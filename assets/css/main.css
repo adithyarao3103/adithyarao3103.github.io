@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|BioRhyme|Sanchez|Tangerine|Italianno');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|BioRhyme|Sanchez|Tangerine|Italianno|Lato:ital,wght@0,900;1,900&display=swap');
 
 html, body{
 	padding: 0;
@@ -13,7 +13,7 @@ html, body{
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	font-size: min(50vw,50vh);
-	font-family: Montserrat;
+	font-family: 'Lato', sans-serif;
 	color: var(--color);
 	opacity: 0.1;
 	z-index: 20;
@@ -189,8 +189,8 @@ body{
 	z-index: 1;
 }
 
-#head::selection {
-		color: white;
+::selection {
+		color: #002ada;
 		background: black;
 	}
 
@@ -246,11 +246,6 @@ body{
 	font-family: Tangerine;
 }
 
-.fluidtxt::selection {
-		color: black;
-		background: #8a8a8a;
-		font-weight: bold;
-	}
 
 ::-webkit-scrollbar {
   width: 7px;
@@ -510,7 +505,7 @@ body{
 	height: 165vh;
 	position: relative;
 	padding-bottom: 15vh;
-	padding-top: 15vh;
+	padding-top: 5vh;
 }
 
 #inabout{
@@ -566,6 +561,7 @@ body{
 	font-variant: all-petite-caps;
 	font-weight: bold;
 }
+
 
 .exp{
 	background: #747ec4;
