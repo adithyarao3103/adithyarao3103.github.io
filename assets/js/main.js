@@ -16,6 +16,15 @@ function changeout(){
     document.getElementById('outcircle').style.width = '50px';
 }
 
+var soc = document.getElementsByClassName('socicon');
+for(i=0;i<soc.length;i++){
+    soc[i].addEventListener('mouseenter', function(e){
+        changein();
+        lag=1;});
+    soc[i].addEventListener('mouseleave', function(e){
+        changeout();
+        lag = 200});
+}
 
 var hb = document.getElementsByTagName('button');
 for(i=0;i<hb.length;i++){

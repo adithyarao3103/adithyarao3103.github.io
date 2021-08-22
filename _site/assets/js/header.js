@@ -25,6 +25,15 @@ function headerloop(){
 		document.body.setAttribute('class','purple-s');
 	}
 
+	else if (document.getElementById('contact').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('contact').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
+		document.getElementById('header').setAttribute('class','header gray');
+		var hb = document.getElementsByClassName('hb');
+		for (var i = hb.length - 1; i >= 0; i--) {
+			hb[i].setAttribute('class', 'hb graybut');
+		}
+		document.body.setAttribute('class','gray-s');
+	}
+
 	else{
 		document.getElementById('header').setAttribute('class','header trans');
 		var hb = document.getElementsByClassName('hb');

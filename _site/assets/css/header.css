@@ -28,6 +28,10 @@
 	background: #451e66;
 }
 
+.gray{
+	background: #242424;
+}
+
 .white:hover{
 	box-shadow: 0px 5px 10px black;
 }
@@ -39,6 +43,11 @@
 .purple:hover{
 	box-shadow: 0px 5px 10px black;
 }
+
+.gray:hover{
+	box-shadow: 0px 5px 10px black;
+}
+
 
 .hb{
 	font-family: BioRhyme;
@@ -98,5 +107,17 @@
 .purplebut:hover{
 	color: black;
 	background-color: #ac77d8;
+	font-weight: bold;
+}
+
+.graybut{
+	color: white;
+	border: 2px solid white;
+	background: transparent;
+}
+
+.graybut:hover{
+	color: black;
+	background: #c2c2c2;
 	font-weight: bold;
 }
