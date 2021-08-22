@@ -21,7 +21,11 @@
 }
 
 .blue{
-	background: #0927ff;
+	background: #050b24;
+}
+
+.purple{
+	background: #451e66;
 }
 
 .white:hover{
@@ -29,6 +33,10 @@
 }
 
 .blue:hover{
+	box-shadow: 0px 5px 10px black;
+}
+
+.purple:hover{
 	box-shadow: 0px 5px 10px black;
 }
 
@@ -42,7 +50,7 @@
 	margin-left: 1.5%;
 	font-weight: normal;
 	font-size: 1em;
-	transition: all 0.2s;
+	transition: all 0.3s;
 	cursor: none;
 }
 
@@ -81,3 +89,14 @@
 	font-weight: bold;
 }
 
+.purplebut{
+	border: 2px solid white;
+	color: white;
+	background: transparent;
+}
+
+.purplebut:hover{
+	color: black;
+	background-color: #ac77d8;
+	font-weight: bold;
+}

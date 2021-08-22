@@ -186,3 +186,59 @@ function loop(){
 
 loop();
 */
+
+entries = document.getElementsByClassName('exp');
+
+for (var i = entries.length - 1; i >= 0; i--) {
+    entries[i].style.transitionDelay = Math.abs(Math.floor(entries.length/2 - i)*300) + 'ms';
+}
+
+function skillsloop(){
+    if (document.getElementById('skills').getBoundingClientRect().top < 0.45*window.innerHeight) 
+    {
+        for (var i = entries.length - 1; i >= 0; i--) {
+            width = entries[i].style.getPropertyValue('--exp');
+            entries[i].style.width = width;
+        }
+    }
+    else{
+        for (var i = entries.length - 1; i >= 0; i--) {
+            entries[i].style.width = '0';
+        }
+
+    requestAnimationFrame(skillsloop);
+    }
+}
+
+skillsloop();
+
+
+  function Stars(numberOfStars, divID){
+    var chosenDiv = document.getElementById(divID)  
+    chosenDiv.style.display = "none";
+    chosenDiv.innerHTML = "";
+    function randomFrom(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+    var text = "";
+    var i; 
+    for (i = 0; i < numberOfStars; i++) {
+        bigRange = Array.apply(null, Array(100)).map(function (_, i) {return i;});
+        smallRange = Array.apply(null, Array(10)).map(function (_, i) {return i;});
+        tenRange = Array.apply(null, Array(5)).map(function (_, i) {return i;});
+        starTwinkleStage = randomFrom(tenRange);
+        var top = randomFrom(bigRange); 
+        var right = randomFrom(bigRange); 
+        var width = randomFrom(smallRange);
+        text += "<style></style>";
+        text += "<div class='stars' style='top:" + top + "%; right: "+ right +"%; width:" + width + "px; height:" + width + "px;";
+        text += "animation: twinkling " + starTwinkleStage + "s alternate infinite";
+        text += ";box-shadow: 0px 0px 1vw rgba(255, 255, 255, 0.2);'></div>";
+        chosenDiv.innerHTML = text;
+        chosenDiv.style.display = "block";
+    }
+}
+  
+// Function(How many stars, id that you want populating)
+Stars(180, "stars");
+

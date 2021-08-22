@@ -3,6 +3,21 @@
 html, body{
 	padding: 0;
 	margin: 0;
+	scroll-behavior: smooth;
+}
+
+.title{
+	font-weight: bolder;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	font-size: min(50vw,50vh);
+	font-family: Montserrat;
+	color: var(--color);
+	opacity: 0.1;
+	z-index: 20;
+	pointer-events: none;
 }
 
 .sk-cube-grid {
@@ -171,7 +186,13 @@ body{
 	line-height: 1.5;
 	letter-spacing: 2px;
 	word-spacing: 7px;
+	z-index: 1;
 }
+
+#head::selection {
+		color: white;
+		background: black;
+	}
 
 
 .incirclehov{
@@ -225,17 +246,31 @@ body{
 	font-family: Tangerine;
 }
 
+.fluidtxt::selection {
+		color: black;
+		background: #8a8a8a;
+		font-weight: bold;
+	}
+
 ::-webkit-scrollbar {
   width: 7px;
   z-index: 9000;
 }
 
-.black::-webkit-scrollbar-track {
+.black-s::-webkit-scrollbar-track {
   background: black;
 }
 
-.white::-webkit-scrollbar-track {
+.white-s::-webkit-scrollbar-track {
 	background: #fff;
+}
+
+.blue-s::-webkit-scrollbar-track {
+	background: #050b24;
+}
+
+.purple-s::-webkit-scrollbar-track {
+	background: #451e66;
 }
 
 /* Handle */
@@ -464,26 +499,6 @@ body{
 
 }
 
-.world{
-	font-size: 10vw;
-	font-weight: bolder;
-	font-family: Montserrat;
-	z-index: 10;
-	margin: 0 auto;
-}
-
-
-.galaxytype{
-	width: 110vw;
-	height: calc(550px + 10vh);
-	background-color: #fff;
-	z-index: 10;
-	background:  #fff;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	position: relative;
-	top: -25px;
-}
 
 .invisible{
 	opacity: 0;
@@ -492,6 +507,10 @@ body{
 #about{
 	background: #fff;
 	width: 100%;
+	height: 165vh;
+	position: relative;
+	padding-bottom: 15vh;
+	padding-top: 15vh;
 }
 
 #inabout{
@@ -508,13 +527,254 @@ body{
 	background-position: center;
 	aspect-ratio:  900/250;
 	width: 100vw;
-	position: relative;
-	top: 15vh;
+	position: absolute;
+	bottom: 0;
 	z-index: 1;
 }
 
 #skills{
 	background: #050b24;
-	height:  100vh;
+	min-height:  100vh;
 	width: 100vw;
+	padding-top: 15vh;
+	padding-bottom: 35vh;
+	position: relative;
 }
+
+
+#inskills{
+	margin-left: 10%;
+	margin-right: 10%;
+	z-index: 2;
+}
+
+.entry{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 100%;
+	padding: 1vh;
+	z-index: 10;
+}
+
+.lang{
+	color: white;
+	width: 95%;
+	text-align: right;
+	font-family: Montserrat;
+	font-size: calc(10px + 1vw) ;
+	letter-spacing: 2px;
+	font-variant: all-petite-caps;
+	font-weight: bold;
+}
+
+.exp{
+	background: #747ec4;
+	background: #fff;
+	width: 0;
+	height: 100%;
+	transition-property: all;
+	transition-duration: 2s;
+	border-radius: 15px;
+}
+
+#waves2{
+	background-image: url(/assets/images/wave2.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	aspect-ratio: 900/250;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+}
+
+#blog{
+	background: #451e66;
+	min-height: 50vh;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-top: 5vh;
+	position: relative;
+}
+
+#inblog{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#text{
+	padding-top: 20vh;
+	color: white;
+	font-size: calc(10px + 1.5vw);
+	font-family: Sanchez;
+	letter-spacing: 1px;
+	text-align: justify;
+	opacity: 0;
+	transition: opacity 2s;
+	text-shadow: 3px 3px 5px black;
+	animation: text 1s alternate ease-in-out infinite;
+}
+
+
+#havok{
+	background: transparent;
+	border: 0px solid white;
+		font-size: calc(10px + 1.5vw);
+	font-family: Sanchez;
+	color: white;
+	letter-spacing: 1px;
+	margin: 5px;
+	position: relative;
+	padding: 15px;
+	transition: background 1s;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#havok:hover{
+	background: #1d0d2b;
+}
+
+#havok:after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: calc(0.7em * 1.2);
+  right: calc(0.7em * 1.2);
+  height: 3px;
+  background: #dcc6ee;
+  transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+  transform-origin: left;
+}
+
+#havok:hover:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+
+.span-text{
+	transform: translate3d(0, 0.5em, 0);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+.line {
+  position: absolute;
+  background: #dcc6ee;
+}
+
+.-right, .-left{
+  width: 3px;
+  bottom: -3px;
+  top: -3px;
+  transform: scale3d(1, 0, 1);
+}
+
+.-top, .-bottom{
+  height: 3px;
+  left: -3px;
+  right: -3px;
+  transform: scale3d(0, 1, 1);
+}
+.-right {
+  right: -3px;
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+  transform-origin: top;
+}
+.-top {
+  top: -3px;
+  transition: transform 0.08s linear 0.43s;
+  transform-origin: left;
+}
+.-left {
+  left: -3px;
+  transition: transform 0.08s linear 0.51s;
+  transform-origin: bottom;
+}
+.-bottom {
+  bottom: -3px;
+  transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+  transform-origin: right;
+}
+
+#havok:hover  .span-text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+#havok:active:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+
+#havok:hover .line {
+  transform: scale3d(1, 1, 1);
+}
+
+#havok:hover .-right {
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+  transform-origin: bottom;
+}
+
+#havok:hover .-top {
+  transition: transform 0.08s linear 0.4s;
+  transform-origin: right;
+}
+
+#havok:hover 	.-left {
+  transition: transform 0.08s linear 0.48s;
+  transform-origin: top;
+}
+
+#havok:hover .-bottom {
+  transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+  transform-origin: left;
+}
+
+#astro{
+	position: relative;
+}
+
+
+.stars{
+  position: absolute;
+  background: #f1f1f1;
+  border-radius: 50%;
+}
+
+#astronaut{
+	width: 100%;
+	position: relative;
+	opacity: 1;
+filter: drop-shadow(40px 40px 15px black);
+   mix-blend-mode: luminosity;
+animation: astro 2s alternate ease-in-out infinite;
+}
+
+@keyframes astro{
+	to{
+		transform: translateY(-25px);
+filter: drop-shadow(65px 90px 30px black);		
+	}	
+}
+
+@keyframes text{
+	to{
+		transform: translateY(-5px);
+		text-shadow: 8px 13px 10px black;
+	}
+}
+
+@keyframes twinkling{
+	to{
+		opacity: 0.1;
+	}
+}
+

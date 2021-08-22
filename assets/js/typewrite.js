@@ -4,6 +4,7 @@ var s2 = 'I am Adithya...';
 var input = ' ';
 
 var s3 = 'I belong to that creamy6not so creamy layer of people who love both physics and programming.';
+var s3change = 'I belong to that not so creamy layer of people who love both physics and programming.';
 var s4 = 'For me, Physics is 0';
 var s5 = 'But I also love fiddling with coding and have fun...';
 
@@ -176,19 +177,19 @@ window.addEventListener("scroll", (event) => {
 */
 
 function finish(){
-	var text = s1 + '<br>' + s2 + '<br><br>' + s3 + '<br><br>' + s4.slice(0,-1) + heart[heart.length-1] + '<br><br>' + s5;
+	var text = s1 + '<br>' + s2 + '<br><br>' + s3change + '<br><br>' + s4.slice(0,-1) + heart[heart.length-1] + '<br><br>' + s5;
 	document.getElementById('headtxt').setAttribute('id','head');
 	document.getElementById('head').innerHTML = text; 
 }
 
 
 function typeloop(){
-	if(document.getElementById('typewrite').getBoundingClientRect().top < 0.35*window.innerHeight && (document.getElementById('typewrite').getBoundingClientRect()).bottom > 0.35*window.innerHeight)
+	if(document.getElementById('typewrite').getBoundingClientRect().top < 0.35*window.innerHeight && document.getElementById('typewrite').getBoundingClientRect().bottom > 0.35*window.innerHeight)
 	{
 		document.getElementById('headtxt').setAttribute('id', 'head');
     	beg(0);
 	}
-	else if(document.getElementById('typewrite').getBoundingClientRect().bottom < 1.5*innerHeight){
+	else if(document.getElementById('typewrite').getBoundingClientRect().bottom < 0){
 		finish();
 	}
 	else{
