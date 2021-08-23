@@ -165,18 +165,6 @@ function menu(){
     document.getElementById('menubutton').setAttribute("onclick", "closemenu()")
 }
 
-if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    document.getElementById('header').style.display = "none";
-    document.getElementById("fluid").style.height = "110vh";
-    document.getElementById("fluidtxt").style.fontSize = "calc(5vh + 5vw)";
-    document.getElementById("fluidtxt").style.marginTop = "30%";
-    document.getElementById("fluidtxt").style.width = "75%";
-    document.getElementById("fluidtxt").style.padding = "5px";
-    document.getElementById("fluidtxt").style.height = "75%";
-    document.getElementById('menubutton').style.visibility = "visible";
-    document.getElementById("fluidtxt").setAttribute("id","fluidtxtmobi");
-
-}
 
 /*
 function loop(){

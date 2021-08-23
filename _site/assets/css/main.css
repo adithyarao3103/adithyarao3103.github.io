@@ -152,10 +152,12 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    aspect-ratio: 859.94/653.13;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    z-index: 20;
 }
 
 .custom-shape-divider-bottom-1622854535 svg {
@@ -240,7 +242,7 @@ body{
 	color:white;
 	position: relative;
 	top: -10px;
-	font-size: calc(2em + 1.5vw + 1.5vh);
+	font-size: calc(15px + 2.75vw);
 	line-height: 1.25;
 	overflow: hidden;
 	font-family: Tangerine;
