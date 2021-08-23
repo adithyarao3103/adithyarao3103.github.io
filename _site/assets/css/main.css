@@ -6,6 +6,10 @@ html, body{
 	scroll-behavior: smooth;
 }
 
+*{
+	cursor: none;
+}
+
 .title{
 	font-weight: bolder;
 	position: absolute;
