@@ -586,7 +586,6 @@ body{
 	background: #fff;
 	width: 0;
 	height: 100%;
-	transform: translateX(5px);
 	transition-property: all;
 	transition-duration: 2s;
 	animation: exp 2s infinite alternate;
@@ -596,9 +595,9 @@ body{
 
 @keyframes exp{
 	to{
-		transform: translateX(-20px);
-		filter: drop-shadow(25px 15px rgba(0,0,0,1));
-		box-shadow: 15px 5px 0px rgba(255,255,255,0.5);
+		transform: translateX(-5px);
+		filter: drop-shadow(10px 10px rgba(0,0,0,1));
+		box-shadow: 5px 5px 0px rgba(255,255,255,0.5);
 	}
 }
 
