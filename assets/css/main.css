@@ -153,7 +153,6 @@ body{
     bottom: 0;
     left: 0;
     width: 100vw;
-    aspect-ratio: 859.94/653.13;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
@@ -189,6 +188,10 @@ body{
 	letter-spacing: 2px;
 	word-spacing: 7px;
 	z-index: 1;
+	width: 100%;
+	height: 100%;
+	text-shadow: 10px 10px 15px rgb(0 0 0 / 75%);
+	padding: 5px;
 }
 
 ::selection {
@@ -545,6 +548,7 @@ body{
 	margin-left: 10%;
 	margin-right: 10%;
 	z-index: 2;
+	padding-bottom: 5vh;
 }
 
 .entry{
@@ -555,6 +559,7 @@ body{
 	z-index: 10;
 }
 
+
 .lang{
 	color: white;
 	width: 95%;
@@ -564,6 +569,15 @@ body{
 	letter-spacing: 2px;
 	font-variant: all-petite-caps;
 	font-weight: bold;
+	animation:  2s infinite alternate;
+}
+
+@keyframes lang{
+	to{
+		transform: translateX(10px);
+		text-shadow: -10px 2.5px 2px rgba(255, 255, 255, 0.1);
+		filter: drop-shadow(-15px 5px rgba(0,0,0,0.1));
+	}
 }
 
 
@@ -572,9 +586,20 @@ body{
 	background: #fff;
 	width: 0;
 	height: 100%;
+	transform: translateX(5px);
 	transition-property: all;
 	transition-duration: 2s;
+	animation: exp 2s infinite alternate;
 	border-radius: 15px;
+}
+
+
+@keyframes exp{
+	to{
+		transform: translateX(-20px);
+		filter: drop-shadow(25px 15px rgba(0,0,0,1));
+		box-shadow: 15px 5px 0px rgba(255,255,255,0.5);
+	}
 }
 
 #waves2{
@@ -593,7 +618,7 @@ body{
 	min-height: 50vh;
 	padding-left: 10vw;
 	padding-right: 10vw;
-	padding-top: 5vh;
+	padding-top: 10vh;
 	position: relative;
 }
 
@@ -630,6 +655,7 @@ body{
 	transition: background 1s;
 	left: 50%;
 	transform: translateX(-50%);
+	animation: havok 1s alternate ease-in-out infinite;
 }
 
 #havok:hover{
@@ -764,6 +790,12 @@ z-index: 11;
 		transform: translateY(-25px);
 filter: drop-shadow(65px 90px 30px black);		
 	}	
+}
+
+@keyframes havok{
+	to{
+		text-shadow: 8px 13px 10px black;
+	}
 }
 
 @keyframes text{
@@ -922,4 +954,17 @@ filter: drop-shadow(65px 90px 30px black);
 #mail:hover:after{
 	height: 80%;
 	transition-delay: 0s;
+}
+
+#visualblob{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 1;
+	opacity: 0.2;
+}
+
+#blob2{
+	visibility: hidden;
 }

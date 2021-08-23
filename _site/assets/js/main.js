@@ -187,7 +187,8 @@ loop();
 entries = document.getElementsByClassName('exp');
 
 for (var i = entries.length - 1; i >= 0; i--) {
-    entries[i].style.transitionDelay = Math.abs(Math.floor(entries.length/2 - i)*300) + 'ms';
+    entries[i].style.transitionDelay = i*300 + 'ms';
+    entries[i].style.animationDelay = i*200 + 'ms';
 }
 
 function skillsloop(){
@@ -239,3 +240,5 @@ skillsloop();
 // Function(How many stars, id that you want populating)
 Stars(180, "stars");
 
+
+var tween = KUTE.fromTo('#blob1', {path: '#blob1' }, { path: '#blob2' },{repeat: 999, duration: 3000, yoyo: true}).start();
