@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|BioRhyme|Sanchez|Tangerine|Italianno|Lato:ital,wght@0,900;1,900&display=swap');
 
+@font-face {
+font-family: "Peace";
+src: url("/assets/font/Peace Sans.otf") format("opentype");
+}
+
 html, body{
 	padding: 0;
 	margin: 0;
@@ -182,20 +187,21 @@ body{
 	display: flex;
 	padding-top: 20vh;
 	z-index: 20;
+	min-height: 70vh;
 }
 
 #head{
-	font-size: calc(10px + 1vw) ;
+	font-size: calc(5px + 1vw) ;
 	color: black;	
+	line-height: 1.75;
+	letter-spacing: 3px;
+	word-spacing: 10px;
 	overflow-y: hidden;
-	line-height: 1.5;
-	letter-spacing: 2px;
-	word-spacing: 7px;
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	text-shadow: 10px 10px 15px rgb(0 0 0 / 75%);
 	padding: 5px;
+	padding-right: 5vw;
 }
 
 ::selection {
@@ -259,26 +265,6 @@ body{
 ::-webkit-scrollbar {
   width: 7px;
   z-index: 9000;
-}
-
-.black-s::-webkit-scrollbar-track {
-  background: black;
-}
-
-.white-s::-webkit-scrollbar-track {
-	background: #fff;
-}
-
-.blue-s::-webkit-scrollbar-track {
-	background: #050b24;
-}
-
-.purple-s::-webkit-scrollbar-track {
-	background: #451e66;
-}
-
-.gray-s::-webkit-scrollbar-track {
-	background: #242424;
 }
 
 /* Handle */
@@ -515,14 +501,12 @@ body{
 #about{
 	background: #fff;
 	width: 100%;
-	height: 165vh;
 	position: relative;
 	padding-top: 5vh;
 }
 
 #inabout{
 	width: 100%;
-	height: 110vh;
 	display: inline-grid;
 	grid-template-columns: repeat(2, 1fr);
 }
@@ -539,9 +523,183 @@ body{
 	z-index: 1;
 }
 
+#wavesabout{
+background-image: url('/assets/images/wavesabout.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	aspect-ratio:  900/250;
+	width: 100vw;
+	position: relative;
+	bottom: 0;
+	z-index: 1;
+}
+
+#acad{
+	background: #73A5C6;
+	position: relative;
+}
+
+#inacad{
+	width: 100vw;
+	padding: 5vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+#edu{
+	display: grid;
+	grid-template-columns: 1fr 1.5fr;
+	width: 100%;
+}
+#proj{
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	width: 100%;
+}
+
+#edutit{
+	color: white;
+	font-variant: small-caps;
+	font-size: calc(25px + 2vw);
+	font-weight: bolder;
+	text-align: right;
+	font-family: Lato;
+	letter-spacing: 3px;
+	line-height: 1.5;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	animation: float 2s alternate infinite ease-in-out;
+}
+
+@keyframes float{
+		0%{
+			transform: translateY(0px) rotate(-0.5deg);
+		}
+		50%{
+			transform: translateY(-10px) rotate(0.5deg);
+		}
+		100%{
+			transform: translateY(-20px) rotate(-0.5deg);
+		}
+}
+
+#eduitems{
+	padding: 20px;
+	margin-bottom: 5vh;
+}
+
+
+.eduitem{
+	width: 80%;
+	border-radius: 20px 20px 0px 0px;
+	background: white;
+	padding: 15px 15px 5px 40px;
+	color: rgba(0, 0, 0, 0.75);
+	position: relative;
+	transition: all 2s;
+	transform-origin: top center;
+	clip-path: inset(0 0 100% 0);
+	transition-delay: 0.4s;
+}
+
+.it{
+	position: relative;
+	margin-bottom: 15vh;
+	animation: float 5s alternate infinite ease-in-out;
+	filter: drop-shadow(5px 5px 20px #001847);
+}
+
+.cut{
+	background: #fff;
+	height: 20px;
+	clip-path: url('#myclip');
+	width: 80%;
+	padding: 15px 15px 15px 40px;
+	border-radius: 20px 20px 20px 20px;
+	position: absolute;
+	top: 0px;
+	transform: scaleY(0);
+	transform-origin: top center;
+	transition: transform 0.5s, top 2s, border-radius 2s;
+}
+
+.noclip{
+	animation: removeclip 2s ease forwards;
+	transition: clip-path 3s;
+}
+
+@keyframes removeclip{
+	100%{
+		clip-path: url('#noclip');
+	}
+}
+
+.qual{
+	font-size: calc(20px + 1vw);
+	font-family: Lato;
+	padding: 10px;
+	letter-spacing: 2px;
+	font-weight: bolder;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.qualdesc{
+	display: grid;
+	grid-template-columns: 7fr 1fr;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	font-family: Montserrat;
+}
+
+.projdesc{
+	font-size: calc(5px + 0.75vw);
+	padding: 10px;
+	letter-spacing: 1px;
+	line-height: 2;
+	font-family: Montserrat;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.descinfo{
+	font-size: calc(5px + 0.75vw);
+	padding: 10px;
+	letter-spacing: 1px;
+	line-height: 2;
+}
+
+.descmarks{
+	font-size: calc(30px + 3vw);
+	padding: 15px;
+	font-family: Lato;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	transform: scaleX(0.7);
+	transform-origin: right center;
+	font-weight: bolder;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.circle{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	background: #73A5C6;
+	border-radius: 50%;
+	box-shadow: inset 1px 1px 5px #001847;
+}
+
 #skills{
 	background: #050b24;
-	min-height:  100vh;
 	width: 100vw;
 	padding-top: 20vh;
 	position: relative;
@@ -559,8 +717,22 @@ body{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	width: 100%;
-	padding: 1vh;
+	padding: 1.5vh;
 	z-index: 10;
+}
+
+.exptit{
+	width: 100%;
+	padding: 1.5vh;
+	z-index: 10;
+	color: white;
+	font-family: Sanchez;
+	font-size: calc(15px + 2vw) ;
+	letter-spacing: 2px;
+	font-variant: all-small-caps;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: ;
 }
 
 
@@ -594,14 +766,15 @@ body{
 	transition-duration: 2s;
 	animation: exp 2s infinite alternate;
 	border-radius: 15px;
+	transform: scale(0.97);
 }
 
 
 @keyframes exp{
 	to{
-		transform: translateX(-5px);
-		filter: drop-shadow(10px 10px rgba(0,0,0,1));
-		box-shadow: 5px 5px 0px rgba(255,255,255,0.5);
+		transform: translateX(-5px) scale(1);
+		filter: drop-shadow(10px 15px rgba(0,0,0,1));
+		box-shadow: 5px 10px 0px rgba(255,255,255,0.5);
 	}
 }
 
@@ -618,7 +791,6 @@ body{
 
 #blog{
 	background: #451e66;
-	min-height: 50vh;
 	padding-left: 10vw;
 	padding-right: 10vw;
 	padding-top: 10vh;
@@ -658,6 +830,7 @@ body{
 	transition: background 1s;
 	left: 50%;
 	transform: translateX(-50%);
+	text-shadow: 3px 3px 5px black;
 	animation: havok 1s alternate ease-in-out infinite;
 }
 
@@ -827,17 +1000,16 @@ filter: drop-shadow(65px 90px 30px black);
 
 #contact{
 	background: #242424;
-	min-height: 90vh;
 	position: relative;
 	padding-left: 10vw;
 	padding-right: 10vw;
 	padding-top: 20vh;
+	padding-bottom: 20vh;
 }
 
 #incontact{
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	height: 80vh;
 }
 
 #social{
@@ -864,6 +1036,7 @@ filter: drop-shadow(65px 90px 30px black);
 		margin: 15px;
 	color: white;
 	transition: all 0.5s;
+	animation: soc 4s alternate infinite;
 }
 
 
@@ -895,10 +1068,6 @@ filter: drop-shadow(65px 90px 30px black);
 
 #contacttext{
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
 	color: white;
 	font-size: calc(10px + 1.5vw);
 		font-family: Montserrat;
@@ -914,7 +1083,7 @@ filter: drop-shadow(65px 90px 30px black);
 	background: transparent;
 	color: white;
 	font-size: calc(10px + 1.5vw);
-		font-family: Montserrat;
+		font-family: BioRhyme;
 		position: relative;
 		padding: 15px;
 		z-index: 1;
@@ -931,32 +1100,35 @@ filter: drop-shadow(65px 90px 30px black);
 	height: 90%;
 	content: '';
 	transform: rotateY(90deg);
-	transition: all 1s;
+	transition: all 0.5s;
 	background: white;
 	transform-origin: bottom center;
 	z-index: -1;
 }
 #mail:hover:before{
 	transform: rotateY(0);
+	transition: all 1s;
 }
 
 
 #mail:after{
 	content: '';
 	width: 100%;
-	height: 10%;
+	height: 5%;
 	background: black;
 	position: absolute;
 	bottom: 10%;
 	left: 0%;
 	transition: all 0.5s;
-	transition-delay: 1s;
+	transition-delay: 0.5s;
 	z-index: -1;
+	border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 #mail:hover:after{
 	height: 80%;
 	transition-delay: 0s;
+	border: 0px solid rgba(255, 255, 255, 0.2);
 }
 
 #visualblob{
@@ -970,4 +1142,238 @@ filter: drop-shadow(65px 90px 30px black);
 
 #blob2{
 	visibility: hidden;
+}
+
+#contacttext{
+	color: white;
+	font-size: calc(10px + 1.5vw);
+		font-family: BioRhyme;
+		white-space: nowrap;
+}
+
+#formdiv{
+		width: 100%;
+}
+
+.formentry{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1.5fr 2fr;
+	padding: 10px;
+}
+
+label{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	font-family: BioRhyme;
+
+}
+
+input,textarea{
+	width: 100%;
+	font-size: calc(7px + 0.5vw);
+	font-family: Montserrat;
+	background: transparent;
+	border: 3px solid white;
+	color: white;
+	transform: scale(1);
+	transition: all 0.5s;
+	font-weight: bold;
+}
+
+input:focus, textarea:focus{
+	transform: scale(1.05);
+	box-shadow: 10px 10px 10px black;
+	background: white;
+	color: black;
+}
+
+.submitbutton{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	font-size: calc(10px + 1.5vw);
+	position: relative;
+}
+
+.submit-button{
+	color: white;
+	width: 40%;
+	padding:10px;
+	margin: 10px;
+	font-size: calc(10px + 1vw);
+	font-family: BioRhyme;
+	background: transparent;
+	position: relative;
+	transition: all 0.75s;
+}
+
+.submit-button:hover {
+	background: white;
+	border: 3px solid black;
+	color: black;
+	font-weight: bold;
+	box-shadow: 15px 15px 0px rgba(255, 255, 255, 0.35);
+	filter: drop-shadow(-15px -15px rgba(255,255,255,0.2));
+}
+
+
+#planecont{
+	pointer-events: none;
+	position: absolute;
+	opacity: 0;
+}
+
+
+@keyframes yAxis {
+  to {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes xAxis {
+  to {
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    transform: translateX(50vw);
+  }
+}
+
+.input{
+	animation: background 1.5s infinite alternate;
+}
+
+
+@keyframes background{
+	to{
+		transform: scale(1.05);
+	}
+}
+
+@keyframes soc{
+	to{
+		transform: scale(1.2);
+	}
+}
+
+#motiv{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 30vh;
+		width: 100vw;
+
+}
+
+#motivtext{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+#inmotivtext{
+	width: 80%;
+	position: relative;
+	left: 5vw;
+	font-size: calc(5px + 1vw) ;
+	color: black;	
+	line-height: 1.75;
+	letter-spacing: 3px;
+	word-spacing: 10px;
+	font-family: Montserrat;
+}
+
+#motivgif{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	overflow: visible;
+   position: relative;
+}
+
+#gifholder{
+	    width: 90%;
+    aspect-ratio: 1;
+    color: white;
+    background: url('/assets/images/harmonicosc.gif') no-repeat;
+    filter: opacity(1) contrast(2) saturate(200%);
+    background-size: cover;
+    user-select: none;
+    font-size: 11vw;
+    word-break: break-all;
+    font-family: Peace;
+    line-height: 0.75;
+    font-weight: bolder;
+    font-style: inherit;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-align: center;
+   -webkit-mask-image: linear-gradient(to left, rgba(255,255,255,1), rgba(0,0,0,0.1));
+   transition: all 0.5s;
+}
+
+#motivgif::after{
+	content: 'The background gif was generated in Mathematica. \00000a It shows the flow of probability density of the position variable in harmonic oscillator';
+	position: absolute;
+	width: 90%;
+	top: 87.5%;
+	left: 5%;
+	opacity: 0;
+	background: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	color: black;
+   font-size: calc(5px + 0.75vw);
+   font-family: BioRhyme;
+   letter-spacing: 1px;
+   word-spacing: 4px;
+   opacity: 0;
+   transition: all 0.75s;
+   text-align: center;
+   z-index: 100;
+}
+
+#motivgif:hover::after{
+	opacity: 0.6;
+
+}
+
+#bubbles{
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: transparent;
+	pointer-events: none;
+}
+
+.bubble{
+	border-radius: 50%;
+	background-image: radial-gradient(farthest-corner at 40px 40px, rgba(255,255,255,0.8), rgba(255,255,255,0));
+	aspect-ratio: 1;
+	pointer-events: none;
+	position: absolute;
+	bottom: 20%;
+	animation: bubblerise 7s forwards linear;
+}
+
+@keyframes bubblerise{
+	to{
+		bottom: 100%;
+		opacity: 0;
+	}
 }

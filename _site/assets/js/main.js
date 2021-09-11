@@ -24,7 +24,18 @@ for(i=0;i<soc.length;i++){
     soc[i].addEventListener('mouseleave', function(e){
         changeout();
         lag = 200});
+    soc[i].style.animationDelay = i*500 + 'ms';
 }
+
+var send = document.getElementsByClassName('submit-button')[0];
+
+    send.addEventListener('mouseenter', function(e){
+        changein();
+        lag=1;});
+    send.addEventListener('mouseleave', function(e){
+        changeout();
+        lag = 200});
+
 
 var hb = document.getElementsByTagName('button');
 for(i=0;i<hb.length;i++){
@@ -242,3 +253,81 @@ Stars(180, "stars");
 
 
 var tween = KUTE.fromTo('#blob1', {path: '#blob1' }, { path: '#blob2' },{repeat: 999, duration: 3000, yoyo: true}).start();
+
+document.getElementById('contact').addEventListener('submit', onsubmit);
+
+function onsubmit(e){
+    document.getElementById('planecont').style.opacity = 1;
+    document.getElementById('planecont').style.animation = 'xAxis 2.5s cubic-bezier(0.02, 0.01, 0.21, 1)';
+    document.getElementById('plane').style.animation = 'yAxis 2.5s cubic-bezier(0.3, 0.27, 0.07, 1.64)';
+    send.value = 'Sent!!!';
+    setTimeout(function(){stopplane();},2000);
+}
+
+function stopplane(){
+    document.getElementById('planecont').style.opacity = 0;
+    document.getElementById('planecont').style.animation = '2.5s cubic-bezier(0.02, 0.01, 0.21, 1)';
+    document.getElementById('plane').style.animation = '2.5s cubic-bezier(0.3, 0.27, 0.07, 1.64)';
+    send.value = 'Send';
+    elems = document.getElementsByClassName("input");
+    for (var i = elems.length - 1; i >= 0; i--) {
+        elems[i].value = '';
+    }
+}
+
+elems = document.getElementsByClassName("input");
+    for (var i = elems.length - 1; i >= 0; i--) {
+        elems[i].style.animationDelay = i*500 + 'ms';
+    }
+
+
+var bub = document.getElementById('bubbles');
+
+function addBubble(){
+    var left = Math.random()*95;
+    var width = Math.random()*10;
+    var time = 0.1 + Math.random()*5;
+    var opacity = 0.7 + Math.random()*0.3;
+    bubble = document.createElement('div');
+    bubble.setAttribute('class','bubble')
+    bubble.style.opacity = opacity;
+    bubble.style.left = left + '%';
+    bubble.style.width = width + '%';
+    bub.appendChild(bubble)
+    setTimeout(function(){addBubble();}, 350);
+    removeBubble(bubble);
+}
+
+addBubble();
+
+function removeBubble(elem){
+    setTimeout(function(){elem.remove();},8000);
+}
+
+it = document.getElementsByClassName('it');
+edu = document.getElementsByClassName('eduitem');
+cut = document.getElementsByClassName('cut');
+
+for (var i = 0; i< it.length; i++) {
+    it[i].style.animationDelay = i*200 + 'ms';
+}
+
+function eduloop(){
+
+    for (var i = it.length - 1; i >= 0; i--) {
+        if(it[i].getBoundingClientRect().top < 0.7*window.innerHeight){
+            edu[i].style.clipPath = 'inset(0 0 0 0)';
+            cut[i].style.transform = 'scaleY(1)';
+            pos(cut[i]);
+        }
+    }
+
+    setTimeout(function(){eduloop();},1000/60);
+}
+
+function pos(elem){
+    setTimeout(function(){elem.style.top = '100%';
+elem.style.borderRadius = ' 0px 0px 20px 20px'},500);
+}
+
+eduloop();

@@ -7,6 +7,16 @@ function headerloop(){
 		}
 		document.body.setAttribute('class','white-s');
 	}
+
+	else if (document.getElementById('acad').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('acad').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
+		document.getElementById('header').setAttribute('class','header lightblue');
+		var hb = document.getElementsByClassName('hb');
+		for (var i = hb.length - 1; i >= 0; i--) {
+			hb[i].setAttribute('class', 'hb lightbluebut');
+		}
+		document.body.setAttribute('class','lightblue-s');
+	}
+
 	else if (document.getElementById('skills').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('skills').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
 		document.getElementById('header').setAttribute('class','header blue');
 		var hb = document.getElementsByClassName('hb');

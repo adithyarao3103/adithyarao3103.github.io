@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|BioRhyme|Sanchez|Tangerine|Italianno|Roboto+Slab|Playfair+Display|Lato:ital,wght@0,900;1,900&display=swap');
+
+#content::-webkit-scrollbar {
+  width: 7px;
+  z-index: 9000;
+}
+
+#content::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+#content::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+#content-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+::selection {
+		color: white;
+		background: black;
+	}
+
+body,html{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-size: calc(10px + 1vw);
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+
+#main-container{
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+}
+
+#sidebar{
+	position: relative;
+	height: 100vh;
+}
+
+#side-cont{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 80%;
+}
+
+.sidebar-but{
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	margin: 5px;
+}
+
+#content{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 100vh;
+	padding-left: 20px;
+	scroll-behavior: smooth;
+	padding-bottom: 10vh;
+	border-left: 1px solid black;
+}
+
+.bullet, .bullet2{
+	position: relative;
+	font-family: Open Sans;
+	padding: 10px;
+}
+
+.bullet:before{	
+	content: '';
+	width: 7.5px;
+	height: 7.5px;
+	border-radius: 50%;
+	background-color: black;
+	position: absolute;
+	left: -7.5px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.bullet2:before{
+	content: '';
+	width: 5px;
+	height: 2px;
+	background-color: black;
+	position: absolute;
+	left: -7.5px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#abouth1{
+	color: transparent;
+	pointer-events: none;
+	user-select: none;
+	font-size:10px;
+}
+
+#name{
+	font-size: calc(40px + 5vw);
+	font-family: Roboto Slab;
+	font-weight: bolder;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h1{
+	font-size: calc(10px + 2.5vw);
+	font-family: Roboto Slab;
+	position: relative;
+}
+/*
+h1:before{
+	content: '';
+	width: calc(75vw - 50px);
+	height: 2px;
+	border: 1px solid black;
+	position: absolute;
+	top: 0;
+}*/
+
+
+.edu-score:not(:last-child), .res-abstract:not(:first-child){
+	margin-bottom: 5vh;
+}
+
+.res-supervisor, .res-date, .res-insti{
+	margin-bottom: 10px;
+}
+
+.posit:last-child{
+	margin-bottom: 2vh;
+}
+
+.section{
+	
+}
+
+#about{
+}
+
+#incontent{
+	width: 90%;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 5px solid rgba(0, 0, 0, 0.5);	
+	padding: 20px;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+}

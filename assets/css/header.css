@@ -13,11 +13,15 @@
 }
 
 .trans{
-	background: transparent;
+	background: #151515;
 }
 
 .white{
 	background: #fff;
+}
+
+.lightblue{
+	background: #73A5C6;
 }
 
 .blue{
@@ -32,19 +36,7 @@
 	background: #242424;
 }
 
-.white:hover{
-	box-shadow: 0px 5px 10px black;
-}
-
-.blue:hover{
-	box-shadow: 0px 5px 10px black;
-}
-
-.purple:hover{
-	box-shadow: 0px 5px 10px black;
-}
-
-.gray:hover{
+.header:hover{
 	box-shadow: 0px 5px 10px black;
 }
 
@@ -120,4 +112,39 @@
 	color: black;
 	background: #c2c2c2;
 	font-weight: bold;
+}
+
+.lightbluebut{
+	background: transparent;
+	color: white;
+	border: 2px solid white;
+}
+
+.lightbluebut:hover{
+	background: #050b24;
+}
+
+
+.black-s::-webkit-scrollbar-track {
+  background: black;
+}
+
+.white-s::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+.blue-s::-webkit-scrollbar-track {
+	background: #050b24;
+}
+
+.lightblue-s::-webkit-scrollbar-track {
+	background: #73a5c6;
+}
+
+.purple-s::-webkit-scrollbar-track {
+	background: #451e66;
+}
+
+.gray-s::-webkit-scrollbar-track {
+	background: #242424;
 }
