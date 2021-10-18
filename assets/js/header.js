@@ -5,7 +5,7 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb whitebut');
 		}
-		document.body.setAttribute('class','white-s');
+		document.getElementById('bitholder').style.transform = 'translateX(0) translateY(0)';
 	}
 
 	else if (document.getElementById('acad').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('acad').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
@@ -14,7 +14,6 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb lightbluebut');
 		}
-		document.body.setAttribute('class','lightblue-s');
 	}
 
 	else if (document.getElementById('skills').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('skills').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
@@ -23,7 +22,6 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb bluebut');
 		}
-		document.body.setAttribute('class','blue-s');
 	}
 
 	else if (document.getElementById('blog').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('blog').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
@@ -32,7 +30,6 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb purplebut');
 		}
-		document.body.setAttribute('class','purple-s');
 	}
 
 	else if (document.getElementById('contact').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('contact').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
@@ -41,7 +38,6 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb graybut');
 		}
-		document.body.setAttribute('class','gray-s');
 	}
 
 	else{
@@ -50,17 +46,16 @@ function headerloop(){
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb transbut');
 		}
-		document.body.setAttribute('class','black-s');
 	}
 
-	if (document.getElementById('about').getBoundingClientRect().top < 0.5*window.innerHeight && document.getElementById('about').getBoundingClientRect().bottom > 0.75*window.innerHeight)
+	if (document.getElementById('solar').getBoundingClientRect().top < 1.3*window.innerHeight && document.getElementById('solar').getBoundingClientRect().bottom > 0*window.innerHeight)
 	{
 		document.getElementById('solar').style.opacity = 1;
-		document.getElementById('solar').style.transform = 'translateX(-5%) scale(1)';
+		document.getElementById('solar').style.transform = 'translateX(5%) translateY(10%) scale(1)';
 	}
 	else{
 		document.getElementById('solar').style.opacity = 0;
-		document.getElementById('solar').style.transform = 'translateX(-5%) scale(0.5)';
+		document.getElementById('solar').style.transform = 'translateX(5%) translateY(10%) scale(0.5)';
 	}
 
 	 if (document.getElementById('blog').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('blog').getBoundingClientRect().bottom > 0.65*window.innerHeight) 

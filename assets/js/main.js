@@ -1,6 +1,5 @@
 var lag = 200;
 
-
 function changein(){
     document.getElementById('incircle').style.width = '30px';
     document.getElementById('incircle').style.height = '30px';
@@ -253,6 +252,12 @@ Stars(180, "stars");
 
 
 var tween = KUTE.fromTo('#blob1', {path: '#blob1' }, { path: '#blob2' },{repeat: 999, duration: 3000, yoyo: true}).start();
+//var tween2 = KUTE.fromTo('#hand_fin', {path: '#hand_fin' }, { path: '#hand_init' },{repeat: 999, duration: 1000, yoyo: true, easing:KUTE.Easing.easingQuadraticInOut}).start();
+
+//svgelem = document.getElementById('#hand_fin');
+
+
+//var rotatetween = KUTE.allTo("#adi_hand",  { rotate: 5 },{rotate: 0},  { repeat: 999, yoyo: true}, {transformOrigin: '50% 50%'}).start();
 
 document.getElementById('contact').addEventListener('submit', onsubmit);
 
@@ -309,6 +314,7 @@ edu = document.getElementsByClassName('eduitem');
 cut = document.getElementsByClassName('cut');
 
 for (var i = 0; i< it.length; i++) {
+    it[i].style.transitionDelay = i*300 + 'ms';
     it[i].style.animationDelay = i*200 + 'ms';
 }
 
@@ -331,3 +337,45 @@ elem.style.borderRadius = ' 0px 0px 20px 20px'},500);
 }
 
 eduloop();
+
+/*bgs = ['adi1.jpg', 'adi2.jpeg', 'adi3.jpeg', 'adi4.jpeg', 'adi5.jpeg','adi6.jpeg'];
+
+var bg = '/assets/images/' + bgs[Math.floor(Math.random() * bgs.length)];
+let image = document.createElement('img');
+image.src = bg;
+image.addEventListener('load', (event)=> {
+    document.getElementById('bitholder').style.backgroundImage = `url(${bg})`;
+});
+*/
+
+
+
+function removeblind(){
+
+
+blinds1 = document.getElementsByClassName('blinds');
+
+blinds2 = document.getElementsByClassName('blinds2');
+
+
+    if(document.getElementById('head').getBoundingClientRect().top < 0.65*window.innerHeight)
+    {
+        for (var i = blinds1.length - 1; i >= 0; i--) {
+            blinds1[i].style.transform = 'translateY(150%) translateX(-150%) rotate(-45deg)';
+        }
+
+    }
+
+
+    if(document.getElementById('inmotivtext').getBoundingClientRect().top < 0.45*window.innerHeight)
+    {
+        for (var i = blinds2.length - 1; i >= 0; i--) {
+            blinds2[i].style.transform = 'translateY(150%) translateX(-150%) rotate(-45deg)';
+        }
+    }
+
+    setTimeout(function(){removeblind();},1000/60);
+
+}
+
+removeblind();

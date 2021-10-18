@@ -123,28 +123,3 @@
 .lightbluebut:hover{
 	background: #050b24;
 }
-
-
-.black-s::-webkit-scrollbar-track {
-  background: black;
-}
-
-.white-s::-webkit-scrollbar-track {
-	background: #fff;
-}
-
-.blue-s::-webkit-scrollbar-track {
-	background: #050b24;
-}
-
-.lightblue-s::-webkit-scrollbar-track {
-	background: #73a5c6;
-}
-
-.purple-s::-webkit-scrollbar-track {
-	background: #451e66;
-}
-
-.gray-s::-webkit-scrollbar-track {
-	background: #242424;
-}

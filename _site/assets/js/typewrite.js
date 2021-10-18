@@ -197,5 +197,5 @@ function typeloop(){
 	}
 }
 
-typeloop();
+//finish();
 
