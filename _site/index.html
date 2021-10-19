@@ -36,8 +36,8 @@
 		<button class="hb" onclick = "document.getElementById('about').scrollIntoView();">About</button>&nbsp&nbsp
 		<button class="hb" onclick = "document.getElementById('acad').scrollIntoView();">Academics</button>&nbsp&nbsp
 		<button class="hb" onclick = "document.getElementById('skills').scrollIntoView();">Skills</button>&nbsp&nbsp
-		<button class="hb" onclick = "document.getElementById('blog').scrollIntoView();">Blog</button>&nbsp&nbsp
-		<button class="hb" onclick = "document.getElementById('contact').scrollIntoView();">Contact</button>&nbsp&nbsp
+		<button class="hb" onclick = "document.getElementById('course').scrollIntoView();" style="width: 120px;">Coursework</button>&nbsp&nbsp
+		<button class="hb" onclick = "document.getElementById('activity').scrollIntoView();">Activities</button>&nbsp&nbsp
 	</div>
 	<div id="top" class="fluidcont">
 		<div class="fluid" id="fluid">
@@ -53,7 +53,7 @@
 	</div>
 
 	<div id="about">
-		<div  class="title" style="--color: black; top:20%; z-index: 100;">ABOUT</div>
+		<div  class="title" style="--color: black;z-index: 100;">ABOUT</div>
 		<div id="inabout">
 			<div id="bitmoji">
 				<div id="bitholder">
@@ -1062,7 +1062,7 @@
 		<div class="blinds" id="blind3"></div>
 		<div class="blinds" id="blind4"></div>
 		
-
+		    Hi,<br>I am Adithya...<br><br> 
 			I belong to that not so creamy layer of people who love both physics and programming.
 			<br><br>
 			For me, Physics is &#128151;
@@ -1266,12 +1266,18 @@
 			<div id="waves2"></div>
 		</div>
 
-		<div id="blog">
-			<div  class="title" style="--color: #fff;">BLOG</div>
+		<div id="course">
+			<div  class="title" style="--color: #fff; font-size:min(30vh, 30vw);">COURSEWORK</div>
+			<div style="width: 100vw; height: 100vh"></div>
+			<div id="waves3"></div>
+		</div>
+		<div id="activity">
+			<center><div  class="title" style="--color: #fff; top:25%; font-size:min(30vw,30vh)">OTHER<BR>ACTIVITIES</div></center>
 			<div id="stars"></div>
+			<div id="inactivities">
 			<div id="inblog">
-				<div id="text">Zap off with your spacesuit to read my science and tech blogs at<br> 
-					<button id="havok" onclick="window.open('https://thehavok.com/author/raoadithya')">
+				<div class="text">Author at thehavok.com, aiming at making science writing a more concise way to learn, even for a beginner to the world of science<br> 
+					<button class="havok" onclick="window.open('https://thehavok.com/author/raoadithya')">
 						<span class="span-text">thehavok.com</span>
 						<span class="line -right"></span>
 						<span class="line -top"></span>
@@ -1286,38 +1292,36 @@
 						<g transform="translate(439.4550263296496 248.53869718222137)"><path id="blob2" d="M184.5 -118.5C242.8 -74 296.4 3 281.4 62.3C266.3 121.7 182.6 163.6 97.2 206.6C11.7 249.6 -75.5 293.7 -143.3 271.2C-211.2 248.7 -259.6 159.5 -262.7 79.1C-265.8 -1.3 -223.6 -73 -172.3 -116C-120.9 -158.9 -60.5 -173.2 1.3 -174.3C63.1 -175.3 126.1 -163.1 184.5 -118.5" fill="#c0c0c0"></path></g>
 						</g>
 					</svg>
-				<img id="astronaut" src="/assets/images/astro.png"></div>
+				<img id="astronaut" src="/assets/images/astro1.png">
 			</div>
-			<div id="waves3"></div>
 		</div>
-		<div id="contact">
-			<div  class="title" style="--color: #fff;">CONTACT</div>
-			<div id="incontact">
-				<div id="social">
-					<div id="insta" class="socicon" onclick="window.open('https://www.instagram.com/rao__adithya/')"><div class="fa fa-instagram"></div></div>
-					<div id="linkedin" class="socicon" onclick="window.open('https://www.linkedin.com/in/adithya-a-rao-3103')"><div class="fa fa-linkedin" ></div></div>
-					<div id="twitter" class="socicon" onclick="window.open('https://twitter.com/raoadithya31')"><div class="fa fa-twitter"></div></div>
-				</div>
-				<div id="contacttext">
-					<div id="incontacttext">
-						<div id="formdiv">
-							<form name="contact" id="contact" enctype="text/plain" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdk7ARN9CZvUUvXFe93mBfXn_RmTMcj1m8JdlfOSTpS5AKSQQ/formResponse" target="hidden_iframe" onsubmit="submitted = true;">
-								<div class="formentry --input"><label>Name</label><input class="input" type="text" name="entry.1518668702" id="entry.1518668702" required></div>
-								<div class="formentry --input"><label>Email</label><input class="input" type="email" name="entry.1222236263" id="entry.1222236263" required></div>
-								<div class="formentry --text"><label>Message</label><textarea class="input" name="entry.1949651056" id="entry.1949651056" rows="10" cols="25" required></textarea></div>
-								<div class="submitbutton"><input class="submit-button" type="submit" value="Send">
-									<div id="planecont"><i id="plane" class="fa fa-paper-plane"></i></div></div>
-								</form>
-								<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){}"></iframe>
 
-							</div>
-						</div>
-					</div>
+			<div id="pcmoon">
+				
+				<div><img id="moonvec" src="/assets/images/moon.jpg"></div>
+				<div class="text">Member of the physics club of NIT Surat, a club actively conducting events to impart knowledge and inculcate the interest for physics in young minds<br><br>
+					<button class="havok" onclick="window.open('https://physicsclubsvnit.github.io')">
+						<span class="span-text">physicsclubsvnit.github.io</span>
+						<span class="line -right"></span>
+						<span class="line -top"></span>
+						<span class="line -left"></span>
+						<span class="line -bottom"></span>
+					</button><br><br>
+					<div id="smalltext">[PS: I built the website for Physics Club.]</div>
 				</div>
-				<center id="contacttext">
-					Or write a mail at <span><button id="mail" onclick="window.open('mailto:adithyarao3132001@gmail.com')">adithyarao3132001@gmail.com</button></span>
-				</center>
 			</div>
+
+			</div>
+
+	<div id="wavesfinal"></div>
+
+		</div>
+
+		<div id="end">
+			
+			
+		</div>
+
 		</body>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
 		<script type="text/javascript" src="/assets/js/main.js"></script>

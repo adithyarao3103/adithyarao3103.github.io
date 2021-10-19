@@ -24,7 +24,7 @@ function headerloop(){
 		}
 	}
 
-	else if (document.getElementById('blog').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('blog').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
+	else if (document.getElementById('course').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('course').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
 		document.getElementById('header').setAttribute('class','header purple');
 		var hb = document.getElementsByClassName('hb');
 		for (var i = hb.length - 1; i >= 0; i--) {
@@ -32,11 +32,19 @@ function headerloop(){
 		}
 	}
 
-	else if (document.getElementById('contact').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('contact').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
+	else if (document.getElementById('activity').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('activity').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
 		document.getElementById('header').setAttribute('class','header gray');
 		var hb = document.getElementsByClassName('hb');
 		for (var i = hb.length - 1; i >= 0; i--) {
 			hb[i].setAttribute('class', 'hb graybut');
+		}
+	}
+
+	else if (document.getElementById('end').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('end').getBoundingClientRect().bottom > 0.65*window.innerHeight) {
+		document.getElementById('header').setAttribute('class','header black');
+		var hb = document.getElementsByClassName('hb');
+		for (var i = hb.length - 1; i >= 0; i--) {
+			hb[i].setAttribute('class', 'hb blackbut');
 		}
 	}
 
@@ -53,15 +61,10 @@ function headerloop(){
 		document.getElementById('solar').style.opacity = 1;
 		document.getElementById('solar').style.transform = 'translateX(5%) translateY(10%) scale(1)';
 	}
-	else{
+	/*else{
 		document.getElementById('solar').style.opacity = 0;
 		document.getElementById('solar').style.transform = 'translateX(5%) translateY(10%) scale(0.5)';
-	}
-
-	 if (document.getElementById('blog').getBoundingClientRect().top < 0.65*window.innerHeight && document.getElementById('blog').getBoundingClientRect().bottom > 0.65*window.innerHeight) 
-	{
-		document.getElementById('text').style.opacity=1;
-	}
+	}*/
 
 	requestAnimationFrame(headerloop);
 }

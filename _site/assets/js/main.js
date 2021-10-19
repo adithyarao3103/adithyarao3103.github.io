@@ -15,6 +15,7 @@ function changeout(){
     document.getElementById('outcircle').style.width = '50px';
 }
 
+/*
 var soc = document.getElementsByClassName('socicon');
 for(i=0;i<soc.length;i++){
     soc[i].addEventListener('mouseenter', function(e){
@@ -34,7 +35,7 @@ var send = document.getElementsByClassName('submit-button')[0];
     send.addEventListener('mouseleave', function(e){
         changeout();
         lag = 200});
-
+*/
 
 var hb = document.getElementsByTagName('button');
 for(i=0;i<hb.length;i++){
@@ -258,33 +259,6 @@ var tween = KUTE.fromTo('#blob1', {path: '#blob1' }, { path: '#blob2' },{repeat:
 
 
 //var rotatetween = KUTE.allTo("#adi_hand",  { rotate: 5 },{rotate: 0},  { repeat: 999, yoyo: true}, {transformOrigin: '50% 50%'}).start();
-
-document.getElementById('contact').addEventListener('submit', onsubmit);
-
-function onsubmit(e){
-    document.getElementById('planecont').style.opacity = 1;
-    document.getElementById('planecont').style.animation = 'xAxis 2.5s cubic-bezier(0.02, 0.01, 0.21, 1)';
-    document.getElementById('plane').style.animation = 'yAxis 2.5s cubic-bezier(0.3, 0.27, 0.07, 1.64)';
-    send.value = 'Sent!!!';
-    setTimeout(function(){stopplane();},2000);
-}
-
-function stopplane(){
-    document.getElementById('planecont').style.opacity = 0;
-    document.getElementById('planecont').style.animation = '2.5s cubic-bezier(0.02, 0.01, 0.21, 1)';
-    document.getElementById('plane').style.animation = '2.5s cubic-bezier(0.3, 0.27, 0.07, 1.64)';
-    send.value = 'Send';
-    elems = document.getElementsByClassName("input");
-    for (var i = elems.length - 1; i >= 0; i--) {
-        elems[i].value = '';
-    }
-}
-
-elems = document.getElementsByClassName("input");
-    for (var i = elems.length - 1; i >= 0; i--) {
-        elems[i].style.animationDelay = i*500 + 'ms';
-    }
-
 
 var bub = document.getElementById('bubbles');
 
