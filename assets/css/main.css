@@ -1292,3 +1292,9 @@ filter: drop-shadow(65px 90px 30px black);
 	background: black;
 	color: white;
 }
+
+#peeps{
+	background: url('/assets/images/peeps2.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
