@@ -1298,3 +1298,25 @@ filter: drop-shadow(65px 90px 30px black);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+#bottom{
+	display: grid;
+	grid-template-columns:1fr 1.5fr 2fr;
+	position:relative;
+	left: 50vw;
+	transform: translateX(-50%);
+	margin-left: 5vw;
+	margin-right: 5vw;
+	padding-bottom: 10vh;
+}
+
+#pbot{
+	padding: 7.5%;
+	color:white;
+	font-family: Montserrat;
+	font-variant: all-petite-caps;
+	font-size: larger;
+	line-height: 2;
+	letter-spacing: 2px;
+	text-align: justify;
+}
