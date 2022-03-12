@@ -18,16 +18,17 @@ html, body{
 
 .title{
 	font-weight: bolder;
-	position: absolute;
-	top: 30%;
+	position: fixed;
+	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	font-size: min(40vw,40vh);
 	font-family: 'Lato', sans-serif;
 	color: var(--color);
-	opacity: 0.1;
+	opacity: 0;
 	z-index: 20;
 	pointer-events: none;
+	transition: all 1.25s;
 }
 
 .sk-cube-grid {
@@ -205,6 +206,9 @@ body{
 	overflow: hidden;
 	border-radius: 10px;
 	position: relative;
+	opacity: 0;
+	transform: translateY(-50px);
+	transition: all 1.5s;
 }
 
 ::selection {
@@ -548,7 +552,7 @@ background-image: url('/assets/images/wavesabout.svg');
 
 #inacad{
 	width: 100vw;
-	padding: 5vw;
+	padding: 2.5vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -570,9 +574,9 @@ background-image: url('/assets/images/wavesabout.svg');
 #edutit{
 	color: white;
 	font-variant: small-caps;
-	font-size: calc(25px + 2vw);
+	font-size: calc(40px + 2vw);
 	font-weight: bolder;
-	text-align: right;
+	text-align: center;
 	font-family: Lato;
 	letter-spacing: 3px;
 	line-height: 1.5;
@@ -581,6 +585,8 @@ background-image: url('/assets/images/wavesabout.svg');
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	writing-mode: vertical-rl;
+	transform: scale(-1);
 }
 
 @keyframes float{
@@ -773,6 +779,8 @@ background-image: url('/assets/images/wavesabout.svg');
 	border-radius: 15px;
 	transform: scale(0.97);
 }
+
+
 
 
 @keyframes exp{
@@ -1021,7 +1029,6 @@ filter: drop-shadow(65px 90px 30px black);
 	aspect-ratio: 900/250;
 	position: relative;
 	bottom: 0;
-	left: -10vw;
 	z-index: 10;
 }
 
@@ -1075,6 +1082,9 @@ filter: drop-shadow(65px 90px 30px black);
 	overflow: hidden;
 	padding: 25px;
 	border-radius: 10px;
+	opacity: 0;
+	transform: translateY(-50px);
+	transition: all 1.5s;
 }
 
 #motivgif{
@@ -1146,7 +1156,7 @@ filter: drop-shadow(65px 90px 30px black);
 	width: 100%;
 	aspect-ratio: 1;
 	position: relative;
-	top: -25%;
+	top: -15%;
 }
 
 #svgoverlay{
@@ -1174,35 +1184,6 @@ filter: drop-shadow(65px 90px 30px black);
 	transition: all 1s;	
 }
 
-.blinds, .blinds2{
-	width: 150%;
-	aspect-ratio: 1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: all 1s;
-	transform: translateX(-20%) translateY(-20%) rotate(-45deg);
-}
-
-#blind1, #blind5{
-background: transparent;
-transition-delay: 0.3s;
-}
-
-#blind2, #blind6{
-background: black;
-transition-delay: 0.3s;
-}
-
-#blind3, #blind7{
-background: gray;
-transition-delay: 0.15s;
-}
-
-#blind4, #blind8{
-background: white;
-transition-delay: 0s;
-}
 
 #wavesfinal{
 	background-image: url('/assets/images/stacked-steps-haikei.svg');
@@ -1219,7 +1200,95 @@ transition-delay: 0s;
 
 #end{
 	position: relative;
-	min-height:100vh;
+	min-height:50vh;
 	width: 100vw;
 	background: black;
+}
+
+#resume{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: none;
+}
+
+#resbut{
+	border: 2px solid white;
+	color: white;
+	background: transparent;
+	font-size: calc(7px + 0.75vw);
+	padding: 10px;
+	margin-left: 5vw;
+	font-family: Sanchez;
+	font-weight: normal;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.75s;
+	box-shadow: inset 0px 0px 1px black;
+	z-index: 1;
+}
+
+#resbut:after{
+	content: '';
+	width: 120%;
+	aspect-ratio: 1;
+	background: white;
+	position: absolute;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%) scale(0);
+	transition: all 0.75s;
+	z-index: -1;
+}
+
+#resbut:before{
+	content: '';
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border: 5px solid black;
+	background: transparent;
+	z-index: 2;
+	transition: all 0.75s;
+	opacity: 0;
+}
+
+#resbut:hover::before{
+	opacity: 1;
+}
+
+#resbut:hover{
+	color: black;
+	font-weight: bold;
+}
+
+#resbut:hover::after{
+	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+#resclose{
+	border: 2px solid black;
+	color: black;
+	position: absolute;
+	padding: 10px;
+	border-radius: 50%;
+	background: white;
+	color: black;
+	font-size: calc(10px + 1vw);
+	width: calc(40px + 1vw);
+	height: calc(40px + 1vw);
+	margin: 20px;
+	transition: all 1s;
+}
+
+#resclose:hover{
+	background: black;
+	color: white;
 }

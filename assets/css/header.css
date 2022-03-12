@@ -4,12 +4,12 @@
 	height: calc(50px + 2vh);
 	position: fixed;
 	top:  0vh;
-	right: 0vh;
+	right: 0vw;
 	display: flex;
 	min-height: 50px;
 	transition: all 0.5s;
 	justify-content: flex-end;
-	z-index: 1000;
+	z-index: 999;
 }
 
 .trans{
@@ -139,4 +139,11 @@
 	color: black;
 	font-weight: bold;
 	border: 2px solid black;
+}
+
+.whitescroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+  transition: all 0.5s;
+  border: 0px solid white;
 }

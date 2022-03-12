@@ -326,26 +326,20 @@ image.addEventListener('load', (event)=> {
 
 function removeblind(){
 
-
-blinds1 = document.getElementsByClassName('blinds');
-
-blinds2 = document.getElementsByClassName('blinds2');
-
-
     if(document.getElementById('head').getBoundingClientRect().top < 0.65*window.innerHeight)
     {
-        for (var i = blinds1.length - 1; i >= 0; i--) {
-            blinds1[i].style.transform = 'translateY(150%) translateX(-150%) rotate(-45deg)';
-        }
-
+        
+        elem = document.getElementById('head');
+        elem.style.opacity = 1;
+        elem.style.transform = 'translateY(0)';
     }
 
 
     if(document.getElementById('inmotivtext').getBoundingClientRect().top < 0.45*window.innerHeight)
     {
-        for (var i = blinds2.length - 1; i >= 0; i--) {
-            blinds2[i].style.transform = 'translateY(150%) translateX(-150%) rotate(-45deg)';
-        }
+        elem = document.getElementById('inmotivtext');
+        elem.style.opacity = 1;
+        elem.style.transform = 'translateY(0)';
     }
 
     setTimeout(function(){removeblind();},1000/60);
@@ -353,3 +347,31 @@ blinds2 = document.getElementsByClassName('blinds2');
 }
 
 removeblind();
+
+var elements = document.getElementsByTagName("*");
+
+function showpdf(){
+    document.body.setAttribute('class', 'whitescroll');
+    disableScrolling();
+    document.getElementById('resume').style.display = 'block';
+    document.getElementById('incircle').style.opacity=0;
+    document.getElementById('outcircle').style.opacity=0;
+}
+
+function hidepdf(){
+    document.body.setAttribute('class', '');
+    enableScrolling();
+    setTimeout(function(){document.getElementById('resume').style.display = 'none';},500);
+    document.getElementById('incircle').style.opacity=1;
+    document.getElementById('outcircle').style.opacity=1;
+}
+
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
+function enableScrolling(){
+    window.onscroll=function(){};
+}

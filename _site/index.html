@@ -36,7 +36,7 @@
 		<button class="hb" onclick = "document.getElementById('about').scrollIntoView();">About</button>&nbsp&nbsp
 		<button class="hb" onclick = "document.getElementById('acad').scrollIntoView();">Academics</button>&nbsp&nbsp
 		<button class="hb" onclick = "document.getElementById('skills').scrollIntoView();">Skills</button>&nbsp&nbsp
-		<button class="hb" onclick = "document.getElementById('course').scrollIntoView();" style="width: 120px;">Coursework</button>&nbsp&nbsp
+		<!--button class="hb" onclick = "document.getElementById('course').scrollIntoView();" style="width: 120px;">Coursework</button>&nbsp&nbsp-->
 		<button class="hb" onclick = "document.getElementById('activity').scrollIntoView();">Activities</button>&nbsp&nbsp
 	</div>
 	<div id="top" class="fluidcont">
@@ -53,7 +53,7 @@
 	</div>
 
 	<div id="about">
-		<div  class="title" style="--color: black;z-index: 100;">ABOUT</div>
+		<div  class="title" style="--color: black;z-index: 100;" id="title-about">ABOUT</div>
 		<div id="inabout">
 			<div id="bitmoji">
 				<div id="bitholder">
@@ -920,7 +920,7 @@
 					<g id="Layer_2">
 					<g id="adi_hand" class="rotatable" transform="rotate(0)">
 
-						<animateTransform attributeName="transform" attributeType="XML" dur="2s" keyTimes="0;0.5;1" repeatCount="indefinite" type="rotate" values="-7;5;-7" calcMode="linear"></animateTransform>
+						<animateTransform attributeName="transform" attributeType="XML" dur="1s" keyTimes="0;0.5;1" repeatCount="indefinite" type="rotate" values="-8;4;-8" calcMode="linear"></animateTransform>
 
 						<path class="st1" d="M-196.1,682.7c-0.1,0.1-0.1,0.3-0.1,0.4c-0.5,1.1-1.4,2.6-2.3,4c-1.6,2.3-2.4,5.5-3.3,8.2
 						c0,0.1-0.7,0.2-0.8,0.2c0.2-3.6,8.9-11.8,12.3-17.2c0,0,0,0,0,0c0.6-1.1-3,1.2-4.1,1.5c-0.3,0.1-1.9,1.7-1.7,1.4
@@ -1056,12 +1056,6 @@
 			</div>
 	<div id="typewrite">
 		<h1 id="head">
-
-<div class="blinds" id="blind1"></div>
-		<div class="blinds" id="blind2"></div>
-		<div class="blinds" id="blind3"></div>
-		<div class="blinds" id="blind4"></div>
-		
 		    Hi,<br>I am Adithya...<br><br> 
 			I belong to that not so creamy layer of people who love both physics and programming.
 			<br><br>
@@ -1073,11 +1067,6 @@
 </div>
 <div id="motiv">
 	<div id="motivtext"><h1 id="inmotivtext">
-
-<div class="blinds2" id="blind5"></div>
-		<div class="blinds2" id="blind6"></div>
-		<div class="blinds2" id="blind7"></div>
-		<div class="blinds2" id="blind8"></div>
 
 		My interests lie in Theoretical High Energy Physics, Physics beyond Standard Model, Quantum
 		Mechanics, Gravity;<br><br> while I am intrigued by the unsolved problems like quantum gravity, matter-
@@ -1127,7 +1116,7 @@
 	<div id="bubbles"></div>
 	<div id="inacad">
 		<div id="edu">
-			<div id="edutit">EDUCATIONAL QUALIFICATION</div>
+			<div id="edutit">EDUCATIONAL <br> QUALIFICATION</div>
 			<div id="eduitems">
 				<div class="it">
 					<div class="eduitem">
@@ -1172,7 +1161,7 @@
 				</div>
 			</div>
 		</div>
-		<div  class="title" style="--color: #000; margin-bottom: 5vh; font-size: min(30vh,30vw); position: relative; top: 0%; left: -5%; transform: translateX(0) translateY(0);">ACADEMICS</div>
+		<div  class="title" style="--color: #000; font-size: min(30vh, 30vw);" id="title-acad">ACADEMICS</div>
 		<div id="proj">
 			<div id="eduitems" class="projects">
 				<div class="it">
@@ -1206,14 +1195,14 @@
 					<div class="cut"></div>
 				</div>
 			</div>
-			<div id="edutit" style="text-align: left;">RESEARCH PROJECTS</div>
+			<div id="edutit" style="text-align: left; transform: scale(1); writing-mode: vertical-rl; ">RESEARCH <br> PROJECTS</div>
 		</div>
 	</div>
 	<div id="waves"></div>
 </div>
 
 <div id="skills">
-	<div  class="title" style="--color: #fff;">SKILLS</div>
+	<div  class="title" style="--color: #fff;" id="title-skills">SKILLS</div>
 	<div id="inskills">
 		<!--div id="langs"-->
 		<div class="exptit">Programming Languages</div>
@@ -1263,16 +1252,16 @@
 			<div id="exps"-->
 				<!--/div-->
 			</div>
-			<div id="waves2"></div>
+			<div id="waves3"></div>
 		</div>
 
-		<div id="course">
+		<!--div id="course">
 			<div  class="title" style="--color: #fff; font-size:min(30vh, 30vw);">COURSEWORK</div>
 			<div style="width: 100vw; height: 100vh"></div>
 			<div id="waves3"></div>
-		</div>
+		</div-->
 		<div id="activity">
-			<center><div  class="title" style="--color: #fff; top:25%; font-size:min(30vw,30vh)">OTHER<BR>ACTIVITIES</div></center>
+			<center><div  class="title" style="--color: #fff; font-size:min(30vw,30vh)" id="title-activity">OTHER<BR>ACTIVITIES</div></center>
 			<div id="stars"></div>
 			<div id="inactivities">
 			<div id="inblog">
@@ -1318,10 +1307,22 @@
 		</div>
 
 		<div id="end">
-			
-			
+
+			<button id="resbut" onclick=showpdf()>View PDF Resume</button>
 		</div>
 
+		<div id="resume">
+			<button id="resclose" onclick=hidepdf() style="cursor:pointer;">&#10006;</button>
+			<iframe
+    src="https://drive.google.com/viewerng/viewer?embedded=true&url=adithyarao3103.github.io/assets/Resume_Adithya_A_Rao.pdf#toolbar=0&scrollbar=0"
+    frameBorder="0"
+    scrolling="auto"
+    height="100%"
+    width="100%"
+></iframe>
+
+
+		</div>
 		</body>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
 		<script type="text/javascript" src="/assets/js/main.js"></script>
