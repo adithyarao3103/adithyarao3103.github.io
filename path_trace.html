@@ -42,7 +42,7 @@
         <label for="Bx">Bx:</label><input type="text" id="Bx" name="Bx" value="0"><br>
         <label for="By">By:</label><input type="text" id="By" name="By" value="0"><br>
         <label for="Bz">Bz:</label><input type="text" id="Bz" name="Bz" value="0"><br>
-        <label for="precision">precision:</label><input type="text" id="precision" name="precision" value="0"><br>
+        <label for="dt">dt:</label><input type="text" id="dt" name="dt" value="0"><br>
         <label for="time">time:</label><input type="text" id="time" name="time" value="0"><br>
         <button onclick="plot()">Trace Path</button>
     </div><div id="plot"></div>
@@ -64,10 +64,10 @@ F = [0,0,0];
 rx = [];
 ry = [];
 rz = [];
-precision = parseFloat(document.getElementById("precision").value);
+dt = parseFloat(document.getElementById("dt").value);
 time = parseFloat(document.getElementById("time").value);
 
-console.log(qe, qm, v, B, E, precision, time);
+console.log(qe, qm, v, B, E, dt, time);
 
 track_path();
 }
@@ -104,13 +104,13 @@ track_path();
 };
 
 function track_path(){
-    for(i = 0; i<=time; i+=precision){
+    for(i = 0; i<=time; i+=dt){
         vB = cross(v, B);
         vE = cross(v, E);
         for(j = 0; j<3; j++){
             F[j] = qe*(E[j] + vB[j]) + qm*(B[j] - vE[j]);
-            v[j] = v[j] + F[j]*precision;
-            r[j] = r[j] + v[j]*precision;
+            v[j] = v[j] + F[j]*dt;
+            r[j] = r[j] + v[j]*dt;
         }
         rx.push(r[0]);
         ry.push(r[1]);
