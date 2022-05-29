@@ -574,7 +574,7 @@ background-image: url('/assets/images/wavesabout.svg');
 #edutit{
 	color: white;
 	font-variant: small-caps;
-	font-size: calc(40px + 2vw);
+	font-size: calc(30px + 1.75vw);
 	font-weight: bolder;
 	text-align: center;
 	font-family: Lato;
@@ -586,7 +586,28 @@ background-image: url('/assets/images/wavesabout.svg');
 	align-items: center;
 	align-content: center;
 	writing-mode: vertical-rl;
-	transform: scale(-1);
+	text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+#qual{
+	
+	position:fixed;
+	left:17.5%;
+	transform: translateY(-50%) scale(-1);
+	top:50%;
+	opacity:0;
+	transition: all 1s ease-in-out;
+	z-index: 50;
+}
+
+#rese{
+	position:fixed;
+	right:17.5%;
+	transform: translateY(-50%);
+	top:50%;
+	opacity:0;
+	transition: all 1s ease-in-out;
+	z-index: 50;
 }
 
 @keyframes float{
@@ -625,6 +646,8 @@ background-image: url('/assets/images/wavesabout.svg');
 	margin-bottom: 15vh;
 	animation: float 5s alternate infinite ease-in-out;
 	filter: drop-shadow(5px 5px 20px #001847);
+	z-index:100;
+
 }
 
 .cut{
@@ -1157,6 +1180,7 @@ filter: drop-shadow(65px 90px 30px black);
 	aspect-ratio: 1;
 	position: relative;
 	top: -15%;
+	z-index:50;
 }
 
 #svgoverlay{
@@ -1165,7 +1189,7 @@ filter: drop-shadow(65px 90px 30px black);
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: linear-gradient(rgba(255,255,255,0) 50%, rgba(255,255,255,1) );
+	background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) );
 }
 
 #adi_hand{

@@ -292,6 +292,27 @@ for (var i = 0; i< it.length; i++) {
     it[i].style.animationDelay = i*200 + 'ms';
 }
 
+function edu_in(){
+    document.getElementById('qual').style.left = '20%';
+    document.getElementById('qual').style.opacity = 1;
+}
+
+function edu_out(){
+    document.getElementById('qual').style.left = '17.5%';
+    document.getElementById('qual').style.opacity = 0;
+}
+
+function proj_in(){
+    document.getElementById('rese').style.right = '20%';
+    document.getElementById('rese').style.opacity = 1;
+}
+
+function proj_out(){
+    document.getElementById('rese').style.right = '17.5%';
+    document.getElementById('rese').style.opacity = 0;
+}
+
+
 function eduloop(){
 
     for (var i = it.length - 1; i >= 0; i--) {
@@ -301,6 +322,27 @@ function eduloop(){
             pos(cut[i]);
         }
     }
+
+
+    if(document.getElementById('edu').getBoundingClientRect().top < 0.4*window.innerHeight && document.getElementById('edu').getBoundingClientRect().bottom > 1.1*window.innerHeight){
+        console.log('trigger');
+         edu_in();
+    }
+    else{
+        edu_out()
+    }
+
+    if(document.getElementById('proj').getBoundingClientRect().top < 0.4*window.innerHeight && document.getElementById('proj').getBoundingClientRect().bottom > 1.1*window.innerHeight){
+        console.log('trigger');
+         proj_in();
+    }
+    else{
+        proj_out()
+    }
+
+    // if(document.getElementById('edu').getBoundingClientRect().bottom > 0.1*window.innerHeight){
+    //     edu_out(0);
+    // }
 
     setTimeout(function(){eduloop();},1000/60);
 }

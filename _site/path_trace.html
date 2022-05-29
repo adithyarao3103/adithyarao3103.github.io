@@ -8,7 +8,6 @@
 
 <style>
 
-
     #controls{
         flex: 25%;
         padding: 30px;
@@ -44,7 +43,11 @@
         <label for="Bz">Bz:</label><input type="text" id="Bz" name="Bz" value="0"><br>
         <label for="dt">dt:</label><input type="text" id="dt" name="dt" value="0"><br>
         <label for="time">time:</label><input type="text" id="time" name="time" value="0"><br>
-        <button onclick="plot()">Trace Path</button>
+        <button onclick="plot()">Trace Path</button><br>
+        <button onclick="downconfig()">Download values</button><br>
+        <button onclick="downpath()">Download Path</button><br>
+        <label for="file">Config File:</label><input type="file" id="file" name="file">
+        
     </div><div id="plot"></div>
 
     </div>
@@ -53,22 +56,23 @@
 
 <script>
 
-function plot(){
-qe = parseFloat(document.getElementById("qe").value);
-qm = parseFloat(document.getElementById("qm").value);
-v = [parseFloat(document.getElementById("vx").value), parseFloat(document.getElementById("vy").value), parseFloat(document.getElementById("vz").value)];
-B = [parseFloat(document.getElementById("Bx").value), parseFloat(document.getElementById("By").value), parseFloat(document.getElementById("Bz").value)];
-E = [parseFloat(document.getElementById("Ex").value), parseFloat(document.getElementById("Ey").value), parseFloat(document.getElementById("Ez").value)];
-r = [0,0,0];
+    function getvalues(){
+        qe = parseFloat(document.getElementById("qe").value);
+        qm = parseFloat(document.getElementById("qm").value);
+        v = [parseFloat(document.getElementById("vx").value), parseFloat(document.getElementById("vy").value), parseFloat(document.getElementById("vz").value)];
+        B = [parseFloat(document.getElementById("Bx").value), parseFloat(document.getElementById("By").value), parseFloat(document.getElementById("Bz").value)];
+        E = [parseFloat(document.getElementById("Ex").value), parseFloat(document.getElementById("Ey").value), parseFloat(document.getElementById("Ez").value)];
+        dt = parseFloat(document.getElementById("dt").value);
+        time = parseFloat(document.getElementById("time").value);
+        r = [0,0,0];
 F = [0,0,0];
 rx = [];
 ry = [];
 rz = [];
-dt = parseFloat(document.getElementById("dt").value);
-time = parseFloat(document.getElementById("time").value);
+    }
 
-console.log(qe, qm, v, B, E, dt, time);
-
+function plot(){
+    getvalues();
 track_path();
 }
 
@@ -104,6 +108,11 @@ track_path();
 };
 
 function track_path(){
+    getpath();
+    plot_in_ly(rx,ry,rz);
+}
+
+function getpath(){
     for(i = 0; i<=time; i+=dt){
         vB = cross(v, B);
         vE = cross(v, E);
@@ -116,12 +125,65 @@ function track_path(){
         ry.push(r[1]);
         rz.push(r[2]);
     }
-
-    console.log(rx, ry, rz);
-
-    plot_in_ly(rx,ry,rz);
 }
 
+function downconfig(){
+    getvalues();
+    arr = [qe].concat([qm], v, E, B, [dt], [time]);
+    download("config.txt", arr);
+}
+
+function downpath(){
+    getvalues();
+    getpath();
+    text = '';
+    for(i = 0; i<rx.length; i++){
+        text+= rx[i].toString().concat('\t',ry[i].toString(),'\t',rz[i].toString(), '\n');
+    }
+    download("path.txt", text);
+}
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+
+document.getElementById('file').addEventListener('change', function() {
+              
+            var fr=new FileReader();
+            fr.onload=function(){
+                conf = fr.result;
+                editvals(conf);
+            }
+              
+            fr.readAsText(this.files[0]);
+        })
+
+function editvals(conf){
+    conf = conf.split(',');
+    document.getElementById("qe").value = parseFloat(conf[0]);
+    document.getElementById("qm").value = parseFloat(conf[1]);
+    document.getElementById("vx").value = parseFloat(conf[2]);
+    document.getElementById("vy").value = parseFloat(conf[3]);
+    document.getElementById("vz").value = parseFloat(conf[4]);
+    document.getElementById("Ex").value = parseFloat(conf[5]);
+    document.getElementById("Ey").value = parseFloat(conf[6]);
+    document.getElementById("Ez").value = parseFloat(conf[7]);
+    document.getElementById("Bx").value = parseFloat(conf[8]);
+    document.getElementById("By").value = parseFloat(conf[9]);
+    document.getElementById("Bz").value = parseFloat(conf[10]);
+    document.getElementById("dt").value = parseFloat(conf[11]);
+    document.getElementById("time").value = parseFloat(conf[12]);
+}
 
 
 </script>
