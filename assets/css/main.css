@@ -272,6 +272,7 @@ body{
 ::-webkit-scrollbar {
   width: 10px;
   z-index: 9000;
+  position: absolute;
 }
 
 /* Handle */
