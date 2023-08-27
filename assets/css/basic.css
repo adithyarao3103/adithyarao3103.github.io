@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+3');
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    z-index: 999;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    line-height: 125%;
+    /* letter-spacing: 1px; */
+    font-family: 'Source Sans 3';
+}
+
+:root{
+    --margin: 17.5vw;
+    --card-width: 20vw;
+    --middle-gap: 5vw;
+    --card-height: 72vh;
+
+
+
+    /* --about: #fffdd0; */
+    --about: #f8f8f8;
+    --projects: #faf9c7;
+    --skills: #f0eda9;
+    --about-contrast: #bdba85;
+    --projects-contrast:  #6f6e4f;
+    --projects-item: #faf89f; 
+    /* --project-buttons: #cf9f6e; */
+    --project-buttons: #FFC6A2;
+    /* --skills-contrast: #6f6e4f; */
+    --skills-contrast: #ffffff;
+}

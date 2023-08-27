@@ -1,0 +1,102 @@
+{
+    "projectlist":[
+        {
+            "title": "Perturbative Yang Mills Theories (Master's Thesis)",
+            "content": "NA",
+            "report": ' ',
+            "certi": ' ',
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr Laurent Baulieu",
+            "insti": "Sorbonne University, Paris" 
+        },
+
+        {
+            "title": "Banks-Fischler-Shenker-Susskind Model on the Lattice ",
+            "content": "The BFSS model, also called the M(atrix) theory is conjectured to be dual to the type IIB string theory. Obtained by dimensional reduction of 9+1 dimensional supersymmetric Yang Mills theory, this is expected to reproduce the theory of quantum gravity in the 11 dimensional space-time.<br><br>Initial study involved only the bosonic sector of the model, the temperature dependance of the energy of the system was obtained and verified. <br><br>An anamolous behaviour of gauge invariant 4-point correlators was observed, with possible reasoning being the presence of confined phase of the glueballs, the actual reason yet to be understood. <br><br>Further, the fermionic energy was computed on the lattice, and it was observed that the temperature dependance matched with the approximate energy formula obtained by the supersymmetric Ward identities.",
+            "report": ' ',
+            "certi": ' ',
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr. Georg Bergner",
+            "insti": "Jena University" 
+        },
+
+        {
+            "title": "Interacting Tachyonic Scalar Field as Dark Energy Candidate",
+            "content": "The dark energy is modeled as a Tachyonic Scalar Field which interacts with the matter content of the universe, and the evolution of the various parameters, especially the functional form of scale factor and the Age of Universe is estimated. <br><br>We obtained that the constraints on the coupling constant to be the same as the case when the interaction term is different (Kundu, A. et.al “Interacting tachyonic scalar field.” Communications in Theoretical Physics 73.2 (2021): 025402.) <br><br>The results have been presented at the XXV High Energy Physics Symposium 2022, and also have been communicated for publication. ",
+            "report": ' ',
+            "certi": ' ',
+            "poster": "https://drive.google.com/file/d/1uq8c3fF39RjsMiS_qSVZ7qhplvpkbSo1/view?usp=drive_link",
+            "preprint": "https://arxiv.org/abs/2305.00277",
+            "supervisor": "Dr Vikash K Ojha",
+            "insti": "NIT Surat" 
+        },
+
+        {
+            "title": "Quantum Many-Body Phenomena and Tensor Networks ",
+            "content": "A brief study of Quantum Many Body physics and Tensor Network methods to study such systems, with connection to Quantum Information. ",
+            "report": ' ',
+            "certi": ' ',
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr Deepak Vaid",
+            "insti": "NITK Surathkal" 
+        },
+
+        {
+            "title": "Concept of Dark Matter: Evidence of Existence and Constraints on Particle Dark Matter Parameters from Cosmological Observations",
+            "content": "A study of the evidence of existence, and constraints that can be put on the dark matter properties like mass and cross-section that can be drawn from the data available from cosmological observations. ",
+            "report": ' ',
+            "poster": ' ',
+            "preprint": ' ',
+            "certi": "https://drive.google.com/file/d/1nLMreMs1x5CYWj9LAjlE5moERW3SR_6y/view?usp=drive_link",
+            "supervisor": "Dr Ranjan Laha",
+            "insti": "CHEP, IISC, Bangalore" 
+        },
+
+        {
+            "title": "Magnetic Monopoles",
+            "content": "A two potential formulation of the symmetric theory is found to be classically consistent to introduce magnetic source terms to Electrodynamics. The Lagrangian for a two potential theory was constructed and Maxwell's equations with magnetic sources, and the Lorentz force equations for dyons were derived using Euler Lagrange equations. ",
+            "report": "https://drive.google.com/file/d/1RmK0mZcHiN878DFNBWbxT8oy3R3MguAX/view?usp=drive_link",
+            "certi": "https://drive.google.com/file/d/1aIRKWUC2FuX7ZSksz2uo9eaTDf_sip11/view?usp=drive_link",
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr Vikash K Ojha",
+            "insti": "NIT Surat" 
+        },
+
+        {
+            "title": "Dynamical Symmetries of the Kepler System",
+            "content": "The SO(4) symmetry group of the Kepler system and its generators is studied. Observed that the non trivial symmetry operations that modify the eccentricity of the elliptic orbit keeping the energy constant translate to simple rotations in a 4D space with non-trivially reparameterized time. ",
+            "report": "https://drive.google.com/file/d/1NQMuUA7QKWOQBD2BlfaaJ7IsfMgEsKwa/view?usp=drive_link",
+            "certi": "https://drive.google.com/file/d/1MO0DYMH-8QqDAHVwYgkKKFz6_EgtuZoi/view?usp=drive_link",
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr K N Pathak",
+            "insti": "NIT Surat" 
+        },
+
+        {
+            "title": "Lepton Oscillations",
+            "content": "Approached the question why charged leptons do not oscillate, in connection to the flavour oscillations observed in the neutrinos. It was understood that the mass squared difference and the uncertainity principle quantify the coherence distance of the flavour superpositions, which turn out to be very small for the charged leptons, thus ruling out the possibility of experimental observation of oscillations. ",
+            "report": "https://drive.google.com/file/d/1cvimxaA3E21IRnhh3pHD4Q5rdMKCCuVv/view?usp=drive_link",
+            "certi": "https://drive.google.com/file/d/1igMPtWoQJSqHWwsXJmp8Oee2_hgChHQ5/view?usp=drive_link",
+            "poster": ' ',
+            "preprint": ' ',
+            "supervisor": "Dr Srubabati Goswami",
+            "insti": "PRL, Ahmedabad" 
+        },
+
+        {
+            "title": "Statistical and Thermodynamic properties of Quark Gluon Plasma",
+            "content": "Obtained a crude bound on the phase boundaries of the quark-gluon plasma via its statistical and thermodynamic properties while also addressing the question of the possibility of producing quark-gluon plasma in the laboratory. ",
+            "report": "https://drive.google.com/file/d/1I2ZEvQaqwNedO7Lskat4EQAcJ5jxz77i/view?usp=drive_link",
+            "poster": ' ',
+            "preprint": ' ',
+            "certi": ' ',
+            "supervisor": "Dr Arvind Kumar",
+            "insti": "NIT Jalandhar" 
+        },
+    ]
+}
