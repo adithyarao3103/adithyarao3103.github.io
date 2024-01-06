@@ -1,6 +1,3 @@
----
-title: Adithya A Rao
----
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,11 +9,12 @@ title: Adithya A Rao
     <link rel="stylesheet" type="text/css" href="/assets/css/classes.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/card.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/basic.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/projects.css">
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/projects.css"> -->
 </head>
-<body>
+<body  style="overflow: hidden; height: 100vh; width:100vw;">
     <div id="card">
-        <img id="photo" src="assets/images/image2.png">
+        <img id="photo" src="assets/images/photo.jpg">
         </img>
         <div id="details">
             <div id="name">Adithya A Rao</div>
@@ -24,9 +22,10 @@ title: Adithya A Rao
             <div id="affiliation">MSc Physics - NIT Surat</div>
             <div id="email">adithyarao3132001 [at] gmail [dot] com</div>
             <div id="buttons"><i id="cv" class="bi-file-earmark-person-fill" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;<i class="bi-github" style="font-size: 1.5rem;"></i></div>
+            <div id="navigation"><button class="pressed" onclick="setAbout()" id="about-button">About</button><button class="notpressed" onclick="setResearch()" id="research-button">Research</button><button class="notpressed" onclick="setCV()" id="cv-button">CV</button></div>
         </div>
     </div>
-    <!-- <div class="content" id="landing"></div> -->
+
     <div class="content" id="about">
         <div class="title" style="text-decoration-color: var(--about-contrast);">&nbsp; About &nbsp;</div>
         <div class="content_body">
@@ -39,44 +38,32 @@ title: Adithya A Rao
         </div>
     </div>
 
-    <div class="content" id="projects">
-            <div class="title" style="text-decoration-color: var(--projects-contrast);">&nbsp;Projects&nbsp;</div>
-            <br><br>
-            {% for project in site.data.projects.projectlist %}
+    <div class="content" id="research">
+        <div class="title" style="text-decoration-color: var(--about-contrast);">&nbsp; Research &nbsp;</div>
+        <div class="content_body">
+            I am Adithya, and I am a physicist.<br>I am a masters' student at <a href="https://www.svnit.ac.in/"  target="_blank" style="color: var(--about-contrast);">NIT Surat</a>, and currently I am working with <a href="https://www.lpthe.jussieu.fr/spip/spip.php?page=member2&lang=en" target="_blank" style="color: var(--about-contrast);">Dr Laurent Baulieu</a>, <a href="https://www.sorbonne-universite.fr/en" target="_blank" style="color: var(--about-contrast);" > Sorbonne University</a> on my masters' thesis.<br><br> 
 
-            <div class="pitem">
-                <div class="pboxup">
-                    <div class="ptitle">
-                        {{ project.title }}
-                    </div>
-                    <div class="pcontent">
-                        {{ project.content }}
-                    </div>
-                </div>
-                <div class="pbottom">
-                    <span class="supervisor">{{ project.supervisor }}, {{project.insti }}</span> 
-                    <span class="buttons">
-                    {% if project.report != ' ' %}
-                        <span class="preport" onclick="window.open('{{ project.report }}')">Report</span>
-                    {% endif %}
-                    {% if project.certi != ' ' %}
-                        <span class="pcerti" onclick="window.open('{{ project.certi }}')">Certificate</span>
-                    {% endif %}
-                    {% if project.poster != ' ' %}
-                        <span class="pposter" onclick="window.open('{{ project.poster }}')">Poster</span>
-                    {% endif %}
-                    {% if project.preprint != ' ' %}
-                        <span class="ppreprint" onclick="window.open('{{ project.preprint }}')">Pre-print</span>
-                    {% endif %}
-                    </span>
-                </div>
-            </div>
-            {% endfor %}
+            <u><i>My favourite pastime involves indulging in the exquisite art of contemplation, as I delve into the innermost workings of the universe at its tiniest scales, surrendering to the cosmic ballet that dances upon the subatomic stage.</i></u> would be a fancy way of telling that my field of interest is Quantum Field Theories. <br>
+            I am currently working on <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" targe='_blank' style="color: var(--about-contrast);" >Quantum Field Theories of Strongly Interacting Fields</a>. These theories with their rich mathematics, and beautiful geometries are hugely unexplored owing to their complexity, and here I am, already neck deep in these uncharted waters. <br><br> 
+            
+            My awe for the universe doesn't make me less sensitive to the man-made wonders, or what we call computers. I belong to that (not so) creamy layer of people who love both physics and programming. Depending on my mood, I am either a theoretical physicist, or a computational physicist working on Lattice Simulations of these field theories. Previously I have also worked with <a href="https://www.physik.uni-jena.de/en/bergner" target="_blank" style="color: var(--about-contrast);">Dr Georg Bergner</a> as a DAAD WISE exchange student at <a href="https://www.uni-jena.de/en" target="_blank" style="color: var(--about-contrast);">Jena University</a> on Lattice Simulations of BFSS model.
         </div>
     </div>
-    <div class="content" id="skills">
-        <div class="title" style="text-decoration-color: var(--skills-contrast);">&nbsp;Skills&nbsp;</div>
 
+    <div class="content" id="cv-cont">
+        <div class="title" style="text-decoration-color: var(--about-contrast);">&nbsp; CV &nbsp;</div>
+        <div class="content_body">
+            I am Adithya, and I am a physicist.<br>I am a masters' student at <a href="https://www.svnit.ac.in/"  target="_blank" style="color: var(--about-contrast);">NIT Surat</a>, and currently I am working with <a href="https://www.lpthe.jussieu.fr/spip/spip.php?page=member2&lang=en" target="_blank" style="color: var(--about-contrast);">Dr Laurent Baulieu</a>, <a href="https://www.sorbonne-universite.fr/en" target="_blank" style="color: var(--about-contrast);" > Sorbonne University</a> on my masters' thesis.<br><br> 
+
+            <u><i>My favourite pastime involves indulging in the exquisite art of contemplation, as I delve into the innermost workings of the universe at its tiniest scales, surrendering to the cosmic ballet that dances upon the subatomic stage.</i></u> would be a fancy way of telling that my field of interest is Quantum Field Theories. <br>
+            I am currently working on <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" targe='_blank' style="color: var(--about-contrast);" >Quantum Field Theories of Strongly Interacting Fields</a>. These theories with their rich mathematics, and beautiful geometries are hugely unexplored owing to their complexity, and here I am, already neck deep in these uncharted waters. <br><br> 
+            
+            My awe for the universe doesn't make me less sensitive to the man-made wonders, or what we call computers. I belong to that (not so) creamy layer of people who love both physics and programming. Depending on my mood, I am either a theoretical physicist, or a computational physicist working on Lattice Simulations of these field theories. Previously I have also worked with <a href="https://www.physik.uni-jena.de/en/bergner" target="_blank" style="color: var(--about-contrast);">Dr Georg Bergner</a> as a DAAD WISE exchange student at <a href="https://www.uni-jena.de/en" target="_blank" style="color: var(--about-contrast);">Jena University</a> on Lattice Simulations of BFSS model.
+        </div>
     </div>
+
 </body>
+
+<script src="assets/js/main.js"></script>
+
 </html>

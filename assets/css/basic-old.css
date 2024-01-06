@@ -28,7 +28,7 @@ body, html{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: overlay;
     line-height: 125%;
     /* letter-spacing: 1px; */
     font-family: 'Source Sans 3';
@@ -42,10 +42,15 @@ body, html{
 
 
 
-    --main: #ffe8e8;
-    --inset: #ffe8e8;
-    --shadow: #1f1f1f;
-
-
+    /* --about: #fffdd0; */
+    /* --about: #f8f8f8; */
+    /* --projects: #faf9c7; */
+    /* --skills: #f0eda9; */
+    /* --about-contrast: #bdba85;
+    --projects-contrast:  #6f6e4f;
+    --projects-item: #faf89f; 
+    /* --project-buttons: #cf9f6e; */
+    /* --project-buttons: #FFC6A2; */
+    /* --skills-contrast: #6f6e4f; */
+    /* --skills-contrast: #ffffff; */ */
 }
-    
