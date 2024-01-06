@@ -123,14 +123,14 @@ button{
     padding-bottom:10px;
     border-radius: 10px;
     letter-spacing: 1px;
-    border: 0px solid black;
+    border: 1px solid black;
 }
 
 .pressed{
-    box-shadow: 5px 5px 5px var(--shadow) inset, -1px -1px 5px var(--shadow) inset;
+    box-shadow: 2px 2px 0px var(--shadow) inset, -1px -1px 0px var(--shadow) inset;
     transform: translateY(2px);
 }
 
 .notpressed{
-    box-shadow:-1px -1px 5px var(--inset) inset, 5px 5px 5px var(--shadow), 5px 5px 5px var(--inset) inset;
+    box-shadow:-1px -1px 0px var(--inset) inset, 5px 5px 0px var(--shadow), 5px 5px 0px var(--inset) inset;
 }
