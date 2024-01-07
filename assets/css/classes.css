@@ -4,6 +4,7 @@ body{
 }
 
 .content{
+    scroll-snap-align: center;
     position:absolute;
     left: calc(var(--margin) + var(--card-width) + var(--middle-gap));
     width: calc(100vw - var(--margin) - var(--card-width) - var(--middle-gap) - var(--margin));
@@ -30,13 +31,14 @@ body{
     align-items: center;
     align-content: center;
     text-align: justify;
-    font-size: calc(0.35vw + 10px);
+    font-size: calc(0.55vw + 0.55vh);
     line-height: 1.75;
+    overflow: scroll;
 }
 
 
 .title{
-    font-size: calc(1.5vw + 10px);
+    font-size: calc(1.5vw + 1.5vh);
     /* font-weight: bold; */
     font-family: 'Playfair Display';
     margin-bottom: 3vh;
@@ -59,12 +61,19 @@ a{
 }
 
 #research{
-    transform: translateY(100vh);
+    top: calc(100vh + (100vh - var(--card-height))/2);
     transition: transform 1s;
 }
 
 #cv-cont{
-    transform: translateY(200vh);
+    top: calc(200vh + (100vh - var(--card-height))/2);
     transition: transform 1s;
-    margin-bottom: calc((100vh - var(--card-height))/2);
+}
+
+#endpadd{
+    position: absolute;
+    height:14vh;
+    width:100%;
+    top: calc(200vh + var(--card-height) + (100vh - var(--card-height))/2);
+
 }
