@@ -35,6 +35,7 @@ body, html{
     scroll-snap-type: y mandatory;
     scroll-snap-points-y: repeat(100vh);
     scroll-behavior: smooth;
+    color: var(--shadow);
 }
 
 :root{
@@ -47,8 +48,9 @@ body, html{
 
     --main: #e0e0e0;
     --inset: #e0e0e0;
-    --shadow: #1f1f1f;
+    --shadow: black;
 
+    /* --shadow: #1f1f1f; */
 
+    --link: #756060;
 }
-    

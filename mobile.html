@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adithya A Rao</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/classes-mobile.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/card-mobile.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/basic-mobile.css">
+    <script>
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(navigator.userAgent) ) {
+            window.scrollTo(0,1);
+        } else window.location.href = 'index'
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/projects.css"> -->
+</head>
+
+
+<body style="height: 100vh; width:100vw;">
+
+    <div id="navigation"><button class="pressed" onclick="setAbout()" id="about-button">About</button><button class="notpressed" onclick="setResearch()" id="research-button">Research</button><button class="notpressed" onclick="setCV()" id="cv-button">CV</button></div>
+
+    <div id="card">
+        <img id="photo" src="assets/images/photo.jpg">
+        </img>
+        <div id="details">
+            <!-- <i class="bi bi-moon" id="switch" onclick="invert()"></i> -->
+            <div id="name">Adithya A Rao</div>
+            <div id="quote">"God said, Let Quantum be!<br> and all was beautiful"</div>
+            <div id="affiliation">MSc Physics - NIT Surat</div>
+            <div id="email">adithyarao3132001 [at] gmail [dot] com</div>
+            <!-- <div id="buttons"><i id="cv" class="bi-file-earmark-person-fill" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;<i class="bi-github" style="font-size: 1.5rem;"></i></div> --><br>
+            <br>
+            <!-- <center><button onclick="window.location='/stuff'" class="notpressed">Stuff</button><button onclick="window.location='mailto:adithyarao3132001@gmail.com'" class="notpressed">Email</button></center> -->
+        </div>
+    </div>
+
+    <div class="content" id="about">
+        <div class="title" style="text-decoration-color: var(--link);">&nbsp; About &nbsp;</div>
+        <div class="content_body">
+            I am Adithya, and I am a physicist.<br>I am a masters' student at <a href="https://www.svnit.ac.in/"  target="_blank"  >NIT Surat</a>, and currently I am working with <a href="https://www.lpthe.jussieu.fr/spip/spip.php?page=member2&lang=en" target="_blank"  >Dr Laurent Baulieu</a>, <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a> and <a href="https://theory.tifr.res.in/~sgupta/" target="_blank"  >Dr Sourendu Gupta</a>, <a href="https://theory.tifr.res.in/" target="_blank"   > TIFR Mumbai</a> on my masters' thesis.<br><br> 
+
+            <u><i>My favourite activity involves indulging in the exquisite art of contemplation, as I delve into the innermost workings of the universe at its tiniest scales, surrendering to the cosmic ballet that dances upon the subatomic stage.</i></u> would be a fancy way of telling that my field of interest is Quantum Field Theories and Quantum Gravity. <br>
+            I am currently working on <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" target='_blank'   >Quantum Field Theories of Strongly Interacting Fields</a>. These theories with their rich mathematics, and beautiful geometries are hugely unexplored owing to their complexity, and here I am, already neck deep in these uncharted waters. <br><br> 
+
+            My awe for the universe doesn't make me less sensitive to the other stuff in the world. I am wowed by the capabilities of the man-made machine educated in only 0s and 1s, but capable of comprehending the universe. Depending on my mood, you might see me coding, creating <a href="https://drive.google.com/drive/folders/1G9o3dKXDkzIb25WU0w3e7vetrBu5R5wk?usp=sharing" target='_blank'   >art</a>, or you might also find me contemplating on Indian Philosophy, trying to make sense of the absurdity of the reality we live in and battling existential crisis that follows.
+        </div>  
+    </div>
+
+    <div class="content" id="research">
+        <div class="title" style="text-decoration-color: var(--link);">&nbsp; Research &nbsp;</div>
+        <div class="content_body">
+            <b>Currently I am working on my masters' thesis, on the topic of Gribov Ambiguity.</b> <br>
+            The standard procedure for quantizing gauge fields is the Faddeev-Popov quantization, which performs gauge fixing in the path integral formulation and introduces ghost fields. This approach provides the foundation for calculations in quantum Yang-Mills theory. However, Gribov showed that the procedure was incomplete, with residual gauge copies (called Gribov copies) still present in the path integral. These copies impact the infrared behavior of the theory and modify gauge-dependent quantities. Furthermore, their existence breaks down the Faddeev-Popov prescription at a fundamental level. <br>
+            If you did not understand it, don't worry. Just think that the gauge theory has copies which had to be removed but the standard procedure for removing them doesn't work perfectly.<br>
+            <b>What am I doing?</b><br>
+            I am taking a multifaceted approach towards the problem. On one hand, I am quantitatively studying the problem on the lattice. On the other, I am qualitatively sttudying the stochastic quantization approach which promises a theory without the ambiguity.  <br><br>
+            Previously I have also worked with <a href="https://www.physik.uni-jena.de/en/bergner" target="_blank"  >Dr Georg Bergner</a> as a DAAD WISE exchange student at <a href="https://www.uni-jena.de/en" target="_blank"  >Jena University</a> on Lattice Simulations of BFSS model. I have also undertaken many other projects, you can find the details in the CV.
+        </div>
+    </div>
+
+    <div class="content" id="cv-cont">
+        <div class="title" style="text-decoration-color: var(--link);">&nbsp; CV &nbsp;</div>
+        <div class="content_body">
+            Click <a href="/resume" target="blank">here</a> to view an online version of my resume.<br>
+            If you want a PDF version, you can download from <a href="/Adithya_A_Rao_Resume.pdf" download>here</a><br>
+            The preprints of my works can be found on <a href="https://arxiv.org/search/gr-qc?searchtype=author&query=Rao,+A+A" target="blank">arxiv</a><br>
+            <!-- Older reports not submitted on arxiv can be found <a href="https://drive.google.com/drive/folders/1EzmaSyif0BiMfyZnSz5H0A7GdsJKZmfn?usp=drive_link" target="blank">here</a> -->
+        </div>
+    </div>
+
+    <div id="endpadd">
+
+    </div>
+
+</body>
+
+<script src="assets/js/mobile.js"></script>
+
+</html>

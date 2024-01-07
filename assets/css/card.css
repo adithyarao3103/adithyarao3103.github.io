@@ -37,8 +37,9 @@
     display: flex;
     flex-direction: column;
     box-shadow:1vw 1vw 0px var(--shadow);
-    border: 2px solid black;
+    border: 2px solid var(--shadow);
     overflow: scroll;
+    color: var(--shadow);
 }
 
 #photo{
@@ -74,7 +75,7 @@
 #quote{
     width: 80%;
     margin-left: 10%;
-    margin-top: 3vh;
+    margin-top: 3.5vh;
     text-align: center;
     /* font-family: Voigante; */
     letter-spacing: 1px;
@@ -129,9 +130,10 @@ button{
     padding-bottom:10px;
     border-radius: 10px;
     letter-spacing: 1px;
-    border: 1px solid black;
+    border: 1px solid var(--shadow);
     transform: translateY(0);
     font-size: calc(0.6vw + 0.2vh);
+    color: var(--shadow);
     /* transition: transform 1s; */
 }
 
@@ -141,7 +143,7 @@ button{
 }
 
 .notpressed{
-    box-shadow:-1px -1px 0px var(--inset) inset, 5px 5px 0px var(--shadow), 5px 5px 0px var(--inset) inset;
+    box-shadow:5px 5px 0px var(--shadow);
     transform: translateY(0);
 }
 
@@ -152,4 +154,19 @@ button{
         width: 30%;
         margin-left: 35%;
     }
+}
+
+#details{
+    position: relative;
+}
+
+#switch{
+    position: absolute;
+    top: 0;
+    right: 0.1vw;
+    width: 9%;
+    aspect-ratio: 1;
+    font-size: calc(1vw + 1vh);
+    color: var(--shadow);
+    /* border: 1px solid black; */
 }

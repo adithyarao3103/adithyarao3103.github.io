@@ -4,6 +4,60 @@ var r = document.querySelector(':root');
 
 rolling=false;
 
+
+// let main= '#d9e7ff';
+// let shadow = 'black';
+// let link = '#002566';
+
+let main = '#fad5cd';
+let shadow = '#171108';
+let link = '#42180f'
+
+
+// let maininv = '#081121';
+// let shadowinv = '#9eb7e6';
+// let linkinv = '#bfd2f5'
+
+let maininv = '#1a0906';
+let shadowinv = '#fad1c8';
+let linkinv = '#8a7370'
+
+
+function switchtolight(){
+    document.getElementById("switch").classList.add('bi-moon');
+    document.getElementById("switch").classList.remove('bi-circle');
+    dark = false;
+    
+    r.style.setProperty('--main', main);
+    r.style.setProperty('--shadow', shadow);
+    r.style.setProperty('--link', link);
+}
+
+function switchtodark(){
+    document.getElementById("switch").classList.remove('bi-moon');
+    document.getElementById("switch").classList.add('bi-circle');
+    dark = true;
+
+    r.style.setProperty('--main', maininv);
+    r.style.setProperty('--shadow', shadowinv);
+    r.style.setProperty('--link', linkinv);
+}
+
+
+r.style.setProperty('--main', main);
+r.style.setProperty('--shadow', shadow);
+r.style.setProperty('--link', link);
+
+
+function invert(){
+    if(dark){
+       switchtolight();
+    }
+    else{
+        switchtodark();
+    }
+}
+
 function setNav(){
     if(!rolling){
 
@@ -100,3 +154,4 @@ let aboutinset = "#c1dfeb";
 let researchmain = "#d2b48c";;
 let researchshadow = "#987445";
 let researchinset = "#e5d3b3";
+
