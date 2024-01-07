@@ -14,7 +14,7 @@ body{
     box-sizing: border-box;
     border-radius: 50px;
     background-color: var(--main);
-    box-shadow:-1px -1px 0px var(--inset) inset, 15px 15px 0px var(--shadow), 15px 15px 0px var(--inset) inset;
+    box-shadow:1vw 1vw 0px var(--shadow);
 
     /* width: !important 100vw;
     min-height: 60vh; */
@@ -23,7 +23,7 @@ body{
     align-items: center;
     align-content: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .content_body{

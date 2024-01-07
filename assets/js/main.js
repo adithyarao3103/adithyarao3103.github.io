@@ -1,66 +1,43 @@
 var r = document.querySelector(':root');
 
-// window.addEventListener("wheel", handleWheel);
+// window.addEventListener("scroll", setNav);
 
-// function handleWheel(e){
-//     window.removeEventListener("wheel", handleWheel);
-//     console.log(e.deltaY);
-//     if(Math.abs(e.deltaY)>2) scroll(e);
+rolling=false;
 
-//     setTimeout(()=>{
-//     window.addEventListener("wheel", handleWheel);},500); // return event after 1 second
-// }
+function setNav(){
+    if(!rolling){
 
+        if(document.getElementById("about").getBoundingClientRect().top > 0 && document.getElementById("about").getBoundingClientRect().bottom < window.innerHeight){
+            document.getElementById("research-button").className = "notpressed";
+            document.getElementById("about-button").className = "pressed";
+            document.getElementById("cv-button").className = "notpressed";
+        }
+        else if(document.getElementById("research").getBoundingClientRect().top > 0 && document.getElementById("research").getBoundingClientRect().bottom < window.innerHeight){
+            document.getElementById("research-button").className = "pressed";
+            document.getElementById("about-button").className = "notpressed";
+            document.getElementById("cv-button").className = "notpressed";
+        }
+        else if(document.getElementById("cv-cont").getBoundingClientRect().top > 0 && document.getElementById("cv-cont").getBoundingClientRect().bottom < window.innerHeight){
+            document.getElementById("research-button").className = "notpressed";
+            document.getElementById("about-button").className = "notpressed";
+            document.getElementById("cv-button").className = "pressed";
+        }
+    }
+    setTimeout(setNav, 500);
+}
 
+setNav();
 
+function setFalse(){
+    rolling=false;
+}
 
-// function scroll(event){
-//     scrollamt = event.deltaY;
-
-//     console.log('fired');
-    
-//     if(scrollamt > 0){
-//         if(indisplay == 1){
-//             setResearch();
-//             // console.log("res");
-//         }
-//         else{
-//         if(indisplay == 2){
-//             setCV();
-//             // console.log("cv");
-//         }
-//     }
-//     }
-//     else{
-//         if(indisplay == 3){
-//             setResearch();
-//             // console.log('res');
-//         }
-//         else{
-//         if(indisplay == 2){
-//             setAbout();
-//             // console.log("abt");
-//         }
-//     }
-
-//     }
-// }
 
 indisplay = 1;
 
-// function bringToViewport(element) {
-//     // Get the element's boundingClientRect()
-//     const rect = element.getBoundingClientRect();
-  
-//     // Check if the element is partially or fully outside the viewport
-//     if (rect.top < 0 || rect.left < 0 || rect.bottom > window.innerHeight || rect.right > window.innerWidth) {
-//       // Scroll the viewport so that the element is centered
-//       window.scrollTo(rect.left - window.innerWidth / 2, rect.top - window.innerHeight / 2);
-//     }
-//   }
-
-
 function setAbout(){
+    rolling = true;
+    setTimeout(setFalse, 500);
     document.getElementById("research-button").className = "notpressed";
     document.getElementById("about-button").className = "pressed";
     document.getElementById("cv-button").className = "notpressed";
@@ -78,6 +55,8 @@ function setAbout(){
 }
 
 function setResearch(){
+    rolling = true;
+    setTimeout(setFalse, 500);
     document.getElementById("research-button").className = "pressed";
     document.getElementById("about-button").className = "notpressed";
     document.getElementById("cv-button").className = "notpressed";
@@ -97,6 +76,8 @@ function setResearch(){
 
 
 function setCV(){
+    rolling = true;
+    setTimeout(setFalse, 500);
     document.getElementById("research-button").className = "notpressed";
     document.getElementById("about-button").className = "notpressed";
     document.getElementById("cv-button").className = "pressed";
