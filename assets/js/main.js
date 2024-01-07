@@ -22,10 +22,14 @@ let link = '#f4a457'
 // let shadowinv = '#9eb7e6';
 // let linkinv = '#bfd2f5'
 
+// let maininv = '#1a0906';
+// let shadowinv = '#fad1c8';
+// let linkinv = '#8a7370'
+
+
 let maininv = '#26170a';
 let shadowinv = '#ffddc0';
 let linkinv = '#f4a457'
-
 
 function switchtolight(){
     document.getElementById("switch").classList.add('bi-moon');
