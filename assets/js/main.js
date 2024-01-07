@@ -4,28 +4,32 @@ var r = document.querySelector(':root');
 
 rolling=false;
 
+dark = false;
 
 // let main= '#d9e7ff';
 // let shadow = 'black';
 // let link = '#002566';
 
-let main = '#fad5cd';
-let shadow = '#171108';
-let link = '#42180f'
+// let main = '#fad5cd';
+// let shadow = '#171108';
+// let link = '#42180f'
 
+let main = '#fce6ce';
+let shadow = '#171108';
+let link = '#f4a457'
 
 // let maininv = '#081121';
 // let shadowinv = '#9eb7e6';
 // let linkinv = '#bfd2f5'
 
-let maininv = '#1a0906';
-let shadowinv = '#fad1c8';
-let linkinv = '#8a7370'
+let maininv = '#26170a';
+let shadowinv = '#ffddc0';
+let linkinv = '#f4a457'
 
 
 function switchtolight(){
     document.getElementById("switch").classList.add('bi-moon');
-    document.getElementById("switch").classList.remove('bi-circle');
+    document.getElementById("switch").classList.remove('bi-sun');
     dark = false;
     
     r.style.setProperty('--main', main);
@@ -35,7 +39,7 @@ function switchtolight(){
 
 function switchtodark(){
     document.getElementById("switch").classList.remove('bi-moon');
-    document.getElementById("switch").classList.add('bi-circle');
+    document.getElementById("switch").classList.add('bi-sun');
     dark = true;
 
     r.style.setProperty('--main', maininv);
