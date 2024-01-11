@@ -1,5 +1,6 @@
 
 body{
+    transition: background-color 0.3s;
     background-color: var(--main);
 }
 
@@ -83,17 +84,17 @@ a:hover{
 
 #about{
     transform: translateY(0vh);
-    transition: transform 1s;
+    transition: backgroud-color 0.3s;
 }
 
 #research{
     top: calc(100vh + (100vh - var(--card-height))/2);
-    transition: transform 1s;
+    transition: backgroud-color 0.3s;
 }
 
 #cv-cont{
     top: calc(200vh + (100vh - var(--card-height))/2);
-    transition: transform 1s;
+    transition: backgroud-color 0.3s;
 }
 
 #endpadd{
