@@ -25,6 +25,7 @@ body{
     align-content: center;
     justify-content: center;
     border: 2px solid var(--shadow);
+    transition: all 0.3s;
 }
 
 .content_body{
@@ -84,17 +85,14 @@ a:hover{
 
 #about{
     transform: translateY(0vh);
-    transition: backgroud-color 0.3s;
 }
 
 #research{
     top: calc(100vh + (100vh - var(--card-height))/2);
-    transition: backgroud-color 0.3s;
 }
 
 #cv-cont{
     top: calc(200vh + (100vh - var(--card-height))/2);
-    transition: backgroud-color 0.3s;
 }
 
 #endpadd{
