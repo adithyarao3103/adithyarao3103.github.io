@@ -78,7 +78,7 @@ button{
     border: 2px solid var(--shadow);
     overflow: scroll;
     color: var(--shadow);
-    margin-top: 15vh;
+    margin-top: 12vh;
     margin-bottom: 12vh;
     left: 50%;
     transform: translateX(-51%);
