@@ -25,7 +25,7 @@
 
 
 #navigation{
-    /* visibility: hidden; */
+    visibility: hidden;
     width: calc(100vw);
     height: 4vh;
     position: fixed;
