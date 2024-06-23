@@ -12,7 +12,7 @@ body{
     width: var(--card-width);
     height: var(--card-height);
     padding:2vh;
-    margin-bottom: 12vw;
+    margin-bottom: 20vw;
     box-sizing: border-box;
     border-radius: 50px;
     background-color: var(--main);
