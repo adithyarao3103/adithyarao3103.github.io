@@ -25,23 +25,25 @@
 
 
 #navigation{
+    visibility: hidden;
     width: calc(100vw);
     height: 4vh;
     position: fixed;
     /* top: 5px; */
+    bottom: 0;
     /* left: 0.5vw; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
-    padding-top: 2vh;
-    padding-bottom: 2.2vh;
+    padding-top: 1.5vh;
+    padding-bottom: 2.5vh;
     z-index: 999;
     background-color: var(--main);
-    border: 2px solid var(--shadow);
-    border-radius: 0 0 20px 20px;
-    box-shadow:0 2vw 0px var(--shadow);
+    border: 0px solid var(--shadow);
+    border-radius: 0 0 0px 0px;
+    box-shadow:0 -0.5vw 0px var(--shadow);
 }
 
 button{
