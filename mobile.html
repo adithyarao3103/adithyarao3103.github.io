@@ -39,7 +39,10 @@
 
 <body style="height: 100vh; width:100vw;">
 
-    <div id="navigation"><button class="pressed" onclick="setAbout()" id="about-button">About</button><button class="notpressed" onclick="setResearch()" id="research-button">Research</button><button class="notpressed" onclick="setCV()" id="cv-button">Links</button></div>
+    <div id="navigation">
+        <button class="notpressed" onclick="setAbout(); window.location.href = '#about';" id="about-button">About</button>
+        <button class="notpressed" onclick="setResearch(); window.location.href = '#research';" id="research-button">Research</button>
+        <button class="notpressed" onclick="setCV(); window.location.href = '#cv-cont';" id="cv-button">Links</button></div>
 
     <div id="card">
         <img id="photo" src="assets/images/photo1.jpg">
@@ -56,29 +59,41 @@
             <!-- <center><button onclick="window.location='/stuff'" class="notpressed">Stuff</button><button onclick="window.location='mailto:adithyarao3132001@gmail.com'" class="notpressed">Email</button></center> -->
         </div>
     </div>
+    <div id="divider_one" style="width: 100vw;">
+        <svg id="visual" viewBox="0 0 100vw 200" width="100vw" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="none"><rect x="0" y="0" width="100vw" height="200" fill="#fce6ce"></rect><path d="M0 139L10.7 126C21.3 113 42.7 87 63.8 72.5C85 58 106 55 127.2 72.7C148.3 90.3 169.7 128.7 190.8 144.3C212 160 233 153 254.2 138.2C275.3 123.3 296.7 100.7 317.8 82.3C339 64 360 50 381.2 50.5C402.3 51 423.7 66 444.8 82.2C466 98.3 487 115.7 508.2 117C529.3 118.3 550.7 103.7 571.8 109.5C593 115.3 614 141.7 635.2 147C656.3 152.3 677.7 136.7 698.8 127.5C720 118.3 741 115.7 762.2 120.2C783.3 124.7 804.7 136.3 825.8 139C847 141.7 868 135.3 889.2 126.3C910.3 117.3 931.7 105.7 952.8 111.5C974 117.3 995 140.7 1016.2 133.3C1037.3 126 1058.7 88 1069.3 69L1080 50L1080 201L1069.3 201C1058.7 201 1037.3 201 1016.2 201C995 201 974 201 952.8 201C931.7 201 910.3 201 889.2 201C868 201 847 201 825.8 201C804.7 201 783.3 201 762.2 201C741 201 720 201 698.8 201C677.7 201 656.3 201 635.2 201C614 201 593 201 571.8 201C550.7 201 529.3 201 508.2 201C487 201 466 201 444.8 201C423.7 201 402.3 201 381.2 201C360 201 339 201 317.8 201C296.7 201 275.3 201 254.2 201C233 201 212 201 190.8 201C169.7 201 148.3 201 127.2 201C106 201 85 201 63.8 201C42.7 201 21.3 201 10.7 201L0 201Z" fill="#f4d8b2" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>
 
-    <div class="content" id="about">
+    <div class="content" id="about" style="background-color: #f4d8b2;">
         <div class="title" style="text-decoration-color: var(--link);">&nbsp; About &nbsp;</div>
         <div class="content_body" id="content_about">
             
         </div>  
     </div>
 
-    <div class="content" id="research">
+    <div id="divider_one" style="width: 100vw;">
+        <svg id="visual" viewBox="0 0 100vw 200" width="100vw" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="100vw" height="200" fill="#f4d8b2"></rect><path d="M0 33L10.7 42C21.3 51 42.7 69 63.8 75.8C85 82.7 106 78.3 127.2 90C148.3 101.7 169.7 129.3 190.8 132.2C212 135 233 113 254.2 106.2C275.3 99.3 296.7 107.7 317.8 113.7C339 119.7 360 123.3 381.2 117.3C402.3 111.3 423.7 95.7 444.8 91C466 86.3 487 92.7 508.2 106.2C529.3 119.7 550.7 140.3 571.8 140C593 139.7 614 118.3 635.2 99.3C656.3 80.3 677.7 63.7 698.8 68C720 72.3 741 97.7 762.2 106.8C783.3 116 804.7 109 825.8 93.5C847 78 868 54 889.2 60.8C910.3 67.7 931.7 105.3 952.8 111.3C974 117.3 995 91.7 1016.2 91.5C1037.3 91.3 1058.7 116.7 1069.3 129.3L1080 142L1080 201L1069.3 201C1058.7 201 1037.3 201 1016.2 201C995 201 974 201 952.8 201C931.7 201 910.3 201 889.2 201C868 201 847 201 825.8 201C804.7 201 783.3 201 762.2 201C741 201 720 201 698.8 201C677.7 201 656.3 201 635.2 201C614 201 593 201 571.8 201C550.7 201 529.3 201 508.2 201C487 201 466 201 444.8 201C423.7 201 402.3 201 381.2 201C360 201 339 201 317.8 201C296.7 201 275.3 201 254.2 201C233 201 212 201 190.8 201C169.7 201 148.3 201 127.2 201C106 201 85 201 63.8 201C42.7 201 21.3 201 10.7 201L0 201Z" fill="#ffd69d" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>
+
+    <div class="content" id="research" style="background-color: #ffd69d;">
         <div class="title" style="text-decoration-color: var(--link);">&nbsp; Research &nbsp;</div>
         <div class="content_body" id="content_research">
             
         </div>
     </div>
 
-    <div class="content" id="cv-cont">
+    <div id="divider_one" style="width: 100vw;">
+        <svg id="visual" viewBox="0 0 100vw 200" width="100vw" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="100vw" height="200" fill="#ffd69d"></rect><path d="M0 146L10.7 130.5C21.3 115 42.7 84 63.8 86.3C85 88.7 106 124.3 127.2 142.2C148.3 160 169.7 160 190.8 148.7C212 137.3 233 114.7 254.2 114C275.3 113.3 296.7 134.7 317.8 130.8C339 127 360 98 381.2 82.3C402.3 66.7 423.7 64.3 444.8 70C466 75.7 487 89.3 508.2 101.3C529.3 113.3 550.7 123.7 571.8 133.8C593 144 614 154 635.2 151.5C656.3 149 677.7 134 698.8 119C720 104 741 89 762.2 78.3C783.3 67.7 804.7 61.3 825.8 75C847 88.7 868 122.3 889.2 140.8C910.3 159.3 931.7 162.7 952.8 153.2C974 143.7 995 121.3 1016.2 107.7C1037.3 94 1058.7 89 1069.3 86.5L1080 84L1080 201L1069.3 201C1058.7 201 1037.3 201 1016.2 201C995 201 974 201 952.8 201C931.7 201 910.3 201 889.2 201C868 201 847 201 825.8 201C804.7 201 783.3 201 762.2 201C741 201 720 201 698.8 201C677.7 201 656.3 201 635.2 201C614 201 593 201 571.8 201C550.7 201 529.3 201 508.2 201C487 201 466 201 444.8 201C423.7 201 402.3 201 381.2 201C360 201 339 201 317.8 201C296.7 201 275.3 201 254.2 201C233 201 212 201 190.8 201C169.7 201 148.3 201 127.2 201C106 201 85 201 63.8 201C42.7 201 21.3 201 10.7 201L0 201Z" fill="#fffc9d" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+    </div>
+
+
+    <div class="content" id="cv-cont" style="background-color: #fffc9d;">
         <div class="title" style="text-decoration-color: var(--link);">&nbsp; Links &nbsp;</div>
         <div class="content_body" id="content_links">
             
         </div>
     </div>
 
-    <div id="endpadd">
+    <div id="endpadd" style="background-color: #fffc9d;">
 
     </div>
 

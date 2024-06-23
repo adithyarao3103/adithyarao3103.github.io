@@ -25,12 +25,12 @@
 
 
 #navigation{
-    /* visibility: hidden; */
+    visibility: hidden;
     width: calc(100vw);
     height: 4vh;
     position: fixed;
     /* top: 5px; */
-    top: 0;
+    bottom: 0;
     /* left: 0.5vw; */
     display: flex;
     flex-direction: row;
@@ -43,7 +43,7 @@
     background-color: var(--main);
     border: 0px solid var(--shadow);
     border-radius: 0 0 0px 0px;
-    box-shadow:0 0.2vw 10px var(--shadow);
+    box-shadow:0 -0.5vw 0px var(--shadow);
 }
 
 button{
@@ -66,7 +66,7 @@ button{
 #card{
     border-radius: 50px;
     width: var(--card-width) !important;
-    /* height: calc(var(--card-height)) !important; */
+    height: calc(var(--card-height)) !important;
     position: relative;
     /* top: calc((100vh - var(--card-height))/2); */
     /* left: var(--margin); */
@@ -74,12 +74,12 @@ button{
     z-index:2;
     display: flex;
     flex-direction: column;
-    /* box-shadow:2vw 2vw 0px var(--shadow); */
-    /* border: 2px solid var(--shadow); */
+    box-shadow:2vw 2vw 0px var(--shadow);
+    border: 2px solid var(--shadow);
     overflow: scroll;
     color: var(--shadow);
-    margin-top: 12vh;
-    /* margin-bottom: 12vh; */
+    margin-top: 8vh;
+    margin-bottom: 12vh;
     left: 50%;
     transform: translateX(-51%);
     scroll-snap-align: center;
@@ -89,9 +89,9 @@ button{
 #photo{
     /* background-image: url('/assets/images/profile_bg-transformed1.png'); */
     background-size: cover;
-    width: 60%;
+    width: 75%;
     height: auto;
-    margin-left: 20%;
+    margin-left: 12.5%;
     margin-top: 10%;
     border-radius: 50%;
     position: relative;

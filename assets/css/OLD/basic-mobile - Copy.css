@@ -34,8 +34,8 @@ body, html{
     /* letter-spacing: 1px; */
     font-family: 'Source Sans 3';
     color: var(--shadow);
-    /* scroll-snap-type:y mandatory; */
-    /* scroll-snap-points-y: repeat(100vh); */
+    scroll-snap-type:y mandatory;
+    scroll-snap-points-y: repeat(100vh);
     scroll-behavior: smooth;
 }
 
