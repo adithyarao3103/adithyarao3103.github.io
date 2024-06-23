@@ -15,7 +15,7 @@
         //     window.location.href = 'mobile'
         // }
         function checkscreen(){
-        let isMobileDevice = window.matchMedia("only screen and (max-width: 760px)").matches;
+        let isMobileDevice = window.matchMedia("only screen and (max-width: 1000px)").matches;
          if(isMobileDevice){
    // The viewport is less than 768 pixels wide
             window.location.href = '/mobile';
@@ -43,7 +43,7 @@
             <div id="name">Adithya A Rao</div>
             <!-- <div id="quote">"God said, Let Quantum be!<br> and all was beautiful"</div> -->
             <div id="quote">"God does play dice with the Universe"</div>
-            <div id="affiliation">MSc Physics</div>
+            <div id="affiliation">MSc Physics<br>Theoretical and Computational<br>Quantum Field Theory</div>
             <div id="email"><a href="mailto:adithyarao3132001@gmail.com" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
             <!-- <div id="buttons"><i id="cv" class="bi-file-earmark-person-fill" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;<i class="bi-github" style="font-size: 1.5rem;"></i></div> --><br>
             <div id="navigation"><button class="pressed" onclick="setAbout()" id="about-button">About</button><button class="notpressed" onclick="setResearch()" id="research-button">Research</button><button class="notpressed" onclick="setCV()" id="cv-button">Links</button></div><br>
@@ -73,73 +73,76 @@
 
 </body>
 <script>
-    function readResearch(file)
-   {
-       var rawFile = new XMLHttpRequest();
-       rawFile.open("GET", file, false);
-       rawFile.onreadystatechange = function ()
-       { 
-           if(rawFile.readyState === 4)
-           {
-               if(rawFile.status === 200 || rawFile.status == 0)
-               { 
-                   var allText = rawFile.responseText;
-                   document.getElementById("content_research").innerHTML = allText;
-               }
-           }
-       }
-       rawFile.send(null);
-   
-   
-       // console.log(data.toString());
-   };
-   readResearch("research.html")
-   
-   function readAbout(file)
-   {
-       var rawFile = new XMLHttpRequest();
-       rawFile.open("GET", file, false);
-       rawFile.onreadystatechange = function ()
-       { 
-           if(rawFile.readyState === 4)
-           {
-               if(rawFile.status === 200 || rawFile.status == 0)
-               { 
-                   var allText = rawFile.responseText;
-                   document.getElementById("content_about").innerHTML = allText;
-               }
-           }
-       }
-       rawFile.send(null);
-   
-   
-       // console.log(data.toString());
-   };
-   readAbout("about.html")
-   
-   function readLinks(file)
-   {
-       var rawFile = new XMLHttpRequest();
-       rawFile.open("GET", file, false);
-       rawFile.onreadystatechange = function ()
-       { 
-           if(rawFile.readyState === 4)
-           {
-               if(rawFile.status === 200 || rawFile.status == 0)
-               { 
-                   var allText = rawFile.responseText;
-                   document.getElementById("content_links").innerHTML = allText;
-               }
-           }
-       }
-       rawFile.send(null);
-   
-   
-       // console.log(data.toString());
-   };
-   readLinks("links.html")
-   
-   </script>
+
+    
+
+function readResearch(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    { 
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            { 
+                var allText = rawFile.responseText;
+                document.getElementById("content_research").innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+
+
+    // console.log(data.toString());
+};
+readResearch("research.html")
+
+function readAbout(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    { 
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            { 
+                var allText = rawFile.responseText;
+                document.getElementById("content_about").innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+
+
+    // console.log(data.toString());
+};
+readAbout("about.html")
+
+function readLinks(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    { 
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            { 
+                var allText = rawFile.responseText;
+                document.getElementById("content_links").innerHTML = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+
+
+    // console.log(data.toString());
+};
+readLinks("links.html")
+
+</script>
 <script src="assets/js/main.js"></script>
 
 </html>
