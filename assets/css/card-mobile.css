@@ -25,11 +25,11 @@
 
 
 #navigation{
-    width: calc(100% - 4vw);
-    height: 3vh;
+    width: calc(100vw);
+    height: 4vh;
     position: fixed;
-    top: 5px;
-    left: 0.5vw;
+    /* top: 5px; */
+    /* left: 0.5vw; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -40,8 +40,8 @@
     z-index: 999;
     background-color: var(--main);
     border: 2px solid var(--shadow);
-    border-radius: 20px;
-    box-shadow:2vw 2vw 0px var(--shadow);
+    border-radius: 0 0 20px 20px;
+    box-shadow:0 2vw 0px var(--shadow);
 }
 
 button{
@@ -76,7 +76,7 @@ button{
     border: 2px solid var(--shadow);
     overflow: scroll;
     color: var(--shadow);
-    margin-top: 12vh;
+    margin-top: 15vh;
     margin-bottom: 12vh;
     left: 50%;
     transform: translateX(-51%);

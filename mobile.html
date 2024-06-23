@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/card-mobile.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/basic-mobile.css">
     <script>
+        function checkscreen(){
         let isMobileDevice = window.matchMedia("only screen and (max-width: 760px)").matches;
          if(isMobileDevice){
    // The viewport is less than 768 pixels wide
@@ -20,6 +21,11 @@
             // alert("This is not a mobile device.");
             window.location.href = '/';
         }
+        setTimeout(checkscreen,100);
+    }
+
+    checkscreen()
+    
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script> -->
     <!-- <link rel="stylesheet" type="text/css" href="/assets/css/projects.css"> -->
