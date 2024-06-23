@@ -55,7 +55,7 @@ function setAbout(){
     // document.getElementById("research").style.transform = 'translateY(100vh)';
     // document.getElementById("cv-cont").style.transform = 'translateY(200vh)';
     
-    indisplay = 1;
+    // indisplay = 1;
 }
 
 function setResearch(){
@@ -76,7 +76,7 @@ function setResearch(){
     // document.getElementById("research").style.transform = 'translateY(0)';
     // document.getElementById("cv-cont").style.transform = 'translateY(100vh)';
     
-    indisplay = 2;
+    // indisplay = 2;
 }
 
 
@@ -95,7 +95,7 @@ function setCV(){
     // document.getElementById("research").style.transform = 'translateY(-100vh)';
     // document.getElementById("cv-cont").style.transform = 'translateY(0)';
     
-    indisplay = 3;
+    // indisplay = 3;
 
 }
 
@@ -110,14 +110,14 @@ function pressAction(i){
     elem = document.getElementById("cv-button")
     }
     elem.className = "pressed";
-    setTimeout(function (){elem.className = "notpressed"}, 500);
+    setTimeout(function (){elem.className = "notpressed"}, 200);
 
 }
 
 
-function setFalse(){
-    rolling=false;
-}
+// function setFalse(){
+//     rolling=false;
+// }
 
 
 // function setNav(){
