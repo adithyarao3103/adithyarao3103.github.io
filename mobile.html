@@ -13,7 +13,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <script>
         function checkscreen(){
-        let isMobileDevice = window.matchMedia("only screen and (max-width: 1000px)").matches;
+        let isMobileDevice = window.matchMedia("only screen and (max-width: 800px)").matches;
          if(isMobileDevice){
    // The viewport is less than 768 pixels wide
    //Conditional script here
@@ -23,7 +23,7 @@
             // alert("This is not a mobile device.");
             window.location.href = '/';
         }
-        setTimeout(checkscreen,100);
+        setTimeout(checkscreen,500);
     }
 
     checkscreen()

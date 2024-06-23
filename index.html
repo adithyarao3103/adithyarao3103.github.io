@@ -15,7 +15,7 @@
         //     window.location.href = 'mobile'
         // }
         function checkscreen(){
-        let isMobileDevice = window.matchMedia("only screen and (max-width: 1000px)").matches;
+        let isMobileDevice = window.matchMedia("only screen and (max-width: 800px)").matches;
          if(isMobileDevice){
    // The viewport is less than 768 pixels wide
             window.location.href = '/mobile';
@@ -25,7 +25,7 @@
    //The viewport is greater than 700 pixels wide
             // alert("This is not a mobile device.");
         }
-        setTimeout(checkscreen ,100);
+        setTimeout(checkscreen ,500);
     }
 
     checkscreen()
