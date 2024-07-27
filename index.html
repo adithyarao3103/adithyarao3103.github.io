@@ -1,148 +1,294 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adithya A Rao</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/classes.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/card.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/basic.css">
+    <title>Adithya - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/mobile.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <script>
-        // if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(navigator.userAgent) ) {
-        //     window.location.href = 'mobile'
-        // }
-        function checkscreen(){
-        let isMobileDevice = window.matchMedia("only screen and (max-width: 800px)").matches;
-         if(isMobileDevice){
-   // The viewport is less than 768 pixels wide
-            window.location.href = '/mobile';
-            //Conditional script here
-            
-         } else{
-   //The viewport is greater than 700 pixels wide
-            // alert("This is not a mobile device.");
-        }
-        setTimeout(checkscreen ,500);
-    }
-
-    checkscreen()
-    
-    </script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/projects.css"> -->
 </head>
-<body  style="overflow: hidden; height: 100vh; width:100vw;">
-    <div id="card">
-        <img id="photo" src="assets/images/photo1.jpg">
-        </img>
-        <div id="details">
-            <i class="bi bi-moon" id="switch" onclick="invert()"></i>
-            <div id="name">Adithya A Rao</div>
-            <!-- <div id="quote">"God said, Let Quantum be!<br> and all was beautiful"</div> -->
-            <div id="quote">"God does play dice with the Universe"</div>
-            <div id="affiliation">MSc Physics<br>Theoretical and Computational<br>High Energy Physics</div>
-            <div id="email"><a href="mailto:adithyarao3132001@gmail.com" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
-            <!-- <div id="buttons"><i id="cv" class="bi-file-earmark-person-fill" style="font-size: 1.5rem;"></i>&nbsp;&nbsp;<i class="bi-github" style="font-size: 1.5rem;"></i></div> --><br>
-            <div id="navigation"><button class="pressed" onclick="setAbout()" id="about-button">About</button><button class="notpressed" onclick="setResearch()" id="research-button">Research</button><button class="notpressed" onclick="setCV()" id="cv-button">Links</button></div><br>
-            <!-- <center><button onclick="window.location='/stuff'" class="notpressed">Stuff</button><button onclick="window.location='mailto:adithyarao3132001@gmail.com'" class="notpressed">Email</button></center> -->
+<body>
+    <nav class="navbar" id="navbar-mob">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+    <nav class="navbar" id="navbar">
+        <a onclick="document.getElementById('about').scrollIntoView(); toggleMenu();">ABOUT</a>
+        <a onclick="document.getElementById('research').scrollIntoView(); toggleMenu();">RESEARCH</a>
+        <a onclick="document.getElementById('projects').scrollIntoView(); toggleMenu();">PROJECTS</a>
+        <a onclick="document.getElementById('honors').scrollIntoView(); toggleMenu();">HONORS</a>
+        <a onclick="document.getElementById('other').scrollIntoView(); toggleMenu();">OTHER</a>
+    </nav>
+
+    <div class="main">
+        <span id="landing"></span>
+        <div class="main-content">
+            <div id="photo">
+                <div id="photo-inner">
+                    <div class="bdrop" style="width: 15vw; height: 15vw; border-radius: 50%;"></div>
+                    <!-- <div class="bdrop"></div> -->
+                    <img src="assets/picture5.png" alt="Adithya" id="profile-img">
+                </div>
+            </div>
+            <div id="landing-text-cont">
+            <div id="landing-text">
+                <div id="landing-text-inner">
+                    <!-- <text>I AM ADITHYA... </text> <br><br>
+                    <text style="font-size: 2.2vw;">A THEORETICAL PHYSICIST</text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;">UNRAVELING THE MYSTERIES OF THE UNIVERSE THROUGH CODE!!</text> -->
+                    <text><div class="bdrop"></div><span> I AM ADITHYA... </span></text> <br><br>
+                    <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> A THEORETICAL PHYSICIST  </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> UNRAVELING THE UNIVERSE'S MYSTERIES </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> THROUGH CODE!!</span></text>
+                    <!-- <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> COLLIDING ATOMS AND  </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> ALGORITHMS TO UNRAVEL </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> NATURE'S SECRETS!!</span></text> -->
+                </div>
+            </div>
+            <div id="connect" onclick="document.getElementById('socials').scrollIntoView()"><div class="bdrop"></div> <span>CONNECT WITH ME!</span></div>
+        </div>
+        <div id="landing-text-mobile">
+            <div id="landing-text">
+                <div id="landing-text-inner">
+                    <!-- <text>I AM ADITHYA... </text> <br><br>
+                    <text style="font-size: 2.2vw;">A THEORETICAL PHYSICIST</text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;">UNRAVELING THE MYSTERIES OF THE UNIVERSE THROUGH CODE!!</text> -->
+                    <text style="font-size: 4.25vh; margin-top: 20px;"><div class="bdrop1"></div><span> I AM ADITHYA... </span></text> <br>
+                    <text style="font-size: 2.75vh;"><div class="bdrop1"></div> <span> A THEORETICAL PHYSICIST UNRAVELING THE UNIVERSE'S MYSTERIES THROUGH CODE!!</span></text>
+                    <!-- <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> COLLIDING ATOMS AND  </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> ALGORITHMS TO UNRAVEL </span></text><br>
+                    <div style="width: 100%; height: 5px"></div>
+                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> NATURE'S SECRETS!!</span></text> -->
+                </div>
+            </div>
+            <div id="connect" onclick="{
+                if(checkMobile()) document.getElementById('socials-mobile').scrollIntoView(); else document.getElementById('socials').scrollIntoView();
+            };"><div class="bdrop"></div> <span>CONNECT WITH ME!</span></div>
+        </div>
+        </div>
+        <span id="about"></span>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+        <div class="sec-head">
+                <div class="bdrop"></div>
+                <span>ABOUT</span>
+            </div>
+            <div class="sec-body">
+                <div class="bdrop"></div>
+                I am a masters' degree graduate from <a href="https://www.svnit.ac.in/"  target="_blank"  >NIT Surat</a> with a specialization in Physics.<br><br>
+                <!-- , and currently I am working with <a href="https://www.lpthe.jussieu.fr/spip/spip.php?page=member2&lang=en" target="_blank"  >Dr Laurent Baulieu</a> -->
+                <!-- , <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a> and <a href="https://theory.tifr.res.in/~sgupta/" target="_blank"  >Dr Sourendu Gupta</a>, <a href="https://theory.tifr.res.in/" target="_blank"   > TIFR Mumbai</a>  -->
+                <!-- on my masters' thesis.<br><br>  -->
+                <u><i>My favourite activity involves indulging in the exquisite art of contemplation, as I dive into the innermost workings of the universe at its tiniest scales, surrendering to the cosmic ballet that dances upon the subatomic stage.</i></u> would be a fancy way of telling that my field of interest is Quantum Field Theories and Quantum Gravity. <br><br>
+
+                I am currently working on <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" target='_blank'   >Quantum Field Theories of Strongly Interacting Fields</a>. These theories with their rich mathematics, and beautiful geometries are hugely unexplored owing to their complexity, and here I am, already neck deep in these uncharted waters. At the same time I am also studying computational methods including lattice field theory, to aid progress in this field.<br><br> 
+                
+                My awe for the universe doesn't make me less sensitive to the other stuff in the world. I am wowed by the capabilities of the man-made machine educated in only 0s and 1s, but capable of comprehending the universe. Depending on my mood, you might see me coding, sketching, or you might also find me contemplating on Indian Philosophy, trying to make sense of the absurdity of the reality we live in and battling existential crisis that follows.<br>
+
+                <h3>Skills</h3>
+                <div class="skills-list">
+                    <span class="skill-tag">Theoretical Physics</span>
+                    <span class="skill-tag">Lattice Simulations</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">FORTRAN</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">ROOT</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">Git/Github</span>
+                </div>
+            </div>
+        </div>
+        <span id="research"></span>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+            <div class="sec-head">
+                <div class="bdrop"></div>
+                <span>RESEARCH</span>
+            </div>
+            <div class="sec-body">
+                <div class="bdrop"></div>
+                <h2 style="margin: 0;">Papers</h2>
+                <div class="project">
+                    Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. , <i>“Estimating the Age of Universe via Scalar Field,”</i> in Proceedings of the XXV DAE-BRNS High Energy Physics (HEP) Symposium 2022, 12-16 December, Mohali, India, vol. 304, S. Jena, A. Shivaji, V. Bhardwaj, K. Lochan, H. K. Jassal, A. Joseph, and P. Khuswaha, Eds., Singapore: Springer Nature Singapore, 2024, pp. 1015-1016. <a href ="https://doi.org/10.1007/978-981-97-0289-3_272" target="_blank">doi:10.1007/978-981-97-0289-3_272</a>
+                </div>
+                <div class="project">
+                    Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. <i>"Interacting Tachyonic Scalar Field II."</i> arXiv, April 29, 2023. <a href="https://doi.org/10.48550/arXiv.2305.00277" target="_blank">https://doi.org/10.48550/arXiv.2305.00277</a>
+                </div>
+                <h2 style="margin: 0;">Conferences</h2>
+                <div class="project">
+                    Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. <i>"Estimating the Age of Universe via Interacting Tachyonic Scalar Field"</i> XXV DAE-BRNS High Energy Physics Symposium 2022. Poster presentation. 
+                </div>
+                
+
+            </div>
+        </div>
+        <span id="projects"></span>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+            <div class="sec-head">
+                <div class="bdrop"></div>
+                <span>PROJECTS</span>
+            </div>
+            <div class="sec-body">
+                <div class="bdrop"></div>
+                <h2 style="margin: 0;">External Projects</h2>
+                <div class="project">
+                    <strong>Gribov Ambiguity and Stochastic Quantization (Master's Thesis)</strong>  <date>[Aug 2023 - May 2024]</date><br>
+                    <i>Supervisor:</i> Prof. Laurent Baulieu, Sorbonne University, Paris & Dr. Vikash K. Ojha, SVNIT, Surat.<br>
+                    <i>Abstract:</i> The Gribov problem arises from the absence of a global section in the Yang-Mills fiber bundle due to the configuration space's non-trivial nature. We studied the Yang-Mills configuration space, particularly the Gribov and Fundamental Modular Regions, and the semi-classical implementation of path integral restriction to the Gribov Region. Additionally, we also explored Stochastic Quantization, an alternative c-number quantization formalism offering gauge fixing in Yang-Mills theory without the Gribov Problem.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://drive.google.com/file/d/1zdattyt4xw6VxPp4eoGy-5FT4h87p2Mq/view?usp=sharing" target="_blank">Thesis</a></report>                    
+                    <report><i class="fas fa-certificate"></i> <a href="https://drive.google.com/file/d/1qH6WMull2hC6BGlO1CiNlOTe3BUo7KzG/view?usp=sharing" target="_blank">Certificate</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>BFSS Model on the Lattice (DAAD-WISE project)</strong>  <date>[May 2023 - July 2023]</date><br>
+                    <i>Supervisor:</i> Dr. habil. Georg Bergner, Friedrich-Schiller-Universität Jena, Germany<br>
+                    <i>Abstract:</i> I contributed to the lattice implementation by writing Energy and 4-point correlator observables in the C++ implementation of the model, and further analyzing the simulation data to verify the model's behavior. We observed an anomalous behavior of gauge invariant 4-point correlators. To confirm the validity of the code, I wrote the same observable in the existing FORTRAN implementation and cross-verified the simulation results. Further, I also computed the Fermionic Energy on the lattice and verified that the temperature dependence matched with the approximate energy formula obtained by the supersymmetric Ward identities.<br>
+                    <report><i class="fas fa-project-diagram"></i> <a href="https://github.com/adithyarao3103/BFSS-CPPCODE" target="_blank">Project</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>Particle Dark Matter: Existence And Constraints</strong>  <date>[May 2022 - Jul 2022]</date><br>
+                    <i>Supervisor:</i> Dr. Ranjan Laha, Center for High Energy Physics, Indian Institute of Science, Bangalore, India.<br>
+                    <i>Abstract:</i> We investigated the necessity of Dark Matter in Cosmological Models and examined the Evidence for the Existence and Properties of Particle Dark Matter from Cosmological Observations.<br>
+                    <report><i class="fas fa-certificate"></i> <a href="https://drive.google.com/file/d/1nLMreMs1x5CYWj9LAjlE5moERW3SR_6y/view?usp=sharing" target="_blank">Certificate</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>Lepton Oscillations (IASc, INSA, NASI - SRFP project)</strong>  <date>[Jun 2021 - Dec 2021]</date><br>
+                    <i>Supervisor:</i> Prof. Srubabati Goswami, Senior Professor, Physical Research Laboratory (PRL), Ahmedabad, India.<br>
+                    <i>Abstract:</i> We approached the question of why charged leptons do not oscillate, in connection to the flavor oscillations observed in the neutrinos. We understood that the mass squared difference and the uncertainty principle quantify the coherence distance of the flavor superpositions, which turn out to be very small for the charged leptons, thus ruling out the possibility of experimental observation of oscillations.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://drive.google.com/file/d/1cvimxaA3E21IRnhh3pHD4Q5rdMKCCuVv/view?usp=sharing" target="_blank">Report</a></report>                    
+                    <report><i class="fas fa-certificate"></i> <a href="https://drive.google.com/file/d/1igMPtWoQJSqHWwsXJmp8Oee2_hgChHQ5/view?usp=sharing" target="_blank">Certificate</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>Statistical and Thermodynamic properties of Quark Gluon Plasma</strong>  <date>[Apr 2021 - Jun 2021]</date><br>
+                    <i>Supervisor:</i> Dr. Arvind Kumar, Dr B R Ambedkar National Institute of Technology, Jalandhar, India.<br>
+                    <i>Abstract:</i> I obtained a crude bound on the phase boundaries of the quark-gluon plasma via its statistical and thermodynamic properties while also addressing the question of the possibility of producing quark-gluon plasma in the laboratory.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://drive.google.com/file/d/1I2ZEvQaqwNedO7Lskat4EQAcJ5jxz77i/view?usp=sharing" target="_blank">Report</a></report>                    
+                </div>
+                <h2 style="margin: 0;">Institute Mini-Projects</h2>
+                <div class="project">
+                    <strong>Interacting Tachyonic Scalar Field as Dark Energy Candidate (Insti. Mini-Project)</strong>  <date>[Aug 2022 - Dec 2022]</date><br>
+                    <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br>
+                    <i>Abstract:</i> We modeled the dark energy as a Tachyonic Scalar Field that interacts with the matter content of the universe. I calculated the evolution of the various parameters, especially the functional form of scale factor and the Age of Universe. Notably, I obtained that the constraints on the coupling constant are the same as the case when the interaction term is different (Kundu, A. et.al ``Interacting tachyonic scalar field.'' Communications in Theoretical Physics 73.2 (2021): 025402.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://arxiv.org/abs/2305.00277" target="_blank">ArXiv Preprint</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>Magnetic Monopoles (Insti. Mini-Project)</strong>  <date>[Jan 2022 - Apr 2022]</date><br>
+                    <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br>
+                    <i>Abstract:</i> We modeled a classically consistent two-potential formulation for classical electrodynamics with magnetic charged. I constructed the Lagrangian for a two-potential theory and derived Maxwell's equations with magnetic sources and Lorentz force equations for dyons were derived using Euler Lagrange equations.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://drive.google.com/file/d/1jOocX6ONVq-2uKSanX3vupp7UTMf46l0/view?usp=sharing" target="_blank">Report</a></report>                    
+                </div>
+                <div class="project">
+                    <strong>Dynamical Symmetries of the Kepler System (Insti. Mini-Project)</strong>  <date>[Aug 2021 - Dec 2021]</date><br>
+                    <i>Supervisor:</i> Prof. K N Pathak, SVNIT, Surat.<br>
+                    <i>Abstract:</i> We studied the SO(4) symmetry group of the Kepler system and its generators. I worked on the observation that the nontrivial symmetry operations that modify the eccentricity of the elliptic orbit keeping the energy constant translate to simple rotations in a 4D space with non-trivially reparameterized time.<br>
+                    <report><i class="fas fa-book-open"></i> <a href="https://drive.google.com/file/d/1bcwnQ8IAojCgluVIHSyoycZtRrwlCwsQ/view?usp=sharing" target="_blank">Report</a></report>                    
+                </div>
+            </div>
+        </div>
+        <span id="honors"></span>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+            <div class="sec-head">
+                <div class="bdrop"></div>
+                <span>HONORS</span>
+            </div>
+            <div class="sec-body">
+                <div class="bdrop"></div>
+                <ul class="highlights-list">
+                    <li><b>2024</b>: Young Scientist Participant, 73rd Lindau Nobel Laureate Meeting in Physics, one of 640 international young scientists.</li>
+                    <li><b>2023</b>: DAAD-WISE award, fully funded research project at FSU Jena, one of 130 Indian students.</li>
+                    <li><b>2021</b>: IASc, INSA, NASI - SRFP award, fully funded research project at PRL Ahmedabad, one of 100 Indian students.</li>
+                    <li><b>2019</b>: Department of Science and Technology, Government of India - INSPIRE award, for exceptional performance in high school examinations. Awarded to top 1% students of the country. </li>
+                </ul>
+
+            </div>
+        </div>
+        <span id="other"></span>
+    </div>
+
+    <div class="main">
+        <div class="main-content">
+            <div class="sec-head">
+                <div class="bdrop"></div>
+                <span>OTHERS</span>
+            </div>
+            <div class="sec-body">
+                <div class="bdrop"></div>
+                Click <a href="/Adithya_A_Rao_Resume.pdf" download>here</a> for my Curriculum Vitae<br>
+                Find my research works here  <a href="https://inspirehep.net/authors/2777228" target="blank">InspireHEP</a> <a href="https://arxiv.org/a/rao_a_2.html" target="blank">arxiv</a><br>
+                You can find a few of my sketches <a href="https://drive.google.com/drive/folders/1G9o3dKXDkzIb25WU0w3e7vetrBu5R5wk?usp=sharing" target='_blank'   >here</a><br><br>
+
+                <b>Talk Slides:</b><br>
+                <a href="The particle problem.pptx" download> The particle problem</a> - Talk given in the Science Sabha series of physics club at SVNIT Surat, in February 2023.<br>
+                <a href="Adithya_Quanta.pdf" download>Effects of Extra-Dimensions on Force Fields and Particles </a> - Talk given in the Quanta seminar series of Department of Physics at SVNIT Surat, in August 2022.
+
+            </div>
         </div>
     </div>
 
-    <div class="content" id="about">
-        <div class="title" style="text-decoration-color: var(--link);">&nbsp; About &nbsp;</div>
-        <div class="content_body" id="content_about">
-        </div>  
-    </div>
-
-    <div class="content" id="research">
-        <div class="title" style="text-decoration-color: var(--link);">&nbsp; Research &nbsp;</div>
-        <div class="content_body" id="content_research">
+    <div id="socials"> 
+        <div class="bdrop"></div>
+        <div class="email" style="margin-bottom: 30px;">I'm always open to new opportunities and collaborations. Feel free to reach out!</div>
+        <div class="email"> Write to me at <a href="mailto:adithyarao3132001@gmail.com" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
+        <div class="social-text">
+            Connect with me on 
+            <socials class="social-icons">
+                <a href="https://instagram.com/rao__adithya/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/raoadithya31" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/adithya-a-rao-3103/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/adithyarao3103/" target="_blank"><i class="fab fa-github"></i></a>
+            </socials>
         </div>
     </div>
 
-    <div class="content" id="cv-cont">
-        <div class="title" style="text-decoration-color: var(--link);">&nbsp; Links &nbsp;</div>
-        <div class="content_body" id="content_links">
+    <div id="socials-mobile">
+        <div class="bdrop"></div>
+        <div class="email" style="margin-bottom: 30px;">I'm always open to new opportunities and collaborations. Feel free to reach out!</div>
+        <div class="email"> Write to me at <br> <a href="mailto:adithyarao3132001@gmail.com" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
+        <div class="social-text">
+            Connect with me on <br>
+            <div style="width: 100%; height: 10px;"></div> 
+            <socials class="social-icons">
+                <a href="https://instagram.com/rao__adithya/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/raoadithya31" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/adithya-a-rao-3103/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/adithyarao3103/" target="_blank"><i class="fab fa-github"></i></a>
+            </socials>
         </div>
     </div>
 
-    <div id="endpadd">  </div>
+    <!-- <div id="left">
 
+    </div>
+    <div id="right">
+
+    </div> -->
 </body>
-<script>
-
-    
-
-function readResearch(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    { 
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            { 
-                var allText = rawFile.responseText;
-                document.getElementById("content_research").innerHTML = allText;
-            }
-        }
-    }
-    rawFile.send(null);
-
-
-    // console.log(data.toString());
-};
-readResearch("research.html")
-
-function readAbout(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    { 
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            { 
-                var allText = rawFile.responseText;
-                document.getElementById("content_about").innerHTML = allText;
-            }
-        }
-    }
-    rawFile.send(null);
-
-
-    // console.log(data.toString());
-};
-readAbout("about.html")
-
-function readLinks(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    { 
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            { 
-                var allText = rawFile.responseText;
-                document.getElementById("content_links").innerHTML = allText;
-            }
-        }
-    }
-    rawFile.send(null);
-
-
-    // console.log(data.toString());
-};
-readLinks("links.html")
-
-</script>
-<script src="assets/js/main.js"></script>
+<script src="js/main.js"></script>
 
 </html>

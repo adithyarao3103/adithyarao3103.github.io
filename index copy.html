@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/main copy.css">
+
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#other">Other</a>
+    </nav>
+    
+    <div class="content">
+        <div class="left-half">
+            <div class="profile-box">
+                <img src="assets/picture1.png" alt="Adithya" class="profile-img">
+                <h1>Your Name</h1>
+                <p style="text-align: center;"><a href="#" download>Download Resume</a></p>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+                <p class="email">Email: your.email@example.com</p>
+            </div>
+        </div>
+        
+        <div class="right-half">
+            <section id="about" class="section">
+                <h2>About</h2>
+                <p>This is a placeholder for your about section. Write a brief introduction about yourself, your background, and your goals.</p>
+            </section>
+            
+            <section id="research" class="section">
+                <h2>Research</h2>
+                <p>This is a placeholder for your research interests. Describe your areas of focus, methodologies, and any significant findings or ongoing projects.</p>
+            </section>
+            
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <h3>Publications</h3>
+                <div class="project">
+                    <h4>Title of the Publication</h4>
+                    <p><strong>Supervisor:</strong> Supervisor Name</p>
+                    <p><strong>Abstract:</strong> This is a placeholder for the abstract of your publication.</p>
+                    <p><a href="#">Read Full Paper</a></p>
+                </div>
+                
+                <h3>Projects</h3>
+                <div class="project">
+                    <h4>Title of the Project</h4>
+                    <p><strong>Supervisor:</strong> Supervisor Name</p>
+                    <p><strong>Abstract:</strong> This is a placeholder for the abstract of your project.</p>
+                    <p><a href="#">View Project Details</a></p>
+                </div>
+            </section>
+            
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">LaTeX</span>
+                    <span class="skill-tag">MATLAB</span>
+                </div>
+            </section>
+            
+            <section id="other" class="section">
+                <h2>Other</h2>
+                <ul>
+                    <li><a href="#">📊 Recent Talk Presentation</a></li>
+                    <li><a href="#">🎨 Sketch Portfolio</a></li>
+                    <li><a href="#">📚 Workshop Materials</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

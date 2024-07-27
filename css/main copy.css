@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #ffba24;
+    --secondary-color: #2c3e50;
+    /* --background-color: #ecf0f1; */
+    --background-color: #faf8f3;
+    --text-color: #34495e;
+    --link-color: #e74c3c;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    /* left: 50vw; */
+    /* transform: translateX(-50%); */
+    background-color: var(--background-color);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    /* width: 50vw; */
+
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.navbar a:hover {
+    color: black;
+    background-color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    padding-top: 60px;
+    min-height: calc(100% - 60px);
+}
+
+.left-half {
+    width: 40%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--background-color);
+    position: fixed;
+    left: 0;
+    top: 60px;
+}
+
+.profile-box {
+    width: 25vw;
+    height: 75vh;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-half {
+    width: 60%;
+    padding: 40px;
+    margin-left: 40%;
+    background-color: var(--background-color);
+}
+
+.profile-img {
+    width: 70%;
+    height: auto;
+    border-radius:25%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    border: 5px solid white;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    margin: 0 10px;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: var(--primary-color);
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', serif;
+    color: var(--secondary-color);
+    text-align: center;
+    unicode-bidi: isolate;
+
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.project {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project h4 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.email {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .left-half {
+        width: 100%;
+        height: auto;
+        position: static;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .profile-box {
+        width: 90%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .right-half {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar.active a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        flex-direction: column;
+        align-items: center;
+    }
+}
