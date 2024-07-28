@@ -433,7 +433,8 @@ text{
 .sec-head{
     width: calc(15vw);
     height: auto;
-    background-color: #ffffffe0;
+    /* background-color: #ffffffe0; */
+    background-color: #ffffffcc;
     color: #185072;
     font-size: 2vw;
     font-weight: bolder;
@@ -453,7 +454,7 @@ text{
 }
 
 .sec-body{
-    background-color: #ffffffe0;
+    background-color: #ffffffcc;
     height: auto;
     padding: 40px;
     font-size: large;
