@@ -48,11 +48,13 @@ function toggleMenu(){
     if (checkMobile()){
         if (menuClose){
             menuClose = 0;
-            document.getElementById("navbar").style.transform = "translateX(-50%)";
+            document.getElementById("navbar").classList.remove('navClose');
+            document.getElementById("navbar").classList.add('navOpen');
         }
         else{
             menuClose = 1;
-            document.getElementById("navbar").style.transform = "translateX(-150%)";
+            document.getElementById("navbar").classList.remove('navOpen');
+            document.getElementById("navbar").classList.add('navClose');
         }
     }
 }

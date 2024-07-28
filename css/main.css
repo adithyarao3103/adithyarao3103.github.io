@@ -87,10 +87,17 @@ div> a:hover, p> a:hover{
     position: fixed;
     top:10px;
     left: 50vw;
-    transform: translateX(-50%);
     border-radius: 20px;
     background-clip: padding-box;
     z-index: 999;
+}
+
+.navClose{
+    transform: translateX(-50%);
+}
+
+.navOpen{
+    transform: translateX(-50%)
 }
 
 .navbar> a{
