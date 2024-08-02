@@ -75,6 +75,10 @@ body{
     height: 60vw;
 }
 
+#photo-inner{
+    background-color: #ffffffcc;
+}
+
 #profile-img{
     width: calc(60vw - 16px);
     height: calc(60vw - 16px);
@@ -171,9 +175,24 @@ text, text>span{
 
 text> span{
     background: #173554c4;
+    /* background: none; */
+    line-height: 1.35;
     padding: 0px 0px;
     border-radius: 0%;
+    /* color: black; */
 }
+
+/* #main-landing{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    margin-bottom: 15vh;
+    background-color: #ffffffcc;
+    border:0 solid white;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+} */
+
+
 
 
 
