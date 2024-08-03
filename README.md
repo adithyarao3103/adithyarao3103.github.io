@@ -6,4 +6,4 @@ Check out the previous iterations here:
 
 [https://adithyarao3103.github.io/3PanelRetroWebsite](https://adithyarao3103.github.io/3PanelRetroWebsite)
 
-[https://adithyarao3103.github.io/ShowcaseGraphicsWebsite](https://adithyarao3103.github.io/ShowcaseGraphicsWebsite)
+[https://adithyarao3103.github.io/ShowcaseGraphicsWebsite](https://adithyarao3103.github.io/ShowcaseGraphicsWebsite). This one is not optimized for mobile 😅.
