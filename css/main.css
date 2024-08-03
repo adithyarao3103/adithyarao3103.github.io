@@ -19,9 +19,9 @@ body, html{
     scroll-behavior: smooth;
 }
 
-body::selection{
+::selection, ::-moz-selection{
     color: white;
-    background-color: black;
+    background: black;
 }
 
 #landing-text-mobile{
