@@ -19,7 +19,12 @@ body, html{
     scroll-behavior: smooth;
 }
 
-::selection, ::-moz-selection{
+::selection{
+    color: white;
+    background: black;
+}
+
+::-moz-selection{
     color: white;
     background: black;
 }
