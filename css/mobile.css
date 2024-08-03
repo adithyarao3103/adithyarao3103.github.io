@@ -174,8 +174,10 @@ text, text>span{
 }
 
 text> span{
-    background: #173554c4;
-    /* background: none; */
+    /* background: #173554c4; */
+    background: none;
+    /* text-shadow: 0 0 3px #022e49, 0 0 10px #022e49; */
+    text-shadow: 4px 0px 10px #173554, 0px 4px 10px #173554, -4px 0px 10px #173554, 0px -4px 10px #173554, 2px 2px 10px #173554, 2px -2px 10px #173554, -2px 2px 10px #173554, -2px -2px 10px #173554;
     line-height: 1.35;
     padding: 0px 0px;
     border-radius: 0%;
