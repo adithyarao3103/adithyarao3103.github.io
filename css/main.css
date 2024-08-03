@@ -19,6 +19,11 @@ body, html{
     scroll-behavior: smooth;
 }
 
+body::selection{
+    color: white;
+    background-color: black;
+}
+
 #landing-text-mobile{
     display: none;
 }
