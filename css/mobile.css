@@ -12,6 +12,7 @@
 
 :root{
     --mobile: 1;
+    --mobile-height: 100vh;
 }
 
 body{
