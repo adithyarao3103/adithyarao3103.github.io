@@ -9,7 +9,7 @@ body, html{
     padding-bottom: 0;
     padding-right: 0;
     margin: 0px;
-    background-image: url('/assets/bg5.webp');
+    background-image: url('/assets/bg_new.jpg');
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,6 +51,8 @@ body{
 ::-webkit-scrollbar {
     width: 12.5px;
     z-index: 999;
+    position: absolute;
+    right: 0;
 }
 
 /* Track */
@@ -138,7 +140,7 @@ div> a:hover, p> a:hover{
     /* height: 100vh; */
     position: relative;
     /* padding-top: 33vh; */
-    padding-bottom: 28vh;
+    padding-bottom: 30vh;
     /* padding-left: 15vw; */
     /* padding-right: 15vw; */
 }
@@ -149,7 +151,7 @@ div> a:hover, p> a:hover{
     /* background-color: #ffffff; */
     /* box-shadow: 0px 1px 20px #8ed9ff; */
     position: relative;
-    left: 57vw;
+    left: 53vw;
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: 0.3fr 0.7fr;
@@ -212,7 +214,7 @@ text{
     height: calc(15vw);
     border-radius: 50%;
     position: relative;
-    /* background-color: #8ed9ff4d; */
+    background-color: #ffffff8a;
     top: 0;
     left: 0;
     z-index: -1;
@@ -445,7 +447,7 @@ text{
     height: auto;
     /* background-color: #ffffffe0; */
     background-color: #ffffffcc;
-    color: #185072;
+    color: #021c69;
     font-size: 2vw;
     font-weight: bolder;
     text-align: center;
@@ -483,7 +485,7 @@ text{
 }
 
 .skill-tag {
-    background-color: #185072;
+    background-color: #021c69;
     color: white;
     padding: 3px 7px;
     border-radius: 20px;
