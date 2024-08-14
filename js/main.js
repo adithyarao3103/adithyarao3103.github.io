@@ -63,7 +63,7 @@ function getHeight(){
     if (checkMobile()){
         var r = document.querySelector(':root');
         r.style.setProperty('--mobile-height', screen.height + 'px');
-        setTimeout(getHeight, 1000);
+        // setTimeout(getHeight, 1000);
     }
 }
 
