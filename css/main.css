@@ -197,9 +197,10 @@ text{
 }
 
 #photo{
-    width: 15vw;
+    width: calc(15vw);
+    height: calc(15vw);
     /* height: 40vh; */
-    border-radius: 30px;
+    border-radius: 50%;
     /* border: 15px solid white; */
     /* box-shadow: 0px 1px 20px #8ed9ff; */
     position: relative;
@@ -207,6 +208,9 @@ text{
     justify-content: center;
     align-items: center;
     /* background-color: ; */
+    border: 15px solid white;
+    position: relative;
+    top: 15px;
 }
 
 #photo-inner{
@@ -214,21 +218,20 @@ text{
     height: calc(15vw);
     border-radius: 50%;
     position: relative;
-    background-color: #ffffff8a;
-    top: 0;
-    left: 0;
+    background-color: #ffffff70;
+    /* top: 15px; */
+    /* left: 15px; */
     z-index: -1;
     backdrop-filter: blur(10px);
 }
 
 #profile-img{
-    width: calc(15vw - 30px);
-    height: calc(15vw - 30px);
+    width: calc(15vw);
+    height: calc(15vw);
     border-radius: 50%;
     top: 0;
     left: 0;
     z-index: 10;
-    border: 15px solid white;
 }
 
 

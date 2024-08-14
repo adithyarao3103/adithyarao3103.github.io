@@ -76,13 +76,13 @@ body{
 }
 
 #photo-inner{
-    background-color: #ffffffcc;
+    background-color: #ffffff70;
 }
 
 #profile-img{
-    width: calc(60vw - 16px);
-    height: calc(60vw - 16px);
-    border: 8px solid white;
+    width: calc(60vw);
+    height: calc(60vw);
+    /* border: 8px solid white; */
 }
 
 #landing-text-mobile{
