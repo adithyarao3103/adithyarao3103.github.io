@@ -1,5 +1,6 @@
 :root{
     --mobile: 0;
+    --mobile-height:0;
 }
 
 body, html{
