@@ -219,7 +219,8 @@ text{
     height: calc(15vw);
     border-radius: 50%;
     position: relative;
-    background-color: #ffffff70;
+    background-color: #ffffff56;
+    /* background-color: #82c9f050; */
     /* top: 15px; */
     /* left: 15px; */
     z-index: -1;
