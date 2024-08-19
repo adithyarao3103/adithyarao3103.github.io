@@ -51,6 +51,7 @@
         width: 20vw;
         height: 20vw;
     }
+    
 }
 
 @media (max-width: 600px) {
@@ -109,6 +110,11 @@ body{
     padding-bottom: 20vh;
 }
 
+#about > .sec-head{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
 #main-landing{
     align-items: center;
     justify-content: center;
@@ -130,8 +136,8 @@ body{
 
 
 #photo, #photo-inner{
-    width: 60vw;
-    height: 60vw;
+    width: 70vw;
+    height: 70vw;
 }
 
 #photo-inner{
@@ -139,8 +145,8 @@ body{
 }
 
 #profile-img{
-    width: calc(60vw);
-    height: calc(60vw);
+    width: calc(70vw - 20px);
+    height: calc(70vw - 20px);
     /* border: 8px solid white; */
 }
 
@@ -166,6 +172,7 @@ text, text>span{
 
 }
 
+
 .sec-head{
     width: 100vw;
     border: 10px solid white;
@@ -185,6 +192,7 @@ text, text>span{
 
 #connect{
     font-size: calc(1.5vh + 5px);
+    /* margin-top: 30px; */
 
 }
 

@@ -67,4 +67,13 @@ function getHeight(){
     }
 }
 
+function scrolltoSocials(){
+    if (checkMobile()==0){
+        document.getElementById('socials').scrollIntoView();
+    }
+    else{
+        document.getElementById('socials-mobile').scrollIntoView();
+    }
+}
+
 getHeight();
