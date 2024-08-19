@@ -42,11 +42,11 @@
                     <div style="width: 100%; height: 5px"></div>
                     <text  style="font-size: 2.2vw;">UNRAVELING THE MYSTERIES OF THE UNIVERSE THROUGH CODE!!</text> -->
                     <text><div class="bdrop"></div><span id="name-bar"> I AM ADITHYA... </span></text> <br><br>
-                    <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> A THEORETICAL PHYSICIST,  </span></text><br>
+                    <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> A PHYSICIST,  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
-                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> DEBUGGING THE UNIVERSE PARTICLE </span></text><br>
+                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> DEBUGGING THE UNIVERSE  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
-                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> BY PARTICLE!!</span></text>
+                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> PARTICLE BY PARTICLE...!!</span></text>
                     <!-- <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> COLLIDING ATOMS AND  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
                     <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> ALGORITHMS TO UNRAVEL </span></text><br>
@@ -64,7 +64,7 @@
                     <div style="width: 100%; height: 5px"></div>
                     <text  style="font-size: 2.2vw;">UNRAVELING THE MYSTERIES OF THE UNIVERSE THROUGH CODE!!</text> -->
                     <text style="font-size: 4.5vh; margin-top: 20px;"><div class="bdrop1"></div><span> I AM ADITHYA </span></text> <br>
-                    <text style="font-size: 2.9vh;"><div class="bdrop1"></div> <span> A THEORETICAL PHYSICIST, DEBUGGING THE UNIVERSE PARTICLE BY PARTICLE!!</span></text>
+                    <text style="font-size: 2.9vh;"><div class="bdrop1"></div> <span> A PHYSICIST, DEBUGGING THE UNIVERSE PARTICLE BY PARTICLE...!!</span></text>
                     <!-- <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> COLLIDING ATOMS AND  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
                     <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> ALGORITHMS TO UNRAVEL </span></text><br>
@@ -77,11 +77,10 @@
             };"><div class="bdrop"></div> <span>CONNECT WITH ME!</span></div>
         </div>
         </div>
-        <span id="about"></span>
     </div>
 
     <div class="main">
-        <div class="main-content">
+        <div class="main-content" id="about">
         <div class="sec-head">
                 <div class="bdrop"></div>
                 <span>ABOUT</span>
@@ -96,9 +95,9 @@
 
                 <!-- I am currently working on <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" target='_blank'   >Quantum Field Theories of Strongly Interacting Fields</a>. These theories with their rich mathematics, and beautiful geometries are hugely unexplored owing to their complexity, and here I am, already neck deep in these uncharted waters. At the same time I am also studying computational methods including lattice field theory, to aid progress in this field.<br><br>  -->
                 
-                My expertise is in theoretical high energy physics, while I am currently exploring Quantum Simulations for Lattice Field Theories and experimental particle physics.<br><br>
+                My <a onclick="document.getElementById('projects').scrollIntoView()" style="cursor: pointer;">expertise</a> is in theoretical high energy physics, while I am currently exploring Quantum Simulations for Lattice Field Theories and <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental particle physics</a>.<br><br>
 
-                My awe for the universe doesn't make me less sensitive to the other stuff in the world. I am amazed by the capabilities of the man-made machine educated in only 0s and 1s, but capable of comprehending the universe. I am also learning deep-learning techniques, especially Physics Informed Neural Networks (PINNs). Depending on my mood, you might see me coding, sketching, or you might also find me contemplating on Indian Philosophy, trying to make sense of the absurdity of the reality we live in and battling existential crisis that follows.<br>
+                My awe for the universe doesn't make me less sensitive to the other stuff in the world. I am amazed by the capabilities of the man-made machine educated in only 0s and 1s, but capable of comprehending the universe. I am also learning deep-learning techniques, especially <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;">Physics Informed Neural Networks (PINNs)</a>. Depending on my mood, you might see me coding, sketching, or you might also find me contemplating on Indian Philosophy, trying to make sense of the absurdity of the reality we live in and battling existential crisis that follows.<br>
 
                 <h3>My Skills:</h3>
                 <div class="skills-list">
@@ -120,11 +119,10 @@
                 </div>
             </div>
         </div>
-        <span id="research"></span>
     </div>
 
     <div class="main">
-        <div class="main-content">
+        <div class="main-content" id="research">
             <div class="sec-head">
                 <div class="bdrop"></div>
                 <span>RESEARCH</span>
@@ -146,11 +144,10 @@
 
             </div>
         </div>
-        <span id="projects"></span>
     </div>
 
     <div class="main">
-        <div class="main-content">
+        <div class="main-content" id="projects">
             <div class="sec-head">
                 <div class="bdrop"></div>
                 <span>PROJECTS</span>
@@ -218,13 +215,23 @@
                     <i>Abstract:</i> We studied the SO(4) symmetry group of the Kepler system and its generators. I worked on the observation that the nontrivial symmetry operations that modify the eccentricity of the elliptic orbit keeping the energy constant translate to simple rotations in a 4D space with non-trivially reparameterized time.<br>
                     <report><i class="fas fa-book"></i> <a href="https://drive.google.com/file/d/1bcwnQ8IAojCgluVIHSyoycZtRrwlCwsQ/view?usp=sharing" target="_blank">Report</a></report>                    
                 </div>
+                <h2 style="margin:0;" id="progProj">Programming Projects</h2>
+                <div class="project">
+                    <strong id="PINN">Physics Informed Neural Networks</strong><br>
+                    Physics Informed Neural Networks, or PINNs for short, make use of the Kolmogorov-Arnold representation theorem, which states that any continuous multivariate function to represent the solution function of a partial differential equation, and trains the neural network to minimize the residue of the partial differential equation.<br>
+                    <report><i class="fa-brands fa-github"></i> <a href="https://github.com/adithyarao3103/PINN" target="_blank">Project</a></report>        
+                </div>
+                <div class="project">
+                    <strong id="ROOT">CERN-ROOT</strong><br>
+                    Practice MWEs from William Seligman's ROOT tutorial given at Nevis Labs.<br>
+                    <report><i class="fa-brands fa-github"></i> <a href="https://github.com/adithyarao3103/NevisLab-ROOT" target="_blank">Project</a></report>        
+                </div>
             </div>
         </div>
-        <span id="honors"></span>
     </div>
 
     <div class="main">
-        <div class="main-content">
+        <div class="main-content" id="honors">
             <div class="sec-head">
                 <div class="bdrop"></div>
                 <span>HONORS</span>
@@ -240,11 +247,10 @@
 
             </div>
         </div>
-        <span id="other"></span>
     </div>
 
     <div class="main">
-        <div class="main-content">
+        <div class="main-content" id="other">
             <div class="sec-head">
                 <div class="bdrop"></div>
                 <span>OTHERS</span>
