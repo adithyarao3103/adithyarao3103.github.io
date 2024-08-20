@@ -236,8 +236,8 @@ text{
 }
 
 #photo-inner{
-    width: calc(15vw - 20px);
-    height: calc(15vw - 20px);
+    width: calc(12vw - 10px);
+    height: calc(12vw - 10px);
     border-radius: 20px;
     position: relative;
     background-color: #ffffff80;
@@ -249,13 +249,13 @@ text{
 }
 
 #profile-img{
-    width: calc(15vw - 40px);
-    height: calc(15vw - 40px);
+    width: calc(12vw - 10px);
+    height: calc(12vw - 10px);
     border-radius: 20px;
     top: 0;
     left: 0;
     z-index: 10;
-    border: 10px solid white
+    /* border: 10px solid white */
 }
 
 
@@ -346,7 +346,7 @@ text{
     position: relative;
     font-size: calc(0.3vw + 10px);
     background-color: #ffffffcc;
-    border: 6px solid white;
+    /* border: 6px solid white; */
     font-weight: bold;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -485,7 +485,7 @@ text{
     align-items: center;
     border-radius: 20px;
     position: relative;
-    border: 15px solid white;
+    /* border: 15px solid white; */
 }
 
 .sec-head> span {
@@ -502,7 +502,7 @@ text{
     line-height: 1.75;
     font-size: calc(0.6vw + 5px);
     border-radius: 20px;
-    border: 15px solid white;
+    /* border: 15px solid white; */
     position: relative;
 }
 
