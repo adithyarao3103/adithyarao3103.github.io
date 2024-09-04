@@ -10,10 +10,11 @@ body, html{
     padding-bottom: 0;
     padding-right: 0;
     margin: 0px;
-    /* background-image: url('/assets/image2.webp'); */
+    background-image: url('/assets/bg1.jpg');
     /* background-image: url('/assets/image1.webp'); */
     /* background-image: url('/assets/image.webp'); */
-    background-image: url('/assets/bg_new.webp');
+    /* background-image: url('/assets/bg_new.webp'); */
+    /* background-color: rgba(255, 167, 167, 0.01); */
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,6 +22,15 @@ body, html{
     background-attachment: fixed;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+.sec-head, .sec-body, .project, #socials, #navbar{
+    border: 1px solid rgba(255, 167, 167, 0.5);
+    box-shadow: 5px 5px 15px rgba(255, 167, 167, 0.8);
+}
+
+.project{
+    background-color: white;
 }
 
 ::selection{
@@ -61,18 +71,18 @@ body{
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: #54c0ff;
+    /* background-color: #54c0ff; */
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #ffffff;
+    background: #555;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #000;
 }
 
 *{
@@ -81,7 +91,8 @@ body{
 
 div> a, report> a{
     /* background-color: #219fe6; */
-    background-color: #54c0ff;
+    /* background-color: #54c0ff; */
+    background-color: #ffadad;
     color: black;
     text-decoration: none;
     padding: 0px 5px;
@@ -90,7 +101,8 @@ div> a, report> a{
 }
 
 div> a:hover, p> a:hover{
-    background-color: #3594c7 ;
+    background-color: #ff8080;
+    /* background-color: #3594c7 ; */
     color: black;
 }
 
@@ -136,8 +148,9 @@ div> a:hover, p> a:hover{
     /* color: white; */
     /* background-image: url('/assets/bg.jpg'); */
     /* font-weight: bolder; */
-    box-shadow: 1px 1px 10px #8ed9ff;
-    background-color: #54c0ff;
+    /* box-shadow: 1px 1px 10px #8ed9ff; */
+    background-color: #ff8080;
+    /* background-color: #54c0ff; */
 }
 
 .main{
