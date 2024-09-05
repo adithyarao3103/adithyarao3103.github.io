@@ -87,7 +87,7 @@ body{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: red;
+    background: #ff0000;
 }
 
 *{
@@ -97,7 +97,7 @@ body{
 div> a, report> a{
     /* background-color: #219fe6; */
     /* background-color: #54c0ff; */
-    background-color: orange;
+    background-color: rgb(255, 165, 0);
     color: black;
     text-decoration: none;
     padding: 0px 5px;
@@ -106,7 +106,7 @@ div> a, report> a{
 }
 
 div> a:hover, p> a:hover{
-    background-color: darkorange;
+    background-color: rgb(255, 140, 0);
     /* background-color: #3594c7 ; */
     color: black;
 }
@@ -154,7 +154,7 @@ div> a:hover, p> a:hover{
     /* background-image: url('/assets/bg.jpg'); */
     /* font-weight: bolder; */
     /* box-shadow: 1px 1px 10px #8ed9ff; */
-    background-color: orange;
+    background-color: rgb(255, 165, 0);
     /* background-color: #54c0ff; */
 }
 
@@ -210,7 +210,7 @@ div> a:hover, p> a:hover{
 
 text> span {
     background: #17365486;
-    color: white;
+    color: #ffffff;
     padding: 0px 5px;
     position: relative;
     border-radius: 10px;
@@ -258,7 +258,7 @@ text{
     height: calc(12vw - 10px);
     border-radius: 20px;
     position: relative;
-    background-color: white;
+    background-color: #ffffff;
     /* background-color: #54c0ff50; */
     /* top: 15px; */
     /* left: 15px; */
@@ -466,7 +466,7 @@ text{
 }
 
 .social-icons> a{
-    color: black;
+    color: #000000;
     padding-left: 10px;
     padding-right: 10px;
     font-size: calc(1.5vw + 5px);
