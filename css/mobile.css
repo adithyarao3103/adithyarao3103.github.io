@@ -144,9 +144,9 @@ body{
     height: 70vw;
 }
 
-#photo-inner{
+/* #photo-inner{
     background-color: #ffffff70;
-}
+} */
 
 #profile-img{
     width: calc(70vw - 20px);
@@ -176,18 +176,32 @@ text, text>span{
 
 }
 
+.sec-head, .sec-body, #socials-mobile, #navbar-mob{
+    /* border: 1px solid rgba(255, 167, 167, 0.5); */
+    border: 2px solid black;
+    /* box-shadow: 5px 5px 15px rgba(255, 167, 167, 0.8); */
+    box-shadow: 0px 4px 0 4px black,
+    0px 12px 0 4px #ff6600;
+}
+
+.project{
+    position: relative;
+    left:-6px;
+}
+
 
 .sec-head{
     width: 100vw;
-    border: 10px solid white;
+    /* border: 10px solid white; */
     font-size: 4.5vh;
     border-radius: 0;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .sec-body{
     width: calc(100vw - 40px);
-    border: 10px solid white;
+    /* border: 10px solid white; */
     border-radius: 0;
     padding: 20px;
     font-size: calc(1.5vh + 5px);
