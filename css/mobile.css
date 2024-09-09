@@ -206,7 +206,9 @@ text, text>span{
     border-radius: 0;
     padding: 10px;
     margin-bottom: 20px;
-    top: 13vh;
+    /* top: 13vh; */
+    position: relative;
+    top: 0;
 }
 
 .sec-body{
