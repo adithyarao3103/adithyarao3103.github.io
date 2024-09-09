@@ -5,7 +5,7 @@
 
 body, html{
     font-family: Roboto;
-    width: 100vw;
+    width: calc(100vw - 10px);
     padding-left: 0;
     padding-bottom: 0;
     padding-right: 0;
@@ -14,13 +14,14 @@ body, html{
     /* background-image: url('/assets/image1.webp'); */
     /* background-image: url('/assets/image.webp'); */
     /* background-image: url('/assets/bg_new.webp'); */
-    background-color: rgba(255, 166, 0, 0.314);
+    /* background-color: rgba(255, 166, 0, 0.314); */
+    background-color: #ffd078;
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-    background-attachment: fixed;
-    overflow-x: hidden;
+    /* background-attachment: fixed; */
+    /* overflow-x: hidden; */
     scroll-behavior: smooth;
 }
 
@@ -67,7 +68,7 @@ body{
 
 
 ::-webkit-scrollbar {
-    width: 12.5px;
+    width: 10px;
     z-index: 999;
     position: absolute;
     right: 0;
@@ -159,7 +160,7 @@ div> a:hover, p> a:hover{
 }
 
 .main{
-    width: 100vw;
+    width: calc(100vw - 10px);
     /* height: 100vh; */
     position: relative;
     /* padding-top: 33vh; */
@@ -495,6 +496,7 @@ text{
 .sec-head{
     width: calc(15vw);
     height: auto;
+    max-height: 80vh;
     /* background-color: #ffffffe0; */
     /* color: #021c69; */
     background-color: rgba(255, 255, 255, 0.9);
@@ -506,7 +508,8 @@ text{
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    position: relative;
+    position: sticky;
+    top: 14vh;
     /* border: 15px solid white; */
 }
 

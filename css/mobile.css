@@ -65,6 +65,14 @@
     --mobile-height: 100vh;
 }
 
+#about> .sec-head{
+    position: relative;
+    top: 0;
+}
+
+.sec-head{
+    z-index: 2;
+}
 
 
 body{
