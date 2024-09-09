@@ -1,7 +1,7 @@
 .menu-toggle {
     display: none;
     background: white;
-    border: none;
+    border: 2px solid black;
     color: black;
     font-size: 3.5vh;
     cursor: pointer;
