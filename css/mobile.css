@@ -190,6 +190,7 @@ text, text>span{
     /* box-shadow: 5px 5px 15px rgba(255, 167, 167, 0.8); */
     box-shadow: 0px 4px 0 4px black,
     0px 12px 0 4px #ff6600;
+    background-color: #fffaf2;
 }
 
 .project{
@@ -205,6 +206,7 @@ text, text>span{
     border-radius: 0;
     padding: 10px;
     margin-bottom: 20px;
+    top: 13vh;
 }
 
 .sec-body{
