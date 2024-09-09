@@ -73,7 +73,7 @@
 }
 
 *{
-    scroll-margin-top:15px ;
+    scroll-margin-top:5px ;
 }
 
 #about> .sec-head{
@@ -107,6 +107,7 @@ body{
 }
 
 #navbar-mob{
+    top:-7px;
     display: block;
     transform: translateX(-50%);
 }
@@ -223,7 +224,7 @@ text, text>span{
     margin-bottom: 20px;
     /* top: 13vh; */
     /* position: relative; */
-    top: 20px;
+    top: 5px;
     background-color: white;
 }
 
