@@ -1,11 +1,18 @@
 .menu-toggle {
     display: none;
-    background: none;
+    background: white;
     border: none;
     color: black;
     font-size: 3.5vh;
     cursor: pointer;
-    padding-left: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+    z-index: 1001;
+    padding-top: 4px;
+    padding-right: 9px;
+    padding-bottom: 7px;
+    padding-left: 9px;
+    border-radius: 10px;
 }
 
 @media (max-width: 900px){
@@ -65,6 +72,10 @@
     --mobile-height: 100vh;
 }
 
+*{
+    scroll-margin-top:15px ;
+}
+
 #about> .sec-head{
     position: relative;
     top: 0;
@@ -76,7 +87,7 @@
 
 
 body{
-    padding-top: 15vh;
+    padding-top: 5vh;
     min-height: var(--mobile-height);
 }
 
@@ -97,7 +108,7 @@ body{
 
 #navbar-mob{
     display: block;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 
 #navbar{
@@ -193,6 +204,10 @@ text, text>span{
     background-color: #fffaf2;
 }
 
+#about> .sec-head{
+    background-color: #fffaf2;
+}
+
 .project{
     position: relative;
     left:-6px;
@@ -207,9 +222,12 @@ text, text>span{
     padding: 10px;
     margin-bottom: 20px;
     /* top: 13vh; */
-    position: relative;
-    top: 0;
+    /* position: relative; */
+    top: 20px;
+    background-color: white;
 }
+
+
 
 .sec-body{
     width: calc(100vw - 40px);
@@ -291,6 +309,12 @@ text> span{
     border-top-width: 5px;
     border-bottom-width: 5px;
 } */
+
+#navbar-mob{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
 
 
 
