@@ -33,7 +33,7 @@
     --thumb-color: black;
     --thumb-hover-color: #57d280;
     --thumb-background-color: #2f4635;
-    --body-bg: url('/assets/wave-green1.svg')
+    --body-bg: url('/assets/wave-green.svg')
 } */
 
 /* 
@@ -174,6 +174,23 @@ body, html{
 
 .navbar> a:hover{
     background-color: var(--hover-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: white;
+    border: 2px solid black;
+    color: black;
+    font-size: 3.5vh;
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 20px;
+    z-index: 1001;
+    padding-top: 4px;
+    padding-right: 9px;
+    padding-bottom: 7px;
+    padding-left: 9px;
+    border-radius: 10px;
 }
 
 div> a, report> a{

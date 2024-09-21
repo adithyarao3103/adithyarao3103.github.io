@@ -1,0 +1,48 @@
+@media (max-width: 900px){
+    .main-content{
+        width: 90%;
+        height: 50%;
+        position: relative;
+        left: 50vw;
+        transform: translateX(-50%);
+        display: grid;
+        grid-template-columns: 0.25fr 0.75fr;
+    }
+
+    #main-landing > .main-content{
+        width: 75%;
+        grid-template-columns: 0.35fr 0.65fr;
+        left: 53vw;
+    }
+
+    .navbar{
+        width: 100vw;
+    }
+
+    .sec-head{
+        font-size: calc(1vw + 10px);
+    }
+
+    .sec-body{
+        font-size: calc(0.3vw + 10px);
+    }
+
+    text> span{
+        font-size: calc(2.5vh + 5px);
+    }
+
+    #name-bar{
+        font-size: calc(3.25vh + 5px);
+    }
+
+    #photo{
+        width: 20vw;
+        height: 20vw;
+    }
+
+    #socials{
+        width: 100vw;
+    }
+    
+}
+
