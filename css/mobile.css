@@ -150,7 +150,7 @@ text, text>span{
 
 }
 
-.sec-head, .sec-body, #socials-mobile, #navbar-mob{
+.sec-head, .sec-body, #socials-mobile, #navbar-mob, #navbar{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     border-right: none;
