@@ -176,23 +176,6 @@ body, html{
     background-color: var(--hover-color);
 }
 
-.menu-toggle {
-    display: none;
-    background: white;
-    border: 2px solid black;
-    color: black;
-    font-size: 3.5vh;
-    cursor: pointer;
-    font-weight: 700;
-    margin-left: 20px;
-    z-index: 1001;
-    padding-top: 4px;
-    padding-right: 9px;
-    padding-bottom: 7px;
-    padding-left: 9px;
-    border-radius: 10px;
-}
-
 div> a, report> a{
     background-color: var(--link-color);
     color: black;

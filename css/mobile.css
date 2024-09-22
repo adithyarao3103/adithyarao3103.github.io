@@ -1,3 +1,21 @@
+.menu-toggle {
+    display: none;
+    background: white;
+    border: 2px solid black;
+    color: black;
+    font-size: 3.5vh;
+    cursor: pointer;
+    font-weight: 700;
+    margin-right: 10px;
+    z-index: 1001;
+    padding-top: -1px;
+    padding-right: 9px;
+    padding-bottom: 3px;
+    padding-left: 9px;
+    border-radius: 10px;
+}
+
+
 @media (max-width: 600px) {
 
 :root{
@@ -6,7 +24,7 @@
 }
 
 *{
-    scroll-margin-top:5px ;
+    scroll-margin-top:0px ;
 }
 
 #about> .sec-head{
@@ -20,8 +38,8 @@
 
 
 body{
-    padding-top: 5vh;
-    min-height: var(--mobile-height);
+    padding: 0;
+    /* min-height: var(--mobile-height); */
 }
 
 .navbar{
@@ -40,18 +58,20 @@ body{
 }
 
 #navbar-mob{
-    top:-7px;
-    display: block;
+    top:-9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
     transform: translateX(-50%);
 }
 
 #navbar{
-    top: 11vh;
+    top: 9vh;
     transition: all 0.3s;
 }
 
 .navClose{
-    transform: translateX(-150%);
+    transform: translateX(150%);
 }
 
 .navOpen{
@@ -130,7 +150,10 @@ text, text>span{
 }
 
 .sec-head, .sec-body, #socials-mobile, #navbar-mob{
-    border: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: none;
+    border-left: none;
     box-shadow: 0px 4px 0 4px black,
     0px 12px 0 4px var(--border-color);
 }
@@ -149,9 +172,10 @@ text, text>span{
     width: 100vw;
     font-size: 4.5vh;
     border-radius: 0;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    top: 5px;
+    top: 0px;
     background-color: white;
 }
 
