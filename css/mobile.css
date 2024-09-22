@@ -37,8 +37,8 @@
 }
 
 
-body{
-    padding: 0;
+body, html{
+    padding-top: 20px;
     /* min-height: var(--mobile-height); */
 }
 
