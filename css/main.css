@@ -167,7 +167,7 @@ body, html{
     border-radius: 5px;
     font-weight: bolder;
     font-size: calc(0.85vw + 5px);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     box-shadow: 0px 0px 0px white;
     cursor: pointer;
 }

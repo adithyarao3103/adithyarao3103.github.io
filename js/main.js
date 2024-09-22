@@ -59,6 +59,15 @@ function toggleMenu(){
     }
 }
 
+menu = document.getElementById("navbar");
+menuButton = document.getElementById("navbar-mob");
+
+document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+    toggleMenu()
+    }
+});
+
 function getHeight(){
     if (checkMobile()){
         var r = document.querySelector(':root');
