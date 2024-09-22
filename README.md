@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-After going through so many iterations finally settled on on!
+After going through so many iterations finally settled on one!
 
 Check out the previous iterations here:
 
