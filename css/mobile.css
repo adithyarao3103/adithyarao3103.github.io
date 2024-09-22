@@ -207,7 +207,7 @@ text, text>span{
     margin-bottom: 40vh;
     padding: 2vh;
     color: black;
-
+    line-height: 1.75;
 }
 
 .email{
