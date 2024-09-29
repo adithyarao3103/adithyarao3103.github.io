@@ -54,8 +54,10 @@ body, html{
 }
 
 .navbar> a{
-    width: fit-content;
+    width: 100%;
     font-size: calc(1.5vh + 5px);
+    margin:0px;
+    padding-left: 0;
 }
 
 #navbar-mob{
@@ -67,8 +69,11 @@ body, html{
 }
 
 #navbar{
+    width: calc(100vw + 20px);
     top: 9vh;
     transition: all 0.5s;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .navClose{
