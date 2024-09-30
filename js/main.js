@@ -45,6 +45,7 @@ function checkMobile(){
 var menuClose=1;
 
 function toggleMenu(){
+    console.log("toggleMenu");
     if (checkMobile()){
         if (menuClose){
             menuClose = 0;
@@ -63,7 +64,7 @@ menu = document.getElementById("navbar");
 menuButton = document.getElementById("navbar-mob");
 
 document.addEventListener('click', (event) => {
-    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+    if (menuClose == 0 && !menu.contains(event.target) && !menuButton.contains(event.target)) {
     toggleMenu()
     }
 });
