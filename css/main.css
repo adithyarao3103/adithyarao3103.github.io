@@ -1,4 +1,4 @@
-/* :root{
+:root{
     --mobile: 0;
     --mobile-height:0;
     --border-color: #3594c7;
@@ -8,7 +8,7 @@
     --thumb-hover-color: #3594c7;
     --thumb-background-color: #173960;
     --body-bg: url('/assets/wave-dblue.svg')
-} */
+}
 
 /* 
 :root{
@@ -63,7 +63,7 @@
 } */
 
 
-:root{
+/* :root{
     --mobile: 0;
     --mobile-height:0;
     --border-color: #c57200;
@@ -73,7 +73,7 @@
     --thumb-hover-color: #a65d10;
     --thumb-background-color: #673716;
     --body-bg: url('/assets/wave-brown.svg')
-}
+} */
 
 
 
