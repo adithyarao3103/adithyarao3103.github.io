@@ -84,7 +84,7 @@
                 I am a physicist with broad interest in Quantum Physics. <br><br>
                 
                 My <a onclick="document.getElementById('projects').scrollIntoView()" style="cursor: pointer;">research so far</a> has primarily focused on theoretical and computational high-energy physics. <br>
-                Currently I am exploring the application of <a onclick="document.getElementById('Schwinger').scrollIntoView()" style="cursor: pointer;">computational methods for Quantum Systems and Quantum Simulations for Lattice Field Theories</a> , and <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental particle physics</a>.<br> In addition to physics, I love programming, and I am currently exploring <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;">Physics Informed Neural Networks (PINNs)</a>.<br><br>
+                Currently I am exploring the application of <a onclick="document.getElementById('Schwinger').scrollIntoView()" style="cursor: pointer;">Computational Methods and Quantum Simulations for Quantum Systems</a> , and <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental particle physics</a>.<br> In addition to physics, I love programming, and I am currently exploring <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;">Physics Informed Neural Networks (PINNs)</a>.<br><br>
 
                 I received my masters' degree in 2024 from NIT Surat, India, where I worked with <a href="https://www.lpthe.jussieu.fr/lpthe/members.pl?key=2" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on Quantum Yang-Mills theories. Prior to that, I have also interned at various places, including a DAAD-WISE project at Jena in Germany, and institutes like TIFR, IISc, PRL in India.<br><br>
 
@@ -214,8 +214,14 @@
                 <div class="project">
                     <strong id="Schwinger">Numerical Simulation of the Schwinger Model</strong><br>
                     Obtained, numerically, the real-time dynamics of particle density and entanglement entropies for the Schwinger model mapped to a spin-lattice model.[Reproduced the experimental results of <a href='https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab' target="_blank">Muschik et al. (2023)</a>]<br>
-                    Developed a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the ground state of the Schwinger model. [Reproduced the experimental results of <a href='https://www.nature.com/articles/s41586-019-1177-4' target="_blank">Kokail et al. (2019)</a>]<br>
-                    Further implemented quantum adiabatic evolution to transform the ground state of a transverse field Hamiltonian into the ground state of the Schwinger Hamiltonian. Also implemented a PINN that outputs the state of the system, and trained it to minimize the energy to approximate the ground state of the Schwinger model.<br>
+                    To obtain the ground state of the Hamiltonian, 
+                    <ul>
+                        <li> Developed a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the <i>separable product state</i> best approximating the ground state. </li>
+                        <li>Developed and implemented a gradient descent algorithm for finding the Matrix Product State approximation of the ground state.</li>
+                        <li>Further employed quantum adiabatic evolution, and Physics Informed Neural Network to prepare the ground state.</li>
+                    </ul>
+                    <!-- Developed a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the ground state of the Schwinger model. [Reproduced the experimental results of <a href='https://www.nature.com/articles/s41586-019-1177-4' target="_blank">Kokail et al. (2019)</a>]<br>
+                    Further implemented quantum adiabatic evolution to transform the ground state of a transverse field Hamiltonian into the ground state of the Schwinger Hamiltonian. Also implemented a PINN that outputs the state of the system, and trained it to minimize the energy to approximate the ground state of the Schwinger model.<br> -->
                     <report><i class="fa-brands fa-github"></i> <a href="https://github.com/adithyarao3103/Schwinger_Model" target="_blank">Project</a></report>        
                 </div>
                 <div class="project">

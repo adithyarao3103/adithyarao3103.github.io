@@ -1,0 +1,24 @@
+{
+    "external": [
+        {
+            "title": "Gribov Ambiguity and Stochastic Quantization (Master's Thesis)",
+            "date": "[Aug 2023 - May 2024]",
+            "supervisor": "Prof. Laurent Baulieu, Sorbonne University, Paris & Dr. Vikash K. Ojha, SVNIT, Surat.",
+            "abstract": "The Gribov problem arises from the absence of a global section in the Yang-Mills fiber bundle due to the configuration space's non-trivial nature. We studied the Yang-Mills configuration space, particularly the Gribov and Fundamental Modular Regions, and the semi-classical implementation of path integral restriction to the Gribov Region. Additionally, we also explored Stochastic Quantization, an alternative c-number quantization formalism offering gauge fixing in Yang-Mills theory without the Gribov Problem.",
+            "links":[
+                {
+                    "class": "fas fa-book",
+                    "title": "Thesis",
+                    "link": "https://drive.google.com/file/d/1zdattyt4xw6VxPp4eoGy-5FT4h87p2Mq/view?usp=sharing",
+                },
+                {
+                    "class": "fa-solid fa-file-lines",
+                    "title": "Certificate",
+                    "link": "https://drive.google.com/file/d/1qH6WMull2hC6BGlO1CiNlOTe3BUo7KzG/view?usp=sharing"
+                }
+            ]
+        },
+
+
+    ]
+}
