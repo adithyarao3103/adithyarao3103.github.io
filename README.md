@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-Visitors: ![Visitors](https://visitor-counter-nine.vercel.app/show)
+![Visitors](https://visitor-counter-nine.vercel.app/show)
 
 After going through so many iterations finally settled on one!
 
