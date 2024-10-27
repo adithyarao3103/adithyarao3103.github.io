@@ -10,7 +10,7 @@
     z-index: 1001;
     padding-top: -1px;
     padding-right: 9px;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
     padding-left: 9px;
     /* border-radius: 10px; */
 }
@@ -29,6 +29,7 @@
 #name-mob{
     display: block;
     font-size: 5.5vh;
+    font-variant-caps: small-caps;
 }
 
 .socials-menu>a{
