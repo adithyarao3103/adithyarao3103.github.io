@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/tablet.css">
     <link rel="stylesheet" type="text/css" href="/css/mobile.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
     <!-- <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment" style="display:none"></iframe> -->
@@ -26,7 +26,7 @@
     </nav>
 
     <!-- <div class="main" id="main-landing">
-        <div class="bdrop"></div>
+        
         <span id="landing"></span>
         <div class="main-content">
             <div id="photo">
@@ -38,15 +38,15 @@
             <div id="landing-text-cont">
             <div id="landing-text">
                 <div id="landing-text-inner">
-                    <text><div class="bdrop"></div><span id="name-bar"> I AM ADITHYA... </span></text> <br><br>
-                    <text style="font-size: 2.2vw;"><div class="bdrop"></div> <span> A PHYSICIST,  </span></text><br>
+                    <text><span id="name-bar"> I AM ADITHYA... </span></text> <br><br>
+                    <text style="font-size: 2.2vw;"> <span> A PHYSICIST,  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
-                    <text  style="font-size: 2.2vw;"><div class="bdrop"></div> <span> DEBUGGING THE UNIVERSE  </span></text><br>
+                    <text  style="font-size: 2.2vw;"> <span> DEBUGGING THE UNIVERSE  </span></text><br>
                     <div style="width: 100%; height: 5px"></div>
-                    <text  style="font-size: 2.2vw;"> <div class="bdrop"></div> <span> PARTICLE BY PARTICLE...!!</span></text>
+                    <text  style="font-size: 2.2vw;">  <span> PARTICLE BY PARTICLE...!!</span></text>
                 </div>
             </div>
-            <div id="connect" onclick="document.getElementById('socials').scrollIntoView()"><div class="bdrop"></div> <span>CONNECT WITH ME!</span></div>
+            <div id="connect" onclick="document.getElementById('socials').scrollIntoView()"> <span>CONNECT WITH ME!</span></div>
         </div>
         <div id="landing-text-mobile">
             <div id="landing-text">
@@ -57,7 +57,7 @@
             </div>
             <div id="connect" onclick="{
                 if(checkMobile()) document.getElementById('socials-mobile').scrollIntoView(); else document.getElementById('socials').scrollIntoView();
-            };"><div class="bdrop"></div> <span>CONNECT WITH ME!</span></div>
+            };"> <span>CONNECT WITH ME!</span></div>
         </div>
         </div>
     </div> -->
@@ -65,32 +65,37 @@
     <div class="main">
         <div class="main-content" id="about">
         <div class="sec-head">
-            <div class="bdrop"></div>
+            
             <div id="photo">
+                <h1 style="margin:0" id="name-mob">I am Adithya...</h1>
                 <div id="photo-inner">
                     <div class="bdrop" style="border-radius: 10px;"></div>
-                    <img src="assets/pp.webp" alt="Adithya" id="profile-img">
+                    <img src="/assets/photo.webp" alt="Adithya" id="profile-img">
                 </div>
-                <socials class="social-icons" style="margin-top: 10px; transform: scale(0.75);">
-                    <a href="mailto:adithyarao3132001@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="https://github.com/adithyarao3103/" target="_blank"><i class="fab fa-github"></i></a>
+                <socials class="socials-menu">
+                    <a href="mailto:adithyarao3132001@gmail.com" target="_blank"> MAIL </a>
+                    <a href="https://github.com/adithyarao3103/" target="_blank"> GITHUB </a>
                     <!-- <a href="https://www.linkedin.com/in/adithya-a-rao-3103/" target="_blank"><i class="fab fa-linkedin"></i></a> -->
-                    <a href="files/Adithya_A_Rao_CV.pdf" download><i class="fa-solid fa-file-arrow-down"></i></a>
+                    <a href="files/Adithya_A_Rao_CV.pdf" download> CV </a>
+                    <a href="https://inspirehep.net/authors/2777228" target="_blank" >  INSPIREHEP </a>
+                    <a href="https://arxiv.org/a/rao_a_2.html" target="_blank">  ARXIV </a>
                 </socials>
             </div>
             </div>
             <div class="sec-body">
-                <div class="bdrop"></div>
-                <h1 style="margin:0">I am Adithya...</h1>
-                I am a physicist with broad interest in Quantum Physics. <br><br>
                 
-                My <a onclick="document.getElementById('projects').scrollIntoView()" style="cursor: pointer;">research so far</a> has primarily focused on theoretical and computational high-energy physics. <br>
-                Currently I am exploring the application of <a onclick="document.getElementById('Schwinger').scrollIntoView()" style="cursor: pointer;">Computational Methods and Quantum Simulations for Quantum Systems</a> , and <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental particle physics</a>.<br> In addition to physics, I love programming, and I am currently exploring <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;">Physics Informed Neural Networks (PINNs)</a>.<br><br>
+                <h1 style="margin:0" id="name">I am Adithya...</h1>
+                ... and I am a physicist. <br><br>
 
-                I received my masters' degree in 2024 from NIT Surat, India, where I worked with <a href="https://www.lpthe.jussieu.fr/lpthe/members.pl?key=2" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on Quantum Yang-Mills theories. Prior to that, I have also interned at various places, including a DAAD-WISE project at Jena in Germany, and institutes like TIFR, IISc, PRL in India.<br><br>
+                My primary interest is in the studies of Quantum Systems.<br><br>
+                
+                I am also interested in how numerical and computational techniques can aid physics, with a specific emphasis on numerical simulations for quantum systems. So far, I have worked on the simulations of <a onclick="document.getElementById('bfss').scrollIntoView()" style="cursor: pointer;">Lattice Gauge Theories</a> and QFTs mapped to <a onclick="document.getElementById('schwinger').scrollIntoView()" style="cursor: pointer;">Spin-Lattice Systems</a>. I am also interested in <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental particle physics</a>, especially on the data analysis sector. Recently, I have taken interest in machine learning techniques for physics, especially <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;"> Physics Informed Neural-Networks</a><br><br>
 
-                Click <a href="files/Adithya_A_Rao_CV.pdf" download>here</a> for my Curriculum Vitae<br>
-                Find my research works here  <a href="https://inspirehep.net/authors/2777228" target="blank">InspireHEP</a> <a href="https://arxiv.org/a/rao_a_2.html" target="blank">arxiv</a><br>
+                I received my masters' degree in 2024 from NIT Surat, India, where I worked with <a href="https://www.lpthe.jussieu.fr/lpthe/members.pl?key=2" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on Quantum Yang-Mills theories. Prior to that, I have also interned at various places, including a DAAD-WISE project at Jena in Germany, and institutes like TIFR, IISc, PRL in India.
+
+                <!-- Click <a href="files/Adithya_A_Rao_CV.pdf" download>here</a> for my Curriculum Vitae<br>
+                
+                Find my research works here  <a href="" target="blank">InspireHEP</a> <a href="" target="blank">arxiv</a><br> -->
                 <!-- or you might also find me contemplating on Indian Philosophy, trying to make sense of the absurd reality we live in and battling the existential crisis that follows.<br><br> -->
 
                 <!-- <i>Recently, I also was a young scientist participant at the Lindau Nobel Laureates Meeting!</i> -->
@@ -120,17 +125,17 @@
     <div class="main">
         <div class="main-content" id="research">
             <div class="sec-head">
-                <div class="bdrop"></div>
+                
                 <span>RESEARCH</span>
             </div>
             <div class="sec-body">
-                <div class="bdrop"></div>
+                
                 <h2 style="margin: 0;">Papers</h2>
                 <div class="project">
                     Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. , <i>“Estimating the Age of Universe via Scalar Field,”</i> in Proceedings of the XXV DAE-BRNS High Energy Physics (HEP) Symposium 2022, 12-16 December, Mohali, India, vol. 304, S. Jena, A. Shivaji, V. Bhardwaj, K. Lochan, H. K. Jassal, A. Joseph, and P. Khuswaha, Eds., Singapore: Springer Nature Singapore, 2024, pp. 1015-1016. <a href ="https://doi.org/10.1007/978-981-97-0289-3_272" target="_blank">doi:10.1007/978-981-97-0289-3_272</a>
                 </div>
                 <div class="project">
-                    Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. <i>"Interacting Tachyonic Scalar Field II."</i> arXiv, April 29, 2023. <a href="https://doi.org/10.48550/arXiv.2305.00277" target="_blank">https://doi.org/10.48550/arXiv.2305.00277</a>
+                    Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. <i>"Interacting Tachyonic Scalar Field II."</i> arXiv, April 29, 2023. <a href="https://doi.org/10.48550/arXiv.2305.00277" target="_blank">https:// doi.org/10.48550/ arXiv.2305.00277</a>
                 </div>
                 <h2 style="margin: 0;">Posters</h2>
                 <div class="project">
@@ -145,11 +150,11 @@
     <div class="main">
         <div class="main-content" id="projects">
             <div class="sec-head">
-                <div class="bdrop"></div>
+                
                 <span>PROJECTS</span>
             </div>
             <div class="sec-body">
-                <div class="bdrop"></div>
+                
                 <h2 style="margin: 0;">External Projects</h2>
                 <div class="project">
                     <strong>Gribov Ambiguity and Stochastic Quantization (Master's Thesis)</strong>  <date>[Aug 2023 - May 2024]</date><br>
@@ -165,7 +170,7 @@
                     <i class="fas fa-book"></i> <a href="https://drive.google.com/file/d/1Gzluz7azzx-d5hvnKyC0WCkISnyJC5yM/view?usp=sharing" target="_blank">Report</a></report>
                     <report><i class="fa-brands fa-github"></i> <a href="https://github.com/adithyarao3103/Spanning-Trees-on-Lattice" target="_blank">Project</a></report>                
                 </div>
-                <div class="project">
+                <div class="project" id="bfss">
                     <strong>BFSS Model on the Lattice (DAAD-WISE project)</strong>  <date>[May 2023 - July 2023]</date><br>
                     <i>Supervisor:</i> Dr. habil. Georg Bergner, Friedrich-Schiller-Universität Jena, Germany<br>
                     <i>Abstract:</i> I contributed to the lattice implementation by writing Energy and 4-point correlator observables in the C++ implementation of the model, and further analyzing the simulation data to verify the model's behavior. We observed an anomalous behavior of gauge invariant 4-point correlators. To confirm the validity of the code, I wrote the same observable in the existing FORTRAN implementation and cross-verified the simulation results. Further, I also computed the Fermionic Energy on the lattice and verified that the temperature dependence matched with the approximate energy formula obtained by the supersymmetric Ward identities.<br>
@@ -213,7 +218,7 @@
                 </div>
                 <h2 style="margin:0;" id="progProj">Independent Projects</h2>
                 <div class="project">
-                    <strong id="Schwinger">Numerical Simulation of the Schwinger Model</strong><br>
+                    <strong id="schwinger">Numerical Simulation of the Schwinger Model</strong><br>
                     Obtained, numerically, the real-time dynamics of particle density and entanglement entropies for the Schwinger model mapped to a spin-lattice model.[Reproduced the experimental results of <a href='https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab' target="_blank">Muschik et al. (2023)</a>]<br>
                     To obtain the ground state of the Hamiltonian, 
                     <ul>
@@ -244,11 +249,11 @@
     <div class="main">
         <div class="main-content" id="honors">
             <div class="sec-head">
-                <div class="bdrop"></div>
+                
                 <span>HONORS</span>
             </div>
             <div class="sec-body">
-                <div class="bdrop"></div>
+                
                 <ul class="highlights-list">
                     <li><b>2024</b>: Young Scientist Participant, 73rd Lindau Nobel Laureate Meeting in Physics, one of 640 international young scientists.</li>
                     <li><b>2023</b>: DAAD-WISE award, fully funded research project at FSU Jena, one of 130 Indian students.</li>
@@ -263,11 +268,11 @@
     <div class="main" id="other-main">
         <div class="main-content" id="other">
             <div class="sec-head">
-                <div class="bdrop"></div>
+                
                 <span>OTHER</span>
             </div>
             <div class="sec-body">
-                <div class="bdrop"></div>
+                
                 Sometime you can find me sketching too! You can find a few of my sketches <a href="https://drive.google.com/drive/folders/1G9o3dKXDkzIb25WU0w3e7vetrBu5R5wk?usp=sharing" target='_blank'   >here</a><br><br>
                 I also love web-designing (I do it mostly with pure CSS/JS. Yes I am crazy!). A few previous iterations (not updated) of my website are here:<br>
                 <a href="/old-website" target='_blank'   >Click here for the most recent one</a> and  <a href="/older-website" target='_blank'   >here for a bit older one</a>. The older one took a lot of sweat and soil! But was dumped at the end due to it being not relevant to an academic setting... Since I gave up on that iteration, the older one is also not optimized for mobile devices!<br>
@@ -283,7 +288,7 @@
     </div>
 
     <div id="socials"> 
-        <!-- <div class="bdrop"></div> -->
+        <!--  -->
         <div class="email" style="margin-bottom: 30px;">I'm always open to new opportunities and collaborations. Feel free to reach out!</div>
         <div class="email"> Write to me at <a href="mailto:adithyarao3132001@gmail.com" target="_blank" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
         <div class="social-text">
@@ -298,7 +303,7 @@
     </div>
 
     <div id="socials-mobile">
-        <div class="bdrop"></div>
+        
         <div class="email" style="margin-bottom: 30px;">I'm always open to new opportunities and collaborations. Feel free to reach out!</div>
         <div class="email"> Write to me at <br> <a href="mailto:adithyarao3132001@gmail.com" target="_blank" style="font-weight: normal; color:black;">adithyarao3132001 [at] gmail [dot] com</a></div>
         <div class="social-text">
