@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-[![Visitors](https://visitor-counter-adithyarao3103.vercel.app/show?name=adithyarao3103)](https://visitor-counter-adithyarao3103.vercel.app)
+[![Visitors](https://visitor-counter-adithyarao3103.vercel.app/show?name=website)](https://visitor-counter-adithyarao3103.vercel.app)
 
 (Visitors since 18-10-2024)
 
