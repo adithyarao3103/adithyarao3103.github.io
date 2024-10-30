@@ -139,9 +139,9 @@ body, html{
 }
 
 #about > .sec-head{
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    min-height: 80vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    min-height: 90vh;
 }
 
 #main-landing{
