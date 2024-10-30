@@ -12,8 +12,10 @@
     --thumb-color: rgb(255, 255, 255);
     --thumb-hover-color: #3594c7;
     --thumb-background-color: #173960;
-    --body-bg: url('/assets/background.webp');
+    /* --body-bg: url('/assets/background.webp'); */
     --body-bg: url('/assets/image.webp');
+    --complementary: #5f3f1e;
+    --body-bg-mobile: url('/assets/image-mob.webp');
 }
 
 
