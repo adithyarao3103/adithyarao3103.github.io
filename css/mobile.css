@@ -1,6 +1,6 @@
 .menu-toggle {
     display: none;
-    background: var(--link-color);
+    background: transparent;
     border: 2px solid var(--complementary);
     color: var(--complementary);
     font-size: 3.5vh;
@@ -15,16 +15,24 @@
     /* border-radius: 10px; */
 }
 
-#name-mob{
+#name-span-mob{
     display: none;
 }
 
-#name{
+#name-span{
     display: block;
+}
+
+#profile-img-mob{
+    display: none;
 }
 
 
 @media (max-width: 600px) {
+
+:root{
+    --link-color: #e8fc8e;
+}
 
 body, html{
     background: var(--body-bg-mobile);
@@ -32,28 +40,41 @@ body, html{
     background-size: cover;
 }
 
+#name-span-mob{
+    display: block;
+    font-size: 3vh;
+    font-weight: 400;
+}
+
 #name-mob{
     display: block;
-    font-size: 6.5vh;
-    font-variant: all-small-caps;
-    background-color: #faf8f4;
+    font-size: 5.5vh;
+    /* font-variant: all-small-caps; */
+    /* background-color: #faf8f4; */
     width: 100vw;
     padding-bottom: 7px;
     /* text-transform: uppercase ; */
 }
 
+#name-span{
+    display: none;
+}
+
+#profile-img{
+    display: none;
+}
+
 .socials-menu>a{
     font-size: 2.25vh;
-    width: calc(100% - 10px);
+    width: calc(70vw - 10px);
 }
 
 .socials-menu{
     margin: 0;
     width: 100%;
-}
-
-#name{
-    display: none;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .main{
@@ -71,13 +92,10 @@ body, html{
     scroll-margin-top:0px ;
 }
 
-#about> .sec-head{
-    position: relative;
-    top: 0;
-}
-
 .sec-head{
     z-index: 2;
+    max-height: fit-content;
+    /* background: white; */
 }
 
 
@@ -139,9 +157,20 @@ body, html{
 }
 
 #about > .sec-head{
-    padding-top: 5vh;
+    padding-top: 0;
     padding-bottom: 5vh;
-    min-height: 90vh;
+    min-height: 95vh;
+    background-color: white;
+    position: relative;
+    top: 0;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#about> .sec-head> *{
+    background-color: white;
 }
 
 #main-landing{
@@ -161,27 +190,32 @@ body, html{
     align-items: center;
     transform: translateX(0);
     left: 0;
-    row-gap: 5px;
+    row-gap: 0px;
 }
 
 
 #photo-inner{
-    width: 70vw;
-    height: 70vw;
+    width: 100vw;
+    height: 80vw;
 }
 
 #photo{
-    width: 70vw;
+    width: 100vw;
     padding: 0;
     height: fit-content;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    /* position: absolute; */
+    /* top: 0; */
 }
 
-#about> .sec-head{
-    height: auto;
+#profile-img-mob{
+    display: block;
+    width: 100vw;
+    height: 80vw;
 }
+
 
 /* #photo-inner{
     background-color: #ffffff70;
