@@ -3,16 +3,17 @@
     background: transparent;
     border: 2px solid var(--complementary);
     color: var(--complementary);
-    font-size: 3.5vh;
+    font-size: 3.25vh;
     cursor: pointer;
     font-weight: 700;
     margin-right: 10px;
     z-index: 1001;
-    padding-top: -1px;
-    padding-right: 9px;
-    padding-bottom: 4px;
-    padding-left: 9px;
+    /* padding-top: -1px; */
+    /* padding-right: 9px; */
+    /* padding-bottom: 1px; */
+    /* padding-left: 8px; */
     /* border-radius: 10px; */
+    position: relative;
 }
 
 #name-span-mob{
