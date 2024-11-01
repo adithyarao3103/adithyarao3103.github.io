@@ -244,14 +244,14 @@ text, text>span{
 
 }
 
-.sec-head, .sec-body, #socials-mobile, #navbar-mob, #navbar{
-    /* border-top: 2px solid black; */
-    /* border-bottom: 2px solid black; */
-    /* border-right: none; */
-    /* border-left: none;
+/* .sec-head, .sec-body, #socials-mobile, #navbar-mob, #navbar{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: none;
+    border-left: none;
     box-shadow: 0px 4px 0 4px black,
-    0px 12px 0 4px var(--border-color); */
-}
+    0px 12px 0 4px var(--border-color);
+} */
 
 /* #about> .sec-head{
     background-color: rgba(255, 255, 255, 0.9);
