@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+*{
+    font-family: 'Roboto Slab';
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #28022b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #444293;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: white ;
+}
+
+
+::selection{
+    color: white;
+    background: black;
+}
+
+::-moz-selection{
+    color: white;
+    background: black;
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    background: url(/assets/interactive.webp);
+    overflow-x: hidden;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+#main-cont{
+    width: 100vw;
+}
+
+#main{
+    width: 55%;
+    min-height: 50vh;
+    padding: 50px;
+    position: relative;
+    left: 50vw;
+    transform: translateX(-50%);
+    background: white;
+    height: fit-content;
+}
+
+
+.link {
+    background-color: #a3b9ff;
+    color: black;
+    text-decoration: none;
+    padding: 2px 5px;
+    transition: all 0.2s;
+    font-size: 1.15em;
+    font-weight: bolder;
+}
+
+.link:hover{
+    background-color: #7795f8;
+}
+
+.desc{
+    margin-top: 10px;
+}
+
+
+.project {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    /* border-radius: 20px; */
+    font-size: 0.9em;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.397);
+    cursor: pointer;
+}
+
+#home{
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    font-size: calc(2.5vh + 5px);
+    aspect-ratio: 1;
+    padding-right: 7px;
+    padding-left: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    background-color: white;
+}
+
+@media (max-width: 700px) {
+    #main{
+        width: calc(100% - 50px);
+        padding: 25px
+    }
+
+    body{
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
+
+}
