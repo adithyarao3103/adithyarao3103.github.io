@@ -1,8 +1,7 @@
 # Personal Portfolio
 
-[![Visitors](https://visitor-counter-adithyarao3103.vercel.app/show?name=website&theme=flat&tb=222d3d&cb=4493f8)](https://visitor-counter-adithyarao3103.vercel.app)
+[![Visitors](https://visitor-counter-adithyarao3103.vercel.app/show?name=website&theme=default&tb=000000&cb=f8bf2b&cf=000000&text=Visitors%20since%2018-10-24)](https://visitor-counter-adithyarao3103.vercel.app)
 
-(Visitors since 18-10-2024)
 
 Check out the previous versions here:
 
