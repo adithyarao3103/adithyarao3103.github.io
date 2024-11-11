@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adithya A Rao | Art Gallery</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-4xl font-bold mb-8 text-center">Art Gallery</h1>
+    <p id="desc">Indian architecture is a treasure trove for art lovers. Each carving on the walls of the temples is a masterpiece and a treat to your eyes. I love putting a perspective to these carvings by reproducing them on paper. Here are a few recent sketches of mine. </p>
+    <div class="gallery">
+      <div class="gallery-item" data-title="Vighnaharta" data-description="Ganapati, the elephant headed god, is also known as Vighnaharta, which literally translates to 'the remover of obstacles'. " data-image="Sketches/ganpati.jpeg">
+        <img src="Sketches/min/ganpati-min.jpeg" alt="Vighnaharta">
+        <h3>Vighnaharta</h3>
+        <p>Ganapati, the elephant headed god, is also known as Vighnaharta, which literally translates to 'the remover of obstacles'. </p>
+      </div>
+
+      <div class="gallery-item" data-title="The wrath of the protector" data-description="Narasimha, in his half-human, half-lion form, casting his divine judgement on the demon Hiranyakashipu. Chennakeshava Temple, Belur, India" data-image="Sketches/narasimha.jpeg">
+        <img src="Sketches/min/narasimha-min.jpeg" alt="Wrath of the protector">
+        <h3>Wrath of the protector</h3>
+        <p>Narasimha, in his half-human, half-lion form, casting his divine judgement on the demon Hiranyakashipu. Chennakeshava Temple, Belur, India</p>
+      </div>
+
+      <div class="gallery-item" data-title="Wheel of time" data-description="One of the wheels on the Konark sun temple, dedicated to the the source of all life, and the supreme soul who brings light and warmth to the world" data-image="Sketches/konark.jpeg">
+        <img src="Sketches/min/konark-min.jpeg" alt="The wheel of life">
+        <h3>Wheel of life</h3>
+        <p>One of the wheels on the Konark sun temple, dedicated to the the source of all life, and the supreme soul who brings light and warmth to the world</p>
+      </div>
+  
+      <div class="gallery-item" data-title="The cosmic dance" data-description="Shiva, the destroyer of the universe, dancing his cosmic dance evoking ripples of destruction spelling the end of the world. Kedareshwara Temple, Halebidu, India" data-image="Sketches/shiva.jpeg">
+        <img src="Sketches/min/shiva-min.jpeg" alt="The cosmic dance of the destroyer">
+        <h3>The cosmic dance</h3>
+        <p>Shiva, the destroyer of the universe, dancing his cosmic dance evoking ripples of destruction spelling the end of the world. Kedareshwara Temple, Halebidu, India</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for detailed view -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImage" src="" alt="Art Piece">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
