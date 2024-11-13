@@ -28,6 +28,7 @@ padding: 2rem;
 background: white;
 min-height: 100vh;
 padding-top: 10vh;
+padding-bottom: 15vh;
 padding-left: 2.5vw;
 padding-right: 2.5vw;
 box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
@@ -75,12 +76,12 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 width: 100%;
 height: 16rem;
 object-fit: cover;
-filter: brightness(1);
+filter: brightness(0.95);
 transition: all 0.3s ease;
 }
 
 .gallery-item:hover img {
-filter: brightness(0.8);
+filter: brightness(1);
 }
 
 .gallery-item h3 {
@@ -125,7 +126,7 @@ text-align: center;
 }
 
 .modal img {
-width: 100%;
+width: 95%;
 height: auto;
 border-radius: 8px;
 }
