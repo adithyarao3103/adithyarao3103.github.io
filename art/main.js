@@ -1,3 +1,31 @@
+async function fetchComments() {
+  const commentsDiv = document.getElementById('comments-div');
+  
+  try {
+      const response = await fetch('https://comment-system-adithyarao3103.vercel.app/api/get-comments');
+      
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const htmlContent = await response.text();
+      
+      // Safely insert the HTML content
+      commentsDiv.innerHTML = htmlContent;
+      
+  } catch (error) {
+      console.error('Error fetching comments:', error);
+      commentsDiv.innerHTML = `
+          <div class="error">
+              Sorry, there was an error loading the comments. Please try again later.
+          </div>
+      `;
+  }
+}
+
+// Fetch comments when the page loads
+document.addEventListener('DOMContentLoaded', fetchComments);
+
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 const modalImage = document.getElementById('modalImage');
