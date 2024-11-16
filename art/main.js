@@ -12,6 +12,15 @@ async function fetchComments() {
       
       // Safely insert the HTML content
       commentsDiv.innerHTML = htmlContent;
+
+      const script= commentsDiv.querySelector('script');
+      if (script) {
+          const newScript = document.createElement('script');
+          newScript.text = script.innerText;
+          document.head.appendChild(newScript);
+      } else {
+          console.error('Script tag not found in the fetched content.');
+      }
       
   } catch (error) {
       console.error('Error fetching comments:', error);
@@ -23,8 +32,7 @@ async function fetchComments() {
   }
 }
 
-// Fetch comments when the page loads
-document.addEventListener('DOMContentLoaded', fetchComments);
+fetchComments();
 
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
