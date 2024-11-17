@@ -2,7 +2,7 @@ async function fetchComments() {
   const commentsDiv = document.getElementById('comments-div');
   
   try {
-      const response = await fetch('https://comment-system-adithyarao3103.vercel.app/api/get-comments');
+      const response = await fetch('https://comments-manager-adithyarao3103.vercel.app/api/get-comments');
       
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
