@@ -8,19 +8,22 @@ async function fetchComments() {
           throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const htmlContent = await response.text();
+      const htmlContentText = await response.text();
+      const parser = new DOMParser();
+      const htmlContent = parser.parseFromString(htmlContentText, 'text/html');
+      const comments = htmlContent.querySelector('#comments-container');
+      const style = htmlContent.querySelector('style');
+      const script = htmlContent.querySelector('script');
       
+      console.log('Comments:', comments);
       // Safely insert the HTML content
-      commentsDiv.innerHTML = htmlContent;
-
-      const script= commentsDiv.querySelector('script');
-      if (script) {
-          const newScript = document.createElement('script');
-          newScript.text = script.innerText;
-          document.head.appendChild(newScript);
-      } else {
-          console.error('Script tag not found in the fetched content.');
-      }
+      commentsDiv.innerHTML = comments.innerHTML;
+      const newScript = document.createElement('script');
+      newScript.text = script.innerText;
+      document.head.appendChild(newScript);
+      const newStyle = document.createElement('style');
+      newStyle.innerHTML = style.innerHTML;
+      document.head.appendChild(newStyle);
       
   } catch (error) {
       console.error('Error fetching comments:', error);

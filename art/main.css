@@ -160,3 +160,7 @@ cursor: pointer;
 .close-modal:hover {
 background-color: darkred;
 }
+
+#comments-div{
+    margin-top: 5vh;
+}
