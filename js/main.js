@@ -44,12 +44,53 @@ function setBackgroundGifPreloaded(divElement, gifUrl) {
         divElement.style.backgroundImage = `url('${gifUrl}')`;
     };
     gifImage.onerror = () => {
-        console.error('Failed to load GIF');
+        console.error('Failed to load media');
     };
     gifImage.src = gifUrl;
 }
+function setVideoPreloaded(videoElement, videoUrl) {
+    // Preserve existing source if any
+    const currentSrc = videoElement.currentSrc || videoElement.src;
+    
+    // Create a new video element for preloading
+    const preloadVideo = document.createElement('video');
+    
+    // Set up event listeners
+    preloadVideo.onloadedmetadata = () => {
+        // Temporarily pause any current playback
+        const wasPaused = videoElement.paused;
+        const currentTime = videoElement.currentTime;
 
-setBackgroundGifPreloaded(document.getElementById("bg_div"), "/assets/bg.gif");
+        // Create a new source element instead of directly changing src
+        const newSource = document.createElement('source');
+        newSource.src = videoUrl;
+        
+        // Replace existing source elements
+        while (videoElement.firstChild) {
+            videoElement.removeChild(videoElement.firstChild);
+        }
+        videoElement.appendChild(newSource);
+
+        // Reload the video without disrupting playback
+        videoElement.load();
+
+        // Restore previous playback state if needed
+        if (!wasPaused) {
+            videoElement.play();
+        }
+        videoElement.currentTime = currentTime;
+    };
+    
+    preloadVideo.onerror = () => {
+        console.error('Failed to preload video:', videoUrl);
+    };
+    
+    // Start preloading
+    preloadVideo.src = videoUrl;
+    preloadVideo.preload = 'metadata';
+}
+
+setVideoPreloaded(document.getElementById("bg_div"), "/assets/bg.mp4");
 
 function checkMobile(){
     return(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile'))

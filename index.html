@@ -18,8 +18,10 @@
 <body>
     <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=website" style="display:none"></iframe>
 
-    <div id="bg_div"><div class="bdrop-bg"></div></div>
-
+    <div id="bg-cont">
+        <video onloadstart="this.playbackRate = 0.5;" autoplay muted loop id="bg_div"><source src="/assets/frame-bg.mp4" type="video/mp4"></video>
+        <div class="bdrop-bg"></div>
+    </div>
     <nav class="navbar" id="navbar-mob">
         <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
     </nav>
