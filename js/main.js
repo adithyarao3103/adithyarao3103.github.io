@@ -49,45 +49,59 @@ function setBackgroundGifPreloaded(divElement, gifUrl) {
     gifImage.src = gifUrl;
 }
 function setVideoPreloaded(videoElement, videoUrl) {
-    // Preserve existing source if any
-    const currentSrc = videoElement.currentSrc || videoElement.src;
+    // If the video source is already the same, do nothing
+    if (videoElement.currentSrc === videoUrl) {
+        return;
+    }
+
+    // Create a new video element specifically for preloading
+    const preloadVideo = new Image();
     
-    // Create a new video element for preloading
-    const preloadVideo = document.createElement('video');
-    
-    // Set up event listeners
-    preloadVideo.onloadedmetadata = () => {
-        // Temporarily pause any current playback
+    // Flag to track if the video is ready
+    let isVideoReady = false;
+
+    // Create a blob URL handler
+    const handleBlobUrl = (blobUrl) => {
+        // Preserve current video state
         const wasPaused = videoElement.paused;
         const currentTime = videoElement.currentTime;
 
-        // Create a new source element instead of directly changing src
-        const newSource = document.createElement('source');
-        newSource.src = videoUrl;
-        
-        // Replace existing source elements
+        // Set the source to the blob URL without clearing the current video
+        const sourceElement = document.createElement('source');
+        sourceElement.src = blobUrl;
+        sourceElement.type = 'video/mp4'; // Adjust type as needed
+
+        // Replace existing sources
         while (videoElement.firstChild) {
             videoElement.removeChild(videoElement.firstChild);
         }
-        videoElement.appendChild(newSource);
+        videoElement.appendChild(sourceElement);
 
-        // Reload the video without disrupting playback
+        // Reload the video
         videoElement.load();
 
-        // Restore previous playback state if needed
+        // Restore previous playback state
         if (!wasPaused) {
             videoElement.play();
         }
         videoElement.currentTime = currentTime;
     };
-    
-    preloadVideo.onerror = () => {
-        console.error('Failed to preload video:', videoUrl);
-    };
-    
-    // Start preloading
-    preloadVideo.src = videoUrl;
-    preloadVideo.preload = 'metadata';
+
+    // Fetch the video as a blob to prevent network interruptions
+    fetch(videoUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            handleBlobUrl(blobUrl);
+        })
+        .catch(error => {
+            console.error('Video preload failed:', error);
+        });
 }
 
 setVideoPreloaded(document.getElementById("bg_div"), "/assets/bg.mp4");
