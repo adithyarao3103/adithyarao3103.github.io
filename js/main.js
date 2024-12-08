@@ -38,73 +38,126 @@
 //     $(this).html(result);
 // });
 
-function setBackgroundGifPreloaded(divElement, gifUrl) {
-    const gifImage = new Image();
-    gifImage.onload = () => {
-        divElement.style.backgroundImage = `url('${gifUrl}')`;
-    };
-    gifImage.onerror = () => {
-        console.error('Failed to load media');
-    };
-    gifImage.src = gifUrl;
-}
-function setVideoPreloaded(videoElement, videoUrl) {
-    // If the video source is already the same, do nothing
-    if (videoElement.currentSrc === videoUrl) {
-        return;
-    }
+// function setVideoPreloaded(videoElement, videoUrl) {
+//     // If the video source is already the same, do nothing
+//     if (videoElement.currentSrc === videoUrl) {
+//         return;
+//     }
 
-    // Create a new video element specifically for preloading
-    const preloadVideo = new Image();
+//     // Create a hidden video element for preloading
+//     const preloadVideo = document.createElement('video');
+//     preloadVideo.style.display = 'none';
+//     document.body.appendChild(preloadVideo);
+
+//     // Capture current video state
+//     const currentSrc = videoElement.currentSrc;
+//     const isPaused = videoElement.paused;
+//     const currentTime = videoElement.currentTime;
+
+//     // Event listener for successful preload
+//     preloadVideo.onloadedmetadata = () => {
+//         // Clone the preloaded video's track to the original video
+//         const clonedTracks = Array.from(preloadVideo.textTracks);
+        
+//         // Temporarily pause the original video
+//         videoElement.pause();
+
+//         // Preserve all existing attributes and tracks
+//         while (videoElement.firstChild) {
+//             videoElement.removeChild(videoElement.firstChild);
+//         }
+
+//         // Clone tracks
+//         clonedTracks.forEach(track => {
+//             const clonedTrack = document.createElement('track');
+//             clonedTrack.kind = track.kind;
+//             clonedTrack.label = track.label;
+//             clonedTrack.srclang = track.language;
+//             clonedTrack.src = track.src;
+//             videoElement.appendChild(clonedTrack);
+//         });
+
+//         // Create and append new source
+//         const newSource = document.createElement('source');
+//         newSource.src = videoUrl;
+//         videoElement.appendChild(newSource);
+
+//         // Reload video without clearing current content
+//         videoElement.load();
+
+//         // Restore previous state
+//         videoElement.currentTime = currentTime;
+//         if (!isPaused) {
+//             videoElement.play();
+//         }
+
+//         // Clean up preload video
+//         document.body.removeChild(preloadVideo);
+//     };
+
+//     // Error handling
+//     preloadVideo.onerror = () => {
+//         console.error('Failed to preload video:', videoUrl);
+//         document.body.removeChild(preloadVideo);
+//     };
+
+//     // Start preloading
+//     preloadVideo.src = videoUrl;
+// }
+
+function createVideoBackground(videoSrc) {
+    // Create the container div
+    const bgContainer = document.createElement('div');
+    bgContainer.id = 'bg-cont';
+
+    // Create the video element
+    const videoElement = document.createElement('video');
+    videoElement.id = 'bg_div';
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.loop = true;
     
-    // Flag to track if the video is ready
-    let isVideoReady = false;
-
-    // Create a blob URL handler
-    const handleBlobUrl = (blobUrl) => {
-        // Preserve current video state
-        const wasPaused = videoElement.paused;
-        const currentTime = videoElement.currentTime;
-
-        // Set the source to the blob URL without clearing the current video
-        const sourceElement = document.createElement('source');
-        sourceElement.src = blobUrl;
-        sourceElement.type = 'video/mp4'; // Adjust type as needed
-
-        // Replace existing sources
-        while (videoElement.firstChild) {
-            videoElement.removeChild(videoElement.firstChild);
-        }
-        videoElement.appendChild(sourceElement);
-
-        // Reload the video
-        videoElement.load();
-
-        // Restore previous playback state
-        if (!wasPaused) {
-            videoElement.play();
-        }
-        videoElement.currentTime = currentTime;
+    // Add onloadstart event to set playback rate
+    videoElement.onloadstart = function() {
+        this.playbackRate = 0.5;
     };
 
-    // Fetch the video as a blob to prevent network interruptions
-    fetch(videoUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.blob();
-        })
-        .then(blob => {
-            const blobUrl = URL.createObjectURL(blob);
-            handleBlobUrl(blobUrl);
-        })
-        .catch(error => {
-            console.error('Video preload failed:', error);
-        });
+    // Create source element
+    const sourceElement = document.createElement('source');
+    sourceElement.src = videoSrc;
+    sourceElement.type = 'video/mp4';
+
+    // Append source to video
+    videoElement.appendChild(sourceElement);
+
+    // Create backdrop div
+    const backdropDiv = document.createElement('div');
+    backdropDiv.className = 'bdrop-bg';
+
+    // Append video and backdrop to container
+    bgContainer.appendChild(videoElement);
+    bgContainer.appendChild(backdropDiv);
+
+    // Function to append to DOM when video is ready
+    const appendToDomWhenReady = () => {
+        if (videoElement.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+            document.body.appendChild(bgContainer);
+            videoElement.removeEventListener('canplay', appendToDomWhenReady);
+        }
+    };
+
+    // Add event listener to append when video is ready
+    videoElement.addEventListener('canplay', appendToDomWhenReady);
+
+    // Attempt initial append in case video is already cached
+    appendToDomWhenReady();
+
+    return bgContainer;
 }
 
-setVideoPreloaded(document.getElementById("bg_div"), "/assets/bg.mp4");
+createVideoBackground('/assets/bg.mp4');
+
+// setVideoPreloaded(document.getElementById("bg_div"), "/assets/bg.mp4");
 
 function checkMobile(){
     return(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile'))
