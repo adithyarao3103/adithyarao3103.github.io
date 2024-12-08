@@ -38,6 +38,19 @@
 //     $(this).html(result);
 // });
 
+function setBackgroundGifPreloaded(divElement, gifUrl) {
+    const gifImage = new Image();
+    gifImage.onload = () => {
+        divElement.style.backgroundImage = `url('${gifUrl}')`;
+    };
+    gifImage.onerror = () => {
+        console.error('Failed to load GIF');
+    };
+    gifImage.src = gifUrl;
+}
+
+setBackgroundGifPreloaded(document.getElementById("bg_div"), "/assets/bg.gif");
+
 function checkMobile(){
     return(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile'))
 }
