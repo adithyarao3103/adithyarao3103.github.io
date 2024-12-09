@@ -2,7 +2,7 @@
     display: none;
     background: transparent;
     border: 2px solid var(--complementary);
-    color: var(--complementary);
+    color:var(--complementary);
     font-size: 3.15vh;
     cursor: pointer;
     font-weight: 700;
@@ -301,7 +301,7 @@ text, text>span{
 
 #socials-mobile{
     display: block;
-    margin-top: 15vw;
+    margin-top: 55vw;
     width: calc(100vw - 4vh);
     position: relative;
     background-color: #ffffff;
