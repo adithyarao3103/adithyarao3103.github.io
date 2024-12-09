@@ -32,7 +32,8 @@
 @media (max-width: 600px) {
 
 :root{
-    --link-color: #e8fc8e;
+    /* --link-color: #e8fc8e; */
+    --link-color: #f8bf2b;
 }
 
 body, html{
