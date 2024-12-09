@@ -1,166 +1,76 @@
-//     String.prototype.replaceAll = function(search, replacement) {
-//     var target = this;
-//     return target.replace(new RegExp(search, 'g'), replacement);
-// };
+vids = ['universe.mp4', 'lattice.mp4'];
+init_vids = ['frame-universe.mp4', 'frame-lattice.mp4', 'frame-cern.mp4'];
+bgs = ['frame-universe.jpg', 'frame-lattice.webp', 'frame-cern.webp'];
 
-//     $("text").each(function(){
-//         var str = $(this).html();
-//         var re = /[^\s]/;
-//         var subst = '<span><div class="bdrop"></div>$&</span>';
-//         var result = str.replaceAll(re, subst);
-//         $(this).html(result);
-//     }
-// );
+descs = [
+    `simulation of the entire universe on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
+    `lattice simulation of the Quantum Chromodynamics Vacuum on a supercomputer by <a href="http://www.physics.adelaide.edu.au/theory/staff/leinweber/VisualQCD/Nobel/index.html" target="_blank">Derek B. Leinweber</a>`,
+    `nothing`
+]
 
-// String.prototype.replaceAll = function(search, replacement) {
-//     var target = this;
-//     return target.replace(new RegExp(search, 'g'), replacement);
-// };
+choice = Math.floor(Math.random() * vids.length);
 
-// $("text").each(function(){
-//     var str = $(this).html();
-//     var re = /[^\s]+/g; // Matches sequences of non-whitespace characters
-//     var subst = '<span><div class="bdrop"></div>$&</span>';
-//     var result = str.replaceAll(re, subst);
-//     $(this).html(result);
-// });
+document.body.style.backgroundImage = `url(/assets/${bgs[choice]})`;
+document.getElementById("vid-desc").innerHTML = descs[choice];
 
-// String.prototype.replaceAll = function(search, replacement) {
-//     var target = this;
-//     return target.replace(new RegExp(search, 'g'), replacement);
-// };
-
-// $("text").each(function(){
-//     var str = $(this).html();
-//     var re = /./g; // Matches every character, including whitespace
-//     var subst = '<span><div class="bdrop"></div>$&</span>';
-//     var result = str.replaceAll(re, subst);
-//     $(this).html(result);
-// });
-
-// function setVideoPreloaded(videoElement, videoUrl) {
-//     // If the video source is already the same, do nothing
-//     if (videoElement.currentSrc === videoUrl) {
-//         return;
-//     }
-
-//     // Create a hidden video element for preloading
-//     const preloadVideo = document.createElement('video');
-//     preloadVideo.style.display = 'none';
-//     document.body.appendChild(preloadVideo);
-
-//     // Capture current video state
-//     const currentSrc = videoElement.currentSrc;
-//     const isPaused = videoElement.paused;
-//     const currentTime = videoElement.currentTime;
-
-//     // Event listener for successful preload
-//     preloadVideo.onloadedmetadata = () => {
-//         // Clone the preloaded video's track to the original video
-//         const clonedTracks = Array.from(preloadVideo.textTracks);
-        
-//         // Temporarily pause the original video
-//         videoElement.pause();
-
-//         // Preserve all existing attributes and tracks
-//         while (videoElement.firstChild) {
-//             videoElement.removeChild(videoElement.firstChild);
-//         }
-
-//         // Clone tracks
-//         clonedTracks.forEach(track => {
-//             const clonedTrack = document.createElement('track');
-//             clonedTrack.kind = track.kind;
-//             clonedTrack.label = track.label;
-//             clonedTrack.srclang = track.language;
-//             clonedTrack.src = track.src;
-//             videoElement.appendChild(clonedTrack);
-//         });
-
-//         // Create and append new source
-//         const newSource = document.createElement('source');
-//         newSource.src = videoUrl;
-//         videoElement.appendChild(newSource);
-
-//         // Reload video without clearing current content
-//         videoElement.load();
-
-//         // Restore previous state
-//         videoElement.currentTime = currentTime;
-//         if (!isPaused) {
-//             videoElement.play();
-//         }
-
-//         // Clean up preload video
-//         document.body.removeChild(preloadVideo);
-//     };
-
-//     // Error handling
-//     preloadVideo.onerror = () => {
-//         console.error('Failed to preload video:', videoUrl);
-//         document.body.removeChild(preloadVideo);
-//     };
-
-//     // Start preloading
-//     preloadVideo.src = videoUrl;
-// }
-
-function createVideoBackground(videoSrc) {
-    // Create the container div
+function createInitialBackground(){
     const bgContainer = document.createElement('div');
     bgContainer.className = 'bg-cont';
+    bgContainer.id = 'before-bg';
+    bgContainer.innerHTML = `
+        <div class="bg-cont" id="before-bg">
+            <video onloadstart="this.playbackRate = 0.5;" autoplay muted loop class="bg_div"><source src="/assets/${init_vids[choice]}" type="video/mp4"></video>
+            <div class="bdrop-bg"></div>
+        </div>
+    `;
+    document.body.appendChild(bgContainer);
+}
 
-    // Create the video element
+createInitialBackground();
+
+function createVideoBackground(videoSrc) {
+    const bgContainer = document.createElement('div');
+    bgContainer.className = 'bg-cont';
     const videoElement = document.createElement('video');
     videoElement.className = 'bg_div';
     videoElement.autoplay = true;
     videoElement.muted = true;
-    videoElement.loop = true;
-    
-    // Add onloadstart event to set playback rate
+    videoElement.loop = true;    
     videoElement.onloadstart = function() {
-        this.playbackRate = 0.5;
+        this.playbackRate = choice == 1? 0.5: 1;
     };
-
-    // Create source element
     const sourceElement = document.createElement('source');
     sourceElement.src = videoSrc;
     sourceElement.type = 'video/mp4';
-
-    // Append source to video
     videoElement.appendChild(sourceElement);
-
-    // Create backdrop div
     const backdropDiv = document.createElement('div');
     backdropDiv.className = 'bdrop-bg';
-
-    // Append video and backdrop to container
     bgContainer.appendChild(videoElement);
     bgContainer.appendChild(backdropDiv);
 
-    // Function to append to DOM when video is ready
     const appendToDomWhenReady = () => {
-        if (videoElement.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+        if (videoElement.readyState >= 2) {
             document.body.appendChild(bgContainer);
             videoElement.removeEventListener('canplay', appendToDomWhenReady);
             document.getElementById("before-bg").remove();
         }
     };
 
-    // Add event listener to append when video is ready
     videoElement.addEventListener('canplay', appendToDomWhenReady);
-
-    // Attempt initial append in case video is already cached
     appendToDomWhenReady();
-
-
-
     return bgContainer;
 }
 
-createVideoBackground('/assets/bg.mp4');
+createVideoBackground(`/assets/${vids[choice]}`);
 
-// setVideoPreloaded(document.getElementById("bg_div"), "/assets/bg.mp4");
+
+
+
+
+
+
+
+
 
 function checkMobile(){
     return(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile'))

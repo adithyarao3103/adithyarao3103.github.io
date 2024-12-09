@@ -13,10 +13,8 @@
     --thumb-hover-color: #f8bf2b;
     --thumb-background-color: #000205;
     /* --body-bg: url('/assets/background.webp'); */
-    --body-bg: url('/assets/frame-bg.webp');
     /* --body-bg: url('/assets/image.webp'); */
     --complementary: #5f3f1e;
-    --body-bg-mobile: url('/assets/frame-bg.webp');
 }
 
 
@@ -113,12 +111,8 @@ body, html{
     min-height: 100vh;
     background-attachment: fixed;
     scroll-behavior: smooth;
-    background-image: url('/assets/frame-bg.webp');
 }
 
-.bg_cont{
-    background-image: url('/assets/frame-bg.webp');
-}
 
 .bg_div{
     width: calc(100vw - 10px);
@@ -140,7 +134,7 @@ body, html{
 }
 
 body{
-    padding-top: 30vh;
+    padding-top: 33vh;
 }
 
 
@@ -239,7 +233,7 @@ body{
     background-color: var(--link-color);
 }
 
-div> a, report> a{
+div> a, report> a, span> a{
     background-color: var(--link-color);
     color: black;
     text-decoration: none;
@@ -438,7 +432,7 @@ date{
 
 
 #socials{
-    margin-top: 13vw;
+    margin-top: 25vw;
     width: 72vw;
     height: 20vh;
     position: relative;
