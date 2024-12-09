@@ -113,19 +113,19 @@ body, html{
     min-height: 100vh;
     background-attachment: fixed;
     scroll-behavior: smooth;
-}
-
-#bg_cont{
     background-image: url('/assets/frame-bg.webp');
 }
 
-#bg_div{
+.bg_cont{
+    background-image: url('/assets/frame-bg.webp');
+}
+
+.bg_div{
     width: calc(100vw - 10px);
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
     object-fit: cover;
     object-position: center;
 }
@@ -137,7 +137,6 @@ body, html{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 
 body{
@@ -265,6 +264,7 @@ div> a:hover, p> a:hover{
     position: relative;
     left: 50vw;
     transform: translateX(-50%);
+    z-index:10;
 }
 
 /* .main:first-of-type {
@@ -453,6 +453,7 @@ date{
     text-align: center;
     margin-bottom: 2vh;
     color: black;
+    z-index:10;
 }
 
 .social-icons> a{

@@ -108,11 +108,11 @@
 function createVideoBackground(videoSrc) {
     // Create the container div
     const bgContainer = document.createElement('div');
-    bgContainer.id = 'bg-cont';
+    bgContainer.className = 'bg-cont';
 
     // Create the video element
     const videoElement = document.createElement('video');
-    videoElement.id = 'bg_div';
+    videoElement.className = 'bg_div';
     videoElement.autoplay = true;
     videoElement.muted = true;
     videoElement.loop = true;
@@ -143,6 +143,7 @@ function createVideoBackground(videoSrc) {
         if (videoElement.readyState >= 2) { // HAVE_CURRENT_DATA or higher
             document.body.appendChild(bgContainer);
             videoElement.removeEventListener('canplay', appendToDomWhenReady);
+            document.getElementById("before-bg").remove();
         }
     };
 
@@ -151,6 +152,8 @@ function createVideoBackground(videoSrc) {
 
     // Attempt initial append in case video is already cached
     appendToDomWhenReady();
+
+
 
     return bgContainer;
 }
