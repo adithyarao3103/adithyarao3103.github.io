@@ -1,4 +1,4 @@
-vids = ['universe.mp4', 'lattice.mp4'];
+vids = ['universe.mp4'];
 init_vids = ['frame-universe.mp4', 'frame-lattice.mp4', 'frame-cern.mp4'];
 bgs = ['frame-universe.jpg', 'frame-lattice.webp', 'frame-cern.webp'];
 
@@ -8,7 +8,8 @@ descs = [
     `nothing`
 ]
 
-choice = Math.floor(Math.random() * vids.length);
+// choice = Math.floor(Math.random() * vids.length);
+choice=0;
 
 document.body.style.backgroundImage = `url(/assets/${bgs[choice]})`;
 document.getElementById("vid-desc").innerHTML = descs[choice];
