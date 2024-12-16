@@ -3,7 +3,7 @@ init_vids = ['frame-universe.mp4', 'frame-magfield.mp4', 'frame-lattice.mp4', 'f
 bgs = ['uni-1.jpg', 'frame-magfield.png', 'frame-lattice.webp', 'frame-cern.webp'];
 
 descs = [
-    `simulation of the entire universe on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/" target="_blank">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
+    `the evolution of universe simulated on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/" target="_blank">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
     `simulation of the  interstellar magnetic field strength by <a href="https://www.tng-project.org/media/" target="_blank">The IllustrisTNG Project</a>`,
     `lattice simulation of the Quantum Chromodynamics Vacuum on a supercomputer by <a href="http://www.physics.adelaide.edu.au/theory/staff/leinweber/VisualQCD/Nobel/index.html" target="_blank">Derek B. Leinweber</a>`,
     `nothing`
