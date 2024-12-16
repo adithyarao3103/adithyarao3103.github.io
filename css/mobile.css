@@ -34,6 +34,7 @@
 :root{
     /* --link-color: #e8fc8e; */
     --link-color: #f8bf2b;
+    --mobile: 1;
 }
 
 body, html{
@@ -128,6 +129,7 @@ body, html{
     padding-left: 0;
     border: 0px solid black;
     text-transform: uppercase;
+    transition: all 0s;;
 }
 
 .navbar> a:hover{

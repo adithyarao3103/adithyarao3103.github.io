@@ -36,7 +36,7 @@ function createVideoBackground(videoSrc) {
     videoElement.className = 'bg_div';
     videoElement.autoplay = true;
     videoElement.muted = true;
-    videoElement.loop = true;    
+    videoElement.loop = false;    
     videoElement.onloadstart = function() {
         this.playbackRate = 0.75;
     };
@@ -50,7 +50,6 @@ function createVideoBackground(videoSrc) {
     bgContainer.appendChild(backdropDiv);
 
     const appendToDomWhenReady = () => {
-        console.log(videoElement.readyState);
         if (videoElement.readyState >= 2) {
             document.body.appendChild(bgContainer);
             videoElement.removeEventListener('canplay', appendToDomWhenReady);
@@ -68,21 +67,31 @@ createVideoBackground(`/assets/${vids[choice]}`);
 
 
 
-
-
-
-
-
-
-
 function checkMobile(){
-    return(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile'))
+    return(parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile')));
 }
 
 var menuClose=1;
 
+window.addEventListener("scroll", (event) => {
+    let scroll = this.scrollY;
+    if(checkMobile()){}
+    else{
+        if(scroll>150){
+            document.getElementById("navbar").classList.remove('navClose');
+            document.getElementById("navbar").classList.add('navOpen');
+            menuClose = 0;
+        }
+        else{
+            menuClose = 1;
+            document.getElementById("navbar").classList.add('navClose');
+            document.getElementById("navbar").classList.remove('navOpen');
+        }
+    }
+});
+
+
 function toggleMenu(){
-    console.log("toggleMenu");
     if (checkMobile()){
         if (menuClose){
             menuClose = 0;
