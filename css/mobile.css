@@ -299,7 +299,7 @@ text, text>span{
     border-radius: 0;
     padding: 20px;
     font-size: calc(1.5vh + 5px);
-    text-align: justify;
+    /* text-align: justify; */
     background: white;
 }
 
