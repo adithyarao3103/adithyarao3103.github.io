@@ -1,12 +1,13 @@
-vids = ['universe.mp4'];
-init_vids = ['frame-universe.mp4', 'frame-lattice.mp4', 'frame-cern.mp4'];
-bgs = ['frame-universe.jpg', 'frame-lattice.webp', 'frame-cern.webp'];
+vids = ['uni-1.mp4', 'magfield.mp4'];
+init_vids = ['frame-universe.mp4', 'frame-magfield.mp4', 'frame-lattice.mp4', 'frame-cern.mp4'];
+bgs = ['uni-1.jpg', 'frame-magfield.png', 'frame-lattice.webp', 'frame-cern.webp'];
 
 descs = [
-    `simulation of the entire universe on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
+    `simulation of the entire universe on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/" target="_blank">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
+    `simulation of the  interstellar magnetic field strength by <a href="https://www.tng-project.org/media/" target="_blank">The IllustrisTNG Project</a>`,
     `lattice simulation of the Quantum Chromodynamics Vacuum on a supercomputer by <a href="http://www.physics.adelaide.edu.au/theory/staff/leinweber/VisualQCD/Nobel/index.html" target="_blank">Derek B. Leinweber</a>`,
     `nothing`
-]
+];
 
 // choice = Math.floor(Math.random() * vids.length);
 choice=0;
@@ -20,7 +21,6 @@ function createInitialBackground(){
     bgContainer.id = 'before-bg';
     bgContainer.innerHTML = `
         <div class="bg-cont" id="before-bg">
-            <video onloadstart="this.playbackRate = 0.5;" autoplay muted loop class="bg_div"><source src="/assets/${init_vids[choice]}" type="video/mp4"></video>
             <div class="bdrop-bg"></div>
         </div>
     `;
@@ -38,7 +38,7 @@ function createVideoBackground(videoSrc) {
     videoElement.muted = true;
     videoElement.loop = true;    
     videoElement.onloadstart = function() {
-        this.playbackRate = choice == 1? 0.5: 1;
+        this.playbackRate = 0.75;
     };
     const sourceElement = document.createElement('source');
     sourceElement.src = videoSrc;
@@ -50,6 +50,7 @@ function createVideoBackground(videoSrc) {
     bgContainer.appendChild(backdropDiv);
 
     const appendToDomWhenReady = () => {
+        console.log(videoElement.readyState);
         if (videoElement.readyState >= 2) {
             document.body.appendChild(bgContainer);
             videoElement.removeEventListener('canplay', appendToDomWhenReady);
@@ -59,6 +60,7 @@ function createVideoBackground(videoSrc) {
 
     videoElement.addEventListener('canplay', appendToDomWhenReady);
     appendToDomWhenReady();
+    
     return bgContainer;
 }
 

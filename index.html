@@ -16,20 +16,20 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=website" style="display:none"></iframe>
+    <!-- <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=website" style="display:none"></iframe> -->
 
     
     <nav class="navbar" id="navbar-mob">
         <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
     </nav>
     <nav class="navbar navClose" id="navbar">
-        <a onclick="document.getElementById('about').scrollIntoView(); toggleMenu();">ABOUT</a>
-        <a onclick="document.getElementById('honors').scrollIntoView(); toggleMenu();">HONORS</a>
-        <a onclick="document.getElementById('research').scrollIntoView(); toggleMenu();">RESEARCH</a>
-        <a onclick="document.getElementById('other').scrollIntoView(); toggleMenu();">OTHER</a>
-        <a onclick="document.getElementById('projects').scrollIntoView(); toggleMenu();">PROJECTS</a>
-        <a onclick="window.location = '/interactive'; toggleMenu();">INTERACTIVE</a>
-        <a onclick="window.location = '/art'; toggleMenu();">ART</a>
+        <a onclick="document.getElementById('about').scrollIntoView(); toggleMenu();">About</a>
+        <a onclick="document.getElementById('honors').scrollIntoView(); toggleMenu();">Honors</a>
+        <a onclick="document.getElementById('research').scrollIntoView(); toggleMenu();">Research</a>
+        <a onclick="document.getElementById('other').scrollIntoView(); toggleMenu();">Other</a>
+        <a onclick="document.getElementById('projects').scrollIntoView(); toggleMenu();">Projects</a>
+        <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a>
+        <a onclick="window.location = '/art'; toggleMenu();">Art</a>
     </nav>
     
     <div class="main">
@@ -63,8 +63,7 @@
                 I am specifically interested in how physics can benefit from computational (both classical and quantum) techniques. Which means I am interested in <a onclick="document.getElementById('bfss').scrollIntoView()" style="cursor: pointer;">Lattice Simulation of Gauge Theories</a> and QFTs mapped to <a onclick="document.getElementById('schwinger').scrollIntoView()" style="cursor: pointer;">Spin-Lattice Systems</a>, and in <a onclick="document.getElementById('ROOT').scrollIntoView()" style="cursor: pointer;">experimental high-energy physics</a> especially in the data analysis sector.
                 <br><br>Recently, I have taken also interest in the use of machine learning techniques for other areas of physics too, especially <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;"> Physics Informed Neural-Networks</a><br><br>
 
-                I received my masters' degree in 2024 from NIT Surat, India, where I worked with <a href="https://www.lpthe.jussieu.fr/lpthe/members.pl?key=2" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on <a onclick="document.getElementById('gribov').scrollIntoView()" style="cursor:pointer">Quantum Gauge Field theories</a>. Prior to that, I have also interned at various places, including a DAAD-WISE project at Jena in Germany on Lattice Simulations, and institutes like TIFR, IISc, PRL in India.<br><br>
-                [The video in the background is a <span id="vid-desc"></span>]
+                I received my masters' degree in 2024 from NIT Surat, India, where I worked with <a href="https://www.lpthe.jussieu.fr/lpthe/members.pl?key=2" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on <a onclick="document.getElementById('gribov').scrollIntoView()" style="cursor:pointer">Quantum Gauge Field theories</a>. Prior to that, I have also interned at various places, including a DAAD-WISE project at Jena in Germany on Lattice Simulations, and institutes like TIFR, IISc, PRL in India.
             </div>
         </div>
     </div>
@@ -272,6 +271,10 @@
                 <a href="https://instagram.com/rao__adithya/" target="_blank"><i class="fab fa-instagram"></i></a>
             </socials>
         </div>
+    </div>
+
+    <div id="video-description">
+        The video in the background is a <span id="vid-desc"></span>
     </div>
 
 </body>
