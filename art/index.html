@@ -9,11 +9,24 @@
   <title>Adithya A Rao | Art Gallery</title>
   <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
 <body>
     <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=art" style="display:none"></iframe>
+    <nav class="navbar" id="navbar-mob">
+        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <nav class="navbar navClose" id="navbar">
+        <a onclick="window.location = '../?section=about'">About</a>
+        <a onclick="window.location = '../?section=honors'">Honors</a>
+        <a onclick="window.location = '../?section=research'">Research</a>
+        <a onclick="window.location = '../?section=other'">Other</a>
+        <a onclick="window.location = '../?section=projects'">Projects</a>
+        <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a>
+        <a onclick="window.location = '/art'; toggleMenu();">Art</a>
+    </nav>
     <div class="container">
-    <h1 class="text-4xl font-bold mb-8 text-center">Art Gallery</h1>
+    <h1 class="text-4xl font-bold mb-8 text-center" style="text-align: center;">Art Gallery</h1>
     <!-- <p id="desc">Indian architecture is a treasure for art lovers—a sanctuary of beauty. Each carving on temple walls is a masterpiece, a feast for the eyes. I love breathing life into these forms, capturing their spirit on paper. Here are a few of my recent sketches, my own humble homage to their timeless grace.
     </p> -->
     <p id="desc">Art is a treasure for the soul—a sanctuary of beauty. Every form, every line, tells a story and offers a feast for the eyes. I find joy in breathing life into these shapes and scenes, capturing their spirit on paper. Most of my art is devoted to  Indian architecture, each carving a testament to the artistry of their creators. Here are a few of my recent sketches, my humble homage to their timeless grace.
@@ -54,7 +67,8 @@
 
   <!-- Modal for detailed view -->
   <div class="modal" id="modal">
-    <div class="modal-content">
+    <div class="bdrop-bg"></div>
+    <div class="modal-content" style="z-index: 10;">
       <button class="close-modal" id="closeModal">&times;</button>
       <img id="modalImage" src="" alt="Art Piece">
       <h3 id="modalTitle"></h3>

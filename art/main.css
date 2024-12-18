@@ -1,3 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+:root{
+    --mobile: 0;
+}
+
+*{
+    font-family: 'Roboto Slab';
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: white ;
+}
+
+
+::selection{
+    color: white;
+    background: black;
+}
+
+::-moz-selection{
+    color: white;
+    background: black;
+}
+
+
 body {
 font-family: Arial, sans-serif;
 margin: 0;
@@ -23,11 +69,11 @@ margin-bottom: 2rem;
 
 .container {
 max-width: 1200px;
-margin: 0 auto;
+margin: 20vh auto;
 padding: 2rem;
 background: white;
 min-height: 100vh;
-padding-top: 10vh;
+padding-top: 2.5vh;
 padding-bottom: 15vh;
 padding-left: 2.5vw;
 padding-right: 2.5vw;
@@ -149,10 +195,10 @@ right: 1rem;
 background-color: red;
 color: white;
 border: none;
-padding-top: 0.5rem;
-padding-bottom: 0.5rem;
-padding-left: 0.7rem;
-padding-right: 0.7rem;
+/* padding-top: 0.5rem; */
+/* padding-bottom: 0.5rem; */
+/* padding-left: 0.7rem; */
+/* padding-right: 0.7rem; */
 font-size: 1.25rem;
 cursor: pointer;
 }
@@ -163,4 +209,154 @@ background-color: darkred;
 
 #comments-div{
     margin-top: 5vh;
+}
+
+
+
+.navbar{
+    width: 70vw;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top:0px;
+    left: 50vw;
+    /* border-radius: 20px; */
+    background-clip: padding-box;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar{
+    transition: all 0.5s;
+}
+
+.navClose{
+    transform: translateX(-50%);
+}
+
+.navOpen{
+    transform: translateX(-50%);
+}
+
+
+#navbar-mob{
+    display: none;
+}
+
+
+.navbar> a{
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    /* border-radius: 5px; */
+    font-weight: normal;
+    font-size: calc(0.85vw + 5px);
+    transition: all 0.5s ease;
+    box-shadow: 0px 0px 0px white;
+    cursor: pointer;
+    border: 1px solid rgb(63, 63, 63);
+    flex: 1;
+}   
+
+.navbar> a:hover{
+    background-color: black;
+    color: white
+}
+
+.menu-toggle {
+    display: none;
+    background: white;
+    border: 2px solid black;
+    color: black;
+    font-size: 3.15vh;
+    cursor: pointer;
+    font-weight: 700;
+    margin-right: 13px;
+    z-index: 1001;
+    /* padding-top: 3px; */
+    padding-right: 7px;
+    /* padding-bottom: 1px; */
+    padding-left: 7px;
+    /* border-radius: 10px; */
+    position: relative;
+}
+
+.bdrop-bg{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+@media (max-width: 700px) {
+    :root{
+        --mobile: 1;
+    }
+
+        
+    .navbar{
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        row-gap: 30px;
+    }
+
+    .navbar> a{
+        width: 100%;
+        font-size: calc(1.5vh + 5px);
+        margin:0px;
+        padding-left: 0;
+        border: 0px solid black;
+        text-transform: uppercase;
+        transition: all 0s;;
+    }
+
+    .navbar> a:hover{
+        border: 0px solid white;
+    }
+
+    #navbar-mob{
+        top:-6px;
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        transform: translateX(-50%);
+        background: transparent;
+    }
+
+    #navbar{
+        width: calc(100vw + 20px);
+        top: 9vh;
+        transition: all 0.5s;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .navClose{
+        transform: translateX(150%);
+    }
+
+    .navOpen{
+        transform: translateX(-50%)
+    }
+
+    .menu-toggle{
+        display: block;
+        width: fit-content;
+    }
+
+    .container {
+        margin: 10vh auto;
+    }
 }

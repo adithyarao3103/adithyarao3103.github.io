@@ -15,7 +15,7 @@ async function fetchComments() {
       const style = htmlContent.querySelector('style');
       const script = htmlContent.querySelector('script');
       
-      console.log('Comments:', comments);
+      // console.log('Comments:', comments);
       // Safely insert the HTML content
       commentsDiv.innerHTML = comments.innerHTML;
       const newScript = document.createElement('script');
@@ -71,5 +71,45 @@ window.addEventListener('click', (event) => {
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     modal.style.display = 'none';
+  }
+});
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Navbar
+
+
+
+function checkMobile(){
+  return(parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile')));
+}
+
+var menuClose=1;
+
+
+function toggleMenu(){
+  if (checkMobile()){
+      if (menuClose){
+          menuClose = 0;
+          document.getElementById("navbar").classList.remove('navClose');
+          document.getElementById("navbar").classList.add('navOpen');
+      }
+      else{
+          menuClose = 1;
+          document.getElementById("navbar").classList.remove('navOpen');
+          document.getElementById("navbar").classList.add('navClose');
+      }
+  }
+}
+
+
+
+menu = document.getElementById("navbar");
+menuButton = document.getElementById("navbar-mob");
+
+document.addEventListener('click', (event) => {
+  if (menuClose == 0 && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+  toggleMenu()
   }
 });

@@ -278,6 +278,28 @@
     </div>
 
 </body>
+<script>
+    // Function to parse query parameters from the URL
+    function getQueryParameter(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+    }
+
+    // Get the `page-section` query parameter
+    const sectionName = getQueryParameter('section');
+
+    if (sectionName) {
+        // Find the corresponding element and scroll to it
+        const targetElement = document.getElementById(sectionName);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+    
+            // Remove the query parameters from the URL
+            const newUrl = window.location.origin + window.location.pathname;
+            history.replaceState(null, '', newUrl); // Replace the current state with the new URL
+        }
+    }
+</script>
 <script src="js/main.js"></script>
 
 </html>

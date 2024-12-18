@@ -10,10 +10,26 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=interactive" style="display:none"></iframe>
     <!-- <div id="home"><i class="fa fa-home"></i></div> -->
+    <nav class="navbar" id="navbar-mob">
+        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
+    </nav>
+    <nav class="navbar navClose" id="navbar">
+        <a onclick="window.location = '../?section=about'">About</a>
+        <a onclick="window.location = '../?section=honors'">Honors</a>
+        <a onclick="window.location = '../?section=research'">Research</a>
+        <a onclick="window.location = '../?section=other'">Other</a>
+        <a onclick="window.location = '../?section=projects'">Projects</a>
+        <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a>
+        <a onclick="window.location = '/art'; toggleMenu();">Art</a>
+    </nav>
+    <div class="bg-cont" id="before-bg">
+        <div class="bdrop-bg"></div>
+    </div>
     <div id="main-cont">
         <div id="main">
             <center><h1>Interactive Programs</h1></center>
@@ -76,4 +92,5 @@
 
 
 </body>
+<script src="main.js"></script>
 </html>

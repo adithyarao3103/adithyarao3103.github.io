@@ -1,3 +1,6 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BG VIDEO
+
 vids = ['uni-1.mp4', 'magfield.mp4'];
 init_vids = ['frame-universe.mp4', 'frame-magfield.mp4', 'frame-lattice.mp4', 'frame-cern.mp4'];
 bgs = ['uni-1.jpg', 'frame-magfield.png', 'frame-lattice.webp', 'frame-cern.webp'];
@@ -10,10 +13,12 @@ descs = [
 ];
 
 // choice = Math.floor(Math.random() * vids.length);
-choice=0;
+const choice=0;
 
 document.body.style.backgroundImage = `url(/assets/${bgs[choice]})`;
 document.getElementById("vid-desc").innerHTML = descs[choice];
+
+const playbackRate = 2;
 
 function createInitialBackground(){
     const bgContainer = document.createElement('div');
@@ -32,13 +37,14 @@ createInitialBackground();
 function createVideoBackground(videoSrc) {
     const bgContainer = document.createElement('div');
     bgContainer.className = 'bg-cont';
+    bgContainer.id = 'main-video';
     const videoElement = document.createElement('video');
     videoElement.className = 'bg_div';
     videoElement.autoplay = true;
     videoElement.muted = true;
     videoElement.loop = false;    
     videoElement.onloadstart = function() {
-        this.playbackRate = 0.75;
+        this.playbackRate = playbackRate;
     };
     const sourceElement = document.createElement('source');
     sourceElement.src = videoSrc;
@@ -52,6 +58,7 @@ function createVideoBackground(videoSrc) {
     const appendToDomWhenReady = () => {
         if (videoElement.readyState >= 2) {
             document.body.appendChild(bgContainer);
+            setTimeout(replace, videoElement.duration*1000/videoElement.playbackRate + 100);
             videoElement.removeEventListener('canplay', appendToDomWhenReady);
             document.getElementById("before-bg").remove();
         }
@@ -65,6 +72,37 @@ function createVideoBackground(videoSrc) {
 
 createVideoBackground(`/assets/${vids[choice]}`);
 
+const loopBgContainer = document.createElement('div');
+loopBgContainer.className = 'bg-cont';
+const loopVideoElement = document.createElement('video');
+loopVideoElement.className = 'bg_div';
+loopVideoElement.autoplay = true;
+loopVideoElement.muted = true;
+loopVideoElement.loop = true;    
+loopVideoElement.onloadstart = function() {
+    this.playbackRate = playbackRate;
+};
+const loopSourceElement = document.createElement('source');
+loopSourceElement.src = '/assets/uni-loop.mp4';
+loopSourceElement.type = 'video/mp4';
+loopVideoElement.appendChild(loopSourceElement);
+const loopBackdropDiv = document.createElement('div');
+loopBackdropDiv.className = 'bdrop-bg';
+loopBgContainer.appendChild(loopVideoElement);
+loopBgContainer.appendChild(loopBackdropDiv);
+
+
+function replace(){
+    // console.log('replacing');
+    const mainVideo = document.getElementById('main-video');
+    document.body.appendChild(loopBgContainer);  
+    mainVideo.remove();    
+    // console.log('done');
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Navigation Bar - Desktop
 
 
 function checkMobile(){
@@ -77,7 +115,7 @@ window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     if(checkMobile()){}
     else{
-        if(scroll>150){
+        if(scroll>100){
             document.getElementById("navbar").classList.remove('navClose');
             document.getElementById("navbar").classList.add('navOpen');
             menuClose = 0;
@@ -89,6 +127,25 @@ window.addEventListener("scroll", (event) => {
         }
     }
 });
+
+// first time
+
+if(checkMobile()){}
+else{
+    if(window.scrollY>100){
+        document.getElementById("navbar").classList.remove('navClose');
+        document.getElementById("navbar").classList.add('navOpen');
+        menuClose = 0;
+    }
+    else{
+        menuClose = 1;
+        document.getElementById("navbar").classList.add('navClose');
+        document.getElementById("navbar").classList.remove('navOpen');
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Navigation Bar - Mobile
 
 
 function toggleMenu(){
@@ -106,6 +163,8 @@ function toggleMenu(){
     }
 }
 
+
+
 menu = document.getElementById("navbar");
 menuButton = document.getElementById("navbar-mob");
 
@@ -114,6 +173,9 @@ document.addEventListener('click', (event) => {
     toggleMenu()
     }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Random 
 
 function getHeight(){
     if (checkMobile()){
