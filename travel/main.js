@@ -17,5 +17,5 @@ maxZoom: 19,
 for(var i = 0; i < cities.length; i++) {
     var city = cities[i];
     L.marker([city.Lat, city.Long]).addTo(map)
-    .bindPopup(city.Name + '<br>' + city.Description);
+    .bindPopup('<b>' + city.Name + '</b><br>' + city.Description);
 }
