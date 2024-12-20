@@ -2,81 +2,154 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 <style>
-    :root{
-        --mobile:0;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
     body{
 			margin:0;
-			overflow: hidden;
-			font-size:0;
+			overflow-x: hidden;
+      background: url('assets/blackhole-frame.jpg');
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
 		}
-		canvas{
-			background: black;
-			width: 100vw;
-			height: 100vh;
-		}
-		input{
-			width: 250px;
-			height: 40px;
-			line-height: 40px;
-			position: absolute;
-			bottom: 35px;
-			left: calc(50% - 125px);
-			background: none;
-			color: white;
-			font-size: 30px;
-			font-family: arial;
-			text-align: center;
-			border: 1px solid white;
-			background: rgba(255,255,255,0.2);
-		}
-        p{
-            position: fixed;
-            left: 0;
-            bottom:5px;
-            color: #fff;
-            z-index:10;
-            font-size:16px;
-            font-family: Helvetica, Verdana, sans-serif;
-            opacity:0.5;
-            width: 100%;
-            text-align: center;
-            margin: 0;
-        }
+
+    
+::-webkit-scrollbar {
+    width: 10px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #723300;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff7708;
+}
+
+
+::selection{
+    color: white;
+    background: black;
+}
+
+::-moz-selection{
+    color: white;
+    background: black;
+}
+
+    
+.bg_div{
+    width: calc(100vw - 10px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bdrop-bg{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#fof{
+	font-size: 40vw;
+	letter-spacing: 2px;
+	white-space: nowrap;
+	font-weight: bold;
+	padding-top: 10px;
+	color: transparent;
+	text-shadow: 0px 0px 10px white;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	mix-blend-mode: overlay;
+  z-index: 5;
+  -webkit-text-stroke: 10px white;
+}
 
         #desc{
             position:fixed;
             bottom:35vh;
             left:0;
-            width:100%;
+            width: 100%;
             text-align:center;
             color:#fff;
             font-size:calc(0.75vw + 5px);
             font-family:Helvetica, Verdana, sans-serif;
             opacity:0;
             animation: fadeIn 2s forwards;
+            z-index: 10;
         }
 
         #desc>a{
             color:#000;
-            background-color: #fff;
+            background-color: #ffffff;
             text-decoration: none;
             padding:3px;
             font-weight:bolder;
-            transition: all 0.2s;
+            transition: all 1s;
         }
 
         #desc> a:hover{
-            background-color: #ffffffd2;
+            background-color: #ffaa64;
         }
 
+        #video-description{
+    width: calc(100vw - 70px);
+    margin-top: 100vh;
+    position: absolute;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    box-shadow: inset 0px 25px 20px -24px rgb(92, 92, 92);
+    z-index:10;
+    background-color: white;
+      font-family: 'Roboto Slab', sans-serif;
+      font-size: calc(0.5vw + 5px);
+      line-height: 2;
+}
+
+#video-description>a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+}
         @media (max-width: 800px) {
-            :root{
-                --mobile:1;
-            }
             #desc{
-                font-size: calc(1vh + 10px);
+              padding: 15px;
+              font-size: calc(1vh + 8px);
+              width:auto;
+              bottom:25vh;
             }
+            #fof{
+              font-size: 55vw;
+            }
+
+          #video-description{
+            font-size: calc(1vh + 5px);
+          }
         }
 
         @keyframes fadeIn{
@@ -84,150 +157,57 @@
                 opacity:0;
             }
             100%{
-                opacity:0.5;
+                opacity:0.75;
             }
         }
 </style>
 <body>
-    <canvas id="scene"></canvas>
-    <div id="desc">The page you are looking for was either never created, or a cosmic ray caused a blip in the GitHub servers causing it to disappear. <br> <br> <a href='/'>Click here to go back to the homepage</a></div>
+  <div class="bdrop-bg"></div>
+	<div id="fof">404</div>
+  <div id="desc">The page you're looking for doesn't exist—or perhaps a cosmic ray from a black hole jet flipped a bit in the GitHub servers, wiping it away. <br> <br> <a href='/'>Click here to go back to the homepage</a></div>
+  <div id="video-description">
+    The video in the background is a simulation of the Sgr A* black hole by <a href="https://achael.github.io/_pages/simulating/" target="_blank">Andrew Chael</a>
+</div>
 </body>
+
+
 <script>
+  
+function createVideoBackground(videoSrc) {
+    const bgContainer = document.createElement('div');
+    bgContainer.className = 'bg-cont';
+    bgContainer.id = 'main-video';
+    const videoElement = document.createElement('video');
+    videoElement.className = 'bg_div';
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.loop = true;    
+    videoElement.onloadstart = function() {
+        this.playbackRate = 1;
+    };
+    const sourceElement = document.createElement('source');
+    sourceElement.src = videoSrc;
+    sourceElement.type = 'video/mp4';
+    videoElement.appendChild(sourceElement);
+    const backdropDiv = document.createElement('div');
+    backdropDiv.className = 'bdrop-bg';
+    bgContainer.appendChild(videoElement);
+    bgContainer.appendChild(backdropDiv);
 
-function checkMobile(){
-    return(parseInt(window.getComputedStyle(document.documentElement).getPropertyValue('--mobile')));
+    const appendToDomWhenReady = () => {
+        if (videoElement.readyState >= 2) {
+            document.body.appendChild(bgContainer);
+            videoElement.removeEventListener('canplay', appendToDomWhenReady);
+        }
+    };
+
+    videoElement.addEventListener('canplay', appendToDomWhenReady);
+    appendToDomWhenReady();
+    
+    return bgContainer;
 }
 
-let np=300;
-let reciprocalSize=5;
-
-if(checkMobile()){
-    np=50;
-    reciprocalSize=2;
-}else{
-    np=300;
-    reciprocalSize=5;
-}
-
-    var canvas = document.querySelector("#scene"),
-  ctx = canvas.getContext("2d"),
-  particles = [],
-  amount = 0,
-  mouse = {x:0,y:0},
-  radius = 1;
-
-var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
-
-
-var ww = canvas.width = window.innerWidth;
-var wh = canvas.height = window.innerHeight;
-
-function Particle(x,y){
-  this.x =  Math.random()*ww;
-  this.y =  Math.random()*wh;
-  this.dest = {
-    x : x,
-    y: y
-  };
-  this.r =  Math.random()*5 + 2;
-  this.vx = (Math.random()-0.5)*20;
-  this.vy = (Math.random()-0.5)*20;
-  this.accX = 0;
-  this.accY = 0;
-  this.friction = Math.random()*0.05 + 0.94;
-
-  this.color = colors[Math.floor(Math.random()*6)];
-}
-
-Particle.prototype.render = function() {
-
-
-  this.accX = (this.dest.x - this.x)/1000;
-  this.accY = (this.dest.y - this.y)/1000;
-  this.vx += this.accX;
-  this.vy += this.accY;
-  this.vx *= this.friction;
-  this.vy *= this.friction;
-
-  this.x += this.vx;
-  this.y +=  this.vy;
-
-  ctx.fillStyle = this.color;
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.r, Math.PI * 2, false);
-  ctx.fill();
-
-  var a = this.x - mouse.x;
-  var b = this.y - mouse.y;
-
-  var distance = Math.sqrt( a*a + b*b );
-  if(distance<(radius*70)){
-    this.accX = (this.x - mouse.x)/100;
-    this.accY = (this.y - mouse.y)/100;
-    this.vx += this.accX;
-    this.vy += this.accY;
-  }
-
-}
-
-function onMouseMove(e){
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-}
-
-function onTouchMove(e){
-  if(e.touches.length > 0 ){
-    mouse.x = e.touches[0].clientX;
-    mouse.y = e.touches[0].clientY;
-  }
-}
-
-function onTouchEnd(e){
-mouse.x = -9999;
-mouse.y = -9999;
-}
-
-function initScene(){
-  ww = canvas.width = window.innerWidth;
-  wh = canvas.height = window.innerHeight;
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  ctx.font = "bold "+(ww/reciprocalSize)+"px sans-serif";
-  ctx.textAlign = "center";
-  ctx.fillText('404', ww*(1/2), wh*(0.97/2));
-
-  var data  = ctx.getImageData(0, 0, ww, wh).data;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.globalCompositeOperation = "screen";
-
-  particles = [];
-  for(var i=0;i<ww;i+=Math.round(ww/np)){
-    for(var j=0;j<wh;j+=Math.round(ww/np)){
-      if(data[ ((i + j*ww)*4) + 3] > 0){
-        particles.push(new Particle(i,j));
-      }
-    }
-  }
-  amount = particles.length;
-
-}
-
-
-function render(a) {
-  requestAnimationFrame(render);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (var i = 0; i < amount; i++) {
-    particles[i].render();
-  }
-};
-
-window.addEventListener("resize", initScene);
-window.addEventListener("mousemove", onMouseMove);
-window.addEventListener("touchmove", onTouchMove);
-window.addEventListener("touchend", onTouchEnd);
-initScene();
-requestAnimationFrame(render);
-
+createVideoBackground(`/assets/blackhole.mp4`);
 </script>
+
 </html>
