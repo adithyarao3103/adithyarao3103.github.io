@@ -1,92 +1,101 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="404 — Page not found">
+    <meta name="author" content="Adithya A Rao">
+    <meta name="keywords" content="404">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Adithya A Rao | 404</title>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-    body{
-			margin:0;
-			overflow-x: hidden;
-      background: url('assets/blackhole-frame.jpg');
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-		}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
-    
-::-webkit-scrollbar {
-    width: 10px;
-    z-index: 999;
-    position: absolute;
-    right: 0;
-}
+        body{
+            margin:0;
+            overflow-x: hidden;
+            background: url('assets/blackhole-frame.jpg');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background-color: black;
-}
+            
+        ::-webkit-scrollbar {
+            width: 10px;
+            z-index: 999;
+            position: absolute;
+            right: 0;
+        }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #723300;
-    border-radius: 10px;
-}
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: black;
+        }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #ff7708;
-}
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #723300;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff7708;
+        }
 
 
-::selection{
-    color: white;
-    background: black;
-}
+        ::selection{
+            color: white;
+            background: black;
+        }
 
-::-moz-selection{
-    color: white;
-    background: black;
-}
+        ::-moz-selection{
+            color: white;
+            background: black;
+        }
 
-    
-.bg_div{
-    width: calc(100vw - 10px);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-}
+            
+        .bg_div{
+            width: calc(100vw - 10px);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+        }
 
-.bdrop-bg{
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(15px);
-    position: fixed;
-    top: 0;
-    left: 0;
-}
+        .bdrop-bg{
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
 
-#fof{
-	font-size: 40vw;
-	letter-spacing: 2px;
-	white-space: nowrap;
-	font-weight: bold;
-	padding-top: 10px;
-	color: transparent;
-	text-shadow: 0px 0px 10px white;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	mix-blend-mode: overlay;
-  z-index: 5;
-  -webkit-text-stroke: 10px white;
-}
+        #fof{
+            font-size: 40vw;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            font-weight: bold;
+            padding-top: 10px;
+            color: transparent;
+            text-shadow: 0px 0px 10px white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            mix-blend-mode: overlay;
+        z-index: 5;
+        -webkit-text-stroke: 10px white;
+        }
 
         #desc{
             position:fixed;
@@ -116,40 +125,41 @@
         }
 
         #video-description{
-    width: calc(100vw - 70px);
-    margin-top: 100vh;
-    position: absolute;
-    height: auto;
-    padding: 30px;
-    text-align: center;
-    box-shadow: inset 0px 25px 20px -24px rgb(92, 92, 92);
-    z-index:10;
-    background-color: white;
-      font-family: 'Roboto Slab', sans-serif;
-      font-size: calc(0.5vw + 5px);
-      line-height: 2;
-}
+            width: calc(100vw - 70px);
+            margin-top: 100vh;
+            position: absolute;
+            height: auto;
+            padding: 30px;
+            text-align: center;
+            box-shadow: inset 0px 25px 20px -24px rgb(92, 92, 92);
+            z-index:10;
+            background-color: white;
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: calc(0.5vw + 5px);
+            line-height: 2;
+        }
 
-#video-description>a{
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    padding: 3px;
-}
+        #video-description>a{
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 3px;
+        }
+
         @media (max-width: 800px) {
             #desc{
-              padding: 15px;
-              font-size: calc(1vh + 8px);
-              width:auto;
-              bottom:25vh;
+            padding: 15px;
+            font-size: calc(1vh + 8px);
+            width:auto;
+            bottom:25vh;
             }
             #fof{
-              font-size: 55vw;
+            font-size: 55vw;
             }
 
-          #video-description{
+        #video-description{
             font-size: calc(1vh + 5px);
-          }
+        }
         }
 
         @keyframes fadeIn{
@@ -160,54 +170,57 @@
                 opacity:0.75;
             }
         }
-</style>
+    </style>
+
+</head>
+
 <body>
-  <div class="bdrop-bg"></div>
-	<div id="fof">404</div>
-  <div id="desc">The page you're looking for doesn't exist—or perhaps a cosmic ray from a black hole jet flipped a bit in the GitHub servers, wiping it away. <br> <br> <a href='/'>Click here to go back to the homepage</a></div>
-  <div id="video-description">
-    The video in the background is a simulation of the Sgr A* black hole by <a href="https://achael.github.io/_pages/simulating/" target="_blank">Andrew Chael</a>
-</div>
+    <div class="bdrop-bg"></div>
+        <div id="fof">404</div>
+    <div id="desc">The page you're looking for doesn't exist—or perhaps a cosmic ray from a black hole jet flipped a bit in the GitHub servers, wiping it away. <br> <br> <a href='/'>Click here to go back to the homepage</a></div>
+    <div id="video-description">
+        The video in the background is a simulation of the Sgr A* black hole by <a href="https://achael.github.io/_pages/simulating/" target="_blank">Andrew Chael</a>
+    </div>
 </body>
 
 
 <script>
-  
-function createVideoBackground(videoSrc) {
-    const bgContainer = document.createElement('div');
-    bgContainer.className = 'bg-cont';
-    bgContainer.id = 'main-video';
-    const videoElement = document.createElement('video');
-    videoElement.className = 'bg_div';
-    videoElement.autoplay = true;
-    videoElement.muted = true;
-    videoElement.loop = true;    
-    videoElement.onloadstart = function() {
-        this.playbackRate = 1;
-    };
-    const sourceElement = document.createElement('source');
-    sourceElement.src = videoSrc;
-    sourceElement.type = 'video/mp4';
-    videoElement.appendChild(sourceElement);
-    const backdropDiv = document.createElement('div');
-    backdropDiv.className = 'bdrop-bg';
-    bgContainer.appendChild(videoElement);
-    bgContainer.appendChild(backdropDiv);
 
-    const appendToDomWhenReady = () => {
-        if (videoElement.readyState >= 2) {
-            document.body.appendChild(bgContainer);
-            videoElement.removeEventListener('canplay', appendToDomWhenReady);
-        }
-    };
+    function createVideoBackground(videoSrc) {
+        const bgContainer = document.createElement('div');
+        bgContainer.className = 'bg-cont';
+        bgContainer.id = 'main-video';
+        const videoElement = document.createElement('video');
+        videoElement.className = 'bg_div';
+        videoElement.autoplay = true;
+        videoElement.muted = true;
+        videoElement.loop = true;    
+        videoElement.onloadstart = function() {
+            this.playbackRate = 1;
+        };
+        const sourceElement = document.createElement('source');
+        sourceElement.src = videoSrc;
+        sourceElement.type = 'video/mp4';
+        videoElement.appendChild(sourceElement);
+        const backdropDiv = document.createElement('div');
+        backdropDiv.className = 'bdrop-bg';
+        bgContainer.appendChild(videoElement);
+        bgContainer.appendChild(backdropDiv);
 
-    videoElement.addEventListener('canplay', appendToDomWhenReady);
-    appendToDomWhenReady();
-    
-    return bgContainer;
-}
+        const appendToDomWhenReady = () => {
+            if (videoElement.readyState >= 2) {
+                document.body.appendChild(bgContainer);
+                videoElement.removeEventListener('canplay', appendToDomWhenReady);
+            }
+        };
 
-createVideoBackground(`/assets/blackhole.mp4`);
+        videoElement.addEventListener('canplay', appendToDomWhenReady);
+        appendToDomWhenReady();
+        
+        return bgContainer;
+    }
+
+    createVideoBackground(`/assets/blackhole.mp4`);
 </script>
 
 </html>
