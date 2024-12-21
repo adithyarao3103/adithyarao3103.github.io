@@ -33,10 +33,4 @@ for(var i = 0; i < cities.length; i++) {
     var city = cities[i];
     marker = L.marker([city.Lat, city.Long], {opacity:0.9, riseOnHover:true}).addTo(map)
     .bindPopup('<b>' + city.Name + '</b><br>' + ( city.Year? city.Year + '<br>' : '' ) + city.Description);
-        marker.on('mouseover', function(e) {
-        this.openPopup();
-      });
-      marker.on('mouseout', function(e) {
-        this.closePopup();
-      });
 }
