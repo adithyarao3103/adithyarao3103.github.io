@@ -272,3 +272,11 @@ body, html{
 }
 
 
+@media (max-width: 1000px){
+
+    .navbar{
+        width: 100vw;
+    }
+    
+}
+

@@ -360,3 +360,12 @@ background-color: darkred;
         margin: 10vh auto;
     }
 }
+
+
+@media (max-width: 1000px){
+
+    .navbar{
+        width: 100vw;
+    }
+    
+}
