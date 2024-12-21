@@ -14,12 +14,6 @@ let cities = [
     "Description": "College trip memories. The Akshardham temple"
     },
     {
-    "Name": "Alappuzha",
-    "Long": 76.333482,
-    "Lat": 9.4980001,
-    "Description": ""
-    },
-    {
     "Name": "Amsterdam",
     "Long": 4.8936041,
     "Lat": 52.3727598,
@@ -83,8 +77,8 @@ let cities = [
     },
     {
     "Name": "Ernakulam",
-    "Long": 76.2741457,
-    "Lat": 9.98408,
+    "Long": 76.2999,
+    "Lat": 9.9816,
     "Description": ""
     },
     {
