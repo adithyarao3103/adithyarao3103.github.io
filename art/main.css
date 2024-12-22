@@ -230,6 +230,7 @@ background-color: darkred;
 
 #navbar{
     transition: all 0.5s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.397);
 }
 
 .navClose{
