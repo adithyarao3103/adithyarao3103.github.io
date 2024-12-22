@@ -129,7 +129,11 @@ body, html{
     padding-left: 0;
     border: 0px solid black;
     text-transform: uppercase;
-    transition: all 0s;;
+    transition: all 0s;
+}
+
+#navbar> a{
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.397);
 }
 
 .navbar> a:hover{
