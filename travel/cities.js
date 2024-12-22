@@ -11,7 +11,7 @@ let cities = [
     "Lat": 23.2156,
     "Long": 72.6369,
     "Year": 2024,
-    "Description": "College trip memories. The Akshardham temple"
+    "Description": "College trip memories. The Akshardham temple, and the light show can be said to be one of the best things I have seen."
     },
     {
     "Name": "Amsterdam",
@@ -39,13 +39,13 @@ let cities = [
     "Long": 7.4514512,
     "Lat": 46.9482713,
     "Year": 2023,
-    "Description": "DAAD. Beautiful City, Swiss feels more beautiful when you have free DAAD money XD"
+    "Description": "DAAD. Beautiful City, Swiss feels more beautiful when you have free DAAD money."
     },
     {
     "Name": "Bonn",
     "Long": 7.10066,
     "Lat": 50.735851,
-    "Description": "DAAD. Collateral visit as a part of some other trip"
+    "Description": "DAAD. Collateral visit as a part of trip to Cologne"
     },
     {
     "Name": "Chemnitz",
@@ -86,7 +86,7 @@ let cities = [
     "Long": 8.6820917,
     "Lat": 50.1106444,
     "Year": '2023, 2024',
-    "Description": "Airport. Thats the only reason I visited this city. Cool place tho."
+    "Description": "Airport. Thats the only reason I visited this city. Cool (but dangerous) city. "
     },
     {
     "Name": "Giethoorn",
@@ -100,14 +100,14 @@ let cities = [
     "Long": 9.9351811,
     "Lat": 51.5328328,
     "Year": 2023,
-    "Description": "DAAD. Collateral visit as a part of some other trip"
+    "Description": "DAAD. Collateral visit as a part of some other trip."
     },
     {
     "Name": "Grindelwald",
     "Long": 8.0367462,
     "Lat": 46.6242733,
     "Year": 2023,
-    "Description": "DAAD. Nice place, good view of alps. Couldn't muster the courage to buy food tho."
+    "Description": "DAAD. Nice place, good view of alps. Couldn't muster the courage to buy food though."
     },
     {
     "Name": "Hamburg",
@@ -121,7 +121,7 @@ let cities = [
     "Long": 8.694724,
     "Lat": 49.4093582,
     "Year": 2023,
-    "Description": "DAAD. Peaceful city, visited only to catch a train to Frankfurt tho."
+    "Description": "DAAD. Peaceful city, visited only to catch a train to Frankfurt, but nevertheless enjoyed the short stay."
     },
     {
     "Name": "Hubli",
@@ -162,14 +162,14 @@ let cities = [
     "Long": 9.682050671,
     "Lat": 47.54574555,
     "Year": 2024,
-    "Description": "Nobel Laureates Meeting! This is where my life peaked"
+    "Description": "Nobel Laureates Meeting! This is where my life peaked."
     },
     {
     "Name": "Lübeck",
     "Long": 10.684738,
     "Lat": 53.866444,
     "Year": 2023,
-    "Description": "DAAD. Expected more, but satisfied by the chocolates"
+    "Description": "DAAD. Expected more, but satisfied by the chocolates."
     },
     {
     "Name": "Mahabaleshwar",
@@ -203,14 +203,21 @@ let cities = [
     "Long": 72.878176,
     "Lat": 19.0785451,
     "Year": '2023, 2024',
-    "Description": "Visa, award ceremony,flight, and Visa again"
+    "Description": "Visa, award ceremony,flight, and Visa again."
     },
     {
     "Name": "Munich",
     "Long": 11.5753822,
     "Lat": 48.1371079,
     "Year": 2023,
-    "Description": "DAAD. Visited so that I can catch a train to Konigsee. "
+    "Description": "DAAD. Visited so that I can catch a train to Königssee. "
+    },
+    {
+    "Name": "Königssee",
+    "Lat": 47.5542,
+    "Long": 12.9784,
+    "Year": 2023,
+    "Description": "DAAD. The most beautiful place I have ever been to. The lake is so peaceful and the mountains are so beautiful. Wallpaper worthy location."
     },
     {
     "Name": "Münster",
