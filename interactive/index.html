@@ -94,4 +94,8 @@
 
 </body>
 <script src="main.js"></script>
+<script>
+    var url = (window.location.origin + window.location.pathname).slice(0, -1);
+    history.replaceState(null, '', url);
+</script>
 </html>
