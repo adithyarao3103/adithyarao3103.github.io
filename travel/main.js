@@ -27,7 +27,7 @@ const customIcon = L.icon({
     popupAnchor: [0, 0]   // point from which the popup should open relative to the iconAnchor
 });
 
-var map = L.map('map').setView([40.1431, 47.5769], zoom);
+var map = L.map('map').setView([33.05, 59.6], zoom);
 L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
 maxZoom: 19,
 }).addTo(map);
