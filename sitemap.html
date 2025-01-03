@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Sitemap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tree {
+            --spacing: 1.5rem;
+            --radius: 10px;
+        }
+
+        .tree li {
+            display: block;
+            position: relative;
+            padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+        }
+
+        .tree ul {
+            margin-left: calc(var(--radius) - var(--spacing));
+            padding-left: 0;
+        }
+
+        .tree ul li {
+            border-left: 2px solid #ddd;
+        }
+
+        .tree ul li:last-child {
+            border-color: transparent;
+        }
+
+        .tree ul li::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(var(--spacing) / -2);
+            left: -2px;
+            width: calc(var(--spacing) + 2px);
+            height: calc(var(--spacing) + 2px);
+            border: 2px solid #ddd;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-radius: 0 0 0 var(--radius);
+        }
+
+        .tree .node {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem 0;
+            border-radius: 6px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .tree .node:hover {
+            background: #e8f0fe;
+            transform: translateX(4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .tree .priority-1 {
+            border-left: 4px solid #4CAF50;
+        }
+
+        .tree .priority-08 {
+            border-left: 4px solid #2196F3;
+        }
+
+        .tree .priority-064 {
+            border-left: 4px solid #9C27B0;
+        }
+
+        .tree .priority-051 {
+            border-left: 4px solid #FF9800;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .legend {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sitemap</h1>
+        <ul class="tree">
+            <li>
+                <a href="https://adithyarao3103.github.io/" class="node priority-1">Home</a>
+                <ul>
+                    <li><a href="https://adithyarao3103.github.io/now/" class="node priority-08">Now</a></li>
+                    <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node priority-08">CV</a></li>
+                    <li><a href="https://adithyarao3103.github.io/interactive/" class="node priority-08">Interactive</a>
+                        <ul>
+                            <li><a href="https://adithyarao3103.github.io/Monte-Carlo/" class="node priority-064">Monte Carlo</a></li>
+                            <li><a href="https://adithyarao3103.github.io/Hopfield-Network/" class="node priority-064">Hopfield Network</a></li>
+                            <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/" class="node priority-064">Spanning Trees on Lattice</a>
+                                <ul>
+                                    <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node priority-051">PDF</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://adithyarao3103.github.io/Game-Of-Life/" class="node priority-064">Game of Life</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://adithyarao3103.github.io/art/" class="node priority-08">Art</a></li>
+                    <li><a href="https://adithyarao3103.github.io/old-website/" class="node priority-08">Old Website</a></li>
+                    <li><a href="https://adithyarao3103.github.io/older-website/" class="node priority-08">Older Website</a></li>
+                    <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node priority-08">Quanta</a></li>
+                    <li><a href="https://adithyarao3103.github.io/travel/" class="node priority-08">Travel</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#e8f0fe';
+            });
+            
+            node.addEventListener('mouseout', function() {
+                this.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</body>
+</html>
