@@ -5,8 +5,10 @@ function checkMobile(){
 
 if(checkMobile()){
     zoom = 2;
+    size = 20;
 } else {
     zoom = 4;
+    size = 34;
 }
 
 function style(feature) {
@@ -20,10 +22,12 @@ function style(feature) {
     };
 }
 
+
+
 const customIcon = L.icon({
     iconUrl: 'map-marker.svg',
-    iconSize: [34, 34],     // size of the icon
-    iconAnchor: [17, 17],   // point of the icon which will correspond to marker's location
+    iconSize: [size, size],     // size of the icon
+    iconAnchor: [size/2, size/2],   // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0]   // point from which the popup should open relative to the iconAnchor
 });
 
