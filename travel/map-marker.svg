@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="7 7 16 16" width="14" height="14">
+  <!-- Definitions for glowing effects -->
+  <defs>
+    <!-- Glow filter for the center -->
+    <filter id="center-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 1  0 0 0 1 0"/>
+    </filter>
+    
+    <!-- Shadow/glow filter -->
+    <filter id="marker-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 1  0 0 0 0.6 0"/>
+    </filter>
+  </defs>
+
+  <!-- Shadow/glow element -->
+  <circle cx="15" cy="15" r="4" fill="#00bfff" filter="url(#marker-shadow)"/>
+  
+  <!-- Main marker body -->
+  <circle cx="15" cy="15" r="3.5" fill="black"/>
+  
+  <!-- Glowing center -->
+  <circle cx="15" cy="15" r="1.5" fill="#00bfff" filter="url(#center-glow)"/>
+  <circle cx="15" cy="15" r="1" fill="#00bfff"/>
+</svg>
