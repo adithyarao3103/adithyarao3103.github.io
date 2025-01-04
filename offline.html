@@ -86,7 +86,7 @@
     function checkConnection() {
     fetch("/", { method: "HEAD" })
         .then(() => {
-        document.querySelector(".overlay").innerHTML = "<h1>Redirecting...</h1><p>You are back online. Redirecting to homepage.</p>";
+        document.querySelector(".overlay").innerHTML = "<h1>Redirecting...</h1><p>Homepage available for serving. Redirecting to homepage.</p>";
         setTimeout(() => {
             window.location.href = "/";
         }, 2000);
