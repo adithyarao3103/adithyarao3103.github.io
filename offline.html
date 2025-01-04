@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offline Notice</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab';
+    }
+
+    body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/flares.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    }
+
+    .overlay {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* border-radius: 8px; */
+    z-index: 2;
+    }
+
+    h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    }
+
+    p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    line-height: 1.5;
+    }
+
+    .status {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    }
+
+    .dots::after {
+    content: "";
+    display: inline-block;
+    animation: dots 1.5s steps(3, end) infinite;
+    }
+
+    @keyframes dots {
+    0% { content: ""; }
+    33% { content: "."; }
+    66% { content: ".."; }
+    100% { content: "..."; }
+    }
+
+    .bdrop{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        backdrop-filter: blur(15px);
+    }
+</style>
+<script>
+    function checkConnection() {
+    fetch("/", { method: "HEAD" })
+        .then(() => {
+        document.querySelector(".overlay").innerHTML = "<h1>Redirecting...</h1><p>You are back online. Redirecting to homepage.</p>";
+        setTimeout(() => {
+            window.location.href = "/";
+        }, 2000);
+        })
+        .catch(() => {
+        setTimeout(checkConnection, 5000);
+        });
+    }
+
+    window.onload = checkConnection;
+</script>
+</head>
+<body>
+<div class="bdrop"></div>
+<div class="overlay">
+    <h1>You are offline</h1>
+    <p>It seems either a massive solar flare is disrupting the network or you have forgotten to connect to the internet.</p>
+    <p>System will keep checking for a connection<span class="dots"></span></p>
+</div>
+</body>
+</html>
