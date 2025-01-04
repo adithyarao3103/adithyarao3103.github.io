@@ -282,8 +282,24 @@
             'help': 'Show available commands',
             'ls': 'List all pages in hierarchy',
             'clear': 'Clear the console',
-            'cd': 'Navigate to a page (e.g., cd home)',
-            'pwd': 'Show current location'
+            'cd': 'Navigate to a page (e.g., cd home/art)',
+            // 'pwd': 'Show current location',
+            // 'coffee': 'Get a virtual coffee break ☕',
+            // 'matrix': 'Enter the matrix mode',
+            // 'weather': 'Check the console weather',
+            // 'dance': 'Make the console dance',
+            // 'flip': 'Flip the console upside down',
+            // 'quote': 'Get a random programmer quote',
+            // 'dinosaur': 'Draw an ASCII dinosaur',
+            // 'man': 'Display manual page for a command',
+            'uname': 'Print system information',
+            'whoami': 'Print effective user name',
+            // 'sl': 'Run a steam locomotive across your terminal',
+            'cowsay': 'Let a cow say something',
+            // 'fortune': 'Print a random fortune cookie message',
+            'date': 'Display the current date and time',
+            'tree': 'Display the directory structure as a tree',
+            'neofetch': 'Display system information in a visually pleasing way'
         };
 
         const outputElement = document.getElementById('output');
@@ -359,6 +375,14 @@
             return current.url;
         }
 
+        var ipaddr;
+
+        function getIPFromAmazon() {
+            fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => ipaddr = data)
+        }
+
+        getIPFromAmazon()
+
         async function handleCommand(cmd) {
             const commandHistory = document.createElement('div');
             commandHistory.className = 'command-history';
@@ -370,6 +394,7 @@
             switch (command) {
                 case 'ls':
                     await listPages();
+                    addToOutputWithAnimation('Use cd <page path> to open the page. Eg. cd home/now')
                     break;
                 case 'clear':
                     outputElement.innerHTML = '';
@@ -393,6 +418,181 @@
                 case 'pwd':
                     addToOutput(currentPath);
                     break;
+
+                case 'coffee':
+                    const coffeeStages = [
+                        'Finding the perfect beans...',
+                        'Grinding beans...',
+                        'Heating water to 96°C...',
+                        'Brewing your virtual coffee...',
+                        '☕ Here\'s your coffee! *virtual aroma wafting*'
+                    ];
+                    for (const stage of coffeeStages) {
+                        await typeText(stage);
+                        await delay(800);
+                    }
+                    break;
+
+                case 'matrix':
+                    document.body.style.transition = '0.5s';
+                    const original = document.body.style.color;
+                    document.body.style.color = '#00ff00';
+                    await typeText('Wake up, Neo...', 'success');
+                    await delay(1000);
+                    await typeText('The Matrix has you...', 'success');
+                    await delay(1000);
+                    await typeText('Follow the white rabbit.', 'success');
+                    setTimeout(() => {
+                        document.body.style.color = original;
+                    }, 3000);
+                    break;
+
+                case 'weather':
+                    const weathers = [
+                        '🌞 Sunny with a chance of syntax errors',
+                        '🌧️ Raining semicolons',
+                        '⛈️ Thunder and debugging storms',
+                        '🌈 Rainbow after successful compilation',
+                        '❄️ Freezing cold cache misses'
+                    ];
+                    addToOutput(weathers[Math.floor(Math.random() * weathers.length)]);
+                    break;
+
+                case 'dance':
+                    const danceFrames = ['(⌐■_■)', '(■_■¬)', '(¬_¬■)', '(■¬_■)', '(⌐■_■)'];
+                    for (let i = 0; i < 10; i++) {
+                        for (const frame of danceFrames) {
+                            await typeText(frame);
+                            await delay(200);
+                            outputElement.removeChild(outputElement.lastChild);
+                        }
+                    }
+                    addToOutput('🎵 Dance complete! 🎵');
+                    break;
+
+                case 'flip':
+                    document.body.style.transform = document.body.style.transform === 'rotate(180deg)' 
+                        ? 'rotate(0deg)' 
+                        : 'rotate(180deg)';
+                    document.body.style.transition = '1s';
+                    break;
+
+                case 'quote':
+                    const quotes = [
+                        '"There are only two hard things in Computer Science: cache invalidation and naming things." - Phil Karlton',
+                        '"The best error message is the one that never shows up." - Thomas Fuchs',
+                        '"First, solve the problem. Then, write the code." - John Johnson',
+                        '"Experience is the name everyone gives to their mistakes." - Oscar Wilde',
+                        '"It\'s not a bug – it\'s an undocumented feature." - Anonymous'
+                    ];
+                    addToOutput(quotes[Math.floor(Math.random() * quotes.length)]);
+                    break;
+
+                case 'dinosaur':
+                    const dino = `
+                      __
+                     / _)
+            _.----._/ /
+           /         /
+        __/ (  | (  |
+       /__.-'|_|--|_|`;
+                    addToOutput(dino);
+                    break;
+
+                case 'uname':
+                    addToOutput('sitemap-1.1.0 website-console FOR Adithya A Rao');
+                    break;
+
+                case 'whoami':
+                    addToOutput(`${ipaddr.slice(0, -1)}@website-console`);
+                    break;
+
+                case 'sl':
+                    const train = [
+                        '      ====        ________                ___________',
+                        '  _D _|  |_______/        \\__I_I_____===__|_________/',
+                        '   |(_)---  |   H\\________/ |   |        =|___ ___|',
+                        '   /     |  |   H  |  |     |   |         ||_| |_||',
+                        '  |      |  |   H  |__--------------------| [___] |',
+                        '  | ________|___H__/__|_____/[][]~\\_______|       |',
+                        '  |/ |   |-----------I_____I [][] []  D   |=======|',
+                        '__/ =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y___________|',
+                        ' |/-=|___|=    ||    ||    ||    |_____/~\\___/',
+                        '  \\_/      \\O=====O=====O=====O_/      \\_/'
+                    ];
+                    for (const line of train) {
+                        await addToOutputWithAnimation(line);
+                        await delay(100);
+                    }
+                    break;
+
+                case 'cowsay':
+                    const message = args.join(' ') || 'Moo!';
+                    const cowMessage = `
+        ${'_'.repeat(message.length + 2)}
+       < ${message} >
+        ${'-'.repeat(message.length + 2)}
+               \\   ^__^
+                \\  (oo)\\________
+                   (__)\\         )\\/\\
+                        ||----w |
+                        ||     ||`;
+                    addToOutput(cowMessage);
+                    break;
+
+                case 'fortune':
+                    const fortunes = [
+                        'Today is your lucky day to commit code without bugs.',
+                        'A clever commit message will come to you soon.',
+                        'Someone will appreciate your well-documented code.',
+                        'The bug you haveve been looking for is in the last place you will look.',
+                        'Your code will compile on the first try... eventually.'
+                    ];
+                    addToOutput(fortunes[Math.floor(Math.random() * fortunes.length)]);
+                    break;
+
+                case 'date':
+                    addToOutput(new Date().toString());
+                    break;
+
+                case 'tree':
+                    async function printTree(node = siteMap, prefix = '') {
+                        for (const [key, value] of Object.entries(node)) {
+                            await addToOutputWithAnimation(`${prefix}${prefix ? '└── ' : ''}${key}${value.children ? '/' : ''}`);
+                            if (value.children) {
+                                await printTree(value.children, prefix + '    ');
+                            }
+                        }
+                    }
+                    await printTree();
+                    addToOutputWithAnimation('Use cd <page path> to open the page. Eg. cd home/now')
+                    break;
+
+                    case 'neofetch':
+                        const art = `
+                            ██╗  ██╗███████╗██╗     ██╗      ██████╗ 
+                            ██║  ██║██╔════╝██║     ██║     ██╔═══██╗
+                            ███████║█████╗  ██║     ██║     ██║   ██║
+                            ██╔══██║██╔══╝  ██║     ██║     ██║   ██║
+                            ██║  ██║███████╗███████╗███████╗╚██████╔╝
+                            ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝ 
+                        `;
+                        const info = `
+                            ${ipaddr.slice(0, -1)}@website-console
+                            -----------------------
+                            OS      : Sitemap-1.1.0
+                            Kernel  : JavaScript
+                            Terminal: Web Browser
+                            CPU     : Client-Side
+                            Memory  : Client-Side
+                            Theme   : Tokyo Night
+                            Commands: ${Object.keys(commands).length} available
+                        `;
+                        addToOutput(art + info);
+                        break;
+
+
+
                 default:
                     if (cmd.trim()) {
                         addToOutput(`Command not found: ${cmd}`, 'error');
@@ -411,9 +611,9 @@
 
         // Initial welcome message
         window.onload = async function() {
-            await typeText('Welcome to the Console Navigation!');
+            await typeText('Welcome to the Sitemap Console!');
             await typeText('Type "help" to see available commands');
-            await typeText('Type "ls" to list all pages');
+            await typeText('Type "ls" or "tree" to list all pages');
             inputElement.focus();
         };
 
