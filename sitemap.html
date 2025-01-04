@@ -248,7 +248,7 @@
                 <li><a href="https://adithyarao3103.github.io/old-website/" class="node">Old Website</a></li>
                 <li><a href="https://adithyarao3103.github.io/older-website/" class="node">Older Website</a></li>
                 <li><a href="https://adithyarao3103.github.io/travel/" class="node">Travel</a></li>
-                <li><a>Files</a>
+                <li><a class="node">Files</a>
                     <ul>
                         <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node">CV.pdf</a></li>                
                         <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node">Quanta.pdf</a></li>
@@ -260,69 +260,70 @@
     </ul>
 
     <script>
+        var lastCmd = '';
+
         const siteMap = {
             'home': {
                 url: 'https://adithyarao3103.github.io/',
+            },
+            'now': {
+                url: 'https://adithyarao3103.github.io/now/'
+            },
+            'interactive': {
+                url: 'https://adithyarao3103.github.io/interactive/',
                 children: {
-                    'now': {
-                        url: 'https://adithyarao3103.github.io/now/'
+                    'monte-carlo': {
+                        url: 'https://adithyarao3103.github.io/Monte-Carlo/'
                     },
-                    'interactive': {
-                        url: 'https://adithyarao3103.github.io/interactive/',
+                    'hopfield': {
+                        url: 'https://adithyarao3103.github.io/Hopfield-Network/'
+                    },
+                    'spanning-trees': {
+                        url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/',
                         children: {
-                            'monte-carlo': {
-                                url: 'https://adithyarao3103.github.io/Monte-Carlo/'
-                            },
-                            'hopfield': {
-                                url: 'https://adithyarao3103.github.io/Hopfield-Network/'
-                            },
-                            'spanning-trees': {
-                                url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/',
-                                children: {
-                                    'paper.pdf': {
-                                        url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
-                                    }
-                                }
-                            },
-                            'game-of-life': {
-                                url: 'https://adithyarao3103.github.io/Game-Of-Life/'
+                            'paper.pdf': {
+                                url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
                             }
                         }
                     },
-                    'art': {
-                        url: 'https://adithyarao3103.github.io/art/'
+                    'game-of-life': {
+                        url: 'https://adithyarao3103.github.io/Game-Of-Life/'
+                    }
+                }
+            },
+            'art': {
+                url: 'https://adithyarao3103.github.io/art/'
+            },
+            'old-website': {
+                url: 'https://adithyarao3103.github.io/old-website/'
+            },
+            'older-website': {
+                url: 'https://adithyarao3103.github.io/older-website/'
+            },
+            'travel': {
+                url: 'https://adithyarao3103.github.io/travel/'
+            },
+            'files':{
+                children:{
+                    'cv.pdf': {
+                        url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
                     },
-                    'old-website': {
-                        url: 'https://adithyarao3103.github.io/old-website/'
+                    'quanta.pdf': {
+                        url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
                     },
-                    'older-website': {
-                        url: 'https://adithyarao3103.github.io/older-website/'
-                    },
-                    'travel': {
-                        url: 'https://adithyarao3103.github.io/travel/'
-                    },
-                    'files':{
-                        children:{
-                            'cv.pdf': {
-                                url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
-                            },
-                            'quanta.pdf': {
-                                url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
-                            },
-                            'The particle problem.pptx': {
-                                url: 'https://adithyarao3103.github.io/files/The particle problem.pptx'
-                            }
-                        }
+                    'The particle problem.pptx': {
+                        url: 'https://adithyarao3103.github.io/files/The particle problem.pptx'
                     }
                 }
             }
+
         };
 
         const commands = {
             'help': 'Show available commands',
             'ls': 'List all pages in hierarchy',
             'clear': 'Clear the console',
-            'cd': 'Navigate to a page (e.g., cd home/art)',
+            'cd': 'Navigate to a page (e.g., cd interactive/hopfield)',
             'uname': 'Print system information',
             'whoami': 'Print effective user name',
             'cowsay': 'Let a cow say something',
@@ -412,8 +413,8 @@
             const parts = path.split('/').filter(Boolean);
             
             for (const part of parts) {
-                if (part === 'home') {
-                    current = siteMap['home'];
+                if (current[part]) {
+                    current = current[part];
                     continue;
                 }
                 
@@ -425,14 +426,13 @@
         }
 
         var ipaddr;
-
         function getIPFromAmazon() {
             fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => ipaddr = data)
         }
-
         getIPFromAmazon()
 
         async function handleCommand(cmd) {
+            lastCmd = cmd;
             const commandHistory = document.createElement('div');
             commandHistory.className = 'command-history';
             commandHistory.textContent = `➜ ${cmd}`;
@@ -442,8 +442,8 @@
 
             switch (command) {
                 case 'ls':
-                    await listPages();
-                    addToOutputWithAnimation('Use cd <page path> to open the page. Eg. cd home/now')
+                    await listPages();                    
+                    addToOutputWithAnimation('Use cd <full path> to open the page. Eg. cd interactive/hopfield')
                     break;
                 case 'clear':
                     outputElement.innerHTML = '';
@@ -618,7 +618,7 @@
                         }
                     }
                     await printTree();
-                    addToOutputWithAnimation('Use cd <page path> to open the page. Eg. cd home/now')
+                    addToOutputWithAnimation('Use cd <full path> to open the page. Eg. cd interactive/hopfield')
                     break;
 
                     case 'neofetch':
@@ -654,11 +654,18 @@
             }
         }
 
-        inputElement.addEventListener('keypress', function(e) {
+        inputElement.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 const command = this.value;
                 this.value = '';
                 handleCommand(command);
+            }
+            if (e.key === 'ArrowUp') {
+                this.value = lastCmd;
+                this.focus();
+                setTimeout(() => {
+                    this.setSelectionRange(this.value.length, this.value.length);
+                }, 0);
             }
         });
 
@@ -666,7 +673,7 @@
         window.onload = async function() {
             await typeText('Welcome to the Sitemap Console!');
             await typeText('Type "help" to see available commands');
-            await typeText('Type "ls" or "tree" to list all pages');
+            await typeText('Type "tree" or "ls" to list all pages');
             inputElement.focus();
         };
 
