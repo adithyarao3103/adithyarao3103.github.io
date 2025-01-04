@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Sitemap</title>
+    <title>Console Sitemap</title>
     <style>
+        :root {
+            --bg: #1a1b26;
+            --text: #a9b1d6;
+            --prompt: #7aa2f7;
+            --success: #9ece6a;
+            --error: #f7768e;
+            --link: #bb9af7;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,18 +21,73 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
-            min-height: 100vh;
-            padding: 2rem;
+            font-family: 'Cascadia Code', 'Source Code Pro', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 1rem;
         }
 
-        .container {
-            max-width: 1200px;
+        .console {
+            max-width: 900px;
             margin: 0 auto;
+            padding: 1rem;
         }
 
+        .console-input {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .prompt {
+            color: var(--prompt);
+            margin-right: 0.5rem;
+        }
+
+        #commandInput {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: inherit;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .output {
+            white-space: pre-wrap;
+            margin-bottom: 1rem;
+        }
+
+        .success {
+            color: var(--success);
+        }
+
+        .error {
+            color: var(--error);
+        }
+
+        .command-history {
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .hierarchy-item {
+            white-space: pre;
+            display: block;
+            opacity: 0;
+            animation: fadeIn 0.1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Tree View styles remain the same */
         .tree {
+            display: none;
             --spacing: 1.5rem;
             --radius: 10px;
         }
@@ -40,7 +104,7 @@
         }
 
         .tree ul li {
-            border-left: 2px solid #ddd;
+            border-left: 2px solid var(--text);
         }
 
         .tree ul li:last-child {
@@ -55,7 +119,7 @@
             left: -2px;
             width: calc(var(--spacing) + 2px);
             height: calc(var(--spacing) + 2px);
-            border: 2px solid #ddd;
+            border: 2px solid var(--text);
             border-top-color: transparent;
             border-right-color: transparent;
             border-radius: 0 0 0 var(--radius);
@@ -65,101 +129,297 @@
             display: inline-block;
             padding: 0.5rem 1rem;
             margin: 0.25rem 0;
-            border-radius: 6px;
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            color: var(--link);
             text-decoration: none;
-            color: #333;
         }
 
         .tree .node:hover {
-            background: #e8f0fe;
-            transform: translateX(4px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-decoration: underline;
         }
 
-        .tree .priority-1 {
-            border-left: 4px solid #4CAF50;
-        }
-
-        .tree .priority-08 {
-            border-left: 4px solid #2196F3;
-        }
-
-        .tree .priority-064 {
-            border-left: 4px solid #9C27B0;
-        }
-
-        .tree .priority-051 {
-            border-left: 4px solid #FF9800;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-        }
-
-        .legend {
-            margin-top: 2rem;
-            text-align: center;
-            padding: 1rem;
-            background: white;
+        /* Console Window Style */
+        .window {
+            background: var(--bg);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
 
-        .legend-item {
-            display: inline-block;
-            margin: 0 1rem;
+        .window-header {
+            background: #2a2b36;
             padding: 0.5rem 1rem;
-            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .window-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .close { background: #ff5f56; }
+        .minimize { background: #ffbd2e; }
+        .maximize { background: #27c93f; }
+
+        .window-title {
+            color: var(--text);
+            margin-left: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .console {
+                display: none;
+            }
+            .tree {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sitemap</h1>
-        <ul class="tree">
-            <li>
-                <a href="https://adithyarao3103.github.io/" class="node priority-1">Home</a>
-                <ul>
-                    <li><a href="https://adithyarao3103.github.io/now/" class="node priority-08">Now</a></li>
-                    <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node priority-08">CV</a></li>
-                    <li><a href="https://adithyarao3103.github.io/interactive/" class="node priority-08">Interactive</a>
-                        <ul>
-                            <li><a href="https://adithyarao3103.github.io/Monte-Carlo/" class="node priority-064">Monte Carlo</a></li>
-                            <li><a href="https://adithyarao3103.github.io/Hopfield-Network/" class="node priority-064">Hopfield Network</a></li>
-                            <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/" class="node priority-064">Spanning Trees on Lattice</a>
-                                <ul>
-                                    <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node priority-051">PDF</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="https://adithyarao3103.github.io/Game-Of-Life/" class="node priority-064">Game of Life</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://adithyarao3103.github.io/art/" class="node priority-08">Art</a></li>
-                    <li><a href="https://adithyarao3103.github.io/old-website/" class="node priority-08">Old Website</a></li>
-                    <li><a href="https://adithyarao3103.github.io/older-website/" class="node priority-08">Older Website</a></li>
-                    <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node priority-08">Quanta</a></li>
-                    <li><a href="https://adithyarao3103.github.io/travel/" class="node priority-08">Travel</a></li>
-                </ul>
-            </li>
-        </ul>
+    <!-- Console View (Desktop) -->
+    <div class="window console">
+        <div class="window-header">
+            <div class="window-button close"></div>
+            <div class="window-button minimize"></div>
+            <div class="window-button maximize"></div>
+            <span class="window-title">terminal</span>
+        </div>
+        <div class="console-content">
+            <div id="output" class="output"></div>
+            <div class="console-input">
+                <span class="prompt">➜</span>
+                <input type="text" id="commandInput" autofocus spellcheck="false" autocomplete="off">
+            </div>
+        </div>
     </div>
 
+    <!-- Tree View (Mobile) remains the same -->
+    <ul class="tree">
+        <li>
+            <a href="https://adithyarao3103.github.io/" class="node">Home</a>
+            <ul>
+                <li><a href="https://adithyarao3103.github.io/now/" class="node">Now</a></li>
+                <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node">CV</a></li>
+                <li><a href="https://adithyarao3103.github.io/interactive/" class="node">Interactive</a>
+                    <ul>
+                        <li><a href="https://adithyarao3103.github.io/Monte-Carlo/" class="node">Monte Carlo</a></li>
+                        <li><a href="https://adithyarao3103.github.io/Hopfield-Network/" class="node">Hopfield Network</a></li>
+                        <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/" class="node">Spanning Trees on Lattice</a>
+                            <ul>
+                                <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node">PDF</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://adithyarao3103.github.io/Game-Of-Life/" class="node">Game of Life</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://adithyarao3103.github.io/art/" class="node">Art</a></li>
+                <li><a href="https://adithyarao3103.github.io/old-website/" class="node">Old Website</a></li>
+                <li><a href="https://adithyarao3103.github.io/older-website/" class="node">Older Website</a></li>
+                <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node">Quanta</a></li>
+                <li><a href="https://adithyarao3103.github.io/travel/" class="node">Travel</a></li>
+            </ul>
+        </li>
+    </ul>
+
     <script>
-        document.querySelectorAll('.node').forEach(node => {
-            node.addEventListener('mouseover', function() {
-                this.style.backgroundColor = '#e8f0fe';
-            });
+        const siteMap = {
+            'home': {
+                url: 'https://adithyarao3103.github.io/',
+                children: {
+                    'now': {
+                        url: 'https://adithyarao3103.github.io/now/'
+                    },
+                    'cv.pdf': {
+                        url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
+                    },
+                    'interactive': {
+                        url: 'https://adithyarao3103.github.io/interactive/',
+                        children: {
+                            'monte-carlo': {
+                                url: 'https://adithyarao3103.github.io/Monte-Carlo/'
+                            },
+                            'hopfield': {
+                                url: 'https://adithyarao3103.github.io/Hopfield-Network/'
+                            },
+                            'spanning-trees': {
+                                url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/',
+                                children: {
+                                    'paper.pdf': {
+                                        url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
+                                    }
+                                }
+                            },
+                            'game-of-life': {
+                                url: 'https://adithyarao3103.github.io/Game-Of-Life/'
+                            }
+                        }
+                    },
+                    'art': {
+                        url: 'https://adithyarao3103.github.io/art/'
+                    },
+                    'old-website': {
+                        url: 'https://adithyarao3103.github.io/old-website/'
+                    },
+                    'older-website': {
+                        url: 'https://adithyarao3103.github.io/older-website/'
+                    },
+                    'quanta.pdf': {
+                        url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
+                    },
+                    'travel': {
+                        url: 'https://adithyarao3103.github.io/travel/'
+                    }
+                }
+            }
+        };
+
+        const commands = {
+            'help': 'Show available commands',
+            'ls': 'List all pages in hierarchy',
+            'clear': 'Clear the console',
+            'cd': 'Navigate to a page (e.g., cd home)',
+            'pwd': 'Show current location'
+        };
+
+        const outputElement = document.getElementById('output');
+        const inputElement = document.getElementById('commandInput');
+        let currentPath = '/';
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function addToOutputWithAnimation(text, className = '', indent = 0) {
+            const div = document.createElement('div');
+            div.className = `hierarchy-item ${className}`;
+            div.style.animationDelay = `${indent * 0.05}s`;
+            div.textContent = '  '.repeat(indent) + text;
+            outputElement.appendChild(div);
+            await delay(50);
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function addToOutput(text, className = '') {
+            const div = document.createElement('div');
+            div.textContent = text;
+            div.className = className;
+            outputElement.appendChild(div);
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        async function typeText(text, className = '') {
+            const div = document.createElement('div');
+            div.className = className;
+            outputElement.appendChild(div);
             
-            node.addEventListener('mouseout', function() {
-                this.style.backgroundColor = 'white';
-            });
+            for (let char of text) {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.className = 'typed-char';
+                div.appendChild(span);
+                await delay(10);
+            }
+        }
+
+        async function listPages(node = siteMap, indent = 0) {
+            for (const [key, value] of Object.entries(node)) {
+                await addToOutputWithAnimation(`${key}${value.children ? '/' : ''}`, 'success', indent);
+                if (value.children) {
+                    await listPages(value.children, indent + 1);
+                }
+            }
+        }
+
+        function showHelp() {
+            const helpText = Object.entries(commands)
+                .map(([cmd, desc]) => `${cmd.padEnd(10)} - ${desc}`)
+                .join('\n');
+            addToOutput(helpText);
+        }
+
+        function findPageUrl(path) {
+            let current = siteMap;
+            const parts = path.split('/').filter(Boolean);
+            
+            for (const part of parts) {
+                if (part === 'home') {
+                    current = siteMap['home'];
+                    continue;
+                }
+                
+                if (!current.children || !current.children[part]) return null;
+                current = current.children[part];
+            }
+            
+            return current.url;
+        }
+
+        async function handleCommand(cmd) {
+            const commandHistory = document.createElement('div');
+            commandHistory.className = 'command-history';
+            commandHistory.textContent = `➜ ${cmd}`;
+            outputElement.appendChild(commandHistory);
+
+            const [command, ...args] = cmd.toLowerCase().trim().split(' ');
+
+            switch (command) {
+                case 'ls':
+                    await listPages();
+                    break;
+                case 'clear':
+                    outputElement.innerHTML = '';
+                    break;
+                case 'help':
+                    showHelp();
+                    break;
+                case 'cd':
+                    const path = args[0];
+                    if (!path) {
+                        addToOutput('Please specify a path', 'error');
+                        break;
+                    }
+                    const url = findPageUrl(path);
+                    if (url) {
+                        window.location.href = url;
+                    } else {
+                        addToOutput(`Path not found: ${path}`, 'error');
+                    }
+                    break;
+                case 'pwd':
+                    addToOutput(currentPath);
+                    break;
+                default:
+                    if (cmd.trim()) {
+                        addToOutput(`Command not found: ${cmd}`, 'error');
+                        addToOutput('Type "help" to see available commands');
+                    }
+            }
+        }
+
+        inputElement.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const command = this.value;
+                this.value = '';
+                handleCommand(command);
+            }
+        });
+
+        // Initial welcome message
+        window.onload = async function() {
+            await typeText('Welcome to the Console Navigation!');
+            await typeText('Type "help" to see available commands');
+            await typeText('Type "ls" to list all pages');
+            inputElement.focus();
+        };
+
+        // Keep focus on input
+        document.addEventListener('click', () => {
+            inputElement.focus();
         });
     </script>
 </body>
