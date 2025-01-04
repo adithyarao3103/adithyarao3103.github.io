@@ -14,6 +14,29 @@
             --link: #bb9af7;
         }
 
+        ::-webkit-scrollbar {
+            width: 0px;
+            z-index: 999;
+            position: absolute;
+            right: 0;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: var(--thumb-background-color);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: var(--thumb-color);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--thumb-hover-color);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -90,6 +113,10 @@
             display: none;
             --spacing: 1.5rem;
             --radius: 10px;
+        }
+
+        .h1{
+            display: none;
         }
 
         .tree li {
@@ -174,7 +201,7 @@
             .console {
                 display: none;
             }
-            .tree {
+            .tree, .h1 {
                 display: block;
             }
         }
@@ -199,19 +226,19 @@
     </div>
 
     <!-- Tree View (Mobile) remains the same -->
+    <h1 class="h1">Sitemap</h1>
     <ul class="tree">
         <li>
             <a href="https://adithyarao3103.github.io/" class="node">Home</a>
             <ul>
                 <li><a href="https://adithyarao3103.github.io/now/" class="node">Now</a></li>
-                <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node">CV</a></li>
                 <li><a href="https://adithyarao3103.github.io/interactive/" class="node">Interactive</a>
                     <ul>
                         <li><a href="https://adithyarao3103.github.io/Monte-Carlo/" class="node">Monte Carlo</a></li>
                         <li><a href="https://adithyarao3103.github.io/Hopfield-Network/" class="node">Hopfield Network</a></li>
                         <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/" class="node">Spanning Trees on Lattice</a>
                             <ul>
-                                <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node">PDF</a></li>
+                                <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node">Paper.pdf</a></li>
                             </ul>
                         </li>
                         <li><a href="https://adithyarao3103.github.io/Game-Of-Life/" class="node">Game of Life</a></li>
@@ -220,8 +247,14 @@
                 <li><a href="https://adithyarao3103.github.io/art/" class="node">Art</a></li>
                 <li><a href="https://adithyarao3103.github.io/old-website/" class="node">Old Website</a></li>
                 <li><a href="https://adithyarao3103.github.io/older-website/" class="node">Older Website</a></li>
-                <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node">Quanta</a></li>
                 <li><a href="https://adithyarao3103.github.io/travel/" class="node">Travel</a></li>
+                <li><a>Files</a>
+                    <ul>
+                        <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node">CV.pdf</a></li>                
+                        <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node">Quanta.pdf</a></li>
+                        <li><a href="https://adithyarao3103.github.io/files/The particle problem.pptx" class="node">The particle problem.pptx</a></li>
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
@@ -233,9 +266,6 @@
                 children: {
                     'now': {
                         url: 'https://adithyarao3103.github.io/now/'
-                    },
-                    'cv.pdf': {
-                        url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
                     },
                     'interactive': {
                         url: 'https://adithyarao3103.github.io/interactive/',
@@ -268,11 +298,21 @@
                     'older-website': {
                         url: 'https://adithyarao3103.github.io/older-website/'
                     },
-                    'quanta.pdf': {
-                        url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
-                    },
                     'travel': {
                         url: 'https://adithyarao3103.github.io/travel/'
+                    },
+                    'files':{
+                        children:{
+                            'cv.pdf': {
+                                url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
+                            },
+                            'quanta.pdf': {
+                                url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
+                            },
+                            'The particle problem.pptx': {
+                                url: 'https://adithyarao3103.github.io/files/The particle problem.pptx'
+                            }
+                        }
                     }
                 }
             }
@@ -283,24 +323,26 @@
             'ls': 'List all pages in hierarchy',
             'clear': 'Clear the console',
             'cd': 'Navigate to a page (e.g., cd home/art)',
-            // 'pwd': 'Show current location',
-            // 'coffee': 'Get a virtual coffee break ☕',
-            // 'matrix': 'Enter the matrix mode',
-            // 'weather': 'Check the console weather',
-            // 'dance': 'Make the console dance',
-            // 'flip': 'Flip the console upside down',
-            // 'quote': 'Get a random programmer quote',
-            // 'dinosaur': 'Draw an ASCII dinosaur',
-            // 'man': 'Display manual page for a command',
             'uname': 'Print system information',
             'whoami': 'Print effective user name',
-            // 'sl': 'Run a steam locomotive across your terminal',
             'cowsay': 'Let a cow say something',
-            // 'fortune': 'Print a random fortune cookie message',
             'date': 'Display the current date and time',
             'tree': 'Display the directory structure as a tree',
-            'neofetch': 'Display system information in a visually pleasing way'
+            'neofetch': 'Display system information in a visually pleasing way',
+            'easter': 'Display easter egg commands'
         };
+
+        const easter_eggs = {
+            'coffee': 'Get a virtual coffee break ☕',
+            'matrix': 'Enter the matrix mode',
+            'weather': 'Check the console weather',
+            'dance': 'Make the console dance',
+            'flip': 'Flip the console upside down',
+            'quote': 'Get a random programmer quote',
+            'dinosaur': 'Draw an ASCII dinosaur',
+            'fortune': 'Print a random fortune cookie message',
+            'sl': 'Run a steam locomotive across your terminal',
+        }
 
         const outputElement = document.getElementById('output');
         const inputElement = document.getElementById('commandInput');
@@ -353,6 +395,13 @@
 
         function showHelp() {
             const helpText = Object.entries(commands)
+                .map(([cmd, desc]) => `${cmd.padEnd(10)} - ${desc}`)
+                .join('\n');
+            addToOutput(helpText);
+        }
+
+        function showEaster() {
+            const helpText = Object.entries(easter_eggs)
                 .map(([cmd, desc]) => `${cmd.padEnd(10)} - ${desc}`)
                 .join('\n');
             addToOutput(helpText);
@@ -419,6 +468,10 @@
                     addToOutput(currentPath);
                     break;
 
+                case 'easter':
+                    showEaster();
+                    break;
+
                 case 'coffee':
                     const coffeeStages = [
                         'Finding the perfect beans...',
@@ -460,7 +513,7 @@
 
                 case 'dance':
                     const danceFrames = ['(⌐■_■)', '(■_■¬)', '(¬_¬■)', '(■¬_■)', '(⌐■_■)'];
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < 3; i++) {
                         for (const frame of danceFrames) {
                             await typeText(frame);
                             await delay(200);
