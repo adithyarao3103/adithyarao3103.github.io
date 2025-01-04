@@ -35,34 +35,29 @@ self.addEventListener('activate', (event) => {
         ])
     );
 });
-
 self.addEventListener('fetch', (event) => {
+    // Handle navigation (HTML) requests, e.g., index.html
     if (event.request.mode === 'navigate') {
-        event.respondWith(
-            fetch(event.request)
-                .catch(() => {
-                    return caches.open(CACHE_NAME)
-                        .then((cache) => cache.match(OFFLINE_URL));
-                })
-        );
+        // Always fetch the HTML page from the network, never from cache
+        event.respondWith(fetch(event.request));
     } else if (event.request.destination === 'image') {
-        // Handle image requests
+        // Handle image caching
         event.respondWith(
             caches.open(CACHE_NAME)
                 .then((cache) => {
                     return cache.match(event.request)
                         .then((cachedResponse) => {
                             if (cachedResponse) {
-                                return cachedResponse;
+                                return cachedResponse; // Serve from cache if available
                             }
                             return fetch(event.request)
                                 .then((networkResponse) => {
-                                    cache.put(event.request, networkResponse.clone());
-                                    return networkResponse;
+                                    cache.put(event.request, networkResponse.clone()); // Cache the new image
+                                    return networkResponse; // Return the network response
                                 })
                                 .catch(() => {
-                                    // Return a fallback image if the image fails to load
-                            });
+                                    // Return a fallback image if network fails
+                                });
                         });
                 })
         );
