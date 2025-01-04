@@ -37,7 +37,6 @@
     font-family: 'Arial', sans-serif;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    /* border-radius: 8px; */
     z-index: 2;
     }
 
@@ -81,22 +80,43 @@
         z-index: 1;
         backdrop-filter: blur(15px);
     }
-</style>
-<script>
-    function checkConnection() {
-    fetch("/", { method: "HEAD" })
-        .then(() => {
-        document.querySelector(".overlay").innerHTML = "<h1>Redirecting...</h1><p>Homepage available for serving. Redirecting to homepage.</p>";
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 2000);
-        })
-        .catch(() => {
-        setTimeout(checkConnection, 5000);
-        });
+
+    .btn-retry {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        background-color: #cbc436;
+        color: #000;
+        border: none;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        margin-top: 20px;
     }
 
-    window.onload = checkConnection;
+    .btn-retry:hover {
+        background-color: #ca9b1a;
+    }
+</style>
+<script>
+    let lastPage = document.referrer;  // Save the page user was trying to visit
+
+    function checkConnection() {
+        if (navigator.onLine) {
+            document.querySelector(".overlay").innerHTML = "<h1>Redirecting<span class='dots'></span></h1><p>You are back online.</p>";
+            setTimeout(() => {
+                window.location.href = lastPage || "/"; // Redirect to last page or homepage
+            }, 2000);
+        }
+    }
+
+    function retryConnection() {
+        checkConnection();
+        document.querySelector(".status").innerText = "Checking connection...";
+    }
+
+    window.onload = () => {
+        document.querySelector(".btn-retry").addEventListener("click", retryConnection);
+        // checkConnection();  // Initiate connection check when the page loads
+    };
 </script>
 </head>
 <body>
@@ -104,7 +124,7 @@
 <div class="overlay">
     <h1>You are offline</h1>
     <p>It seems either a massive solar flare is disrupting the network or you have forgotten to connect to the internet.</p>
-    <p>System will keep checking for a connection<span class="dots"></span></p>
+    <button class="btn-retry">Recheck Connection</button>
 </div>
 </body>
 </html>
