@@ -106,11 +106,15 @@
                 window.location.href = lastPage || "/"; // Redirect to last page or homepage
             }, 2000);
         }
+        else{
+            document.querySelector(".btn-retry").innerHTML = "Not connected";
+            setTimeout(() => {document.querySelector(".btn-retry").innerText = "Recheck Connection"}, 2000);
+        }
     }
 
     function retryConnection() {
         checkConnection();
-        document.querySelector(".status").innerText = "Checking connection...";
+        document.querySelector(".btn-retry").innerHTML = "Checking connection<span class='dots'></span>";
     }
 
     window.onload = () => {
