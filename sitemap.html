@@ -553,7 +553,7 @@
                     break;
 
                 case 'uname':
-                    addToOutput('sitemap-1.1.0 website-console FOR Adithya A Rao');
+                    addToOutput('sitemap-1.1.0 website-console for Adithya A Rao');
                     break;
 
                 case 'whoami':
@@ -562,16 +562,16 @@
 
                 case 'sl':
                     const train = [
-                        '      ====        ________                ___________',
-                        '  _D _|  |_______/        \\__I_I_____===__|_________/',
-                        '   |(_)---  |   H\\________/ |   |        =|___ ___|',
-                        '   /     |  |   H  |  |     |   |         ||_| |_||',
-                        '  |      |  |   H  |__--------------------| [___] |',
-                        '  | ________|___H__/__|_____/[][]~\\_______|       |',
-                        '  |/ |   |-----------I_____I [][] []  D   |=======|',
-                        '__/ =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y___________|',
-                        ' |/-=|___|=    ||    ||    ||    |_____/~\\___/',
-                        '  \\_/      \\O=====O=====O=====O_/      \\_/'
+                        '           ====        ________                ___________',
+                        '       _D _|  |_______/        \\__I_I_____===__|_________/',
+                        '       |(_)---  |   H\\________/ |   |        =|___ ___|',
+                        '       /     |  |   H  |  |     |   |         ||_| |_||',
+                        '      |      |  |   H  |__--------------------| [___] |',
+                        '      | ________|___H__/__|_____/[][]~\\_______|       |',
+                        '      |/ |   |-----------I_____I [][] []  D   |=======|',
+                        '    __/ =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y___________|',
+                        '     |/-=|___|=    ||    ||    ||    |_____/~\\___/',
+                        '      \\_/      \\O=====O=====O=====O_/      \\_/'
                     ];
                     for (const line of train) {
                         await addToOutputWithAnimation(line);
@@ -623,23 +623,23 @@
 
                     case 'neofetch':
                         const art = `
-                            ██╗  ██╗███████╗██╗     ██╗      ██████╗ 
-                            ██║  ██║██╔════╝██║     ██║     ██╔═══██╗
-                            ███████║█████╗  ██║     ██║     ██║   ██║
-                            ██╔══██║██╔══╝  ██║     ██║     ██║   ██║
-                            ██║  ██║███████╗███████╗███████╗╚██████╔╝
-                            ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝ 
+    ██╗  ██╗███████╗██╗     ██╗      ██████╗ 
+    ██║  ██║██╔════╝██║     ██║     ██╔═══██╗
+    ███████║█████╗  ██║     ██║     ██║   ██║
+    ██╔══██║██╔══╝  ██║     ██║     ██║   ██║
+    ██║  ██║███████╗███████╗███████╗╚██████╔╝
+    ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝ 
                         `;
                         const info = `
-                            ${ipaddr.slice(0, -1)}@website-console
-                            -----------------------
-                            OS      : Sitemap-1.1.0
-                            Kernel  : JavaScript
-                            Terminal: Web Browser
-                            CPU     : Client-Side
-                            Memory  : Client-Side
-                            Theme   : Tokyo Night
-                            Commands: ${Object.keys(commands).length} available
+    ${ipaddr.slice(0, -1)}@website-console
+    -----------------------
+    OS      : Sitemap-1.1.0
+    Kernel  : JavaScript
+    Terminal: Web Browser
+    CPU     : Client-Side
+    Memory  : Client-Side
+    Theme   : Tokyo Night
+    Commands: ${Object.keys(commands).length} available
                         `;
                         addToOutput(art + info);
                         break;
@@ -675,6 +675,8 @@
             await typeText('Type "help" to see available commands');
             await typeText('Type "tree" or "ls" to list all pages');
             inputElement.focus();
+            handleCommand('tree');
+
         };
 
         // Keep focus on input
