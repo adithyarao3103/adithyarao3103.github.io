@@ -1,0 +1,200 @@
+:root {
+    --bg: #1a1b26;
+    --text: #a9b1d6;
+    --prompt: #7aa2f7;
+    --success: #9ece6a;
+    --error: #f7768e;
+    --link: #bb9af7;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    z-index: 999;
+    position: absolute;
+    right: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: var(--thumb-background-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--thumb-color);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--thumb-hover-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cascadia Code', 'Source Code Pro', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+.console {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.console-input {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.prompt {
+    color: var(--prompt);
+    margin-right: 0.5rem;
+}
+
+#commandInput {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: inherit;
+    flex-grow: 1;
+    outline: none;
+}
+
+.output {
+    white-space: pre-wrap;
+    margin-bottom: 1rem;
+}
+
+.success {
+    color: var(--success);
+}
+
+.error {
+    color: var(--error);
+}
+
+.command-history {
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.hierarchy-item {
+    white-space: pre;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Tree View styles remain the same */
+.tree {
+    display: none;
+    --spacing: 1.5rem;
+    --radius: 10px;
+}
+
+.h1{
+    display: none;
+}
+
+.tree li {
+    display: block;
+    position: relative;
+    padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+}
+
+.tree ul {
+    margin-left: calc(var(--radius) - var(--spacing));
+    padding-left: 0;
+}
+
+.tree ul li {
+    border-left: 2px solid var(--text);
+}
+
+.tree ul li:last-child {
+    border-color: transparent;
+}
+
+.tree ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(var(--spacing) / -2);
+    left: -2px;
+    width: calc(var(--spacing) + 2px);
+    height: calc(var(--spacing) + 2px);
+    border: 2px solid var(--text);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 0 0 0 var(--radius);
+}
+
+.tree .node {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0;
+    color: var(--link);
+    text-decoration: none;
+}
+
+.tree .node:hover {
+    text-decoration: underline;
+}
+
+/* Console Window Style */
+.window {
+    background: var(--bg);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.window-header {
+    background: #2a2b36;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.window-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.window-title {
+    color: var(--text);
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .console {
+        display: none;
+    }
+    .tree, .h1 {
+        display: block;
+    }
+}
