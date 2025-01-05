@@ -1,6 +1,8 @@
 var cmdHistory = [];
 var cmdHistoryIndex = -1;
 
+currentGame = null;
+
 var ipaddr;
 function getIPFromAmazon() {
     fetch("https://checkip.amazonaws.com/").then(res => res.text()).then(data => ipaddr = data)
@@ -195,6 +197,40 @@ function handleGameEnd(winner) {
 
 
 
+
+async function wordScramble() {
+    const words = ['function', 'variable', 'console', 'terminal', 'program'];
+    const word = words[Math.floor(Math.random() * words.length)];
+    const scrambled = word.split('')
+        .sort(() => Math.random() - 0.5)
+        .join('');
+
+    await addToOutput("Welcome to Word Scramble!");
+    await addToOutput(`Unscramble this word: ${scrambled}`);
+    await addToOutput("Hint: It's programming-related!");
+
+    return {
+        name: 'unscramble',
+        handler: async (input) => {
+            const guess = input.toLowerCase();
+
+            if (guess === 'quit') {
+                currentGame = null;
+                return "Game ended. Thanks for playing!";
+            }
+            
+            if (guess === word) {
+                currentGame=null;
+                return "Correct! You unscrambled the word!";
+            } else {
+                return "Not quite! Try again!";
+            }
+        }
+    };
+}
+
+
+
 const siteMap = {
     'home': {
         url: 'https://adithyarao3103.github.io/',
@@ -365,6 +401,14 @@ async function handleCommand(cmd) {
             return;
         }
     }
+    if (currentGame) {
+        const result = await currentGame.handler(cmd);
+        if (result.includes('Congratulations!') || result.includes('Game Over!')) {
+            currentGame = null;
+        }
+        addToOutput(result);
+        return;
+    }
 
     cmdHistory = [cmd, ...cmdHistory];
     cmdHistoryIndex = -1;
@@ -378,7 +422,7 @@ async function handleCommand(cmd) {
     switch (command) {
         case 'ls':
             await listPages();                    
-            addToOutputWithAnimation('Use cd <full path> to open the page. Eg. cd interactive/hopfield')
+            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield')
             break;
         case 'clear':
             outputElement.innerHTML = '';
@@ -533,7 +577,7 @@ ${'-'.repeat(message.length + 2)}
                 'Today is your lucky day to commit code without bugs.',
                 'A clever commit message will come to you soon.',
                 'Someone will appreciate your well-documented code.',
-                'The bug you haveve been looking for is in the last place you will look.',
+                'The bug you have been looking for is in the last place you will look.',
                 'Your code will compile on the first try... eventually.'
             ];
             addToOutput(fortunes[Math.floor(Math.random() * fortunes.length)]);
@@ -553,7 +597,7 @@ ${'-'.repeat(message.length + 2)}
                 }
             }
             await printTree();
-            addToOutputWithAnimation('Use cd <full path> to open the page. Eg. cd interactive/hopfield')
+            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield')
             break;
 
             case 'neofetch':
@@ -581,6 +625,10 @@ Commands: ${Object.keys(commands).length} available
 
         case 'tictactoe':
             initTicTacToe();
+            break;
+
+        case 'unscramble':
+            currentGame = await wordScramble();
             break;
 
         default:
