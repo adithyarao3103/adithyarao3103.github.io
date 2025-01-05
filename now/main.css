@@ -265,7 +265,7 @@ li::before {
 
 .menu-toggle {
     display: none;
-    background: white;
+    background: #c26d26;
     border: 2px solid black;
     color: black;
     font-size: 3.15vh;
@@ -273,12 +273,12 @@ li::before {
     font-weight: 700;
     margin-right: 13px;
     z-index: 1001;
-    /* padding-top: 3px; */
-    padding-right: 7px;
-    /* padding-bottom: 1px; */
-    padding-left: 7px;
-    /* border-radius: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
     position: relative;
+    width: 40px;
+    height: 40px;    
 }
 
 .bdrop-bg{
@@ -347,11 +347,6 @@ li::before {
 
     .navOpen{
         transform: translateX(-50%)
-    }
-
-    .menu-toggle{
-        display: block;
-        width: fit-content;
     }
 
 }

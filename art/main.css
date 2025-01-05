@@ -277,12 +277,12 @@ background-color: darkred;
     font-weight: 700;
     margin-right: 13px;
     z-index: 1001;
-    /* padding-top: 3px; */
-    padding-right: 7px;
-    /* padding-bottom: 1px; */
-    padding-left: 7px;
-    /* border-radius: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
     position: relative;
+    width: 40px;
+    height: 40px;    
 }
 
 .bdrop-bg{
@@ -353,10 +353,6 @@ background-color: darkred;
         transform: translateX(-50%)
     }
 
-    .menu-toggle{
-        display: block;
-        width: fit-content;
-    }
 
     .container {
         margin: 10vh auto;

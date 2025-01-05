@@ -180,12 +180,12 @@ body, html{
     font-weight: 700;
     margin-right: 13px;
     z-index: 1001;
-    /* padding-top: -1px; */
-    padding-right: 7px;
-    /* padding-bottom: 1px; */
-    padding-left: 7px;
-    /* border-radius: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
     position: relative;
+    width: 40px;
+    height: 40px;    
 }
 
 .bdrop-bg{
@@ -261,11 +261,6 @@ body, html{
 
     .navOpen{
         transform: translateX(-50%)
-    }
-
-    .menu-toggle{
-        display: block;
-        width: fit-content;
     }
 
 

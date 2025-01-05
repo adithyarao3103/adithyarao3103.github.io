@@ -8,12 +8,17 @@
     font-weight: 700;
     margin-right: 13px;
     z-index: 1001;
-    /* padding-top: -1px; */
-    padding-right: 7px;
-    /* padding-bottom: 1px; */
-    padding-left: 7px;
-    /* border-radius: 10px; */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 40px;
+    height: 40px;    
+}
+
+.menu-toggle>svg>path{
+    fill: var(--complementary);
 }
 
 #name-span-mob{
@@ -164,10 +169,6 @@ body, html{
     transform: translateX(-50%)
 }
 
-.menu-toggle{
-    display: block;
-    width: fit-content;
-}
 
 .main{
     padding-bottom: 15vh;
