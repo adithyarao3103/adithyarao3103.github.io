@@ -4,3 +4,9 @@
 [submodule "interactive/Spanning-Trees-on-Lattice"]
 	path = interactive/Spanning-Trees-on-Lattice
 	url = https://github.com/adithyarao3103/Spanning-Trees-on-Lattice.git
+[submodule "interactive/Monte-Carlo"]
+	path = interactive/Monte-Carlo
+	url = https://github.com/adithyarao3103/Monte-Carlo.git
+[submodule "interactive/Hopfield-Network"]
+	path = interactive/Hopfield-Network
+	url = https://github.com/adithyarao3103/Hopfield-Network.git
