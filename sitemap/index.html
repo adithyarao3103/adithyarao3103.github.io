@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adithya A Rao | Sitemap</title>
-    <link rel="stylesheet" href="sitemap.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <!-- Console View (Desktop) -->
@@ -25,41 +25,12 @@
     </div>
 
     <!-- Tree View (Mobile) remains the same -->
-    <h1 class="h1">Sitemap</h1>
-    <ul class="tree">
-        <li>
-            <a href="https://adithyarao3103.github.io/" class="node">Home</a>
-            <ul>
-                <li><a href="https://adithyarao3103.github.io/now/" class="node">Now</a></li>
-                <li><a href="https://adithyarao3103.github.io/interactive/" class="node">Interactive</a>
-                    <ul>
-                        <li><a href="https://adithyarao3103.github.io/Monte-Carlo/" class="node">Monte Carlo</a></li>
-                        <li><a href="https://adithyarao3103.github.io/Hopfield-Network/" class="node">Hopfield Network</a></li>
-                        <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/" class="node">Spanning Trees on Lattice</a>
-                            <ul>
-                                <li><a href="https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf" class="node">Paper.pdf</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://adithyarao3103.github.io/Game-Of-Life/" class="node">Game of Life</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://adithyarao3103.github.io/art/" class="node">Art</a></li>
-                <li><a href="https://adithyarao3103.github.io/old-website/" class="node">Old Website</a></li>
-                <li><a href="https://adithyarao3103.github.io/older-website/" class="node">Older Website</a></li>
-                <li><a href="https://adithyarao3103.github.io/travel/" class="node">Travel</a></li>
-                <li><a class="node">Files</a>
-                    <ul>
-                        <li><a href="https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf" class="node">CV.pdf</a></li>                
-                        <li><a href="https://adithyarao3103.github.io/files/Adithya_Quanta.pdf" class="node">Quanta.pdf</a></li>
-                        <li><a href="https://adithyarao3103.github.io/files/The particle problem.pptx" class="node">The particle problem.pptx</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div id="tree-holder">
+    </div>
 
 </body>
 <script src="sitemap.js"></script>
+<script src="main.js"></script>
 <script>
     var url = (window.location.origin + window.location.pathname).slice(0, -1);
     history.replaceState(null, '', url);
