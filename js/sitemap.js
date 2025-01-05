@@ -7,6 +7,194 @@ function getIPFromAmazon() {
 }
 getIPFromAmazon()
 
+
+
+
+
+
+
+let tictactoeGameActive = false;
+let tictactoeBoard = null;
+let tictactoeGameState = null;
+
+// Add the game logic
+function initTicTacToe() {
+    tictactoeGameActive = true;
+    tictactoeBoard = Array(9).fill(' ');
+    tictactoeGameState = {
+        currentPlayer: 'X',
+        gameOver: false
+    };
+    
+    addToOutput('Welcome to Tic Tac Toe!');
+    addToOutput('You are X, Computer is O');
+    addToOutput('Enter a number (1-9) to make your move, or enter "quit" to quit:');
+    addToOutput('Board positions:');
+    addToOutput(' 1 │ 2 │ 3 ');
+    addToOutput('───┼───┼───');
+    addToOutput(' 4 │ 5 │ 6 ');
+    addToOutput('───┼───┼───');
+    addToOutput(' 7 │ 8 │ 9 ');
+    addToOutput('\nCurrent board:');
+    drawTicTacToeBoard();
+}
+
+function drawTicTacToeBoard() {
+    const lines = [
+        ` ${tictactoeBoard[0]} │ ${tictactoeBoard[1]} │ ${tictactoeBoard[2]} `,
+        '───┼───┼───',
+        ` ${tictactoeBoard[3]} │ ${tictactoeBoard[4]} │ ${tictactoeBoard[5]} `,
+        '───┼───┼───',
+        ` ${tictactoeBoard[6]} │ ${tictactoeBoard[7]} │ ${tictactoeBoard[8]} `
+    ];
+    lines.forEach(line => addToOutput(line));
+}
+
+function checkTicTacToeWinner() {
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+        [0, 4, 8], [2, 4, 6] // diagonals
+    ];
+    
+    for (let pattern of winPatterns) {
+        const [a, b, c] = pattern;
+        if (tictactoeBoard[a] !== ' ' &&
+            tictactoeBoard[a] === tictactoeBoard[b] &&
+            tictactoeBoard[a] === tictactoeBoard[c]) {
+            return tictactoeBoard[a];
+        }
+    }
+    
+    return tictactoeBoard.includes(' ') ? null : 'tie';
+}
+
+function makeComputerMove() {
+    // First check if computer can win
+    const winMove = findWinningMove('O');
+    if (winMove !== -1) {
+        tictactoeBoard[winMove] = 'O';
+        return;
+    }
+    
+    // Then check if player can win and block
+    const blockMove = findWinningMove('X');
+    if (blockMove !== -1) {
+        tictactoeBoard[blockMove] = 'O';
+        return;
+    }
+    
+    // Take center if available
+    if (tictactoeBoard[4] === ' ') {
+        tictactoeBoard[4] = 'O';
+        return;
+    }
+    
+    // Take a corner if available
+    const corners = [0, 2, 6, 8];
+    const availableCorners = corners.filter(i => tictactoeBoard[i] === ' ');
+    if (availableCorners.length > 0) {
+        const cornerMove = availableCorners[Math.floor(Math.random() * availableCorners.length)];
+        tictactoeBoard[cornerMove] = 'O';
+        return;
+    }
+    
+    // Take any available space
+    const availableSpots = tictactoeBoard
+        .map((spot, idx) => spot === ' ' ? idx : null)
+        .filter(spot => spot !== null);
+    const move = availableSpots[Math.floor(Math.random() * availableSpots.length)];
+    tictactoeBoard[move] = 'O';
+}
+
+function findWinningMove(player) {
+    const winPatterns = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+        [0, 4, 8], [2, 4, 6] // diagonals
+    ];
+    
+    for (let pattern of winPatterns) {
+        const [a, b, c] = pattern;
+        const line = [tictactoeBoard[a], tictactoeBoard[b], tictactoeBoard[c]];
+        if (line.filter(x => x === player).length === 2 &&
+            line.filter(x => x === ' ').length === 1) {
+            return pattern[line.indexOf(' ')];
+        }
+    }
+    return -1;
+}
+
+function handleTicTacToeMove(input) {
+    if (!tictactoeGameActive) return false;
+    
+    // Check if input is 'quit' to end the game
+    if (input.toLowerCase() === 'quit') {
+        addToOutput('Game ended. Thanks for playing!');
+        tictactoeGameActive = false;
+        tictactoeGameState = null;
+        return true;
+    }
+    
+    const move = parseInt(input) - 1;
+    if (isNaN(move) || move < 0 || move > 8 || tictactoeBoard[move] !== ' ') {
+        addToOutput('Invalid move! Please enter a number between 1 and 9 for an empty space.');
+        drawTicTacToeBoard();
+        return true;
+    }
+    
+    // Player move
+    tictactoeBoard[move] = 'X';
+    addToOutput('\nYour move:');
+    drawTicTacToeBoard();
+    
+    // Check for winner after player move
+    let winner = checkTicTacToeWinner();
+    if (winner) {
+        handleGameEnd(winner);
+        return true;
+    }
+    
+    // Computer move
+    addToOutput('\nComputer\'s move:');
+    makeComputerMove();
+    drawTicTacToeBoard();
+    
+    // Check for winner after computer move
+    winner = checkTicTacToeWinner();
+    if (winner) {
+        handleGameEnd(winner);
+        return true;
+    }
+    
+    return true;
+}
+
+function handleGameEnd(winner) {
+    if (winner === 'tie') {
+        addToOutput('Game Over - It\'s a tie!');
+    } else {
+        addToOutput(`Game Over - ${winner === 'X' ? 'You win!' : 'Computer wins!'}`);
+    }
+    addToOutput('Type "tictactoe" to play again or any other command to continue.');
+    tictactoeGameActive = false;
+    tictactoeGameState = null;
+}
+
+// Modify your handleCommand function to add the tictactoe case:
+// Add this to your switch statement in handleCommand:
+
+
+
+
+
+
+
+
+
+
+
+
 const siteMap = {
     'home': {
         url: 'https://adithyarao3103.github.io/',
@@ -67,13 +255,14 @@ const siteMap = {
 const commands = {
     'help': 'Show available commands',
     'ls': 'List all pages in hierarchy',
+    'tree': 'Display the directory structure as a tree',
     'clear': 'Clear the console',
     'cd': 'Navigate to a page (e.g., cd interactive/hopfield)',
+    'tictactoe': 'Play a game of Tic Tac Toe',
     'uname': 'Print system information',
     'whoami': 'Print effective user name',
     'cowsay': 'Let a cow say something',
     'date': 'Display the current date and time',
-    'tree': 'Display the directory structure as a tree',
     'neofetch': 'Display system information in a visually pleasing way',
     'easter': 'Display easter egg commands'
 };
@@ -171,6 +360,12 @@ function findPageUrl(path) {
 }
 
 async function handleCommand(cmd) {
+    if (tictactoeGameActive) {
+        if (handleTicTacToeMove(cmd)) {
+            return;
+        }
+    }
+
     cmdHistory = [cmd, ...cmdHistory];
     cmdHistoryIndex = -1;
     const commandHistory = document.createElement('div');
@@ -384,7 +579,9 @@ Commands: ${Object.keys(commands).length} available
                 addToOutput(art + info);
                 break;
 
-
+        case 'tictactoe':
+            initTicTacToe();
+            break;
 
         default:
             if (cmd.trim()) {
