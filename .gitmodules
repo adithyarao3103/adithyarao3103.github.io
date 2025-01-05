@@ -1,3 +1,6 @@
 [submodule "interactive/Game-Of-Life"]
 	path = interactive/Game-Of-Life
 	url = https://github.com/adithyarao3103/Game-Of-Life.git
+[submodule "interactive/Spanning-Trees-on-Lattice"]
+	path = interactive/Spanning-Trees-on-Lattice
+	url = https://github.com/adithyarao3103/Spanning-Trees-on-Lattice.git
