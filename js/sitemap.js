@@ -295,6 +295,7 @@ const commands = {
     'clear': 'Clear the console',
     'cd': 'Navigate to a page (e.g., cd interactive/hopfield)',
     'tictactoe': 'Play a game of Tic Tac Toe',
+    'unscramble': 'Play unscramble a word',
     'uname': 'Print system information',
     'whoami': 'Print effective user name',
     'cowsay': 'Let a cow say something',
@@ -532,11 +533,11 @@ __/ (  | (  |
             break;
 
         case 'uname':
-            addToOutput('sitemap-1.1.0 website-console for Adithya A Rao');
+            addToOutput('Sitemap v42.0.π Console powered by coffee-and-sleepless-nights-v137 on Adithya:Profile');
             break;
 
         case 'whoami':
-            addToOutput(`${ipaddr.slice(0, -1)}@website-console`);
+            addToOutput(`${ipaddr.slice(0, -1)}@Adithya:Profile`);
             break;
 
         case 'sl':
@@ -609,16 +610,29 @@ ${'-'.repeat(message.length + 2)}
 ██║  ██║███████╗███████╗███████╗╚██████╔╝
 ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝ 
                 `;
+                var t1 = new Date("March 31, 2001 05:10:00");
+                var t2 = new Date();
+                var dif = t2.getTime() - t1.getTime();
+
+                var Seconds_from_T1_to_T2 = dif / 1000;
+                var Seconds_Between_Dates = Math.abs(Seconds_from_T1_to_T2);
+                // var age = new Date(t2 - t1).getFullYear() - 1970
+                var day = 1000 * 60 * 60 * 24;
+                var days = Math.floor(dif/day);
+                var months = Math.floor(days/31);
+                var years = Math.floor(months/12);
+                var days = days - (months * 31);
+                var months = months - (years * 12);
                 const info = `
-${ipaddr.slice(0, -1)}@website-console
+${ipaddr.slice(0, -1)}@Adithya:Profile
 -----------------------
-OS      : Sitemap-1.1.0
-Kernel  : JavaScript
-Terminal: Web Browser
-CPU     : Client-Side
-Memory  : Client-Side
-Theme   : Tokyo Night
-Commands: ${Object.keys(commands).length} available
+OS       : Sitemap v42.0.π
+Kernel   : v${years}.${months}.${days}
+Terminal : coffee-and-sleepless-nights-v137
+CPU      : 1000% usage. Barely holding together
+Memory   : 2 PeB / 2.5 PeB
+Uptime   : ${Seconds_Between_Dates}
+Theme    : Sometimes sunshine sometimes blues
                 `;
                 addToOutput(art + info);
                 break;
