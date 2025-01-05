@@ -11,21 +11,21 @@ const siteMap = {
         url: 'https://adithyarao3103.github.io/interactive/',
         children: {
             'monte-carlo': {
-                url: 'https://adithyarao3103.github.io/Monte-Carlo/'
+                url: 'https://adithyarao3103.github.io/interactive/Monte-Carlo/'
             },
             'hopfield-network': {
-                url: 'https://adithyarao3103.github.io/Hopfield-Network/'
+                url: 'https://adithyarao3103.github.io/interactive/Hopfield-Network/'
             },
             'spanning-trees': {
-                url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/',
+                url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/',
                 children: {
                     'paper.pdf': {
-                        url: 'https://adithyarao3103.github.io/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
+                        url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
                     }
                 }
             },
             'game-of-life': {
-                url: 'https://adithyarao3103.github.io/Game-Of-Life/'
+                url: 'https://adithyarao3103.github.io/interactive/Game-Of-Life/'
             }
         }
     },
