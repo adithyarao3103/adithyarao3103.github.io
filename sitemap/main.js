@@ -235,7 +235,7 @@ const commands = {
     'ls': 'List all pages in hierarchy',
     'tree': 'Display the directory structure as a tree',
     'clear': 'Clear the console',
-    'cd': 'Navigate to a page (e.g., cd interactive/hopfield)',
+    'cd': 'Navigate to a page (e.g., cd interactive/hopfield-network)',
     'tictactoe': 'Play a game of Tic Tac Toe',
     'unscramble': 'Play unscramble a word',
     'uname': 'Print system information',
@@ -365,7 +365,7 @@ async function handleCommand(cmd) {
     switch (command) {
         case 'ls':
             await listPages();                    
-            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield')
+            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield-network')
             break;
         case 'clear':
             outputElement.innerHTML = '';
@@ -540,7 +540,7 @@ ${'-'.repeat(message.length + 2)}
                 }
             }
             await printTree();
-            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield')
+            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield-network');
             break;
 
             case 'neofetch':
