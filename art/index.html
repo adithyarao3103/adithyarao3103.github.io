@@ -9,13 +9,13 @@
   <title>Adithya A Rao | Art Gallery</title>
   <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="google-site-verification" content="b6_XlHeUt0M_hbe1HV9_4YrLuxnkNabDEL1DXS5PuQA" />
-  </head>
-<body>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+  <body>
     <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=art" style="display:none"></iframe>
     <nav class="navbar" id="navbar-mob">
-        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i data-lucide="menu"></i></button>
     </nav>
     <nav class="navbar navClose" id="navbar">
         <a onclick="window.location = '../?section=about'">About</a>
@@ -79,6 +79,7 @@
 
   <script src="main.js"></script>
   <script>
+      lucide.createIcons();
       var url = (window.location.origin + window.location.pathname).slice(0, -1);
       history.replaceState(null, '', url);
   </script>

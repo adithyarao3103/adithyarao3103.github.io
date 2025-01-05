@@ -412,6 +412,11 @@ div> a:hover, p> a:hover{
     font-size: 0.9em;
 }
 
+.report-icons{
+    width: 20px;
+    transform: translateY(6px);
+}
+
 date{
     opacity: 0.5;
 }
@@ -429,8 +434,7 @@ date{
 }
 
 .highlights-list li:before {
-    content: "\f061";
-    font-family: "Font Awesome 5 Free";
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1vdmUtcmlnaHQiPjxwYXRoIGQ9Ik0xOCA4TDIyIDEyTDE4IDE2Ii8+PHBhdGggZD0iTTIgMTJIMjIiLz48L3N2Zz4=);
     font-weight: 900;
     position: absolute;
     left: 0;
@@ -489,4 +493,15 @@ date{
     box-shadow: inset 0px 25px 20px -24px rgb(92, 92, 92);
     z-index:10;
     background-color: white;
+}
+
+.social-icon-footer{
+    width:30px;
+    height: 30px;
+}
+
+.heart{
+    width: 16px;
+    height:16px;
+    transform: translateY(2px);
 }

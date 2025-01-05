@@ -11,13 +11,12 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=interactive" style="display:none"></iframe>
-    <!-- <div id="home"><i class="fa fa-home"></i></div> -->
     <nav class="navbar" id="navbar-mob">
-        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><i data-lucide="menu"></i></button>
     </nav>
     <nav class="navbar navClose" id="navbar">
         <a onclick="window.location = '../?section=about'">About</a>
@@ -95,6 +94,7 @@
 </body>
 <script src="main.js"></script>
 <script>
+    lucide.createIcons();
     var url = (window.location.origin + window.location.pathname).slice(0, -1);
     history.replaceState(null, '', url);
 </script>
