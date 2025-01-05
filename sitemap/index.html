@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adithya A Rao | Sitemap</title>
-    <link rel="stylesheet" href="/css/sitemap.css">
+    <link rel="stylesheet" href="sitemap.css">
 </head>
 <body>
     <!-- Console View (Desktop) -->
@@ -58,6 +58,10 @@
         </li>
     </ul>
 
-    <script src="/js/sitemap.js"></script>
 </body>
+<script src="sitemap.js"></script>
+<script>
+    var url = (window.location.origin + window.location.pathname).slice(0, -1);
+    history.replaceState(null, '', url);
+</script>
 </html>
