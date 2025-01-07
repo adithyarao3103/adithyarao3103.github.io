@@ -229,7 +229,7 @@ body {
 
 .clickable-link {
     text-decoration: none;
-    color: inherit; /* Matches parent text color */
+    color: inherit; 
     cursor: pointer;
     text-shadow: 0 0 2px currentColor, 
                  0 0 3px currentColor;
@@ -237,7 +237,45 @@ body {
 }
 
 .clickable-link:hover {
-    text-shadow: 0 0 0px currentColor,
-                 0 0 0px currentColor;
-    color: #fcfcfc; /* Slightly brighter on hover */
+    animation: glitch 0.3s ease-in-out;
 }
+
+
+.clickable-link::after{
+    content: "❯";
+    margin-left: 0.5rem;
+    color: currentColor;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.clickable-link:hover::after{
+    opacity: 1;
+}
+
+@keyframes glitch {
+    0% {
+      text-shadow: 0 0 2px currentColor;
+      transform: translate(0);
+    }
+    20% {
+      text-shadow: -1px 0 #ff0000, 1px 0 #00ff00;
+      transform: translate(-2px, 1px);
+    }
+    40% {
+      text-shadow: 2px 0 #0000ff, -2px 0 #ff00ff;
+      transform: translate(2px, -1px);
+    }
+    60% {
+      text-shadow: 1px -1px #00ffff, -1px 1px #ffff00;
+      transform: skew(2deg);
+    }
+    80% {
+      text-shadow: 0 0 2px currentColor;
+      transform: translate(0);
+    }
+    100% {
+      text-shadow: 0 0 2px currentColor;
+      transform: translate(0);
+    }
+   }
