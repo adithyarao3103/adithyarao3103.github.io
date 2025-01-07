@@ -27,6 +27,8 @@ function initTicTacToe() {
         currentPlayer: 'X',
         gameOver: false
     };
+
+    outputElement.innerHTML = '';
     
     addToOutput('Welcome to Tic Tac Toe!');
     addToOutput('You are X, Computer is O');
@@ -129,6 +131,8 @@ function findWinningMove(player) {
 
 function handleTicTacToeMove(input) {
     if (!tictactoeGameActive) return false;
+
+    outputElement.innerHTML = '';
     
     // Check if input is 'quit' to end the game
     if (input.toLowerCase() === 'quit') {
