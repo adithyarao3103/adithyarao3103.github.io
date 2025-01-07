@@ -237,7 +237,7 @@ body {
 }
 
 .clickable-link:hover {
-    animation: subtleGlitch 1s ease-in-out infinite;
+    animation: glitch 3s ease-in-out infinite;
 }
 
 
@@ -258,23 +258,19 @@ body {
     text-shadow: 0 0 2px currentColor;
     transform: translate(0);
 }
-20% {
+2%, 20%, 60% {
     text-shadow: -1px 0 #ff0000, 1px 0 #00ff00;
     transform: translate(-2px, 1px);
 }
-40% {
+4%, 24%, 61%{
     text-shadow: 2px 0 #0000ff, -2px 0 #ff00ff;
     transform: translate(2px, -1px);
 }
-60% {
+6%, 28%, 62%{
     text-shadow: 1px -1px #00ffff, -1px 1px #ffff00;
     transform: skew(2deg);
 }
-80% {
-    text-shadow: 0 0 2px currentColor;
-    transform: translate(0);
-}
-100% {
+8%, 32%, 63% {
     text-shadow: 0 0 2px currentColor;
     transform: translate(0);
 }
