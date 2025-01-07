@@ -237,7 +237,7 @@ body {
 }
 
 .clickable-link:hover {
-    animation: glitch 0.3s ease-in-out;
+    animation: subtleGlitch 1s ease-in-out infinite;
 }
 
 
@@ -254,28 +254,48 @@ body {
 }
 
 @keyframes glitch {
-    0% {
-      text-shadow: 0 0 2px currentColor;
-      transform: translate(0);
-    }
-    20% {
-      text-shadow: -1px 0 #ff0000, 1px 0 #00ff00;
-      transform: translate(-2px, 1px);
-    }
-    40% {
-      text-shadow: 2px 0 #0000ff, -2px 0 #ff00ff;
-      transform: translate(2px, -1px);
-    }
-    60% {
-      text-shadow: 1px -1px #00ffff, -1px 1px #ffff00;
-      transform: skew(2deg);
-    }
-    80% {
-      text-shadow: 0 0 2px currentColor;
-      transform: translate(0);
-    }
-    100% {
-      text-shadow: 0 0 2px currentColor;
-      transform: translate(0);
-    }
-   }
+0% {
+    text-shadow: 0 0 2px currentColor;
+    transform: translate(0);
+}
+20% {
+    text-shadow: -1px 0 #ff0000, 1px 0 #00ff00;
+    transform: translate(-2px, 1px);
+}
+40% {
+    text-shadow: 2px 0 #0000ff, -2px 0 #ff00ff;
+    transform: translate(2px, -1px);
+}
+60% {
+    text-shadow: 1px -1px #00ffff, -1px 1px #ffff00;
+    transform: skew(2deg);
+}
+80% {
+    text-shadow: 0 0 2px currentColor;
+    transform: translate(0);
+}
+100% {
+    text-shadow: 0 0 2px currentColor;
+    transform: translate(0);
+}
+}
+
+@keyframes subtleGlitch {
+0%, 100% { text-shadow: 0 0 2px currentColor; }
+20% { text-shadow: -1px 0 #ff000080, 1px 0 #0000ff80; }
+40% { text-shadow: 1px 0 #00ff0080, -1px 0 #ff00ff80; }
+}
+
+@keyframes noiseGlitch {
+0%, 100% { clip-path: inset(0 0 0 0); }
+20% { clip-path: inset(20% 0 0 0); }
+40% { clip-path: inset(40% 0 60% 0); }
+60% { clip-path: inset(60% 0 20% 0); }
+80% { clip-path: inset(80% 0 40% 0); }
+}
+
+/* Scan lines */
+@keyframes scanlineGlitch {
+0% { background: linear-gradient(transparent 50%, currentColor 50.1%, transparent 50.2%); }
+100% { background: linear-gradient(transparent 49.9%, currentColor 50%, transparent 50.1%); }
+}
