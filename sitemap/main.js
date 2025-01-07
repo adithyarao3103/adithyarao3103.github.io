@@ -239,7 +239,7 @@ const commands = {
     'ls': 'List all pages in hierarchy',
     'tree': 'Display the directory structure as a tree',
     'clear': 'Clear the console',
-    'cd': 'Navigate to a page (e.g., cd interactive/hopfield-network)',
+    'cd': 'Navigate to a page (e.g., cd interactive/Hopfield-Network)',
     'tictactoe': 'Play a game of Tic Tac Toe',
     'unscramble': 'Play unscramble a word',
     'uname': 'Print system information',
@@ -270,11 +270,21 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function addToOutputWithAnimation(text, className = '', indent = 0) {
+async function addToOutputWithAnimation(text, url = '', className = '', indent = 0) {
     const div = document.createElement('div');
     div.className = `hierarchy-item ${className}`;
     div.style.animationDelay = `${indent * 0.05}s`;
-    div.textContent = '  '.repeat(indent) + text;
+
+    if (url) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.textContent = '  '.repeat(indent) + text;
+        link.className = 'clickable-link'; // Add a specific class for links
+        div.appendChild(link);
+    } else {
+        div.textContent = '  '.repeat(indent) + text;
+    }
+
     outputElement.appendChild(div);
     await delay(50);
     window.scrollTo(0, document.body.scrollHeight);
@@ -304,7 +314,12 @@ async function typeText(text, className = '') {
 
 async function listPages(node = siteMap, indent = 0) {
     for (const [key, value] of Object.entries(node)) {
-        await addToOutputWithAnimation(`${key}${value.children ? '/' : ''}`, 'success', indent);
+        await addToOutputWithAnimation(
+            `${key}${value.children ? '/' : ''}`,
+            value.url || '',
+            'success',
+            indent
+        );
         if (value.children) {
             await listPages(value.children, indent + 1);
         }
@@ -369,7 +384,7 @@ async function handleCommand(cmd) {
     switch (command) {
         case 'ls':
             await listPages();                    
-            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield-network')
+            addToOutputWithAnimation('\nTo open a page, click on the page name,\nor use cd <full path> (eg. cd interactive/Hopfield-Network)')
             break;
         case 'clear':
             outputElement.innerHTML = '';
@@ -537,14 +552,17 @@ ${'-'.repeat(message.length + 2)}
         case 'tree':
             async function printTree(node = siteMap, prefix = '') {
                 for (const [key, value] of Object.entries(node)) {
-                    await addToOutputWithAnimation(`${prefix}${prefix ? '└── ' : ''}${key}${value.children ? '/' : ''}`);
+                    await addToOutputWithAnimation(
+                        `${prefix}${prefix ? '└── ' : ''}${key}${value.children ? '/' : ''}`,
+                        value.url || ''
+                    );
                     if (value.children) {
                         await printTree(value.children, prefix + '    ');
                     }
                 }
             }
             await printTree();
-            addToOutputWithAnimation('\nUse cd <full path> to open the page. Eg. cd interactive/hopfield-network');
+            addToOutputWithAnimation('\nTo open a page, click on the page name,\nor use cd <full path> (eg. cd interactive/Hopfield-Network)')
             break;
 
             case 'neofetch':

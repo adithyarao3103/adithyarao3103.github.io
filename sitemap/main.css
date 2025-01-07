@@ -226,3 +226,18 @@ body {
     }
 
 }
+
+.clickable-link {
+    text-decoration: none;
+    color: inherit; /* Matches parent text color */
+    cursor: pointer;
+    text-shadow: 0 0 2px currentColor, 
+                 0 0 3px currentColor;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.clickable-link:hover {
+    text-shadow: 0 0 0px currentColor,
+                 0 0 0px currentColor;
+    color: #fcfcfc; /* Slightly brighter on hover */
+}

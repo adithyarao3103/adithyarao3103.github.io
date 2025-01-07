@@ -1,5 +1,3 @@
-
-
 const siteMap = {
     'home': {
         url: 'https://adithyarao3103.github.io/',
@@ -10,21 +8,21 @@ const siteMap = {
     'interactive': {
         url: 'https://adithyarao3103.github.io/interactive/',
         children: {
-            'monte-carlo': {
+            'Monte-Carlo': {
                 url: 'https://adithyarao3103.github.io/interactive/Monte-Carlo/'
             },
-            'hopfield-network': {
+            'Hopfield-Network': {
                 url: 'https://adithyarao3103.github.io/interactive/Hopfield-Network/'
             },
-            'spanning-trees': {
+            'Spanning-Trees-on-Lattice': {
                 url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/',
                 children: {
-                    'paper.pdf': {
+                    'Spanning_Trees_on_a_Lattice.pdf': {
                         url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
                     }
                 }
             },
-            'game-of-life': {
+            'Game-Of-Life': {
                 url: 'https://adithyarao3103.github.io/interactive/Game-Of-Life/'
             }
         }
@@ -41,21 +39,21 @@ const siteMap = {
     'travel': {
         url: 'https://adithyarao3103.github.io/travel/'
     },
-    'files':{
-        children:{
-            'cv.pdf': {
+    'files': {
+        children: {
+            'Adithya_A_Rao_CV.pdf': {
                 url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
             },
-            'quanta.pdf': {
+            'Adithya_Quanta.pdf': {
                 url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
             },
-            'The particle problem.pptx': {
+            'The_particle_problem.pptx': {
                 url: 'https://adithyarao3103.github.io/files/The particle problem.pptx'
             }
         }
     }
-
 };
+
 
 
 
