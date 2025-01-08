@@ -1,0 +1,184 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files Directory</title>
+    <style>
+        :root {
+            --primary-color: #f59e0b;
+            --hover-color: #ef4444;
+            --bg-color: #18181b;
+            --card-bg: #27272a;
+            --text-color: #fafafa;
+            --text-muted: #a1a1aa;
+            --border-color: #3f3f46;
+            --accent-glow: rgba(245, 158, 11, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .files-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .file-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .file-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--accent-glow);
+            border-color: var(--primary-color);
+            background: #2d2d30;
+        }
+
+        .file-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            gap: 1rem;
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: var(--bg-color);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover .file-icon {
+            background: var(--hover-color);
+        }
+
+        .file-info {
+            flex-grow: 1;
+        }
+
+        .file-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover .file-name {
+            color: var(--primary-color);
+        }
+
+        .file-meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .file-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Custom scrollbar for Webkit browsers */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Files Directory</h1>
+        <ul class="files-list">
+        {% for file in site.static_files %}
+            {% if file.path contains '/files/' and file.path != '/files/index.html' %}
+            <li class="file-item">
+                <a href="{{ file.path | relative_url }}" class="file-link">
+                    <div class="file-icon">
+                        {% assign extension = file.path | split: '.' | last | upcase %}
+                        {{ extension }}
+                    </div>
+                    <div class="file-info">
+                        <div class="file-name">{{ file.name }}</div>
+                        <div class="file-meta">
+                            {% assign modified_time = file.modified_time | date: "%B %d, %Y" %}
+                            Last modified: {{ modified_time }}
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
