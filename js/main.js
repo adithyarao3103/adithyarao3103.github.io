@@ -38,6 +38,7 @@ function createInitialBackground(){
 createInitialBackground();
 
 function createVideoBackground(videoSrc) {
+    console.log('called');
     const bgContainer = document.createElement('div');
     bgContainer.className = 'bg-cont';
     bgContainer.id = 'main-video';
