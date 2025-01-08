@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     /* background: white; */
-    background: #000000b7;
+    background: #000000da;
     z-index: 9900;
 }
 
@@ -19,6 +19,20 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(15px);
+}
+
+.loading-container::after{
+    z-index: 9999;
+    content: "View the particle collision full animation in /collision-animation";
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width:100%;
+    height: 5vh;
+    text-align: center;
+    transform: translateX(-50%);
+    padding: 1vh;
+    color: #f0f0f0;
 }
 
 .loading-container svg {
@@ -34,7 +48,7 @@
     width: 8px;
     height: 8px;
     /* background: #000; */
-    background: #c7c7c7;
+    background: #f0f0f0;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     will-change: transform;
@@ -55,7 +69,7 @@
 .loading-container path {
     fill: none;
     /* stroke: #000; */
-    stroke: #c7c7c7;
+    stroke: #f0f0f0;
     stroke-width: 2;
     transition: opacity 0.1s ease;
     z-index: 9999;
