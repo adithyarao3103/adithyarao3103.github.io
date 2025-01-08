@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     // Minimum display time for loading animation
-    setTimeout(finishLoading, 100);
+    setTimeout(finishLoading, 10);
 });
 
 // Handle window resize
