@@ -15,7 +15,7 @@ class LoadingAnimation {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.center = { x: this.width / 2, y: this.height / 2 };
-        this.speed = 15;
+        this.speed = 25;
         this.animationStarted = false;
     }
 
