@@ -1,61 +1,59 @@
 const siteMap = {
     'home': {
-        url: 'https://adithyarao3103.github.io/',
+        url: '/',
     },
     'now': {
-        url: 'https://adithyarao3103.github.io/now/'
+        url: '/now/'
     },
     'interactive': {
-        url: 'https://adithyarao3103.github.io/interactive/',
+        url: '/interactive/',
         children: {
             'Monte-Carlo': {
-                url: 'https://adithyarao3103.github.io/interactive/Monte-Carlo/'
+                url: '/interactive/Monte-Carlo/'
             },
             'Hopfield-Network': {
-                url: 'https://adithyarao3103.github.io/interactive/Hopfield-Network/'
+                url: '/interactive/Hopfield-Network/'
             },
             'Spanning-Trees-on-Lattice': {
-                url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/',
+                url: '/interactive/Spanning-Trees-on-Lattice/',
                 children: {
                     'Spanning_Trees_on_a_Lattice.pdf': {
-                        url: 'https://adithyarao3103.github.io/interactive/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
+                        url: '/interactive/Spanning-Trees-on-Lattice/Spanning_Trees_on_a_Lattice.pdf'
                     }
                 }
             },
             'Game-Of-Life': {
-                url: 'https://adithyarao3103.github.io/interactive/Game-Of-Life/'
+                url: '/interactive/Game-Of-Life/'
             }
         }
     },
     'art': {
-        url: 'https://adithyarao3103.github.io/art/'
+        url: '/art/'
     },
     'old-website': {
-        url: 'https://adithyarao3103.github.io/old-website/'
+        url: '/old-website/'
     },
     'older-website': {
-        url: 'https://adithyarao3103.github.io/older-website/'
+        url: '/older-website/'
     },
     'travel': {
-        url: 'https://adithyarao3103.github.io/travel/'
+        url: '/travel/'
     },
     'files': {
+        url: '/files/',
         children: {
             'Adithya_A_Rao_CV.pdf': {
-                url: 'https://adithyarao3103.github.io/files/Adithya_A_Rao_CV.pdf'
+                url: '/files/Adithya_A_Rao_CV.pdf'
             },
             'Adithya_Quanta.pdf': {
-                url: 'https://adithyarao3103.github.io/files/Adithya_Quanta.pdf'
+                url: '/files/Adithya_Quanta.pdf'
             },
             'The_particle_problem.pptx': {
-                url: 'https://adithyarao3103.github.io/files/The particle problem.pptx'
+                url: '/files/The particle problem.pptx'
             }
         }
     }
-};
-
-
-
+}
 
 
 
@@ -83,10 +81,11 @@ function generateSitemap(siteMap) {
     }
 
     function formatName(name) {
-        // Convert names like 'monte-carlo' to 'Monte Carlo', etc.
+        // Convert names like 'monte-carlo' to 'Monte Carlo', but keep extensions lowercase.
         return name
             .replace(/-/g, ' ')
-            .replace(/\b\w/g, char => char.toUpperCase());
+            .replace(/\b\w/g, char => char.toUpperCase())
+            .replace(/\.(\w+)$/, match => match.toLowerCase());
     }
 
     let sitemapHtml = '<h1 class="h1">Sitemap</h1><ul class="tree">';
