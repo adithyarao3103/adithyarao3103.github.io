@@ -247,7 +247,7 @@ const commands = {
     'cowsay': 'Let a cow say something',
     'date': 'Display the current date and time',
     'neofetch': 'Display system information in a visually pleasing way',
-    'easter': 'Display easter egg commands'
+    'easter': 'Display easter egg commands',
 };
 
 const easter_eggs = {
@@ -484,11 +484,11 @@ async function handleCommand(cmd) {
 
         case 'dinosaur':
             const dino = `
-              __
-             / _)
-    _.----._/ /
-   /         /
-__/ (  | (  |
+               __
+              / _)
+     _.----._/ /
+    /         /
+ __/ (  | (  |
 /__.-'|_|--|_|`;
             addToOutput(dino);
             break;
