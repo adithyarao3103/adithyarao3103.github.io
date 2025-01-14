@@ -148,22 +148,10 @@ li::before {
     background-size: cover;
 }
 
-#ent{
+.ent{
     display: flex;
     flex-direction: row;
     column-gap: 20px;
-}
-
-#tbate{
-    background-image: url(tbate.webp);
-}
-
-#op{
-    background-image: url(onepiece.jpg);
-}
-
-#frieren{
-    background-image: url(frieren.jpg);
 }
 
 @media (max-width: 768px) {
@@ -186,7 +174,7 @@ li::before {
         width: 100%;
     }
 
-    #ent{
+    .ent{
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 20px;
@@ -359,3 +347,29 @@ li::before {
     
 }
 
+
+
+
+#tbate{
+    background-image: url(tbate.webp);
+}
+
+#op{
+    background-image: url(onepiece.webp);
+}
+
+#frieren{
+    background-image: url(frieren.webp);
+}
+
+#pows{
+    background-image: url(pows.jpg);
+}
+
+#tfas{
+    background-image: url(tfas.jpg);
+}
+
+#orv{
+    background-image: url(orv.webp);
+}
