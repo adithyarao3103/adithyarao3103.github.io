@@ -236,7 +236,7 @@ async function wordScramble() {
 
 const commands = {
     'help': 'Show available commands',
-    'ls': 'List all pages in hierarchy',
+    'ls': 'List pages in root directory',
     'tree': 'Display the directory structure as a tree',
     'clear': 'Clear the console',
     'cd': 'Navigate to a page (e.g., cd interactive/Hopfield-Network)',
@@ -320,9 +320,9 @@ async function listPages(node = siteMap, indent = 0) {
             'success',
             indent
         );
-        if (value.children) {
-            await listPages(value.children, indent + 1);
-        }
+        // if (value.children) {
+        //     await listPages(value.children, indent + 1);
+        // }
     }
 }
 
