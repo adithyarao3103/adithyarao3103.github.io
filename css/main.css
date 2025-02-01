@@ -519,6 +519,7 @@ date{
 
 #name-text{
     backface-visibility: hidden;
+    transition: all 0.3s;
 }
 
 #name{
@@ -529,9 +530,20 @@ date{
     padding-right: 30px;
 }
 
+#name-text:hover{
+    opacity: 0.2;
+}
+
 #pronounce{
     position: relative;
     top:10px;
     width: 10px;
     height: 10px;
+    margin-left: 5px;
+}
+
+#volume-button-path{
+    fill: black;
+    fill-opacity: 0;
+    transition: fill-opacity 0.3s ease;
 }

@@ -259,19 +259,25 @@ const audio = new Audio('/assets/pronounce.mp3');
 const playButton = document.querySelector('#name');
 const playButton_mob = document.querySelector('#pronounce');
 
-// Add click event listener
 playButton.addEventListener('click', function() {
-    // Reset audio to start if it was already played
+
     audio.currentTime = 0;
-    
-    // Play the audio
+    document.querySelector('#name').style.cursor = 'url(/assets/volume-fill.svg), auto';
+
     audio.play();
+    audio.onended = function () {
+        document.querySelector('#name').style.cursor = 'url(/assets/volume.svg), auto';
+    }
 });
 
 playButton_mob.addEventListener('click', function() {
-    // Reset audio to start if it was already played
+    
     audio.currentTime = 0;
+    document.querySelector("#volume-button-path").style.fillOpacity = 1;
 
-    // Play the audio
     audio.play();
+    audio.onended = function (){
+        document.querySelector("#volume-button-path").style.fillOpacity = 0;
+    }
+
 });
