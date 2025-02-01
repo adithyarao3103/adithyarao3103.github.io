@@ -207,41 +207,44 @@ getHeight();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Name flip
 
-// const hover = document.getElementById('name');
-// const card = document.querySelector('#name-container');
-// const nameDisplay = document.getElementById('name-text');
-// let intervalId = null;
+const hover = document.getElementById('name');
+const card = document.querySelector('#name-container');
+const nameDisplay = document.getElementById('name-text');
+let intervalId = null;
 
-// const names = {
-//     english: 'Adithya...',
-//     kannada: 'ಆದಿತ್ಯ...',
-//     hindi: 'आदित्य...' 
-// };
+const names = {
+    english: 'Adithya...',
+    kannada: 'ಆದಿತ್ಯ...',
+    hindi: 'आदित्य...' 
+};
 
-// const languages = ['english', 'kannada', 'hindi'];
-// let currentIndex = 0;
+const languages = ['english', 'kannada', 'hindi'];
+let currentIndex = 0;
 
-// rotation = 360;
+rotation = 360;
 
-// function updateName() {
-//     card.style.transform = `rotateX(${rotation}deg)`;
-//     rotation += 360;
+function updateName() {
+    card.style.transform = `rotateX(${rotation}deg)`;
+    rotation += 360;
 
-//     setTimeout(() => {
-//         currentIndex = (currentIndex + 1) % languages.length;
-//         nameDisplay.textContent = names[languages[currentIndex]];
-//     }, 300);
-// }
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % languages.length;
+        nameDisplay.textContent = names[languages[currentIndex]];
+    }, 250);
+}
 
-// card.addEventListener('mouseenter', () => {
-//     updateName();
-//     intervalId = setInterval(updateName, 2000);
-// });
+hover.addEventListener('mouseenter', () => {
+    updateName();
+    intervalId = setInterval(updateName, 2000);
+});
 
-// card.addEventListener('mouseleave', () => {
-//     clearInterval(intervalId);
-//     setTimeout(() => {
-//         nameDisplay.textContent = names.english;
-//         currentIndex = 0;
-//     }, 600);
-// });
+hover.addEventListener('mouseleave', () => {
+    clearInterval(intervalId);
+    if (currentIndex == 0) return;
+    card.style.transform = `rotateX(${rotation}deg)`;
+    rotation += 360;
+    setTimeout(() => {
+        nameDisplay.textContent = names.english;
+        currentIndex = 0;
+    }, 250);
+});
