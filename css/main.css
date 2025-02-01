@@ -530,7 +530,7 @@ date{
     padding-right: 30px;
 }
 
-#name-text:hover{
+#name-container:hover #name-text{
     opacity: 0.2;
 }
 
