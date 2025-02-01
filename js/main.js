@@ -257,12 +257,21 @@ setTimeout(updateName, 5000);
 
 const audio = new Audio('/assets/pronounce.mp3');
 const playButton = document.querySelector('#name');
+const playButton_mob = document.querySelector('#pronounce');
 
 // Add click event listener
 playButton.addEventListener('click', function() {
     // Reset audio to start if it was already played
     audio.currentTime = 0;
     
+    // Play the audio
+    audio.play();
+});
+
+playButton_mob.addEventListener('click', function() {
+    // Reset audio to start if it was already played
+    audio.currentTime = 0;
+
     // Play the audio
     audio.play();
 });
