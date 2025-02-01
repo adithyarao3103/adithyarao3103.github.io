@@ -202,3 +202,46 @@ function scrolltoSocials(){
 }
 
 getHeight();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Name flip
+
+// const hover = document.getElementById('name');
+// const card = document.querySelector('#name-container');
+// const nameDisplay = document.getElementById('name-text');
+// let intervalId = null;
+
+// const names = {
+//     english: 'Adithya...',
+//     kannada: 'ಆದಿತ್ಯ...',
+//     hindi: 'आदित्य...' 
+// };
+
+// const languages = ['english', 'kannada', 'hindi'];
+// let currentIndex = 0;
+
+// rotation = 360;
+
+// function updateName() {
+//     card.style.transform = `rotateX(${rotation}deg)`;
+//     rotation += 360;
+
+//     setTimeout(() => {
+//         currentIndex = (currentIndex + 1) % languages.length;
+//         nameDisplay.textContent = names[languages[currentIndex]];
+//     }, 300);
+// }
+
+// card.addEventListener('mouseenter', () => {
+//     updateName();
+//     intervalId = setInterval(updateName, 2000);
+// });
+
+// card.addEventListener('mouseleave', () => {
+//     clearInterval(intervalId);
+//     setTimeout(() => {
+//         nameDisplay.textContent = names.english;
+//         currentIndex = 0;
+//     }, 600);
+// });
