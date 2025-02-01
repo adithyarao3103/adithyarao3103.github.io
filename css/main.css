@@ -522,6 +522,6 @@ date{
 }
 
 #name{
-    cursor: pointer;
+    /* cursor: pointer; */
     isolation: isolate;
 }
