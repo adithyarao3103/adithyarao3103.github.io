@@ -225,26 +225,44 @@ rotation = 360;
 
 function updateName() {
     card.style.transform = `rotateX(${rotation}deg)`;
-    rotation += 360;
+    rotation = (rotation + 360) % 720;
 
     setTimeout(() => {
         currentIndex = (currentIndex + 1) % languages.length;
         nameDisplay.textContent = names[languages[currentIndex]];
     }, 250);
+
+    setTimeout(updateName, 5000);
 }
 
-hover.addEventListener('mouseenter', () => {
-    updateName();
-    intervalId = setInterval(updateName, 2000);
-});
+setTimeout(updateName, 5000);
 
-hover.addEventListener('mouseleave', () => {
-    clearInterval(intervalId);
-    if (currentIndex == 0) return;
-    card.style.transform = `rotateX(${rotation}deg)`;
-    rotation += 360;
-    setTimeout(() => {
-        nameDisplay.textContent = names.english;
-        currentIndex = 0;
-    }, 250);
+// hover.addEventListener('mouseenter', () => {
+//     updateName();
+//     intervalId = setInterval(updateName, 2000);
+// });
+
+// hover.addEventListener('mouseleave', () => {
+//     clearInterval(intervalId);
+//     if (currentIndex == 0) return;
+//     card.style.transform = `rotateX(${rotation}deg)`;
+//     rotation += 360;
+//     setTimeout(() => {
+//         nameDisplay.textContent = names.english;
+//         currentIndex = 0;
+//     }, 250);
+// });
+
+
+
+const audio = new Audio('/assets/pronounce.mp3');
+const playButton = document.querySelector('#name');
+
+// Add click event listener
+playButton.addEventListener('click', function() {
+    // Reset audio to start if it was already played
+    audio.currentTime = 0;
+    
+    // Play the audio
+    audio.play();
 });

@@ -524,4 +524,7 @@ date{
 #name{
     /* cursor: pointer; */
     isolation: isolate;
+    cursor: url(/assets/volume.svg), auto;
+    width: fit-content;
+    padding-right: 30px;
 }

@@ -1,41 +1,43 @@
-async function fetchComments() {
-  const commentsDiv = document.getElementById('comments-div');
+// async function fetchComments() {
+//   const commentsDiv = document.getElementById('comments-div');
   
-  try {
-      const response = await fetch('https://comments-manager-adithyarao3103.vercel.app/api/get-comments');
+//   try {
+//       const response = await fetch('https://comments-manager-adithyarao3103.vercel.app/api/get-comments');
       
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
+//       if (!response.ok) {
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//       }
       
-      const htmlContentText = await response.text();
-      const parser = new DOMParser();
-      const htmlContent = parser.parseFromString(htmlContentText, 'text/html');
-      const comments = htmlContent.querySelector('#comments-container');
-      const style = htmlContent.querySelector('style');
-      const script = htmlContent.querySelector('script');
+//       const htmlContentText = await response.text();
+//       const parser = new DOMParser();
+//       const htmlContent = parser.parseFromString(htmlContentText, 'text/html');
+//       const comments = htmlContent.querySelector('#comments-container');
+//       const style = htmlContent.querySelector('style');
+//       const script = htmlContent.querySelector('script');
       
-      // console.log('Comments:', comments);
-      // Safely insert the HTML content
-      commentsDiv.innerHTML = comments.innerHTML;
-      const newScript = document.createElement('script');
-      newScript.text = script.innerText;
-      document.head.appendChild(newScript);
-      const newStyle = document.createElement('style');
-      newStyle.innerHTML = style.innerHTML;
-      document.head.appendChild(newStyle);
+//       // console.log('Comments:', comments);
+//       // Safely insert the HTML content
+//       commentsDiv.innerHTML = comments.innerHTML;
+//       const newScript = document.createElement('script');
+//       newScript.text = script.innerText;
+//       document.head.appendChild(newScript);
+//       const newStyle = document.createElement('style');
+//       newStyle.innerHTML = style.innerHTML;
+//       document.head.appendChild(newStyle);
       
-  } catch (error) {
-      console.error('Error fetching comments:', error);
-      commentsDiv.innerHTML = `
-          <div class="error">
-              Sorry, there was an error loading the comments. Please try again later.
-          </div>
-      `;
-  }
-}
+//   } catch (error) {
+//       console.error('Error fetching comments:', error);
+//       commentsDiv.innerHTML = `
+//           <div class="error">
+//               Sorry, there was an error loading the comments. Please try again later.
+//           </div>
+//       `;
+//   }
+// }
 
-fetchComments();
+// fetchComments();
+
+
 
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
