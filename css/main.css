@@ -550,7 +550,6 @@ date{
 
 .heart{
     fill: red;
-    cursor: pointer;
     animation: heartbeat 1s infinite;
     transform-origin: center;
     position: relative;
@@ -569,7 +568,7 @@ date{
     }
 }
 
-.github{
+/* .github{
     fill: black;
 }
 
@@ -597,4 +596,24 @@ date{
 
 .github:hover, .linkedin:hover, .instagram:hover, .twitter:hover, .mail:hover{
     fill-opacity: 0.4;
+} */
+
+.github, .linkedin, .instagram, .twitter, .mail{
+    filter: drop-shadow(1px 1px 0px var((--link-color)));
+    transform: translateY(0px) translateX(0px);
+    transition: transform 0.3s ease, filter 0.1s ease;
+}
+
+.github:hover, .linkedin:hover, .instagram:hover, .twitter:hover, .mail:hover{
+    transform: translateY(-2px) translateX(-2px);
+    filter: drop-shadow(4px 4px 1px var(--link-color));
+}
+
+.sitemap{
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.sitemap:hover {
+    background: var(--link-color);
 }
