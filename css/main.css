@@ -249,7 +249,7 @@ div> a, report> a, span> a{
 
 }
 
-div> a:hover, p> a:hover{
+div> a:hover, p> a:hover, report>a:hover{
     background-color: var(--hover-color) ;
     color: black;
 }
@@ -410,6 +410,10 @@ div> a:hover, p> a:hover{
     background-color: white;
     /* border-radius: 20px; */
     font-size: 0.9em;
+}
+
+.project> strong{
+    font-size: 1.15em;
 }
 
 .report-icons{

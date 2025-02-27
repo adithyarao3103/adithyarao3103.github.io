@@ -182,73 +182,83 @@
                 <h2 style="margin: 0;">External Projects</h2>
                 <div class="project" id="gribov">
                     <strong>Gribov Ambiguity and Stochastic Quantization (Master's Thesis)</strong>  <date>[Aug 2023 - May 2024]</date><br>
-                    <i>Supervisor:</i> Prof. Laurent Baulieu, Sorbonne University, Paris & Dr. Vikash K. Ojha, SVNIT, Surat.<br>
-                    <i>Abstract:</i> The Gribov problem arises from the absence of a global section in the Yang-Mills fiber bundle due to the configuration space's non-trivial nature. We studied the Yang-Mills configuration space, particularly the Gribov and Fundamental Modular Regions, and the semi-classical implementation of path integral restriction to the Gribov Region. Additionally, we also explored Stochastic Quantization, an alternative c-number quantization formalism offering gauge fixing in Yang-Mills theory without the Gribov Problem.<br>
+                    <!-- <i>Supervisor:</i> Prof. Laurent Baulieu, Sorbonne University, Paris & Dr. Vikash K. Ojha, SVNIT, Surat.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    The Gribov problem arises from the absence of a global section map in the Yang-Mills fiber bundle. This is due to the configuration space's non-trivial nature, meaning any continous gauge fixing functional should intersect some gauge orbits more than once. Due to this, few gauge copies remain in the path integral even after gauge fixing using the Faddeev-Popov formalism, especially in the studies of non-perturbative sector. In this project, we studied the Yang-Mills configuration space, and the restriction of path integral to the Gribov region which resolves the Gribov problem. Additionally, we also discused Stochastic Quantization which models quantum field theories as a Brownian motion in the configuration space in a fictitious time, providing an alternative approach to quantizing gauge fields without encountering the Gribov problem.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1zdattyt4xw6VxPp4eoGy-5FT4h87p2Mq/view?usp=sharing" target="_blank">Thesis</a></report>                    
                     <report><i class="report-icons" data-lucide="file-pen"></i> <a href="https://drive.google.com/file/d/1qH6WMull2hC6BGlO1CiNlOTe3BUo7KzG/view?usp=sharing" target="_blank">Certificate</a></report>                    
                 </div>
                 <div class="project">
                     <strong>Spanning Trees on a Lattice</strong>  <date>[Dec 2023 - Jan 2024]</date><br>
-                    <i>Supervisor:</i> Prof. Sourendu Gupta, TIFR, Mumbai.<br>
-                    <i>Abstract:</i> In a lattice gauge theory, for evaluating gauge variant observables, a class which many important observables belong to, it becomes necessary to fix the gauge. In this project, we demonstrate an explicit proof that imposing a spanning tree on the lattice maps the local gauge transformed copies to global gauge transformed copies. We also discuss theorems to count the number of spanning trees on a lattice, and provide algorithms to generate all of them. Further, we give a procedure to obtain the gauge transformation between two spanning trees. We also implement the above said algorithms in Mathematica, and discuss the computational challenges and possible improvements.<br>
+                    <!-- <i>Supervisor:</i> Prof. Sourendu Gupta, TIFR, Mumbai.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    In lattice gauge theory, gauge invariant observables don't suffer from the infinity problems seen in continuum theory, making gauge fixing optional. However, gauge fixing becomes necessary when studying gauge variant observables. This project focused on spanning tree gauge fixing, where we proved that imposing a spanning tree on a lattice effectively maps local gauge transformed copies to global gauge transformed ones. We discussed theorems to count spanning trees on a lattice and developed algorithms to generate all possible spanning trees. Additionally, we established a procedure to determine gauge transformations between different spanning trees, and implemented these algorithms in Mathematica, analyzing their computational challenges and suggesting potential improvements.<br>
                     <i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1Gzluz7azzx-d5hvnKyC0WCkISnyJC5yM/view?usp=sharing" target="_blank">Report</a></report>
                     <report><i class="report-icons" data-lucide="github"></i> <a href="https://github.com/adithyarao3103/Spanning-Trees-on-Lattice" target="_blank">Project</a></report>                
                 </div>
                 <div class="project" id="bfss">
                     <strong>BFSS Model on the Lattice (DAAD-WISE project)</strong>  <date>[May 2023 - July 2023]</date><br>
-                    <i>Supervisor:</i> Dr. habil. Georg Bergner, Friedrich-Schiller-Universität Jena, Germany<br>
-                    <i>Abstract:</i> I contributed to the lattice implementation by writing Energy and 4-point correlator observables in the C++ implementation of the model, and further analyzing the simulation data to verify the model's behavior. We observed an anomalous behavior of gauge invariant 4-point correlators. To confirm the validity of the code, I wrote statistical analysis pipelines and tests for the simulation data, and also implemented the observable in the existing FORTRAN implementation and cross-verified the simulation results. Further, I also computed the Fermionic Energy on the lattice and verified that the temperature dependence matched with the approximate energy formula obtained by the supersymmetric Ward identities.<br>
+                    <!-- <i>Supervisor:</i> Dr. habil. Georg Bergner, Friedrich-Schiller-Universität Jena, Germany<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    The BFSS matrix model is a model of matrix quantum mechanics with a single temporal dimension. It is obtained from a dimensional reduction of a 9+1 dimensional supersymmetric Yang-Mills to 0+1 dimensions, and is postulated to be dual to M theory thus bridging the studies of Yang-Mills to the studies of Quantum Gravity. In this project, I contributed to the lattice implementation of the BFSS model by writing Energy and 4-point correlator observables in the C++ implementation of the model, and further analyzing the simulation data to verify the model's behavior. We observed an anomalous behavior of gauge invariant 4-point correlators. To confirm that the anomaly was not a programming artifact, I wrote statistical analysis pipelines and tests for the simulation data, and also implemented the observable in the existing FORTRAN implementation and cross-verified the simulation results. Further, I also computed the Fermionic Energy on the lattice and verified that the temperature dependence matched with the approximate energy formula obtained by the supersymmetric Ward identities.<br>
                     <i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/11EGKMmu3cRkP4Flr6u1TlCPHuBkutx8P/view?usp=sharing" target="_blank">Report</a></report>
                     <report><i class="report-icons" data-lucide="github"></i> <a href="https://github.com/adithyarao3103/BFSS-CPPCODE" target="_blank">Project</a></report>
                 </div>
                 <div class="project">
                     <strong>Particle Dark Matter: Existence And Constraints</strong>  <date>[May 2022 - Jul 2022]</date><br>
-                    <i>Supervisor:</i> Dr. Ranjan Laha, Center for High Energy Physics, Indian Institute of Science, Bangalore, India.<br>
-                    <i>Abstract:</i> We investigated the necessity of Dark Matter in Cosmological Models and examined the Evidence for the Existence and Properties of Particle Dark Matter from Cosmological Observations.<br>
+                    <!-- <i>Supervisor:</i> Dr. Ranjan Laha, Center for High Energy Physics, Indian Institute of Science, Bangalore, India.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    Dark Matter makes up a staggering 85% of the matter content in the universe, and yet we have little to no idea what it is made of. In this project, we investigated the necessity of Dark Matter in Cosmological Models and examined the evidence for the existence and the properties of particle Dark Matter from the constraints that can be imposed on it from cosmological observations.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1MlqsgukkMOFmIvqrwD7bnz0n8AMz5qtg/view?usp=sharing" target="_blank">Report</a></report>   
                     <report><i class="report-icons" data-lucide="file-pen"></i> <a href="https://drive.google.com/file/d/1nLMreMs1x5CYWj9LAjlE5moERW3SR_6y/view?usp=sharing" target="_blank">Certificate</a></report>                    
                 </div>
                 <div class="project">
                     <strong>Lepton Oscillations (IASc, INSA, NASI - SRFP project)</strong>  <date>[Jun 2021 - Dec 2021]</date><br>
-                    <i>Supervisor:</i> Prof. Srubabati Goswami, Senior Professor, Physical Research Laboratory (PRL), Ahmedabad, India.<br>
-                    <i>Abstract:</i> We approached the question of why charged leptons do not oscillate, in connection to the flavor oscillations observed in the neutrinos. We understood that the mass squared difference and the uncertainty principle quantify the coherence distance of the flavor superpositions, which turn out to be very small for the charged leptons, thus ruling out the possibility of experimental observation of oscillations.<br>
+                    <!-- <i>Supervisor:</i> Prof. Srubabati Goswami, Senior Professor, Physical Research Laboratory (PRL), Ahmedabad, India.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    Neutrinos oscillate between different flavor states as they travel accross the universe. This is understood as arising due to the mass states being different from the flvor states, and therefore the neutrino flavor state is not invariant under time evolution. Similar arguments apply to charged leptons like electrons and muons too, but we have never experimentally observed charged lepton oscillations. In this project, w`e approached the question of why charged leptons do not oscillate, in connection to the flavor oscillations observed in the neutrinos. We understood that the mass squared difference and the uncertainty principle quantify the coherence distance of the flavor superpositions, which turn out to be very small for the charged leptons, thus ruling out the possibility of experimental observation of oscillations.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1cvimxaA3E21IRnhh3pHD4Q5rdMKCCuVv/view?usp=sharing" target="_blank">Report</a></report>                    
                     <report><i class="report-icons" data-lucide="file-pen"></i> <a href="https://drive.google.com/file/d/1igMPtWoQJSqHWwsXJmp8Oee2_hgChHQ5/view?usp=sharing" target="_blank">Certificate</a></report>                    
                 </div>
                 <div class="project">
                     <strong>Statistical and Thermodynamic properties of Quark Gluon Plasma</strong>  <date>[Apr 2021 - Jun 2021]</date><br>
-                    <i>Supervisor:</i> Dr. Arvind Kumar, Dr B R Ambedkar National Institute of Technology, Jalandhar, India.<br>
-                    <i>Abstract:</i> I obtained a crude bound on the phase boundaries of the quark-gluon plasma via its statistical and thermodynamic properties while also addressing the question of the possibility of producing quark-gluon plasma in the laboratory.<br>
+                    <!-- <i>Supervisor:</i> Dr. Arvind Kumar, Dr B R Ambedkar National Institute of Technology, Jalandhar, India.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    At large nuclear densities, due to screening of color charge, quarks become entirely deconfined and unbound, and hence we obtain a macroscopic system with free quarks and gluons. This system is called the quark-gluon plasma and it is speculated to be the primordial soup of matter at the beginning of the universe. In this project, we worked on obtaining a crude bound on the phase boundaries of the quark-gluon plasma via its statistical and thermodynamic properties while also addressing the question of the possibility of producing quark-gluon plasma in the laboratory.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1I2ZEvQaqwNedO7Lskat4EQAcJ5jxz77i/view?usp=sharing" target="_blank">Report</a></report>                    
                 </div>
                 <h2 style="margin: 0;">Institute Mini-Projects</h2>
                 <div class="project">
                     <strong>Interacting Tachyonic Scalar Field as Dark Energy Candidate</strong>  <date>[Aug 2022 - Dec 2022]</date><br>
-                    <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br>
-                    <i>Abstract:</i> We modeled the dark energy as a Tachyonic Scalar Field that interacts with the matter content of the universe. I calculated the evolution of the various parameters, especially the functional form of scale factor and the Age of Universe. Notably, I obtained that the constraints on the coupling constant are the same as the case when the interaction term is different (Kundu, A. et.al ``Interacting tachyonic scalar field.'' Communications in Theoretical Physics 73.2 (2021): 025402.<br>
+                    <!-- <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    The Tachyonic Scalar Field (TSF) was first introduced in string theory, but later was discovered to be an excellent candidate for dark energy. A non-interacting TSF behaves exactly like cosmological constant, and therefore also suffers from the problems like the the coincidence
+                    problem, and the Cosmological Constant problem. A model of dark energy interacting with dust matter resolves this problem, and therefore makes an interesting dark energy candidate. In this project, we constructed a specific interacting TSF model where the interaction strength is proportional to the dust matter density. We calculated the evolution of the various parameters, especially the functional form of scale factor and the Age of Universe. Notably, we obtained that the constraints on the coupling constant are the same as the case when the interaction term is different (Kundu, A. et.al ``Interacting tachyonic scalar field.'' Communications in Theoretical Physics 73.2 (2021): 025402.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://arxiv.org/abs/2305.00277" target="_blank">ArXiv Preprint</a></report>                    
                 </div>
                 <div class="project">
                     <strong>Magnetic Monopoles</strong>  <date>[Jan 2022 - Apr 2022]</date><br>
-                    <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br>
-                    <i>Abstract:</i> We modeled a classically consistent two-potential formulation for classical electrodynamics with magnetic charged. I constructed the Lagrangian for a two-potential theory and derived Maxwell's equations with magnetic sources and Lorentz force equations for dyons were derived using Euler Lagrange equations.<br>
+                    <!-- <i>Supervisor:</i> Dr. Vikash K. Ojha, SVNIT, Surat.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    If magnetic monopoles existed, the Maxwell's equations would be beautifully symmetric in magnetic and electric fields. Motivated by this beauty, we worked on constructing a symmetric system of equations including the magnetic charges. We modeled a classically consistent two-potential formulation for classical electrodynamics with magnetic charges. We also constructed the Lagrangian for a two-potential theory and derived Maxwell's equations with magnetic sources and Lorentz force equations for dyons were derived using Euler Lagrange equations.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1jOocX6ONVq-2uKSanX3vupp7UTMf46l0/view?usp=sharing" target="_blank">Report</a></report>                    
                 </div>
                 <div class="project">
                     <strong>Dynamical Symmetries of the Kepler System</strong>  <date>[Aug 2021 - Dec 2021]</date><br>
-                    <i>Supervisor:</i> Prof. K N Pathak, SVNIT, Surat.<br>
-                    <i>Abstract:</i> We studied the SO(4) symmetry group of the Kepler system and its generators. I worked on the observation that the nontrivial symmetry operations that modify the eccentricity of the elliptic orbit keeping the energy constant translate to simple rotations in a 4D space with non-trivially reparameterized time.<br>
+                    <!-- <i>Supervisor:</i> Prof. K N Pathak, SVNIT, Surat.<br> -->
+                    <!-- <i> Abstract: </i> -->
+                    In a Kepler system, there exists a non-trivial operation that can be performed on the orbit, other than spatial rotations, that leaves the energy invariant. This operation involves changing the eccentricity of the orbit, and is a consequence of the conservation of the Runge-Lenz vector. In this project, we first studied the SO(4) symmetry group of the Kepler system and its generators. Then we worked on the observation that the nontrivial symmetry operations translate to simple rotations in a 4D space one can obtain by non-trivially reparameterizing time. The orbit then becomes a circle in 4D, whose projection to 3D will be the actual orbit, and all the symmetry operations simply take form of rotations of the circle. Rotations about one specific axis is then showed to give rise to the eccentricity changing operation, while other rotations are simply rotations in 3D space.<br>
                     <report><i class="report-icons" data-lucide="book-text"></i> <a href="https://drive.google.com/file/d/1bcwnQ8IAojCgluVIHSyoycZtRrwlCwsQ/view?usp=sharing" target="_blank">Report</a></report>                    
                 </div>
                 <h2 style="margin:0;" id="progProj">Independent Projects</h2>
                 <div class="project">
                     <strong id="schwinger">Numerical Simulation of the Schwinger Model</strong><br>
-                    Obtained, numerically, the real-time dynamics of particle density and entanglement entropies for the Schwinger model mapped to a spin-lattice model.[Reproduced the experimental results of <a href='https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab' target="_blank">Muschik et al. (2023)</a>]<br>
-                    To obtain the ground state of the Hamiltonian, 
+                    Computing the real-time dynamics in gauge theories is a notorious challenge for classical computational methods. Therefore recent focus has been on using quantum computers to map the qubits to the quantum field degrees of freedom and compute their evolution in custom Hamiltonian to study their real-time evolution. One such attemot is by <a href='https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab' target="_blank">Muschik et al. (2023)</a>, where they used the Jordan-Wigner transformation to map the Schwinger model to a spin-lattice model. In this project, I reproduced the study and their results numerically on my classical computer for small system sizes. <br>
+                    Further, I implemented algorithms to obtain the ground state of the Schwinger model by, 
                     <ul>
-                        <li> Developed a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the <i>separable product state</i> best approximating the ground state. </li>
-                        <li>Developed and implemented a gradient descent algorithm for finding the Matrix Product State approximation of the ground state.</li>
-                        <li>Further employed quantum adiabatic evolution, and Physics Informed Neural Network to prepare the ground state.</li>
+                        <li> Developing a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the <i>separable product state</i> that best approximates the ground state. </li>
+                        <li> Developing and implementing a gradient descent algorithm for finding the Matrix Product State approximation of the ground state.</li>
+                        <li> Employing quantum adiabatic evolution, and Physics Informed Neural Network to prepare the ground state.</li>
                     </ul>
                     <!-- Developed a variational quantum solver that implements the gradient descent, stochastic gradient, and ADAM method to obtain the ground state of the Schwinger model. [Reproduced the experimental results of <a href='https://www.nature.com/articles/s41586-019-1177-4' target="_blank">Kokail et al. (2019)</a>]<br>
                     Further implemented quantum adiabatic evolution to transform the ground state of a transverse field Hamiltonian into the ground state of the Schwinger Hamiltonian. Also implemented a PINN that outputs the state of the system, and trained it to minimize the energy to approximate the ground state of the Schwinger model.<br> -->
@@ -256,14 +266,15 @@
                 </div>
                 <div class="project">
                     <strong id="PINN">Physics Informed Neural Networks</strong><br>
-                    Implemented Physics Informed Neural Networks (PINNs) for solving PDEs using both TensorFlow and PyTorch.<br>
-                    Used PINNs to first solve, as a benchmark, simple one variable differential equations, and then used it to solve the Heat Equation, Burgers Equation and Wave Equation in 2D. Further extended the methods to solve coupled differential equations.<br>
-                    Presently working on solving the Lotka-Volterra equations which, to verify if the equation invariants are preserved.<br>
+                    Physics Informed Neural Networks (PINNs) are a class of neural networks that are trained to solve partial differential equations (PDEs) by incorporating the physics of the problem into the training process. PINNs combine the power of neural networks with the physical laws of the system to learn the solution of the PDE. This approach allows for the use of neural networks to solve complex PDEs that are difficult or impossible to solve using traditional numerical methods. <br>
+                    In this project, I implemented PINNs for solving PDEs using both TensorFlow and PyTorch.<br>
+                    I Used PINNs to first solve, as a benchmark, simple one variable differential equations, and then used it to solve the Heat Equation, Burgers Equation and Wave Equation in 2D. Further extended the methods to solve coupled differential equations.<br>
+                    Presently I am working on solving the Lotka-Volterra equations which, to verify if the equation invariants are preserved.<br>
                     <report><i class="report-icons" data-lucide="github"></i> <a href="https://github.com/adithyarao3103/PINN" target="_blank">Project</a></report>        
                 </div>
                 <div class="project">
                     <strong id="ROOT">CERN-ROOT</strong><br>
-                    Practice MWEs from William Seligman's ROOT tutorial given at Nevis Labs.<br>
+                    Practice minimal working examples from William Seligman's ROOT tutorial given at Nevis Labs.<br>
                     <report><i class="report-icons" data-lucide="github"></i> <a href="https://github.com/adithyarao3103/NevisLab-ROOT" target="_blank">Project</a></report>        
                 </div>
             </div>
