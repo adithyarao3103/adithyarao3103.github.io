@@ -14,3 +14,9 @@ Check out the previous versions here:
 [https://adithyarao3103.github.io/older-website](https://adithyarao3103.github.io/older-website) [This one is not optimized for mobile devices].
 
 ![ss-older](ss-older.png)
+
+## Visitor Distribution 
+
+[Tracked using [https://visitor-counter-adithyarao3103.vercel.app/](https://visitor-counter-adithyarao3103.vercel.app/)]
+
+![visitors](visitors/country_distribution.png)
