@@ -234,10 +234,12 @@ body{
     box-shadow: 0px 0px 0px white;
     cursor: pointer;
     flex: 1;
+    border: 1px solid rgb(136, 136, 136);
 }   
 
 .navbar> a:hover{
-    background-color: var(--link-color);
+    border: 1px solid rgb(0, 0, 0);
+    /* background-color: var(--link-color); */
 }
 
 div> a, report> a, span> a{
@@ -292,7 +294,7 @@ div> a:hover, p> a:hover, report>a:hover{
     height: auto;
     max-height: 80vh;
     background-color: rgba(255, 255, 255, 0.9);
-    background-color: var(--link-color);
+    background-color: white;
     color: black;
     /* color: white; */
     font-size: 2vw;
@@ -388,17 +390,18 @@ div> a:hover, p> a:hover, report>a:hover{
     color: black;
     width: calc(100% - 10px);
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid rgb(185, 185, 185);
     padding: 5px;
     transform: translateY(0px);
     box-shadow: 0px 0px 0px black;
-    transition: all 0.2s;
+    /* transition: all 0.2s; */
 }
 
 .socials-menu>a:hover{
-    background-color: #fcd77c;
+    /* background-color: #fcd77c; */
     /* transform: translateY(-1px); */
-    box-shadow: 1px 1px 1px black;
+    border: 1px solid rgb(0, 0, 0);
+    /* box-shadow: 1px 1px 1px black; */
 }
 
 
