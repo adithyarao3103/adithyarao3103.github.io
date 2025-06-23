@@ -233,15 +233,15 @@ body{
     font-weight: normal;
     font-size: calc(0.85vw + 5px);
     transition: all 0.5s ease;
-    box-shadow: 0px 0px 0px white;
+    /* box-shadow: 0px 0px 0px white; */
     cursor: pointer;
     flex: 1;
-    border: 1px solid rgb(136, 136, 136);
+    /* border: 1px solid rgb(136, 136, 136); */
 }   
 
-/* .navbar> a:hover{
-    background-color: var(--link-color);    
-} */
+.navbar> a:hover{
+    background-color: rgba(0, 0, 0, 0.253);    
+}
 
 div> a, report> a, span> a{
     background-color: var(--link-color);

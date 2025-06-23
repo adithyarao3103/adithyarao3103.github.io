@@ -138,7 +138,7 @@ function navBarChange(scroll){
             nav.style.background = '#ffffff50';
             for (child of nav.children){
                 // child.style.color = '#ffffff';
-                child.style.borderColor = 'transparent';  
+                // child.style.borderColor = 'transparent';  
             }
         }
     }
