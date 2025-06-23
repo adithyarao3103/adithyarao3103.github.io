@@ -49,13 +49,13 @@
         <a onclick="document.getElementById('honors').scrollIntoView(); toggleMenu();">Honors</a>
         <a onclick="document.getElementById('other').scrollIntoView(); toggleMenu();">Other</a>
         <!-- <a onclick="document.getElementById('projects').scrollIntoView(); toggleMenu();">Projects</a> -->
-        <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a>
+        <!-- <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a> -->
         <a onclick="window.location = '/art'; toggleMenu();">Art</a>
     </nav>
     
     <div class="main">
         <div class="main-content" id="about">
-        <div class="sec-head">
+        <div class="sec-head" style="padding-bottom: 5%;">
             
             <div id="photo">
                 <div id="photo-inner">
@@ -81,11 +81,11 @@
                 ... and I am a physicist. <br><br></span>
                 My research interest is in high-energy physics.<br><br>
                 
-                I am specifically interested in theoretical studies of systems at microscopic scales, and also in how these studies can benefit from computational (both classical and quantum) techniques, which means I am interested in <a onclick="document.getElementById('bfss').scrollIntoView()" style="cursor: pointer;">Lattice Simulation of Gauge Theories</a> and studies of QFTs mapped to <a onclick="document.getElementById('schwinger').scrollIntoView()" style="cursor: pointer;">Spin-Lattice Systems</a> too.<br><br>
-
-                Recently, I have taken also interest in the use of machine learning techniques for other areas of physics too, especially <a onclick="document.getElementById('PINN').scrollIntoView()" style="cursor: pointer;"> Physics Informed Neural-Networks</a>.<br><br>
+                I am specifically interested in theoretical studies of Quantum Field Theories, and also in how these studies can benefit from computational (both classical and quantum) techniques, which means I am interested in Lattice Simulation of Gauge Theories and studies of Quantum Field Theories mapped to Spin-Lattice Systems too.<br><br>
                 
-                I received my masters' degree in 2024 from NIT Surat, India, where I worked with Laurent Baulieu from Sorbonne University on my master's thesis on <a onclick="document.getElementById('gribov').scrollIntoView()" style="cursor:pointer">Quantum Gauge Field theories</a>. Prior to that, I have also worked as a research intern at various places, including a DAAD-WISE project at Jena in Germany on Lattice Simulations, and Indian institutes like TIFR, IISc, PRL, etc.
+                I received my masters' degree in 2024 from NIT Surat, India, where I worked with Laurent Baulieu from Sorbonne University on my master's thesis on Quantum Gauge Field theories.<br><br>
+                
+                Prior to that, I have also worked as a research intern at various places, including a DAAD-WISE project at Jena in Germany on Lattice Simulations, and various eminent Indian institutes like TIFR, IISc, PRL, etc.
             </div>
         </div>
     </div>
@@ -98,11 +98,14 @@
             </div>
             <div class="sec-body">
 
+                Quantum Field Theories describe the dynamics of theories with fields (which are machines that take in a spacetime point and give out a mathematical object), whose excitations are understood to be particles. They were born out of the inadequacy of quantum mechanics in explaining relativistic processes where particles were created and annihilated. Although successful in explaining a lot of phenomena, QFTs are still surrounded by a hoard of questions, especially pertaining the quantization of gravity, which is one of the biggest unsolved questions in modern physics. Most of these problems can be attributed to the fact that QFTs are inherently complicated, since they start off assuming infinite number of degrees of freedom, i.e. one mathematical object to each and every point in spacetime (which is, not so obviously, infinite).<br><br>
+                My research is in theoretical ventures into QFTs and their relatives, in a hope to stumble upon some problem and solve it someday. Another aspect I find interesting is that one can discretize spacetime points to reduce the number of degrees of freedom from infinite to finite, and formulate a QFT on this discrete "lattice". Once put on a lattice, one can then use modern computational facilities to compute the hard integrals to get numerical results which can be compared with experiments. This is called <a href="https://arxiv.org/abs/hep-lat/0412043" target="_blank">lattice field theory</a>. Further interestingly, in recent days, there has been a formulation of a mapping between the interactions of qubits to the dynamics of lattice field theories. If exploited well, one could use this mapping to <a href="https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab" target="_blank"> simulate lattice field theories using quantum computers </a> too.<br><br>  
+
                 <!-- The realisation that the microscopic world follows a different set of rules as opposed to a macroscopic world was one of the greatest revelations in the past century, and is what led to the golden period in physics called the quantum revolution. With innumerous brilliant minds working together on this one subject, it soon became clear that "ordinary" quantum mechanics fails when applied to relativistic processes where particles can be created or annihilated, and to rescue the quantum theory, quantum field theory was born. Quantum field theory (QFT) is the language in which most of the modern physics is formulated. It provides a natural framework to explain the creation and annihilation of particles by describing them as ripples in underlying fields. You can read a short article about what is QFT and why QFT is hard by Prof. David Tong <a href="https://www.damtp.cam.ac.uk/user/tong/whatisqft.html" target="_blank">here</a>. Although successful in explaining a lot of phenomena, QFTs are still surrounded by a hoard of questions, especially pertaining the quantization of gravity, which is one of the biggest unsolved questions in modern physics. Most of these problems can be attributed to the fact that QFTs are inherently complicated, since they start off assuming infinite number of degrees of freedom.<br>
                 My research is in theoretical ventures into QFTs and their relatives, in a hope to stumble upon some problem and solve it someday. Further, modern computational techniques (both Quantum and Classical) have paved good ways to understand and compute QFTs, and I am interested in them too. Someday I will get enough time to summarize about QFTs and how computational frameworks help us understand them, till then please bear with me.
                 <br><br> -->
 
-                <h2 style="margin: 0;">Papers</h2>
+                <!-- <h2 style="margin: 0;">Papers</h2>
                 <div class="project">
                     Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. , <i>“Estimating the Age of Universe via Scalar Field,”</i> in Proceedings of the XXV DAE-BRNS High Energy Physics (HEP) Symposium 2022, 12-16 December, Mohali, India, vol. 304, S. Jena, A. Shivaji, V. Bhardwaj, K. Lochan, H. K. Jassal, A. Joseph, and P. Khuswaha, Eds., Singapore: Springer Nature Singapore, 2024, pp. 1015-1016. <a href ="https://doi.org/10.1007/978-981-97-0289-3_272" target="_blank">doi:10.1007/978-981-97-0289-3_272</a>. For direct access: <a href="https://drive.google.com/file/d/1KAqll7eWNuh_GKrwrXW3-CQA_LekXgw-/view?usp=sharing" target="_blank">Link</a>
                 </div>
@@ -112,7 +115,7 @@
                 <h2 style="margin: 0;">Posters</h2>
                 <div class="project">
                     Ojha, V. K., <b>A. A. Rao</b>, and S. D. Pathak. <i>"Estimating the Age of Universe via Interacting Tachyonic Scalar Field"</i> XXV DAE-BRNS High Energy Physics Symposium 2022. <a href="https://drive.google.com/file/d/1uq8c3fF39RjsMiS_qSVZ7qhplvpkbSo1/view?usp=drive_link", target="_blank">Poster</a> presentation. 
-                </div>
+                </div> -->
                 
 
             </div>

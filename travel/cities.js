@@ -1,5 +1,19 @@
 let cities = [
     {
+    "Name": "Chennai",
+    "Long": 80.2705,
+    "Lat": 13.0843,
+    "Year": 2025,
+    "Description": "Interview at IISER."
+    },
+    {
+    "Name": "Bhopal",
+    "Long": 77.4126,
+    "Lat": 23.2599,
+    "Year": 2025,
+    "Description": "Interview at IMSc."
+    },
+    {
     "Name": "Ahmedabad",
     "Long": 72.5797068,
     "Lat": 23.0216238,
