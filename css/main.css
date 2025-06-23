@@ -451,7 +451,7 @@ date{
 
 
 #socials{
-    margin-top: 25vw;
+    margin-top: 15vw;
     width: 72vw;
     height: 20vh;
     position: relative;
@@ -464,7 +464,7 @@ date{
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 2vh;
+    margin-bottom: 0vh;
     color: black;
     z-index:10;
 }
@@ -493,7 +493,7 @@ date{
 
 #video-description{
     width: calc(100vw - 70px);
-    margin-top: 10vh;
+    margin-top: 2vh;
     position: absolute;
     height: auto;
     padding: 30px;
