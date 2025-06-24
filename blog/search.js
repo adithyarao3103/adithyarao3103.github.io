@@ -1,4 +1,4 @@
-// Blog search functionality
+// Blog search functionality with multiple search options
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
     const blogPosts = document.querySelectorAll('.project');
@@ -15,22 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
             originalPosts.forEach(post => {
                 post.style.display = 'block';
             });
-            showNoResultsMessage(false, '');
+            showNoResultsMessage(false, '', 'all');
             return;
         }
         
-        // Check if it's a tag-only search
-        const isTagSearch = searchValue.toLowerCase().startsWith('t:');
-        const searchTerm = isTagSearch 
-            ? searchValue.slice(2).toLowerCase().trim() 
-            : searchValue.toLowerCase();
+        // Determine search type and extract search term
+        const searchType = getSearchType(searchValue);
+        const searchTerm = extractSearchTerm(searchValue, searchType);
         
-        // If tag search but no term after "t:", show all posts
-        if (isTagSearch && searchTerm === '') {
+        // If prefix is used but no term after it, show all posts
+        if (searchType !== 'all' && searchTerm === '') {
             originalPosts.forEach(post => {
                 post.style.display = 'block';
             });
-            showNoResultsMessage(false, '');
+            showNoResultsMessage(false, '', searchType);
             return;
         }
         
@@ -40,17 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = post.querySelector('h2').textContent.toLowerCase();
             const tags = post.querySelector('.tags').textContent.toLowerCase();
             const description = post.querySelector('.desc').textContent.toLowerCase();
+            const dateElement = post.querySelector('.date');
+            const date = dateElement ? dateElement.textContent.toLowerCase() : '';
             
             let matchesSearch = false;
             
-            if (isTagSearch) {
-                // Search only in tags
-                matchesSearch = tags.includes(searchTerm);
-            } else {
-                // Search in title, tags, and description
-                matchesSearch = title.includes(searchTerm) || 
-                              tags.includes(searchTerm) || 
-                              description.includes(searchTerm);
+            switch (searchType) {
+                case 'tags':
+                    // Search only in tags (t:)
+                    matchesSearch = tags.includes(searchTerm);
+                    break;
+                case 'date':
+                    // Search only in date (d:)
+                    matchesSearch = date.includes(searchTerm);
+                    break;
+                case 'title':
+                    // Search only in title (h:)
+                    matchesSearch = title.includes(searchTerm);
+                    break;
+                case 'description':
+                    // Search only in description (b:)
+                    matchesSearch = description.includes(searchTerm);
+                    break;
+                default:
+                    // Search in title, tags, and description (default behavior)
+                    matchesSearch = title.includes(searchTerm) || 
+                                  tags.includes(searchTerm) || 
+                                  description.includes(searchTerm);
             }
             
             if (matchesSearch) {
@@ -62,49 +76,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Show "no results" message
-        showNoResultsMessage(visibleCount === 0, searchTerm, isTagSearch);
+        showNoResultsMessage(visibleCount === 0, searchTerm, searchType);
+    }
+    
+    // Function to determine search type based on prefix
+    function getSearchType(searchValue) {
+        const lowerValue = searchValue.toLowerCase();
+        if (lowerValue.startsWith('t:')) return 'tags';
+        if (lowerValue.startsWith('d:')) return 'date';
+        if (lowerValue.startsWith('h:')) return 'title';
+        if (lowerValue.startsWith('b:')) return 'description';
+        return 'all';
+    }
+    
+    // Function to extract search term after prefix
+    function extractSearchTerm(searchValue, searchType) {
+        if (searchType === 'all') {
+            return searchValue.toLowerCase();
+        }
+        return searchValue.slice(2).toLowerCase().trim();
+    }
+    
+    // Function to get search type display name
+    function getSearchTypeDisplay(searchType) {
+        const displayNames = {
+            'tags': 'tags',
+            'date': 'dates',
+            'title': 'titles',
+            'description': 'descriptions',
+            'all': 'blog posts'
+        };
+        return displayNames[searchType] || 'blog posts';
+    }
+    
+    // Function to get search prefix display
+    function getSearchPrefix(searchType) {
+        const prefixes = {
+            'tags': 'tag ',
+            'date': 'date ',
+            'title': 'title ',
+            'description': 'description ',
+            'all': ''
+        };
+        return prefixes[searchType] || '';
     }
     
     // Function to show/hide "no results" message
-    function showNoResultsMessage(show, searchTerm, isTagSearch = false) {
+    function showNoResultsMessage(show, searchTerm, searchType = 'all') {
         let noResultsDiv = document.getElementById('no-results-message');
         
         if (show) {
-            const searchType = isTagSearch ? 'tags' : 'blog posts';
-            const searchPrefix = isTagSearch ? 'tag ' : '';
+            const searchTypeDisplay = getSearchTypeDisplay(searchType);
+            const searchPrefix = getSearchPrefix(searchType);
             
             if (!noResultsDiv) {
                 noResultsDiv = document.createElement('div');
                 noResultsDiv.id = 'no-results-message';
                 noResultsDiv.className = 'no-results';
-                noResultsDiv.innerHTML = `
-                    <div style="text-align: center; padding: 40px 20px; color: #666;">
-                        <h3>No results found</h3>
-                        <p>No ${searchType} match your search for ${searchPrefix}"<strong>${escapeHtml(searchTerm)}</strong>"</p>
-                        <p>Try searching with different keywords or check the spelling.</p>
-                        ${isTagSearch ? '<p><em>Tip: Remove "t:" to search all content</em></p>' : '<p><em>Tip: Use "t:" prefix to search tags only (e.g., "t:physics")</em></p>'}
-                    </div>
-                `;
                 
                 // Insert after the search box
                 const searchDiv = document.getElementById('search');
                 searchDiv.parentNode.insertBefore(noResultsDiv, searchDiv.nextSibling);
-            } else {
-                // Update existing message
-                const messageDiv = noResultsDiv.querySelector('div');
-                messageDiv.innerHTML = `
-                    <h3>No results found</h3>
-                    <p>No ${searchType} match your search for ${searchPrefix}"<strong>${escapeHtml(searchTerm)}</strong>"</p>
-                    <p>Try searching with different keywords or check the spelling.</p>
-                    ${isTagSearch ? '<p><em>Tip: Remove "t:" to search all content</em></p>' : '<p><em>Tip: Use "t:" prefix to search tags only (e.g., "t:physics")</em></p>'}
-                `;
-                noResultsDiv.style.display = 'block';
             }
+            
+            // Update message content
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = 'text-align: center; padding: 40px 20px; color: #666;';
+            messageDiv.innerHTML = `
+                <h3>No results found</h3>
+                <p>No ${searchTypeDisplay} match your search for ${searchPrefix}"<strong>${escapeHtml(searchTerm)}</strong>"</p>
+                <p>Try searching with different keywords or check the spelling.</p>
+                ${getTipMessage(searchType)}
+            `;
+            
+            noResultsDiv.innerHTML = '';
+            noResultsDiv.appendChild(messageDiv);
+            noResultsDiv.style.display = 'block';
         } else {
             if (noResultsDiv) {
                 noResultsDiv.style.display = 'none';
             }
         }
+    }
+    
+    // Function to get appropriate tip message based on search type
+    function getTipMessage(searchType) {
+        const tips = {
+            'tags': '<p><em>Tip: Remove "t:" to search all content</em></p>',
+            'date': '<p><em>Tip: Remove "d:" to search all content</em></p>',
+            'title': '<p><em>Tip: Remove "h:" to search all content</em></p>',
+            'description': '<p><em>Tip: Remove "b:" to search all content</em></p>',
+            'all': '<p><em>Tips: Use "t:" for tags, "d:" for dates, "h:" for titles, "b:" for descriptions</em></p>'
+        };
+        return tips[searchType] || tips['all'];
     }
     
     // Helper function to escape HTML
@@ -122,11 +186,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update placeholder based on input
     function updatePlaceholder() {
         const currentValue = searchInput.value;
-        if (currentValue.toLowerCase().startsWith('t:')) {
-            searchInput.placeholder = 'Search tags... (remove "t:" to search all)';
-        } else {
-            searchInput.placeholder = 'Search blog posts... (use "t:" for tags only)';
-        }
+        const searchType = getSearchType(currentValue);
+        
+        const placeholders = {
+            'tags': 'Search tags... (remove "t:" to search all)',
+            'date': 'Search dates... (remove "d:" to search all)',
+            'title': 'Search titles... (remove "h:" to search all)',
+            'description': 'Search descriptions... (remove "b:" to search all)',
+            'all': 'Search... (use "t:" for tags, "d:" for date, "h:" for title, "b:" for description)'
+        };
+        
+        searchInput.placeholder = placeholders[searchType];
     }
     
     // Add event listeners - search as you type
@@ -144,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clear search function
     function clearSearch() {
         searchInput.value = '';
-        searchInput.placeholder = 'Search blog posts... (use "t:" for tags only)';
+        searchInput.placeholder = 'Search... (use "t:" for tags, "d:" for date, "h:" for title, "b:" for description)';
         searchBlogPosts();
         searchInput.blur();
     }
