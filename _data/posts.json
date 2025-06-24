@@ -25,7 +25,7 @@
         "title": "Conway's Game of Life",
         "date": "01-01-2023",
         "tags": ["#Simulations,", "#Interactive,", "#Miscellaneous"],
-        "desc": "evised by British mathematician John Conway, the Game of Life is a Cellular Automata algorithm. It is a set of very simple update rules that decides if a cell lives or dies based on its neighbors, and despite its simplicity, it leads to complicated patterns and sequences.",
+        "desc": "Devised by British mathematician John Conway, the Game of Life is a Cellular Automata algorithm. It is a set of very simple update rules that decides if a cell lives or dies based on its neighbors, and despite its simplicity, it leads to complicated patterns and sequences.",
         "link": "/interactive/Game-Of-Life"
         }
     ]
