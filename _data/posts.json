@@ -1,0 +1,32 @@
+{
+    "posts":[
+        {
+        "title": "Monte Carlo simulations for 2D Ising Model",
+        "date": "05-01-2025",
+        "tags": ["#Simulations,", "#Interactive,", "#Codensed-Matter"],
+        "desc": "Monte Carlo simulations are one of the powerful algorithms in computational physics, that is used everywhere, ranging from Quantum Field Theories to Quantum Many-Body Systems. They allow us to numerically obtain a very excellent approximation of the thermal state of a system with large number of degrees of freedom, which is impossible to solve analytically.",
+        "link": "/interactive/Monte-Carlo"
+        },
+        {
+        "title": "Hopfield Network for Associative Memory",
+        "date": "10-01-2025",
+        "tags": ["#Simulations,", "#Interactive,", "#AI"],
+        "desc": "Hopfield Networks are one of the first Neural Networks developed for storing patterns and retrieving them from an incomplete or noisy input. Given an noisy input, it returns the closest saved pattern or the best guess.",
+        "link": "/interactive/Hopfield-Network"
+        },
+        {
+        "title": "Spanning Tree Gauge Fixing",
+        "date": "08-10-2024",
+        "tags": ["#Simulations,", "#Interactive,", "#Lattice-GT"],
+        "desc": "Lattice Gauge Theories provide can be said to be the only non-perturbative approaches towards solving quantum field theories, and therefore are very important for their studies. Spanning Tree Gauge Fixing allows one to study gauge-variant observables like propagator on the lattice consistently, and are therefore necessary for aiding these studies.",
+        "link": "/interactive/Spanning-Trees-on-Lattice"
+        },
+        {
+        "title": "Conway's Game of Life",
+        "date": "01-01-2023",
+        "tags": ["#Simulations,", "#Interactive,", "#Miscellaneous"],
+        "desc": "evised by British mathematician John Conway, the Game of Life is a Cellular Automata algorithm. It is a set of very simple update rules that decides if a cell lives or dies based on its neighbors, and despite its simplicity, it leads to complicated patterns and sequences.",
+        "link": "/interactive/Game-Of-Life"
+        }
+    ]
+}

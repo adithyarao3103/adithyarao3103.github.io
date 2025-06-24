@@ -75,8 +75,8 @@ body {
 .container {
     display: flex;
     gap: 2rem;
-    width: 60%;
-    margin: 15vh auto;
+    width: 70%;
+    margin: 30vh auto;
 }
 
 
@@ -248,7 +248,8 @@ li::before {
 }   
 
 .navbar> a:hover{
-    background-color: #c26d26;
+    /* background-color: #c26d26; */
+    background-color: rgba(0, 0, 0, 0.253);    
 }
 
 .menu-toggle {
@@ -372,4 +373,12 @@ li::before {
 
 #orv{
     background-image: url(orv.webp);
+}
+
+#slf{
+    background-image: url(slf.webp);
+}
+
+#tbhx{
+    background-image: url(tbhx.webp);
 }

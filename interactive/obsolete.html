@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Interactive blogs.">
+    <meta name="author" content="Adithya A Rao">
+    <meta name="keywords" content="Physics, Sandbox">
+    <title>Adithya A Rao | Interactive</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/loading.css"> -->
+    <!-- <script src="/js/loading.js"></script> -->
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSVCQCHEEQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NSVCQCHEEQ');
+</script>
+
+<body>
+    <iframe src="https://visitor-counter-adithyarao3103.vercel.app/increment?name=interactive" style="display:none"></iframe>
+    <nav class="navbar" id="navbar-mob">
+        <div class="menu-toggle" onclick="toggleMenu()"><div class="bdrop"></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify"><path d="M3 12h18"/><path d="M3 18h18"/><path d="M3 6h18"/></svg>
+    </div>
+    </nav>
+    <nav class="navbar navClose" id="navbar">
+        <a onclick="window.location = '../?section=about'">About</a>
+        <a onclick="window.location = '../?section=honors'">Honors</a>
+        <a onclick="window.location = '../?section=research'">Research</a>
+        <a onclick="window.location = '../?section=other'">Other</a>
+        <a onclick="window.location = '../?section=projects'">Projects</a>
+        <a onclick="window.location = '/interactive'; toggleMenu();">Interactive</a>
+        <a onclick="window.location = '/art'; toggleMenu();">Art</a>
+    </nav>
+    <div class="bg-cont" id="before-bg">
+        <div class="bdrop-bg"></div>
+    </div>
+    <div id="main-cont">
+        <div id="main">
+            <center><h1>Interactive Programs</h1></center>
+            Here are a few sandboxes I coded for exploring concepts interactively. (Click on the title to go open the webpage)<br><br><br>
+            <div class="project">
+                <a class="link" href="Monte-Carlo" target="_blank">Monte Carlo simulations for 2D Ising Model</a>
+                <div class="desc">Monte Carlo simulations are one of the powerful algorithms in computational physics, that is used everywhere, ranging from Quantum Field Theories to Quantum Many-Body Systems. They allow us to numerically obtain a very excellent approximation of the thermal state of a system with large number of degrees of freedom, which is impossible to solve analytically.<br><br>
+                In this webpage, I have implemented an interactive version of Monte Carlo simulation for 2D Ising model, while discussing the mathematics behind it.</div>
+            </div>
+            <div class="project">
+                <a class="link" href="Hopfield-Network" target="_blank">Hopfield Network for Associative Memory</a>
+                <div class="desc">Hopfield Networks are one of the first Neural Networks developed for storing patterns and retrieving them from an incomplete or noisy input. Given an noisy input, it returns the closest saved pattern or the best guess.<br><br>
+                In this webpage, you can read how Hopfield Networks store and retrieve information, while also interactively playing with a Hopfield Network to see it in action.</div>
+            </div>
+            <div class="project">
+                <a class="link" href="Spanning-Trees-on-Lattice" target="_blank">Spanning Tree Gauge Fixing</a>
+                <div class="desc">Lattice Gauge Theories provide can be said to be the only non-perturbative approaches towards solving quantum field theories, and therefore are very important for their studies. Spanning Tree Gauge Fixing allows one to study gauge-variant observables like propagator on the lattice consistently, and are therefore necessary for aiding these studies. <br><br>
+                In this webpage, you can read about Spanning Tree Gauge Fixing, and you can also visualize an algorithm for generating a random spanning tree on the lattice while also performing gauge fixing. </div>
+            </div>
+            <div class="project">
+                <a class="link" href="Game-Of-Life" target="_blank">Conway's Game of Life</a>
+                <div class="desc">Devised by British mathematician John Conway, the Game of Life is a Cellular Automata algorithm. It is a set of very simple update rules that decides if a cell lives or dies based on its neighbors, and despite its simplicity, it leads to complicated patterns and sequences. <br><br>
+                In this webpage, you can interactively play with a Game of Life grid, and also read about the different patterns that emerge.</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="main.js"></script>
+<!-- <script src="/js/loading-handler.js"></script> -->
+</html>
