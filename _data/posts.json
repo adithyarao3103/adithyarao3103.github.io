@@ -3,7 +3,7 @@
         {
         "title": "Monte Carlo simulations for 2D Ising Model",
         "date": "05-01-2025",
-        "tags": ["#Simulations,", "#Interactive,", "#Codensed-Matter"],
+        "tags": ["#Simulations,", "#Interactive,", "#Condensed-Matter"],
         "desc": "Monte Carlo simulations are one of the powerful algorithms in computational physics, that is used everywhere, ranging from Quantum Field Theories to Quantum Many-Body Systems. They allow us to numerically obtain a very excellent approximation of the thermal state of a system with large number of degrees of freedom, which is impossible to solve analytically.",
         "link": "/interactive/Monte-Carlo"
         },

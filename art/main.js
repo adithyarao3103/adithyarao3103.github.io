@@ -42,8 +42,8 @@
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 const modalImage = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
+// const modalTitle = document.getElementById('modalTitle');
+// const modalDescription = document.getElementById('modalDescription');
 const modalContent = document.getElementById('modalContent');
 
 document.querySelectorAll('.gallery-item').forEach(item => {
@@ -52,8 +52,8 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     const description = item.getAttribute('data-description');
     const imageSrc = item.getAttribute('data-image');
 
-    modalTitle.textContent = title;
-    modalDescription.textContent = description;
+    // modalTitle.textContent = title;
+    // modalDescription.textContent = description;
     modalImage.src = imageSrc;
 
     modal.style.display = 'flex';
