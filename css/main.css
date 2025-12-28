@@ -321,7 +321,8 @@ div> a:hover, p> a:hover, report>a:hover{
     background-color: rgba(255, 255, 255, 0.9);
     font-size: large;
     line-height: 1.75;
-    font-size: calc(0.55vw + 5px);
+    /* font-size: calc(0.55vw + 5px); */
+    font-size: 0.865em;
     /* border-radius: 20px; */
     position: relative;
 }
@@ -386,7 +387,8 @@ div> a:hover, p> a:hover, report>a:hover{
 
 .socials-menu>a{
     font-weight: 400;
-    font-size: calc(0.5vw + 5px);
+    /* font-size: calc(0.5vw + 5px); */
+    font-size:0.415em;
     text-decoration: none;
     color: black;
     width: calc(100% - 10px);
