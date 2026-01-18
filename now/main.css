@@ -351,17 +351,7 @@ li::before {
 
 
 
-#tbate{
-    background-image: url(tbate.webp);
-}
 
-#op{
-    background-image: url(onepiece.webp);
-}
-
-#frieren{
-    background-image: url(frieren.webp);
-}
 
 #pows{
     background-image: url(pows.jpg);
@@ -371,18 +361,14 @@ li::before {
     background-image: url(tfas.jpg);
 }
 
-#orv{
-    background-image: url(orv.webp);
-}
-
-#slf{
-    background-image: url(slf.webp);
-}
-
 #wpwt{
     background-image: url(wpwt.jpg);
 }
 
-#tbhx{
-    background-image: url(tbhx.webp);
+#why{
+    background-image: url(why.webp);
+}
+
+#tem{
+    background-image: url(tem.webp);
 }
