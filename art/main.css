@@ -198,6 +198,13 @@ z-index: 1000;
     
     object-fit: contain; /* Ensures aspect ratio is preserved */
     border-radius: 8px;
+    /* This creates the smooth fade effect */
+    transition: filter 0.3s ease; 
+}
+
+/* Add this NEW class for the blur effect */
+.blurred-img {
+    filter: blur(8px);
 }
 
 

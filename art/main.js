@@ -48,15 +48,29 @@ const modalContent = document.getElementById('modalContent');
 
 document.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
-    const title = item.getAttribute('data-title');
-    const description = item.getAttribute('data-description');
-    const imageSrc = item.getAttribute('data-image');
-
-    // modalTitle.textContent = title;
-    // modalDescription.textContent = description;
-    modalImage.src = imageSrc;
-
+    const fullResSrc = item.getAttribute('data-image'); // High-res source
+    const lowResSrc = item.querySelector('img').src;    // Current thumbnail source
+    
+    // 1. Immediately show the thumbnail (low res)
+    modalImage.src = lowResSrc;
+    
+    // 2. Add the blur class immediately
+    modalImage.classList.add('blurred-img');
+    
+    // 3. Open the modal
     modal.style.display = 'flex';
+
+    // 4. Load the high-res image in the background
+    const loader = new Image();
+    loader.src = fullResSrc;
+
+    loader.onload = () => {
+      // Only swap if the modal is still open
+      if (modal.style.display === 'flex') {
+        modalImage.src = fullResSrc;                // Swap to high res
+        modalImage.classList.remove('blurred-img'); // Smoothly remove blur
+      }
+    };
   });
 });
 
