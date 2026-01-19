@@ -1,0 +1,53 @@
+{
+    "sketches":[
+        {
+        "title": "Sacred Symmetry",
+        "source": "Sketches/mandala.jpg",
+        "source-min": "Sketches/min/mandala-min.jpg",
+        "alt": "mandala",
+        "desc": "A hypnotic convergence of art and spirit, this mandala blooms from the center like a cosmic lotus. It serves as a visual meditation, where every petal and curve signifies the harmonious unfolding of life's infinite possibilities, inviting the viewer into a state of deep mindfulness."
+        },
+        {
+        "title": "Uma Maheshwara",
+        "source": "Sketches/shivaparvati.jpg",
+        "source-min": "Sketches/min/shivaparvati-min.jpg",
+        "alt": "shivaparvati",
+        "desc": "Depicting the serene embrace of Shiva and Parvati, this intricate stippling artwork captures the essence of Uma-Maheshvara. Seated in eternal harmony at the Hoysaleshwar Temple, the couple represents the perfect balance of masculine and feminine energies (Purusha and Prakriti)."
+    },
+    {
+        "title": "Vighnaharta",
+        "source": "Sketches/ganpati.jpeg",
+        "source-min": "Sketches/min/ganpati-min.jpeg",
+        "alt": "Vighnaharta",
+        "desc": "Ganapati, the beloved elephant-headed god, is revered as the remover of obstacles, clearing paths with grace and strength. His very name, Vighnaharta, resonates as a promise of protection and guidance."
+    },
+    {
+        "title": "Wrath of the protector",
+        "source": "Sketches/narasimha.jpeg",
+        "source-min": "Sketches/min/narasimha-min.jpeg",
+        "alt": "Wrath of the protector",
+        "desc": "Narasimha, fierce and majestic in his half-human, half-lion form, unleashes divine judgment upon the Rakshasa Hiranyakashipu. A scene of celestial justice carved in stone at the Chennakeshava Temple, Belur, India."
+    },
+    {
+        "title": "Wheel of time",
+        "source": "Sketches/konark.jpeg",
+        "source-min": "Sketches/min/konark-min.jpeg",
+        "alt": "The wheel of life",
+        "desc": "A magnificent wheel at the Konark Sun Temple, a tribute to the source of all life, the supreme soul who bestows light and warmth upon the world. Each spoke and carving tells the story of existence, a timeless ode to the rhythms of creation and the divine cycle of being."
+    },
+    {
+        "title": "The cosmic dance",
+        "source": "Sketches/shiva.jpeg",
+        "source-min": "Sketches/min/shiva-min.jpeg",
+        "alt": "The cosmic dance of the destroyer",
+        "desc": "Shiva, the great destroyer, moves in his divine rhythm, each step a wave of destruction heralding the world's end. At the Kedareshwara Temple in Halebidu, India, this dance is eternal, capturing the powerful cycle of creation and dissolution in the universe."
+    },
+    {
+        "title": "Muse of Melodies",
+        "source": "Sketches/music.jpg",
+        "source-min": "Sketches/min/music-min.jpg",
+        "alt": "Muse of Melodies",
+        "desc": "She plays the veena with serene devotion, embodying Saraswati, the goddess of wisdom and the arts. Her music flows like a river of knowledge and creativity, inspiring all who hear it with its tranquil beauty and timeless grace."
+    }
+    ]
+}

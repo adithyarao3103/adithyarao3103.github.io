@@ -187,6 +187,7 @@ z-index: 1000;
     align-items: center;
     justify-content: center;
     position: relative; /* Keeps the close button anchored to this box */
+    z-index: 1000;
 }
 
 .modal img {
@@ -200,6 +201,7 @@ z-index: 1000;
     border-radius: 8px;
     /* This creates the smooth fade effect */
     transition: filter 0.3s ease; 
+    z-index: 1000;
 }
 
 /* Add this NEW class for the blur effect */
