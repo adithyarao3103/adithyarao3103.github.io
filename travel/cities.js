@@ -4,14 +4,14 @@ let cities = [
     "Long": 80.2705,
     "Lat": 13.0843,
     "Year": 2025,
-    "Description": "Interview at IISER."
+    "Description": "Interview at IMSc."
     },
     {
     "Name": "Bhopal",
     "Long": 77.4126,
     "Lat": 23.2599,
     "Year": 2025,
-    "Description": "Interview at IMSc."
+    "Description": "Interview at IISERB."
     },
     {
     "Name": "Ahmedabad",
@@ -264,8 +264,8 @@ let cities = [
     "Name": "Pune",
     "Long": 73.8544541,
     "Lat": 18.521428,
-    "Year": '2022, 2024',
-    "Description": "Trip, interview and more."
+    "Year": '2022, 2024, 2025 —',
+    "Description": "Third home..."
     },
     {
     "Name": "Salzburg",
