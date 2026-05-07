@@ -627,3 +627,7 @@ date{
 .sitemap:hover {
     background: var(--link-color);
 }
+
+#notes-main{
+    margin-bottom: 25vh;
+}

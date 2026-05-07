@@ -354,4 +354,8 @@ text, text>span{
     width: calc(100vw - 60px)
 }
 
+#notes-main{
+    margin-bottom: 15vh;
+}
+
 }
