@@ -28,6 +28,15 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSVCQCHEEQ"></script>
 <script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -46,6 +55,7 @@
     <nav class="navbar navClose" id="navbar">
         <a onclick="document.getElementById('about').scrollIntoView(); toggleMenu();">About</a>
         <a onclick="document.getElementById('research').scrollIntoView(); toggleMenu();">Research</a>
+        <a onclick="document.getElementById('works').scrollIntoView(); toggleMenu();">Works</a>
         <a onclick="document.getElementById('honors').scrollIntoView(); toggleMenu();">Honors</a>
         <a onclick="document.getElementById('other').scrollIntoView(); toggleMenu();">Misc.</a>
         <a onclick="document.getElementById('notes').scrollIntoView(); toggleMenu();">Notes</a>
@@ -83,11 +93,11 @@
                 <span id="name-span"><h1 style="margin:0" id="name">I am <span id="name-container-container"><span id="name-container"><span id="name-text">Adithya...</span></span></span></h1>
                 ... and I am a Physics PhD student in the group of <a href="https://www.iiserpune.ac.in/research/department/physics/people/faculty/regular-faculty/sachin-jain/354" target="_blank">Dr. Sachin Jain</a> at IISER Pune. <br><br></span>
                 My current research is in theoretical high-energy physics.<br>  
-                To be specific, I am working on bootstrap methods for the non-perturbative studies of conformal field theories. Along with this, I am also interested in how interdisciplinary input can aid to deepen our understanding of theoretical physics.<br><br>
+                I am working broadly in quantum field theory, conformal field theories, and the mathematical structures underlying fundamental physics. While my current work focuses on bootstrap methods for conformal field theories, I am equally interested in the interplay between physics, mathematics, and computation, and in how ideas from seemingly distant disciplines can shed light on fundamental questions.<br><br>
                 
-                I received my masters' degree in 2024 from NIT Surat, India, where I worked with Laurent Baulieu from Sorbonne University on my master's thesis on Quantum Gauge Field theories.<br><br>
+                I received my Integrated Masters' in Physics degree in 2024 from NIT Surat, India, where I worked with <a href="https://inspirehep.net/authors/1017088?ui-citation-summary=true" target="_blank">Laurent Baulieu</a> from Sorbonne University on my master's thesis on Quantum Gauge Field theories.<br><br>
                 
-                Prior to that, I have also worked as a research intern at various places, including a DAAD-WISE project at Jena in Germany on Lattice Simulations, and various other institutes like TIFR, IISc, PRL, etc.
+                During my studies, I have also had the opportunity to carry out research projects at several institutes, including a DAAD-WISE project at Friedrich Schiller University Jena, as well as research internships at TIFR, IISc, PRL, and other institutes.
             </div>
         </div>
     </div>
@@ -102,7 +112,7 @@
 
                 If you are a layman — Quantum Field Theories describe the dynamics of theories with fields, whose excitations manifest as particles. In simple words, what a quantum field theory does is assign some operators (scalars, vectors, spinors) to each point in space, and study their dynamics with time. These theories were born out of the inadequacy of quantum mechanics in explaining relativistic processes where particles were created and annihilated. Despite their tremendous success, QFTs still harbor deep mysteries—most notably how to quantize gravity, which is one of the biggest unsolved questions in modern physics. Most of these problems can be attributed to the fact that QFTs are inherently complicated, since they start off assuming infinite number of degrees of freedom, i.e. one mathematical object to each and every point in spacetime (which is, not so obviously, infinite).<br><br>
                 
-                If you are not a layman — I am currently working on conformal field theories. These have a very appealing universality, and have a wide range of applications in not only high-energy physics but also in condensed matter systems. My research is currently on the so called bootstrap methods which allow one to write physical results just from symmetry arguments, without having to appeal to the tedious calculations. <br><br>  
+                If you are not a layman — I am currently working on bootstrap methods for conformal field theories, attempting to study them relying only on general principles such as symmetry, consistency, and unitarity rather than the details of a specific microscopic model. Conformal field theories have a very appealing universality, and have a wide range of applications in not only high-energy physics but also in condensed matter systems. The overarching motivation behind this research is the formulation of a consistent quantum theory of gravity. In particular, the study of conformal field theories in the context of AdS/CFT duality provides a remarkable framework in which questions about quantum gravity can be translated into precise statements about quantum field theories, offering a unique window into some of the deepest problems in fundamental physics. <br><br>  
 
                 Another aspect I find interesting is that one can discretize spacetime points to reduce the number of degrees of freedom from infinite to finite, and formulate a QFT on this discrete "lattice". Once put on a lattice, one can use modern computational facilities to compute the hard integrals to get numerical results which can be compared with experiments. This is called lattice field theory (see <a href="https://arxiv.org/abs/hep-lat/0412043" target="_blank">Wilson</a> for more details).<br><br>
                 More interestingly, in recent days, there has been a formulation of a mapping between the interactions of qubits to the dynamics of lattice field theories. Exploiting these correspondences could allow us to simulate lattice field theories directly on quantum computers (for example, <a href="https://iopscience.iop.org/article/10.1088/1367-2630/aa89ab" target="_blank">Muschik et. al.</a>), opening a new frontier at the intersection of quantum information and high-energy physics.<br><br>  
@@ -124,6 +134,36 @@
                 </div> -->
                 
 
+            </div>
+        </div>
+    </div>
+
+    <div class="main" id="works-main">
+        <div class="main-content" id="works">
+            <div class="sec-head">
+                
+                <span>WORKS</span>
+            </div>
+            <div class="sec-body">
+                <br><br> 
+                <div class="project">
+                    <a href="https://arxiv.org/abs/2604.07503" target="_blank"><strong style="font-size: larger;">Super-Grassmannians for $\mathcal{N}=2$ to $4$ SCFT$_3$: From AdS$_4$ Correlators to $\mathcal{N}=4$ SYM scattering Amplitudes</strong></a><br>
+                    <strong style="font-size: small;">Bala Aswini, Jain Sachin, K. S. Dhruva, Rao Adithya A. (IISER Pune, India)</strong><br>
+                    We construct a Super-Grassmannian framework for $n$-point functions in $\mathcal N=2\!-\!4$ SCFT$_3$, where superconformal and $R$-symmetry constraints are manifest through operator-valued delta functions. We test the formalism in $\mathcal N=2$ and $\mathcal N=4$ AdS$_4$ super Yang--Mills theories, reproducing known correlators and constructing $\mathcal N=4$ super-operators in two distinct ways. One yields a multiplet containing spins up to two, while the other is CPT self-conjugate and mirrors the $\mathcal N=4$ SYM superfield structure. The latter connects directly to flat-space $\mathcal N=4$ SYM amplitudes, revealing an enhancement of the $R$-symmetry from $SO(\mathcal N)$ to $SU(\mathcal N)$ in the flat-space limit.<br>
+                    A semi-technical summary can be found on <a href="https://www.alphaxiv.org/overview/2604.07503" target="_blank">alphaXiv</a>
+                </div> 
+                <div class="project">
+                    <a href="https://arxiv.org/abs/2604.07446" target="_blank" style="font-size: larger;"><strong>The $\mathcal{N}=1$ Super-Grassmannian for CFT$_3$ and a Foray on AdS and Cosmological Correlators</strong></a><br>
+                    <strong style="font-size: small;">Bala Aswini, Jain Sachin, K. S. Dhruva, Rao Adithya A. (IISER Pune, India)</strong><br>
+                    We construct a Super-Grassmannian integral representation for $n$-point functions in $\mathcal{N}=1$ SCFT$_3$, where conformal and superconformal symmetries are manifest through operator-valued delta functions. The formalism relates all component correlators to a single component and enables the construction of (A)dS$_4$ correlators with contact contributions from purely exchange correlators. As an example, we derive the (A)dS$_4$ Yang--Mills gluon four-point function from its gluino counterpart and establish a flat-space limit in superspace that agrees with known results.<br>
+                    A semi-technical summary can be found on <a href="https://www.alphaxiv.org/overview/2604.07503" target="_blank">alphaXiv</a>
+                </div>  
+                <div class="project">
+                    <a href="https://arxiv.org/abs/2305.00277" target="_blank" style="font-size: larger;"><strong>Interacting tachyonic scalar field II</strong></a><br>
+                    <strong style="font-size: small;">Ojha V K, Rao Adithya A. (NIT Surat, India), Pathak S D (LPU, India) </strong><br>
+                    We investigate a homogeneous interacting tachyonic scalar field as a dynamical dark energy candidate capable of driving the observed accelerated expansion of the Universe. Considering interactions proportional to either the matter or tachyonic-field energy density and the Hubble parameter, we study the expansion history, age of the Universe, and the evolution of the corresponding energy densities in a spatially flat ($k=0$) cosmology. We find that the interaction coupling is bounded above by unity, independent of whether the interaction is sourced by matter or tachyonic-field energy density.<br>
+                    A semi-technical summary can be found on <a href="https://www.alphaxiv.org/overview/2305.00277" target="_blank">alphaXiv</a>
+                </div>                
             </div>
         </div>
     </div>
