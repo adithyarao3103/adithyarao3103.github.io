@@ -128,14 +128,14 @@ body, html{
 .bdrop-bg{
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(8px);
     position: fixed;
     top: 0;
     left: 0;
 }
 
 body{
-    padding-top: 32vh;
+    padding-top: 50vh;
 }
 
 
@@ -638,5 +638,5 @@ date{
 }
 
 #notes-main{
-    margin-bottom: 25vh;
+    margin-bottom: 70vh;
 }
