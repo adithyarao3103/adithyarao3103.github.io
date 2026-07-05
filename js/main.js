@@ -2,6 +2,7 @@
 // document.getElementById('year-mob').textContent = new Date().getFullYear();
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // BG VIDEO
 
 vids = ['uni-1.mp4', 'magfield.mp4'];
@@ -10,97 +11,168 @@ bgs = ['uni-1.jpg', 'frame-magfield.png', 'frame-lattice.webp', 'frame-cern.webp
 
 descs = [
     `the evolution of universe simulated on a supercomputer by the <a href="https://www.exascaleproject.org/research-project/exasky/" target="_blank">Exasky project</a>. Full video <a href="https://vimeo.com/1031341849" target="_blank">here</a>.`,
-    `simulation of the  interstellar magnetic field strength by <a href="https://www.tng-project.org/media/" target="_blank">The IllustrisTNG Project</a>`,
+    `simulation of the interstellar magnetic field strength by <a href="https://www.tng-project.org/media/" target="_blank">The IllustrisTNG Project</a>`,
     `lattice simulation of the Quantum Chromodynamics Vacuum on a supercomputer by <a href="http://www.physics.adelaide.edu.au/theory/staff/leinweber/VisualQCD/Nobel/index.html" target="_blank">Derek B. Leinweber</a>`,
     `nothing`
 ];
 
 // choice = Math.floor(Math.random() * vids.length);
-const choice=0;
+const choice = 0;
 
-document.body.style.backgroundImage = `url(/assets/${bgs[choice]})`;
-document.getElementById("vid-desc").innerHTML = descs[choice];
+// 1 = use GIF background
+// 0 = use intro video -> looping video
+const singleBackground = true;
 
-const playbackRate = 2;
 
-function createInitialBackground(){
+const playbackRate = 1;
+
+function initializeGifBackground() {
+
+    document.getElementById("vid-desc").innerHTML = 'general relativistic magnetohydrodynamics (GRMHD) simulation and visualization of two supermassive black holes spiraling toward merger, by d`Ascoli et al. <br>Find the full video and associated article <a href="https://www.nasa.gov/universe/new-simulation-sheds-light-on-spiraling-supermassive-black-holes/", target="_blank">here</a>.'
+
+    // Remove any CSS background image
+    document.body.style.backgroundImage = "none";
+
     const bgContainer = document.createElement('div');
     bgContainer.className = 'bg-cont';
-    bgContainer.id = 'before-bg';
-    bgContainer.innerHTML = `
-        <div class="bg-cont" id="before-bg">
-            <div class="bdrop-bg"></div>
-        </div>
-    `;
-    document.body.appendChild(bgContainer);
-}
 
-createInitialBackground();
+    const video = document.createElement('video');
+    video.className = 'bg_div';const singleBackgroundZoom = 1.3;
 
-function createVideoBackground(videoSrc) {
-    const bgContainer = document.createElement('div');
-    bgContainer.className = 'bg-cont';
-    bgContainer.id = 'main-video';
-    const videoElement = document.createElement('video');
-    videoElement.className = 'bg_div';
-    videoElement.autoplay = true;
-    videoElement.muted = true;
-    videoElement.loop = false;    
-    videoElement.onloadstart = function() {
+
+    const singleBackgroundOffsetY = -10; // % of video height, negative = move up
+    video.style.transform = `translateY(${singleBackgroundOffsetY}%) scale(${singleBackgroundZoom})`;
+    video.style.transformOrigin = "center center";
+
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    video.onloadedmetadata = function () {
         this.playbackRate = playbackRate;
     };
-    const sourceElement = document.createElement('source');
-    sourceElement.src = videoSrc;
-    sourceElement.type = 'video/mp4';
-    videoElement.appendChild(sourceElement);
+
+    const source = document.createElement('source');
+    source.src = "/assets/blackhole-precession.mp4";
+    source.type = "video/mp4";
+
+    video.appendChild(source);
+
     const backdropDiv = document.createElement('div');
     backdropDiv.className = 'bdrop-bg';
-    bgContainer.appendChild(videoElement);
+
+    bgContainer.appendChild(video);
     bgContainer.appendChild(backdropDiv);
 
-    const appendToDomWhenReady = () => {
-        if (videoElement.readyState >= 2) {
-            document.body.appendChild(bgContainer);
-            setTimeout(replace, videoElement.duration*1000/videoElement.playbackRate + 100);
-            videoElement.removeEventListener('canplay', appendToDomWhenReady);
-            document.getElementById("before-bg").remove();
-        }
-    };
+    document.body.appendChild(bgContainer);
 
-    videoElement.addEventListener('canplay', appendToDomWhenReady);
-    appendToDomWhenReady();
-    
-    return bgContainer;
 }
 
-createVideoBackground(`/assets/${vids[choice]}`);
+function initializeVideoBackground() {
 
-const loopBgContainer = document.createElement('div');
-loopBgContainer.className = 'bg-cont';
-const loopVideoElement = document.createElement('video');
-loopVideoElement.className = 'bg_div';
-loopVideoElement.autoplay = true;
-loopVideoElement.muted = true;
-loopVideoElement.loop = true;    
-loopVideoElement.onloadstart = function() {
-    this.playbackRate = playbackRate;
-};
-const loopSourceElement = document.createElement('source');
-loopSourceElement.src = '/assets/uni-loop.mp4';
-loopSourceElement.type = 'video/mp4';
-loopVideoElement.appendChild(loopSourceElement);
-const loopBackdropDiv = document.createElement('div');
-loopBackdropDiv.className = 'bdrop-bg';
-loopBgContainer.appendChild(loopVideoElement);
-loopBgContainer.appendChild(loopBackdropDiv);
+    
+    document.body.style.backgroundImage = `url(/assets/${bgs[choice]})`;
+    document.getElementById("vid-desc").innerHTML = descs[choice];
 
+    function createInitialBackground() {
+        const bgContainer = document.createElement('div');
+        bgContainer.className = 'bg-cont';
+        bgContainer.id = 'before-bg';
+        bgContainer.innerHTML = `
+            <div class="bg-cont" id="before-bg">
+                <div class="bdrop-bg"></div>
+            </div>
+        `;
+        document.body.appendChild(bgContainer);
+    }
 
-function replace(){
-    // console.log('replacing');
-    const mainVideo = document.getElementById('main-video');
-    document.body.appendChild(loopBgContainer);  
-    mainVideo.remove();    
-    // console.log('done');
+    createInitialBackground();
+
+    function createVideoBackground(videoSrc) {
+        const bgContainer = document.createElement('div');
+        bgContainer.className = 'bg-cont';
+        bgContainer.id = 'main-video';
+
+        const videoElement = document.createElement('video');
+        videoElement.className = 'bg_div';
+        videoElement.autoplay = true;
+        videoElement.muted = true;
+        videoElement.loop = false;
+
+        videoElement.onloadstart = function () {
+            this.playbackRate = playbackRate;
+        };
+
+        const sourceElement = document.createElement('source');
+        sourceElement.src = videoSrc;
+        sourceElement.type = 'video/mp4';
+        videoElement.appendChild(sourceElement);
+
+        const backdropDiv = document.createElement('div');
+        backdropDiv.className = 'bdrop-bg';
+
+        bgContainer.appendChild(videoElement);
+        bgContainer.appendChild(backdropDiv);
+
+        const appendToDomWhenReady = () => {
+            if (videoElement.readyState >= 2) {
+                document.body.appendChild(bgContainer);
+
+                setTimeout(
+                    replace,
+                    videoElement.duration * 1000 / videoElement.playbackRate + 100
+                );
+
+                videoElement.removeEventListener('canplay', appendToDomWhenReady);
+                document.getElementById("before-bg").remove();
+            }
+        };
+
+        videoElement.addEventListener('canplay', appendToDomWhenReady);
+        appendToDomWhenReady();
+
+        return bgContainer;
+    }
+
+    createVideoBackground(`/assets/${vids[choice]}`);
+
+    const loopBgContainer = document.createElement('div');
+    loopBgContainer.className = 'bg-cont';
+
+    const loopVideoElement = document.createElement('video');
+    loopVideoElement.className = 'bg_div';
+    loopVideoElement.autoplay = true;
+    loopVideoElement.muted = true;
+    loopVideoElement.loop = true;
+
+    loopVideoElement.onloadstart = function () {
+        this.playbackRate = playbackRate;
+    };
+
+    const loopSourceElement = document.createElement('source');
+    loopSourceElement.src = '/assets/uni-loop.mp4';
+    loopSourceElement.type = 'video/mp4';
+    loopVideoElement.appendChild(loopSourceElement);
+
+    const loopBackdropDiv = document.createElement('div');
+    loopBackdropDiv.className = 'bdrop-bg';
+
+    loopBgContainer.appendChild(loopVideoElement);
+    loopBgContainer.appendChild(loopBackdropDiv);
+
+    function replace() {
+        const mainVideo = document.getElementById('main-video');
+        document.body.appendChild(loopBgContainer);
+        mainVideo.remove();
+    }
+
+}
+
+if (singleBackground) {
+    initializeGifBackground();
+} else {
+    initializeVideoBackground();
 }
 
 
